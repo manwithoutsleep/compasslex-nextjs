@@ -42,14 +42,19 @@ export interface INewsletterRepository {
  */
 export class CounselorRepository implements ICounselorRepository {
   private dataPath = join(process.cwd(), 'public', 'data', 'counselor.json')
+  private cachedData: Counselor[] | null = null
 
   /**
    * Retrieve all counselors from JSON file
+   * Uses in-memory cache to avoid redundant file I/O
    */
   async getAllCounselors(): Promise<Counselor[]> {
-    const raw = await readFile(this.dataPath, 'utf-8')
-    const data: CounselorData = JSON.parse(raw)
-    return data.counselorList
+    if (this.cachedData === null) {
+      const raw = await readFile(this.dataPath, 'utf-8')
+      const data: CounselorData = JSON.parse(raw)
+      this.cachedData = data.counselorList
+    }
+    return this.cachedData
   }
 
   /**
@@ -71,14 +76,19 @@ export class CounselorRepository implements ICounselorRepository {
  */
 export class NewsletterRepository implements INewsletterRepository {
   private dataPath = join(process.cwd(), 'public', 'data', 'newsletter.json')
+  private cachedData: Newsletter[] | null = null
 
   /**
    * Retrieve all newsletters from JSON file
+   * Uses in-memory cache to avoid redundant file I/O
    */
   async getAllNewsletters(): Promise<Newsletter[]> {
-    const raw = await readFile(this.dataPath, 'utf-8')
-    const data: NewsletterData = JSON.parse(raw)
-    return data.newsletterList
+    if (this.cachedData === null) {
+      const raw = await readFile(this.dataPath, 'utf-8')
+      const data: NewsletterData = JSON.parse(raw)
+      this.cachedData = data.newsletterList
+    }
+    return this.cachedData
   }
 
   /**
