@@ -55,7 +55,13 @@
       "Bash(where npm:*)",
       "WebSearch",
       "Bash(cmd /c \"npm --version 2>&1\")",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(test:*)",
+      "Bash(powershell.exe -Command \"npm list --depth=0\")",
+      "Bash(powershell.exe -Command \"npm list @vitest/coverage-v8\")",
+      "Bash(gh pr comment:*)"
     ],
     "deny": [],
     "ask": []

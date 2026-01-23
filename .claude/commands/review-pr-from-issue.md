@@ -1,6 +1,6 @@
 ---
-argument-hint: [github-issue] [pr-num]
 description: Review a PR and add comments
+argument-hint: [github-issue] [pr-num]
 ---
 
 <prompt>
