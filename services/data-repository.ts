@@ -47,12 +47,28 @@ export class CounselorRepository implements ICounselorRepository {
   /**
    * Retrieve all counselors from JSON file
    * Uses in-memory cache to avoid redundant file I/O
+   * @throws Error if file cannot be read, JSON is invalid, or data structure is incorrect
    */
   async getAllCounselors(): Promise<Counselor[]> {
     if (this.cachedData === null) {
-      const raw = await readFile(this.dataPath, 'utf-8')
-      const data: CounselorData = JSON.parse(raw)
-      this.cachedData = data.counselorList
+      try {
+        const raw = await readFile(this.dataPath, 'utf-8')
+        const data: CounselorData = JSON.parse(raw)
+
+        if (!data.counselorList || !Array.isArray(data.counselorList)) {
+          throw new Error('Invalid counselor data format: counselorList is missing or not an array')
+        }
+
+        this.cachedData = data.counselorList
+      } catch (error) {
+        if (error instanceof SyntaxError) {
+          throw new Error(`Failed to parse counselor data: Invalid JSON format - ${error.message}`)
+        }
+        if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+          throw new Error(`Counselor data file not found at ${this.dataPath}`)
+        }
+        throw error
+      }
     }
     return this.cachedData
   }
@@ -81,12 +97,30 @@ export class NewsletterRepository implements INewsletterRepository {
   /**
    * Retrieve all newsletters from JSON file
    * Uses in-memory cache to avoid redundant file I/O
+   * @throws Error if file cannot be read, JSON is invalid, or data structure is incorrect
    */
   async getAllNewsletters(): Promise<Newsletter[]> {
     if (this.cachedData === null) {
-      const raw = await readFile(this.dataPath, 'utf-8')
-      const data: NewsletterData = JSON.parse(raw)
-      this.cachedData = data.newsletterList
+      try {
+        const raw = await readFile(this.dataPath, 'utf-8')
+        const data: NewsletterData = JSON.parse(raw)
+
+        if (!data.newsletterList || !Array.isArray(data.newsletterList)) {
+          throw new Error(
+            'Invalid newsletter data format: newsletterList is missing or not an array'
+          )
+        }
+
+        this.cachedData = data.newsletterList
+      } catch (error) {
+        if (error instanceof SyntaxError) {
+          throw new Error(`Failed to parse newsletter data: Invalid JSON format - ${error.message}`)
+        }
+        if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+          throw new Error(`Newsletter data file not found at ${this.dataPath}`)
+        }
+        throw error
+      }
     }
     return this.cachedData
   }
