@@ -49,6 +49,21 @@ This task covers the initial setup and configuration of the development environm
 - Tailwind theme configuration (handled in Task 03)
 - Any implementation work
 
+## Environment Notes
+
+**CRITICAL: npm Command Syntax for Windows PowerShell**
+
+In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
+
+```powershell
+powershell.exe -Command "npm --version"
+powershell.exe -Command "npm install"
+powershell.exe -Command "npm run build"
+powershell.exe -Command "npm run test"
+```
+
+**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+
 ## Implementation Requirements
 
 ### Technology Stack
@@ -88,93 +103,93 @@ npm install @googlemaps/js-api-loader
 #### 1. Vitest Configuration (`vitest.config.ts`)
 
 ```typescript
-import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
-    plugins: [react()],
-    test: {
-        environment: 'jsdom',
-        setupFiles: ['./vitest.setup.ts'],
-        globals: true,
-        coverage: {
-            provider: 'v8',
-            reporter: ['text', 'json', 'html'],
-            exclude: ['node_modules/', '.next/', 'coverage/', '**/*.config.ts', '**/*.config.js'],
-        },
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.ts'],
+    globals: true,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      exclude: ['node_modules/', '.next/', 'coverage/', '**/*.config.ts', '**/*.config.js'],
     },
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './'),
-        },
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './'),
     },
-});
+  },
+})
 ```
 
 #### 2. Vitest Setup File (`vitest.setup.ts`)
 
 ```typescript
-import '@testing-library/jest-dom/vitest';
+import '@testing-library/jest-dom/vitest'
 ```
 
 #### 3. Playwright Configuration (`playwright.config.ts`)
 
 ```typescript
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test'
 
 export default defineConfig({
-    testDir: './e2e',
-    fullyParallel: true,
-    forbidOnly: !!process.env.CI,
-    retries: process.env.CI ? 2 : 0,
-    workers: process.env.CI ? 1 : undefined,
-    reporter: 'html',
-    use: {
-        baseURL: 'http://localhost:3000',
-        trace: 'on-first-retry',
+  testDir: './e2e',
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: 'html',
+  use: {
+    baseURL: 'http://localhost:3000',
+    trace: 'on-first-retry',
+  },
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
     },
-    projects: [
-        {
-            name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
-        },
-        {
-            name: 'firefox',
-            use: { ...devices['Desktop Firefox'] },
-        },
-        {
-            name: 'webkit',
-            use: { ...devices['Desktop Safari'] },
-        },
-        {
-            name: 'Mobile Chrome',
-            use: { ...devices['Pixel 5'] },
-        },
-        {
-            name: 'Mobile Safari',
-            use: { ...devices['iPhone 12'] },
-        },
-    ],
-    webServer: {
-        command: 'npm run dev',
-        url: 'http://localhost:3000',
-        reuseExistingServer: !process.env.CI,
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
     },
-});
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },
+    },
+  ],
+  webServer: {
+    command: 'npm run dev',
+    url: 'http://localhost:3000',
+    reuseExistingServer: !process.env.CI,
+  },
+})
 ```
 
 #### 4. Prettier Configuration (`.prettierrc.json`)
 
 ```json
 {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "useTabs": false,
-    "trailingComma": "es5",
-    "printWidth": 100,
-    "plugins": ["prettier-plugin-tailwindcss"]
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "trailingComma": "es5",
+  "printWidth": 100,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
 ```
 
@@ -217,19 +232,19 @@ Add or verify these npm scripts exist:
 
 ```json
 {
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "test": "vitest",
-        "test:ui": "vitest --ui",
-        "test:coverage": "vitest run --coverage",
-        "e2e": "playwright test",
-        "e2e:ui": "playwright test --ui",
-        "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-        "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
-    }
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
+  }
 }
 ```
 
@@ -253,83 +268,85 @@ Since this task is about setup and configuration, testing involves verification 
 
 1. **Verify npm dependencies installed**:
 
-    ```powershell
-    npm list vitest @testing-library/react @playwright/test prettier @googlemaps/js-api-loader
-    ```
+   ```powershell
+   npm list vitest @testing-library/react @playwright/test prettier @googlemaps/js-api-loader
+   ```
 
 2. **Verify TypeScript compilation works**:
 
-    ```bash
-    tsc --noEmit
-    ```
+   ```bash
+   tsc --noEmit
+   ```
 
 3. **Verify Vitest configuration is valid**:
 
-    ```bash
-    npx vitest --version
-    npx vitest run --reporter=verbose --no-coverage
-    ```
+   ```bash
+   npx vitest --version
+   npx vitest run --reporter=verbose --no-coverage
+   ```
 
-    Expected: Vitest runs successfully (even with no tests yet)
+   Expected: Vitest runs successfully (even with no tests yet)
 
 4. **Verify Playwright installation**:
 
-    ```bash
-    npx playwright install
-    npx playwright test --list
-    ```
+   ```bash
+   npx playwright install
+   npx playwright test --list
+   ```
 
-    Expected: Playwright lists 0 tests (none created yet)
+   Expected: Playwright lists 0 tests (none created yet)
 
 5. **Verify Prettier configuration**:
 
-    ```bash
-    npx prettier --check "**/*.{ts,tsx,json,md}"
-    ```
+   ```bash
+   npx prettier --check "**/*.{ts,tsx,json,md}"
+   ```
 
-    Expected: Prettier runs successfully
+   Expected: Prettier runs successfully
 
 6. **Verify build pipeline**:
 
-    ```bash
-    npm run build
-    ```
+   ```bash
+   npm run build
+   ```
 
-    Expected: Build completes successfully with no errors
+   Expected: Build completes successfully with no errors
 
 7. **Verify dev server starts**:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
-    Expected: Dev server starts on http://localhost:3000 with no errors
+   Expected: Dev server starts on http://localhost:3000 with no errors
 
 8. **Verify environment variables**:
-    - Check that `.env.local` exists and contains `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`
-    - Check that `.env.example` exists with placeholder value
-    - Verify `.env.local` is in `.gitignore`
+   - Check that `.env.local` exists and contains `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`
+   - Check that `.env.example` exists with placeholder value
+   - Verify `.env.local` is in `.gitignore`
 
 ## Success Criteria
 
-- [ ] All npm dependencies installed successfully
-- [ ] `vitest.config.ts` created with correct configuration
-- [ ] `vitest.setup.ts` created with @testing-library/jest-dom
-- [ ] `playwright.config.ts` created with multi-browser configuration
-- [ ] `.prettierrc.json` created with Tailwind plugin
-- [ ] `.prettierignore` created
-- [ ] `.env.example` created with placeholder values
-- [ ] `.env.local` created with actual Google Maps API key from Angular repo
-- [ ] `package.json` updated with test, e2e, and format scripts
-- [ ] `.gitignore` includes `.env.local`
-- [ ] TypeScript compilation succeeds (`tsc --noEmit`)
-- [ ] Vitest runs without errors (`npx vitest --version` and dry run)
-- [ ] Playwright installed (`npx playwright install` succeeds)
-- [ ] Prettier runs successfully (`npx prettier --check "**/*.{ts,tsx,json,md}"`)
-- [ ] Build completes successfully (`npm run build`)
-- [ ] Dev server starts without errors (`npm run dev`)
-- [ ] All configuration files have no syntax errors
-- [ ] Path aliases (`@/`) configured correctly in vitest.config.ts
+- [x] All npm dependencies installed successfully
+- [x] `vitest.config.ts` created with correct configuration
+- [x] `vitest.setup.ts` created with @testing-library/jest-dom
+- [x] `playwright.config.ts` created with multi-browser configuration
+- [x] `.prettierrc.json` created with Tailwind plugin
+- [x] `.prettierignore` created
+- [x] `.env.example` created with placeholder values
+- [x] `.env.local` created with actual Google Maps API key from Angular repo
+- [x] `package.json` updated with test, e2e, and format scripts
+- [x] `.gitignore` includes `.env.local`
+- [x] TypeScript compilation succeeds (`tsc --noEmit`)
+- [x] Vitest runs without errors (`npx vitest --version` and dry run)
+- [x] Playwright installed (`npx playwright install` succeeds)
+- [x] Prettier runs successfully (`npx prettier --check "**/*.{ts,tsx,json,md}"`)
+- [x] Build completes successfully (`npm run build`)
+- [x] Dev server starts without errors (`npm run dev`)
+- [x] All configuration files have no syntax errors
+- [x] Path aliases (`@/`) configured correctly in vitest.config.ts
+
+**STATUS: COMPLETED** ✅
 
 ## Notes
 

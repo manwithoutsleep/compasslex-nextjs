@@ -46,6 +46,21 @@ Implement Google Maps integration using `@googlemaps/js-api-loader` as a client 
 - Geocoding/search functionality
 - Map controls beyond defaults
 
+## Environment Notes
+
+**CRITICAL: npm Command Syntax for Windows PowerShell**
+
+In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
+
+```powershell
+powershell.exe -Command "npm --version"
+powershell.exe -Command "npm install"
+powershell.exe -Command "npm run build"
+powershell.exe -Command "npm run test"
+```
+
+**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+
 ## Implementation Requirements
 
 ### Technology Stack
@@ -76,15 +91,15 @@ Google Maps requires mocking for tests:
 ```typescript
 // Mock @googlemaps/js-api-loader
 vi.mock('@googlemaps/js-api-loader', () => ({
-    Loader: vi.fn().mockImplementation(() => ({
-        load: vi.fn().mockResolvedValue({
-            maps: {
-                Map: vi.fn(),
-                Marker: vi.fn(),
-            },
-        }),
-    })),
-}));
+  Loader: vi.fn().mockImplementation(() => ({
+    load: vi.fn().mockResolvedValue({
+      maps: {
+        Map: vi.fn(),
+        Marker: vi.fn(),
+      },
+    }),
+  })),
+}))
 ```
 
 ## Implementation Steps

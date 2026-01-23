@@ -71,6 +71,21 @@ Execute comprehensive testing strategy (unit, integration, E2E, visual regressio
 - Monitoring/analytics setup (future enhancement)
 - Creating PR (separate step after this task)
 
+## Environment Notes
+
+**CRITICAL: npm Command Syntax for Windows PowerShell**
+
+In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
+
+```powershell
+powershell.exe -Command "npm --version"
+powershell.exe -Command "npm install"
+powershell.exe -Command "npm run build"
+powershell.exe -Command "npm run test"
+```
+
+**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+
 ## Implementation Requirements
 
 ### Testing Strategy Overview
@@ -113,16 +128,16 @@ start coverage/index.html  # Windows
 **File**: `__tests__/integration/navigation-flow.test.tsx`
 
 ```typescript
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { describe, it, expect } from 'vitest'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 describe('Navigation Flow Integration', () => {
-    it('should navigate between pages', async () => {
-        // Test navigation flow through multiple pages
-        // This is a placeholder - actual implementation depends on routing setup
-    });
-});
+  it('should navigate between pages', async () => {
+    // Test navigation flow through multiple pages
+    // This is a placeholder - actual implementation depends on routing setup
+  })
+})
 ```
 
 #### Step 2.2: Create Data Loading Integration Test
@@ -130,33 +145,33 @@ describe('Navigation Flow Integration', () => {
 **File**: `__tests__/integration/data-loading.test.tsx`
 
 ```typescript
-import { describe, it, expect } from 'vitest';
-import { CounselorRepository, NewsletterRepository } from '@/services/data-repository';
+import { describe, it, expect } from 'vitest'
+import { CounselorRepository, NewsletterRepository } from '@/services/data-repository'
 
 describe('Data Loading Integration', () => {
-    it('should load all counselors successfully', async () => {
-        const repo = new CounselorRepository();
-        const counselors = await repo.getAllCounselors();
+  it('should load all counselors successfully', async () => {
+    const repo = new CounselorRepository()
+    const counselors = await repo.getAllCounselors()
 
-        expect(counselors).toHaveLength(11); // Verify count
-        counselors.forEach((counselor) => {
-            expect(counselor).toHaveProperty('firstname');
-            expect(counselor).toHaveProperty('lastname');
-            expect(counselor).toHaveProperty('email');
-        });
-    });
+    expect(counselors).toHaveLength(11) // Verify count
+    counselors.forEach((counselor) => {
+      expect(counselor).toHaveProperty('firstname')
+      expect(counselor).toHaveProperty('lastname')
+      expect(counselor).toHaveProperty('email')
+    })
+  })
 
-    it('should load all newsletters successfully', async () => {
-        const repo = new NewsletterRepository();
-        const newsletters = await repo.getAllNewsletters();
+  it('should load all newsletters successfully', async () => {
+    const repo = new NewsletterRepository()
+    const newsletters = await repo.getAllNewsletters()
 
-        expect(newsletters).toHaveLength(24); // Verify count
-        newsletters.forEach((newsletter) => {
-            expect(newsletter).toHaveProperty('title');
-            expect(newsletter).toHaveProperty('year');
-        });
-    });
-});
+    expect(newsletters).toHaveLength(24) // Verify count
+    newsletters.forEach((newsletter) => {
+      expect(newsletter).toHaveProperty('title')
+      expect(newsletter).toHaveProperty('year')
+    })
+  })
+})
 ```
 
 #### Step 2.3: Run Integration Tests
@@ -172,23 +187,23 @@ npx vitest run __tests__/integration/
 **File**: `e2e/homepage.spec.ts`
 
 ```typescript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Homepage', () => {
-    test('should display correctly', async ({ page }) => {
-        await page.goto('/');
+  test('should display correctly', async ({ page }) => {
+    await page.goto('/')
 
-        await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-        await expect(page.getByRole('navigation')).toBeVisible();
-    });
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    await expect(page.getByRole('navigation')).toBeVisible()
+  })
 
-    test('should have working navigation links', async ({ page }) => {
-        await page.goto('/');
+  test('should have working navigation links', async ({ page }) => {
+    await page.goto('/')
 
-        await page.getByRole('link', { name: 'Meet Us' }).click();
-        await expect(page).toHaveURL(/\/meet-us/);
-    });
-});
+    await page.getByRole('link', { name: 'Meet Us' }).click()
+    await expect(page).toHaveURL(/\/meet-us/)
+  })
+})
 ```
 
 #### Step 3.2: Create Counselor Flow E2E Test
@@ -196,27 +211,27 @@ test.describe('Homepage', () => {
 **File**: `e2e/counselor-flow.spec.ts`
 
 ```typescript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Counselor Flow', () => {
-    test('should navigate from meet-us to counselor detail', async ({ page }) => {
-        await page.goto('/meet-us');
+  test('should navigate from meet-us to counselor detail', async ({ page }) => {
+    await page.goto('/meet-us')
 
-        // Click first counselor card
-        await page.getByText('Joanna').first().click();
+    // Click first counselor card
+    await page.getByText('Joanna').first().click()
 
-        await expect(page).toHaveURL(/\/meet-us\/Joanna/);
-        await expect(page.getByRole('heading', { level: 1 })).toContainText('Joanna');
-    });
+    await expect(page).toHaveURL(/\/meet-us\/Joanna/)
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Joanna')
+  })
 
-    test('should display all 11 counselors', async ({ page }) => {
-        await page.goto('/meet-us');
+  test('should display all 11 counselors', async ({ page }) => {
+    await page.goto('/meet-us')
 
-        // Count counselor cards
-        const cards = page.locator('[data-testid="counselor-card"]');
-        await expect(cards).toHaveCount(11);
-    });
-});
+    // Count counselor cards
+    const cards = page.locator('[data-testid="counselor-card"]')
+    await expect(cards).toHaveCount(11)
+  })
+})
 ```
 
 #### Step 3.3: Create Newsletter E2E Test
@@ -224,23 +239,23 @@ test.describe('Counselor Flow', () => {
 **File**: `e2e/newsletters.spec.ts`
 
 ```typescript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Newsletters', () => {
-    test('should display all newsletters', async ({ page }) => {
-        await page.goto('/newsletters');
+  test('should display all newsletters', async ({ page }) => {
+    await page.goto('/newsletters')
 
-        const cards = page.locator('[data-testid="newsletter-card"]');
-        await expect(cards).toHaveCount(24);
-    });
+    const cards = page.locator('[data-testid="newsletter-card"]')
+    await expect(cards).toHaveCount(24)
+  })
 
-    test('should have working PDF download links', async ({ page }) => {
-        await page.goto('/newsletters');
+  test('should have working PDF download links', async ({ page }) => {
+    await page.goto('/newsletters')
 
-        const pdfLink = page.getByRole('link', { name: /download/i }).first();
-        await expect(pdfLink).toHaveAttribute('href', /\.pdf$/);
-    });
-});
+    const pdfLink = page.getByRole('link', { name: /download/i }).first()
+    await expect(pdfLink).toHaveAttribute('href', /\.pdf$/)
+  })
+})
 ```
 
 #### Step 3.4: Create Google Maps E2E Test
@@ -248,15 +263,15 @@ test.describe('Newsletters', () => {
 **File**: `e2e/google-maps.spec.ts`
 
 ```typescript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Google Maps', () => {
-    test('should display map on contact-us page', async ({ page }) => {
-        await page.goto('/contact-us');
+  test('should display map on contact-us page', async ({ page }) => {
+    await page.goto('/contact-us')
 
-        await expect(page.getByTestId('google-map')).toBeVisible();
-    });
-});
+    await expect(page.getByTestId('google-map')).toBeVisible()
+  })
+})
 ```
 
 #### Step 3.5: Run E2E Tests
@@ -274,34 +289,34 @@ npx playwright test --ui  # Run with UI for debugging
 **File**: `e2e/visual-regression.spec.ts`
 
 ```typescript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 
 test.describe('Visual Regression', () => {
-    test('homepage visual regression', async ({ page }) => {
-        await page.goto('/');
-        await expect(page).toHaveScreenshot('homepage.png', { fullPage: true });
-    });
+  test('homepage visual regression', async ({ page }) => {
+    await page.goto('/')
+    await expect(page).toHaveScreenshot('homepage.png', { fullPage: true })
+  })
 
-    test('meet-us page visual regression', async ({ page }) => {
-        await page.goto('/meet-us');
-        await expect(page).toHaveScreenshot('meet-us.png', { fullPage: true });
-    });
+  test('meet-us page visual regression', async ({ page }) => {
+    await page.goto('/meet-us')
+    await expect(page).toHaveScreenshot('meet-us.png', { fullPage: true })
+  })
 
-    test('counselor detail visual regression', async ({ page }) => {
-        await page.goto('/meet-us/Joanna');
-        await expect(page).toHaveScreenshot('counselor-detail.png', { fullPage: true });
-    });
+  test('counselor detail visual regression', async ({ page }) => {
+    await page.goto('/meet-us/Joanna')
+    await expect(page).toHaveScreenshot('counselor-detail.png', { fullPage: true })
+  })
 
-    test('newsletters page visual regression', async ({ page }) => {
-        await page.goto('/newsletters');
-        await expect(page).toHaveScreenshot('newsletters.png', { fullPage: true });
-    });
+  test('newsletters page visual regression', async ({ page }) => {
+    await page.goto('/newsletters')
+    await expect(page).toHaveScreenshot('newsletters.png', { fullPage: true })
+  })
 
-    test('contact-us page visual regression', async ({ page }) => {
-        await page.goto('/contact-us');
-        await expect(page).toHaveScreenshot('contact-us.png', { fullPage: true });
-    });
-});
+  test('contact-us page visual regression', async ({ page }) => {
+    await page.goto('/contact-us')
+    await expect(page).toHaveScreenshot('contact-us.png', { fullPage: true })
+  })
+})
 ```
 
 #### Step 4.2: Generate Baseline Screenshots
@@ -366,24 +381,24 @@ npm install -D @axe-core/playwright
 **File**: `e2e/accessibility.spec.ts`
 
 ```typescript
-import { test, expect } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { test, expect } from '@playwright/test'
+import AxeBuilder from '@axe-core/playwright'
 
 test.describe('Accessibility', () => {
-    test('homepage should not have accessibility violations', async ({ page }) => {
-        await page.goto('/');
+  test('homepage should not have accessibility violations', async ({ page }) => {
+    await page.goto('/')
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
-        expect(accessibilityScanResults.violations).toEqual([]);
-    });
+    const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+    expect(accessibilityScanResults.violations).toEqual([])
+  })
 
-    test('meet-us page should not have accessibility violations', async ({ page }) => {
-        await page.goto('/meet-us');
+  test('meet-us page should not have accessibility violations', async ({ page }) => {
+    await page.goto('/meet-us')
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
-        expect(accessibilityScanResults.violations).toEqual([]);
-    });
-});
+    const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+    expect(accessibilityScanResults.violations).toEqual([])
+  })
+})
 ```
 
 #### Step 6.2: Manual Accessibility Testing
@@ -420,10 +435,10 @@ npx playwright test --project="Mobile Safari"
 
 ```json
 {
-    "framework": "nextjs",
-    "buildCommand": "npm run build",
-    "devCommand": "npm run dev",
-    "installCommand": "npm install"
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install"
 }
 ```
 
@@ -445,7 +460,7 @@ NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your-google-maps-api-key-here
 
 1. Connect GitHub repository to Vercel
 2. Configure environment variables in Vercel dashboard:
-    - `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`: Google Maps API key
+   - `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`: Google Maps API key
 
 ## Build Verification
 
@@ -537,14 +552,14 @@ npm run e2e
 1. Open Angular app: http://localhost:4200 (or test.compasslex.com)
 2. Open Next.js app: http://localhost:3000
 3. Compare visually:
-    - [ ] Homepage matches
-    - [ ] Meet Us page matches
-    - [ ] Counselor detail pages match
-    - [ ] Newsletters page matches
-    - [ ] All other pages match
-    - [ ] Colors match
-    - [ ] Fonts match
-    - [ ] Spacing matches
+   - [ ] Homepage matches
+   - [ ] Meet Us page matches
+   - [ ] Counselor detail pages match
+   - [ ] Newsletters page matches
+   - [ ] All other pages match
+   - [ ] Colors match
+   - [ ] Fonts match
+   - [ ] Spacing matches
 
 #### Step 10.4: Final Checklist
 

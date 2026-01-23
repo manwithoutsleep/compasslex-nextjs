@@ -324,9 +324,9 @@ description: Review a PR and add comments
 
 **Findings:**
 
--   🚨 Critical Issues: [count]
--   🤔 Suggestions: [count]
--   ✨ Nitpicks: [count]
+- 🚨 Critical Issues: [count]
+- 🤔 Suggestions: [count]
+- ✨ Nitpicks: [count]
 
 **Key Highlights:**
 [2-4 bullet points covering the most important findings, both positive and negative]
