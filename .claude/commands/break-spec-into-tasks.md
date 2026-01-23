@@ -43,12 +43,12 @@ This prompt expects the following input parameter:
 1. Read the specification file at `.specs/{{spec-name}}.md` (or the provided
    path)
 2. Thoroughly analyze the entire specification to understand:
-    - Overall goals and objectives
-    - Major components or features
-    - Technical requirements and constraints
-    - Dependencies between different parts of the work
-    - Existing vs. new functionality
-    - Testing requirements
+   - Overall goals and objectives
+   - Major components or features
+   - Technical requirements and constraints
+   - Dependencies between different parts of the work
+   - Existing vs. new functionality
+   - Testing requirements
 3. Consider these additional notes:
 
 {{notes}}
@@ -59,18 +59,18 @@ This prompt expects the following input parameter:
 
 3. Identify logical boundaries for breaking down the work based on:
 
--   **Functional cohesion**: Group related functionality together
--   **Logical dependencies**: Identify what must be built before other things
--   **File scope**: Consider which files/modules will be affected by each task
--   **Testability**: Each sub-task should be independently testable
--   **Size balance**: Aim for sub-tasks of roughly similar complexity (not too
-    small, not too large)
+- **Functional cohesion**: Group related functionality together
+- **Logical dependencies**: Identify what must be built before other things
+- **File scope**: Consider which files/modules will be affected by each task
+- **Testability**: Each sub-task should be independently testable
+- **Size balance**: Aim for sub-tasks of roughly similar complexity (not too
+  small, not too large)
 
 4. Determine the optimal number of sub-tasks:
-    - Minimum 2 sub-tasks (otherwise, no breakdown is needed)
-    - Maximum 10 sub-tasks (beyond this, tasks may be too granular)
-    - Sweet spot: 3-6 sub-tasks for most specifications
-    - Consider: Each sub-task should represent 1-3 hours of focused work
+   - Minimum 2 sub-tasks (otherwise, no breakdown is needed)
+   - Maximum 10 sub-tasks (beyond this, tasks may be too granular)
+   - Sweet spot: 3-6 sub-tasks for most specifications
+   - Consider: Each sub-task should represent 1-3 hours of focused work
 
 </step_2_identify_logical_boundaries>
 
@@ -78,17 +78,17 @@ This prompt expects the following input parameter:
 
 5. For each identified sub-task, analyze dependencies:
 
--   **Sequential dependencies**: Task B requires Task A to be completed first
--   **Parallel opportunities**: Tasks that can be executed simultaneously
--   **Shared resources**: Tasks that modify the same files (potential conflicts)
--   **Data flow**: Does one task produce data/state needed by another?
--   **Testing dependencies**: Must tests pass before proceeding to dependent
-    tasks?
+- **Sequential dependencies**: Task B requires Task A to be completed first
+- **Parallel opportunities**: Tasks that can be executed simultaneously
+- **Shared resources**: Tasks that modify the same files (potential conflicts)
+- **Data flow**: Does one task produce data/state needed by another?
+- **Testing dependencies**: Must tests pass before proceeding to dependent
+  tasks?
 
 6. Create a dependency graph (conceptually) that shows:
-    - Which tasks can start immediately (no dependencies)
-    - Which tasks must wait for other tasks to complete
-    - Which groups of tasks can run in parallel
+   - Which tasks can start immediately (no dependencies)
+   - Which tasks must wait for other tasks to complete
+   - Which groups of tasks can run in parallel
 
 </step_3_analyze_dependencies>
 
@@ -96,82 +96,82 @@ This prompt expects the following input parameter:
 
 7. Create sub-task specification files following this naming pattern:
 
--   `.specs/{{spec-name}}-01-[descriptive-name].md`
--   `.specs/{{spec-name}}-02-[descriptive-name].md`
--   `.specs/{{spec-name}}-03-[descriptive-name].md`
--   ... continuing sequentially
+- `.specs/{{spec-name}}-01-[descriptive-name].md`
+- `.specs/{{spec-name}}-02-[descriptive-name].md`
+- `.specs/{{spec-name}}-03-[descriptive-name].md`
+- ... continuing sequentially
 
 8. Each sub-task file must contain:
 
-    ```markdown
-    # {{spec-name}}-NN: [Descriptive Title]
+   ```markdown
+   # {{spec-name}}-NN: [Descriptive Title]
 
-    ## Parent Specification
+   ## Parent Specification
 
-    This is sub-task NN of the parent specification: `{{spec-name}}.md`
+   This is sub-task NN of the parent specification: `{{spec-name}}.md`
 
-    ## Objective
+   ## Objective
 
-    [Clear, focused objective for this specific sub-task]
+   [Clear, focused objective for this specific sub-task]
 
-    ## Dependencies
+   ## Dependencies
 
-    **Prerequisites** (must be completed before this task):
+   **Prerequisites** (must be completed before this task):
 
-    -   [List any sub-tasks that must be completed first, or "None" if this can start
-        immediately]
+   - [List any sub-tasks that must be completed first, or "None" if this can start
+     immediately]
 
-    **Blocks** (tasks that depend on this one):
+   **Blocks** (tasks that depend on this one):
 
-    -   [List any sub-tasks that depend on this one completing, or "None"]
+   - [List any sub-tasks that depend on this one completing, or "None"]
 
-    **Parallel Opportunities**:
+   **Parallel Opportunities**:
 
-    -   [List any sub-tasks that can be executed simultaneously with this one, or
-        "None"]
+   - [List any sub-tasks that can be executed simultaneously with this one, or
+     "None"]
 
-    ## Scope
+   ## Scope
 
-    [Detailed description of what this sub-task includes]
+   [Detailed description of what this sub-task includes]
 
-    ### In Scope
+   ### In Scope
 
-    -   [Specific features, files, components to implement]
+   - [Specific features, files, components to implement]
 
-    ### Out of Scope
+   ### Out of Scope
 
-    -   [What is explicitly NOT part of this sub-task]
+   - [What is explicitly NOT part of this sub-task]
 
-    ## Implementation Requirements
+   ## Implementation Requirements
 
-    [Technical requirements specific to this sub-task]
+   [Technical requirements specific to this sub-task]
 
-    ## Files to Create/Modify
+   ## Files to Create/Modify
 
-    -   `./path/to/file1.ts` - [description]
-    -   `./path/to/file2.tsx` - [description]
+   - `./path/to/file1.ts` - [description]
+   - `./path/to/file2.tsx` - [description]
 
-    ## Testing Requirements
+   ## Testing Requirements
 
-    [How to verify this sub-task is complete]
+   [How to verify this sub-task is complete]
 
-    ## Success Criteria
+   ## Success Criteria
 
-    -   [ ] [Specific, measurable criterion 1]
-    -   [ ] [Specific, measurable criterion 2]
-    -   [ ] All tests pass
-    -   [ ] The verify-code skill has been successfully executed
+   - [ ] [Specific, measurable criterion 1]
+   - [ ] [Specific, measurable criterion 2]
+   - [ ] All tests pass
+   - [ ] The verify-code skill has been successfully executed
 
-    ## Notes
+   ## Notes
 
-    [Any additional context, gotchas, or important considerations]
-    ```
+   [Any additional context, gotchas, or important considerations]
+   ```
 
 9. Ensure each sub-task is:
-    - **Self-contained**: Can be understood without reading other sub-tasks
-    - **Focused**: Has a single, clear purpose
-    - **Testable**: Has clear success criteria
-    - **Properly scoped**: Not too large, not too small
+   - **Self-contained**: Can be understood without reading other sub-tasks
+   - **Focused**: Has a single, clear purpose
+   - **Testable**: Has clear success criteria
+   - **Properly scoped**: Not too large, not too small
 
 </step_4_create_subtask_files>
 
@@ -208,9 +208,9 @@ This prompt expects the following input parameter:
 
     Execute these tasks simultaneously:
 
-    -   Task 01: [brief description]
-    -   Task 02: [brief description]
-    -   Task 03: [brief description]
+    - Task 01: [brief description]
+    - Task 02: [brief description]
+    - Task 03: [brief description]
 
     **Wait for Phase 1 completion before proceeding to Phase 2**
 
@@ -220,7 +220,7 @@ This prompt expects the following input parameter:
 
     Execute these tasks simultaneously:
 
-    -   Task 04: [brief description]
+    - Task 04: [brief description]
 
     [Continue with additional phases as needed]
 
@@ -321,16 +321,16 @@ all necessary sections.
 
 <success_criteria>
 
--   [ ] Original specification thoroughly analyzed
--   [ ] Optimal number of sub-tasks identified (2-10, ideally 3-6)
--   [ ] All sub-task files created with complete, well-structured content
--   [ ] Coordinator plan created with accurate dependency graph
--   [ ] Execution strategy clearly defines parallel vs. sequential tasks
--   [ ] No work from original specification is lost or duplicated
--   [ ] All files follow naming conventions
--   [ ] Each sub-task has clear objectives, scope, and success criteria
--   [ ] Dependencies are accurately identified and documented
--   [ ] Coordinator provides actionable execution guidance
+- [ ] Original specification thoroughly analyzed
+- [ ] Optimal number of sub-tasks identified (2-10, ideally 3-6)
+- [ ] All sub-task files created with complete, well-structured content
+- [ ] Coordinator plan created with accurate dependency graph
+- [ ] Execution strategy clearly defines parallel vs. sequential tasks
+- [ ] No work from original specification is lost or duplicated
+- [ ] All files follow naming conventions
+- [ ] Each sub-task has clear objectives, scope, and success criteria
+- [ ] Dependencies are accurately identified and documented
+- [ ] Coordinator provides actionable execution guidance
 
 </success_criteria>
 
@@ -348,16 +348,16 @@ Example of good sub-task breakdown for an authentication feature:
 
 **Dependencies**:
 
--   Task 02 depends on Task 01 (needs database schema)
--   Tasks 03 and 04 depend on Task 02 (need server utilities)
--   Tasks 03 and 04 can run in parallel (independent UI components)
--   Task 05 depends on Tasks 02, 03, 04 (needs auth system complete)
+- Task 02 depends on Task 01 (needs database schema)
+- Tasks 03 and 04 depend on Task 02 (need server utilities)
+- Tasks 03 and 04 can run in parallel (independent UI components)
+- Task 05 depends on Tasks 02, 03, 04 (needs auth system complete)
 
 **Execution Strategy**:
 
--   Phase 1: Task 01 (foundation)
--   Phase 2: Task 02 (depends on Phase 1)
--   Phase 3: Tasks 03 and 04 in parallel (depends on Phase 2)
--   Phase 4: Task 05 (depends on Phase 3)
+- Phase 1: Task 01 (foundation)
+- Phase 2: Task 02 (depends on Phase 1)
+- Phase 3: Tasks 03 and 04 in parallel (depends on Phase 2)
+- Phase 4: Task 05 (depends on Phase 3)
 
 </examples>

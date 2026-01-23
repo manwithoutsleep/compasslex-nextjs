@@ -47,6 +47,21 @@ Configure Tailwind CSS theme to match the existing Angular application's color s
 - Any data fetching or business logic
 - Complex interactive components
 
+## Environment Notes
+
+**CRITICAL: npm Command Syntax for Windows PowerShell**
+
+In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
+
+```powershell
+powershell.exe -Command "npm --version"
+powershell.exe -Command "npm install"
+powershell.exe -Command "npm run build"
+powershell.exe -Command "npm run test"
+```
+
+**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+
 ## Implementation Requirements
 
 ### Technology Stack
@@ -118,53 +133,53 @@ $ultra-pure-white: #f8f9f3;
 Create `__tests__/styles/tailwind-config.test.ts`:
 
 ```typescript
-import { describe, it, expect } from 'vitest';
-import resolveConfig from 'tailwindcss/resolveConfig';
-import tailwindConfig from '@/tailwind.config';
+import { describe, it, expect } from 'vitest'
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '@/tailwind.config'
 
 describe('Tailwind Configuration', () => {
-    const config = resolveConfig(tailwindConfig);
+  const config = resolveConfig(tailwindConfig)
 
-    describe('Custom Color Palette', () => {
-        it('should include old site colors', () => {
-            expect(config.theme.colors).toHaveProperty('deep-sapphire');
-            expect(config.theme.colors).toHaveProperty('warm-sand');
-            expect(config.theme.colors).toHaveProperty('peach-puff');
-            expect(config.theme.colors).toHaveProperty('pure-white');
-            expect(config.theme.colors).toHaveProperty('royal-indigo');
-        });
+  describe('Custom Color Palette', () => {
+    it('should include old site colors', () => {
+      expect(config.theme.colors).toHaveProperty('deep-sapphire')
+      expect(config.theme.colors).toHaveProperty('warm-sand')
+      expect(config.theme.colors).toHaveProperty('peach-puff')
+      expect(config.theme.colors).toHaveProperty('pure-white')
+      expect(config.theme.colors).toHaveProperty('royal-indigo')
+    })
 
-        it('should include new site colors', () => {
-            expect(config.theme.colors).toHaveProperty('polar-mist');
-            expect(config.theme.colors).toHaveProperty('bengal-blue');
-            expect(config.theme.colors).toHaveProperty('raspberry-smoothie');
-            expect(config.theme.colors).toHaveProperty('north-pole-blue');
-            expect(config.theme.colors).toHaveProperty('ultra-pure-white');
-        });
+    it('should include new site colors', () => {
+      expect(config.theme.colors).toHaveProperty('polar-mist')
+      expect(config.theme.colors).toHaveProperty('bengal-blue')
+      expect(config.theme.colors).toHaveProperty('raspberry-smoothie')
+      expect(config.theme.colors).toHaveProperty('north-pole-blue')
+      expect(config.theme.colors).toHaveProperty('ultra-pure-white')
+    })
 
-        it('should have correct color values', () => {
-            expect(config.theme.colors['deep-sapphire']).toBe('#191248');
-            expect(config.theme.colors['warm-sand']).toBe('#f2c58a');
-            expect(config.theme.colors['polar-mist']).toBe('#ddeff7');
-        });
-    });
+    it('should have correct color values', () => {
+      expect(config.theme.colors['deep-sapphire']).toBe('#191248')
+      expect(config.theme.colors['warm-sand']).toBe('#f2c58a')
+      expect(config.theme.colors['polar-mist']).toBe('#ddeff7')
+    })
+  })
 
-    describe('Layout Configuration', () => {
-        it('should set correct max width for site', () => {
-            expect(config.theme.maxWidth).toHaveProperty('site', '1440px');
-        });
+  describe('Layout Configuration', () => {
+    it('should set correct max width for site', () => {
+      expect(config.theme.maxWidth).toHaveProperty('site', '1440px')
+    })
 
-        it('should set correct min width for site', () => {
-            expect(config.theme.minWidth).toHaveProperty('site', '320px');
-        });
-    });
+    it('should set correct min width for site', () => {
+      expect(config.theme.minWidth).toHaveProperty('site', '320px')
+    })
+  })
 
-    describe('Typography', () => {
-        it('should configure Roboto as sans-serif font', () => {
-            expect(config.theme.fontFamily.sans).toContain('Roboto');
-        });
-    });
-});
+  describe('Typography', () => {
+    it('should configure Roboto as sans-serif font', () => {
+      expect(config.theme.fontFamily.sans).toContain('Roboto')
+    })
+  })
+})
 ```
 
 #### 2.2: Update Tailwind Configuration
@@ -172,45 +187,45 @@ describe('Tailwind Configuration', () => {
 Update `tailwind.config.ts`:
 
 ```typescript
-import type { Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
-    content: [
-        './pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './components/**/*.{js,ts,jsx,tsx,mdx}',
-        './app/**/*.{js,ts,jsx,tsx,mdx}',
-    ],
-    theme: {
-        extend: {
-            colors: {
-                // New site colors
-                'polar-mist': '#ddeff7',
-                'bengal-blue': '#b1cfdd',
-                'raspberry-smoothie': '#c6a3b3',
-                'north-pole-blue': '#709eb4',
-                'ultra-pure-white': '#f8f9f3',
-                // Old site colors (primary palette)
-                'deep-sapphire': '#191248',
-                'warm-sand': '#f2c58a',
-                'peach-puff': '#fbe3c9',
-                'pure-white': '#ffffff',
-                'royal-indigo': '#43208a',
-            },
-            maxWidth: {
-                site: '1440px',
-            },
-            minWidth: {
-                site: '320px',
-            },
-            fontFamily: {
-                sans: ['Roboto', 'sans-serif'],
-            },
-        },
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // New site colors
+        'polar-mist': '#ddeff7',
+        'bengal-blue': '#b1cfdd',
+        'raspberry-smoothie': '#c6a3b3',
+        'north-pole-blue': '#709eb4',
+        'ultra-pure-white': '#f8f9f3',
+        // Old site colors (primary palette)
+        'deep-sapphire': '#191248',
+        'warm-sand': '#f2c58a',
+        'peach-puff': '#fbe3c9',
+        'pure-white': '#ffffff',
+        'royal-indigo': '#43208a',
+      },
+      maxWidth: {
+        site: '1440px',
+      },
+      minWidth: {
+        site: '320px',
+      },
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+      },
     },
-    plugins: [],
-};
+  },
+  plugins: [],
+}
 
-export default config;
+export default config
 ```
 
 #### 2.3: Run Configuration Tests
@@ -619,9 +634,9 @@ npx vitest run __tests__/components/ui/heading.test.tsx
 Create `components/ui/index.ts`:
 
 ```typescript
-export { Card, CardTitle, CardBody } from './card';
-export { Button } from './button';
-export { Heading } from './heading';
+export { Card, CardTitle, CardBody } from './card'
+export { Button } from './button'
+export { Heading } from './heading'
 ```
 
 ### Step 7: Run All Design System Tests

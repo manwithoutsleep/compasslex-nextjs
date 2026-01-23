@@ -145,18 +145,18 @@ The longest sequence of dependent tasks (determines minimum completion time):
 **Potential Conflicts**:
 
 1. **Tasks 02 & 03**: Low conflict risk
-    - Task 02: Works in `types/`, `services/`, `public/data/`, `__tests__/types/`, `__tests__/services/`
-    - Task 03: Works in `tailwind.config.ts`, `components/ui/`, `__tests__/components/ui/`, `__tests__/styles/`
-    - **Mitigation**: No file overlap, can run in parallel
+   - Task 02: Works in `types/`, `services/`, `public/data/`, `__tests__/types/`, `__tests__/services/`
+   - Task 03: Works in `tailwind.config.ts`, `components/ui/`, `__tests__/components/ui/`, `__tests__/styles/`
+   - **Mitigation**: No file overlap, can run in parallel
 
 2. **Tasks 05 & 06**: Low-Medium conflict risk
-    - Task 05: Works in `app/*/page.tsx`, `components/counselor-*`, `components/newsletter-*`
-    - Task 06: Works in `components/google-map.tsx`, `__tests__/components/google-map.test.tsx`
-    - **Mitigation**: Minimal file overlap. Task 06 may need to integrate into Task 05's contact-us page, so coordination needed at integration point
+   - Task 05: Works in `app/*/page.tsx`, `components/counselor-*`, `components/newsletter-*`
+   - Task 06: Works in `components/google-map.tsx`, `__tests__/components/google-map.test.tsx`
+   - **Mitigation**: Minimal file overlap. Task 06 may need to integrate into Task 05's contact-us page, so coordination needed at integration point
 
 3. **Vitest Configuration**: All tasks with tests
-    - Multiple tasks create test files
-    - **Mitigation**: Task 01 sets up Vitest configuration. All subsequent tasks follow established patterns
+   - Multiple tasks create test files
+   - **Mitigation**: Task 01 sets up Vitest configuration. All subsequent tasks follow established patterns
 
 ### Recommended Execution Order
 
@@ -223,25 +223,25 @@ After all sub-tasks are complete, verify:
 If a critical issue is discovered:
 
 1. **Identify which sub-task(s) introduced the issue**
-    - Use git history to isolate changes by sub-task
-    - Review sub-task success criteria that may have been missed
+   - Use git history to isolate changes by sub-task
+   - Review sub-task success criteria that may have been missed
 
 2. **Isolate the problematic changes**
-    - Create a separate branch for investigation
-    - Identify minimal set of changes causing the issue
+   - Create a separate branch for investigation
+   - Identify minimal set of changes causing the issue
 
 3. **Determine fix-forward or rollback**
-    - **Fix-forward**: If issue is minor and fixable quickly
-    - **Rollback**: If issue is fundamental or blocks progress
+   - **Fix-forward**: If issue is minor and fixable quickly
+   - **Rollback**: If issue is fundamental or blocks progress
 
 4. **Update affected sub-task specifications**
-    - Document lessons learned
-    - Update success criteria if needed
-    - Add additional verification steps
+   - Document lessons learned
+   - Update success criteria if needed
+   - Add additional verification steps
 
 5. **Re-verify integration**
-    - Run full integration verification checklist
-    - Ensure no downstream impacts
+   - Run full integration verification checklist
+   - Ensure no downstream impacts
 
 ## Special Considerations
 
@@ -264,7 +264,11 @@ All shell commands use **PowerShell syntax** (Windows 11):
 
 - Use `Copy-Item` instead of `cp`
 - Use `New-Item` instead of `mkdir`
-- npm/npx/git commands work identically
+- **IMPORTANT - npm commands**: To see npm command output, use `powershell.exe -Command "npm {{command}}"` syntax
+  - Example: `powershell.exe -Command "npm --version"`
+  - Example: `powershell.exe -Command "npm install"`
+  - Example: `powershell.exe -Command "npm run build"`
+- git commands work normally
 
 ### TDD Discipline
 

@@ -45,6 +45,21 @@ Implement the root layout, navigation component (desktop and mobile), and establ
 - Complex navigation features (dropdowns, mega menus)
 - User authentication/authorization
 
+## Environment Notes
+
+**CRITICAL: npm Command Syntax for Windows PowerShell**
+
+In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
+
+```powershell
+powershell.exe -Command "npm --version"
+powershell.exe -Command "npm install"
+powershell.exe -Command "npm run build"
+powershell.exe -Command "npm run test"
+```
+
+**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+
 ## Implementation Requirements
 
 ### Step 1: Create Root Layout (TDD)

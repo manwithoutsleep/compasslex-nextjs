@@ -64,10 +64,10 @@ Implementing the email template component...
 
 Running verification for Phase 1:
 
--   TypeScript: ✓ No errors
--   ESLint: ✓ No errors or warnings
--   Prettier: ✓ Formatted
--   Tests: ✓ All tests passing (8/8)
+- TypeScript: ✓ No errors
+- ESLint: ✓ No errors or warnings
+- Prettier: ✓ Formatted
+- Tests: ✓ All tests passing (8/8)
 
 Phase 1 complete. Moving to Phase 2...
 
@@ -104,10 +104,10 @@ Implementing RLS policies...
 
 Running verification for Phase 1:
 
--   TypeScript: ✓ No errors
--   ESLint: ✓ No errors or warnings
--   Prettier: ✓ Formatted
--   Tests: ✓ All tests passing (6/6)
+- TypeScript: ✓ No errors
+- ESLint: ✓ No errors or warnings
+- Prettier: ✓ Formatted
+- Tests: ✓ All tests passing (6/6)
 
 Phase 1 complete. Moving to Phase 2...
 
@@ -117,17 +117,17 @@ Phase 1 complete. Moving to Phase 2...
 
 Running verification for Phase 2:
 
--   TypeScript: ✓ No errors
--   ESLint: ✓ No errors or warnings
--   Prettier: ✓ Formatted
--   Tests: ✓ All tests passing (6/6)
+- TypeScript: ✓ No errors
+- ESLint: ✓ No errors or warnings
+- Prettier: ✓ Formatted
+- Tests: ✓ All tests passing (6/6)
 
 All phases complete. Summary:
 
--   Added RLS policies for customer and participant photo access
--   Created tests covering both authorized and unauthorized access scenarios
--   All tests passing (12/12)
--   All verification checks passed for both phases
+- Added RLS policies for customer and participant photo access
+- Created tests covering both authorized and unauthorized access scenarios
+- All tests passing (12/12)
+- All verification checks passed for both phases
 
 The code is ready for your local testing. Please verify:
 
