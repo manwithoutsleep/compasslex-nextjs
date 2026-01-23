@@ -1,6 +1,8 @@
 import { readFile } from 'fs/promises'
 import { join } from 'path'
-import type { Counselor, Newsletter, CounselorData, NewsletterData } from '@/types/models'
+import { z } from 'zod'
+import type { Counselor, Newsletter } from '@/types/models'
+import { CounselorDataSchema, NewsletterDataSchema } from '@/types/models'
 
 /**
  * Interface for counselor data access
@@ -53,14 +55,19 @@ export class CounselorRepository implements ICounselorRepository {
     if (this.cachedData === null) {
       try {
         const raw = await readFile(this.dataPath, 'utf-8')
-        const data: CounselorData = JSON.parse(raw)
+        const parsed = JSON.parse(raw)
 
-        if (!data.counselorList || !Array.isArray(data.counselorList)) {
-          throw new Error('Invalid counselor data format: counselorList is missing or not an array')
-        }
+        // Runtime validation with Zod
+        const validatedData = CounselorDataSchema.parse(parsed)
 
-        this.cachedData = data.counselorList
+        this.cachedData = validatedData.counselorList
       } catch (error) {
+        if (error instanceof z.ZodError) {
+          const issues = error.issues
+            .map((issue) => `${issue.path.join('.')}: ${issue.message}`)
+            .join(', ')
+          throw new Error(`Invalid counselor data structure: ${issues}`)
+        }
         if (error instanceof SyntaxError) {
           throw new Error(`Failed to parse counselor data: Invalid JSON format - ${error.message}`)
         }
@@ -103,16 +110,19 @@ export class NewsletterRepository implements INewsletterRepository {
     if (this.cachedData === null) {
       try {
         const raw = await readFile(this.dataPath, 'utf-8')
-        const data: NewsletterData = JSON.parse(raw)
+        const parsed = JSON.parse(raw)
 
-        if (!data.newsletterList || !Array.isArray(data.newsletterList)) {
-          throw new Error(
-            'Invalid newsletter data format: newsletterList is missing or not an array'
-          )
-        }
+        // Runtime validation with Zod
+        const validatedData = NewsletterDataSchema.parse(parsed)
 
-        this.cachedData = data.newsletterList
+        this.cachedData = validatedData.newsletterList
       } catch (error) {
+        if (error instanceof z.ZodError) {
+          const issues = error.issues
+            .map((issue) => `${issue.path.join('.')}: ${issue.message}`)
+            .join(', ')
+          throw new Error(`Invalid newsletter data structure: ${issues}`)
+        }
         if (error instanceof SyntaxError) {
           throw new Error(`Failed to parse newsletter data: Invalid JSON format - ${error.message}`)
         }
