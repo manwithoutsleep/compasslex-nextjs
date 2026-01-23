@@ -631,24 +631,24 @@ npx vitest run __tests__/services/data-repository.test.ts
 
 ## Success Criteria
 
-- [ ] `types/models.ts` created with Counselor, Newsletter, CounselorData, NewsletterData interfaces
-- [ ] `services/data-repository.ts` created with repository classes and interfaces
-- [ ] `__tests__/types/models.test.ts` created with comprehensive type tests
-- [ ] `__tests__/services/data-repository.test.ts` created with comprehensive repository tests
-- [ ] All type tests pass
-- [ ] All repository tests pass
-- [ ] `public/data/counselor.json` copied from Angular repo
-- [ ] `public/data/newsletter.json` copied from Angular repo
-- [ ] All static assets copied to `public/assets/`
-- [ ] Favicon copied to `public/`
-- [ ] TypeScript compilation succeeds (tsc --noEmit)
-- [ ] ESLint passes (npx eslint --fix)
-- [ ] Prettier formatting applied (npx prettier --write)
-- [ ] Test coverage >90% for services/data-repository.ts
-- [ ] All 11 counselors load correctly
-- [ ] All 24 newsletters load correctly
-- [ ] Case-insensitive counselor search works
-- [ ] Repository interfaces properly abstract data access
+- [x] `types/models.ts` created with Counselor, Newsletter, CounselorData, NewsletterData interfaces
+- [x] `services/data-repository.ts` created with repository classes and interfaces
+- [x] `__tests__/types/models.test.ts` created with comprehensive type tests
+- [x] `__tests__/services/data-repository.test.ts` created with comprehensive repository tests
+- [x] All type tests pass
+- [x] All repository tests pass
+- [x] `public/data/counselor.json` copied from Angular repo
+- [x] `public/data/newsletter.json` copied from Angular repo
+- [x] All static assets copied to `public/assets/`
+- [x] Favicon copied to `public/`
+- [x] TypeScript compilation succeeds (tsc --noEmit)
+- [x] ESLint passes (npx eslint --fix)
+- [x] Prettier formatting applied (npx prettier --write)
+- [x] Test coverage >90% for services/data-repository.ts
+- [x] All 11 counselors load correctly
+- [x] All 24 newsletters load correctly
+- [x] Case-insensitive counselor search works
+- [x] Repository interfaces properly abstract data access
 
 ## Notes
 
