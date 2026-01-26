@@ -1,5 +1,6 @@
 ---
 argument-hint: [pr-num] [branch-name] [focus-areas]
+allowed-tools: Skill(verify-code)
 description: Read and handle comments on a PR
 ---
 
@@ -17,13 +18,6 @@ description: Read and handle comments on a PR
     Address only the issues listed in the <focus_areas> section above.
     Ignore all other issues for this session.
 </purpose>
-
-<verification_commands>
-<cmd_compile>tsc --noEmit</cmd_compile>
-<cmd_lint>npx eslint --fix {files}</cmd_lint>
-<cmd_format>npx prettier --write {files}</cmd_format>
-<cmd_test>npx vitest related run {files}</cmd_test>
-</verification_commands>
 
 <instructions>
     <step>
@@ -45,17 +39,11 @@ description: Read and handle comments on a PR
             </fix>
 
             <verify>
-                1. Identify the specific file paths you just modified.
-                2. Run the <verification_commands>, replacing `{files}` with those paths (space-separated).
-                    - Note: Run <cmd_compile> as written, without file paths.
-                3. IF any command fails:
-                    - Fix the specific error.
-                    - Retry <verify>.
-                4. IF failures persist beyond 3 attempts: Stop and ask for human guidance.
+                Use the verify-code skill to ensure TypeScript, formatting, and testing issues are identified and resolved. This ensures code quality and prevents accumulation of technical debt.
             </verify>
 
             <commit>
-                Once <verify_loop> passes, commit the changes.
+                Once <verify> passes, commit the changes.
                 - Message Format: "fix: [brief description of the specific critical issue]"
                 - Constraint: Do NOT use `--no-verify`.
             </commit>
