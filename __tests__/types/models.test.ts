@@ -5,41 +5,41 @@ describe('Type Definitions', () => {
   describe('Counselor Interface', () => {
     it('should accept valid Counselor object', () => {
       const counselor: Counselor = {
-        appointmentlink: 'https://example.com',
+        appointmentLink: 'https://example.com',
         credentials: ['MA', 'LPC'],
-        directoryid: '123',
+        directoryId: '123',
         email: 'test@example.com',
-        firstname: 'John',
+        firstName: 'John',
         insurance: ['Aetna', 'Humana'],
-        lastname: 'Doe',
-        longdescription: '<p>Long description here</p>',
+        lastName: 'Doe',
+        longDescription: '<p>Long description here</p>',
         memberships: ['ACA', 'AACC'],
         phone: '555-1234',
-        practitionerid: '1',
-        shortdescription: 'Short description',
+        practitionerId: '1',
+        shortDescription: 'Short description',
         titles: ['MA', 'LPC'],
         id: '1',
       }
       expect(counselor).toBeDefined()
-      expect(counselor.firstname).toBe('John')
+      expect(counselor.firstName).toBe('John')
     })
 
     it('should enforce required fields', () => {
       // This test verifies TypeScript compilation would fail for missing fields
       // In runtime, we verify the shape is correct
       const counselor: Counselor = {
-        appointmentlink: '',
+        appointmentLink: '',
         credentials: [],
-        directoryid: '',
+        directoryId: '',
         email: '',
-        firstname: '',
+        firstName: '',
         insurance: [],
-        lastname: '',
-        longdescription: '',
+        lastName: '',
+        longDescription: '',
         memberships: [],
         phone: '',
-        practitionerid: '',
-        shortdescription: '',
+        practitionerId: '',
+        shortDescription: '',
         titles: [],
         id: '',
       }
