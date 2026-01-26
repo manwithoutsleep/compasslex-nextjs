@@ -51,18 +51,7 @@ This task covers the initial setup and configuration of the development environm
 
 ## Environment Notes
 
-**CRITICAL: npm Command Syntax for Windows PowerShell**
-
-In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
-
-```powershell
-powershell.exe -Command "npm --version"
-powershell.exe -Command "npm install"
-powershell.exe -Command "npm run build"
-powershell.exe -Command "npm run test"
-```
-
-**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
 
 ## Implementation Requirements
 
@@ -70,7 +59,7 @@ powershell.exe -Command "npm run test"
 
 - Node.js environment (already set up)
 - npm package manager
-- PowerShell command shell (Windows 11)
+- WSL (Windows Subsystem for Linux) bash shell
 
 ### Dependencies to Install
 
@@ -268,7 +257,7 @@ Since this task is about setup and configuration, testing involves verification 
 
 1. **Verify npm dependencies installed**:
 
-   ```powershell
+   ```bash
    npm list vitest @testing-library/react @playwright/test prettier @googlemaps/js-api-loader
    ```
 
@@ -352,7 +341,7 @@ Since this task is about setup and configuration, testing involves verification 
 
 ### Important Considerations
 
-1. **PowerShell Syntax**: All commands in this task use standard npm/npx syntax which works identically in PowerShell
+1. **Development Environment**: All commands in this task use standard Unix/bash syntax
 
 2. **Angular Repo Reference**: When retrieving the Google Maps API key, reference the Angular repo at `../compasslex.com/` but do NOT modify any files there
 

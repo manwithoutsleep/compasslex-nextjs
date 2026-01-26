@@ -49,18 +49,7 @@ Configure Tailwind CSS theme to match the existing Angular application's color s
 
 ## Environment Notes
 
-**CRITICAL: npm Command Syntax for Windows PowerShell**
-
-In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
-
-```powershell
-powershell.exe -Command "npm --version"
-powershell.exe -Command "npm install"
-powershell.exe -Command "npm run build"
-powershell.exe -Command "npm run test"
-```
-
-**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
 
 ## Implementation Requirements
 
@@ -101,6 +90,14 @@ Follow strict Test-Driven Development:
 - All components follow standard React component interface
 
 ## Implementation Steps
+
+### Step 0: Create Git Branch
+
+Create a git branch for these changes:
+
+```bash
+git checkout -b nextjs-migration-phase-3
+```
 
 ### Step 1: Extract Color Palette from Angular SCSS
 
@@ -231,7 +228,7 @@ export default config
 #### 2.3: Run Configuration Tests
 
 ```bash
-tsc --noEmit
+npx tsc --noEmit
 npx vitest run __tests__/styles/tailwind-config.test.ts
 ```
 
@@ -382,7 +379,7 @@ export function CardBody({ children, className = '' }: CardProps) {
 #### 3.3: Run Card Tests
 
 ```bash
-tsc --noEmit
+npx tsc --noEmit
 npx eslint --fix components/ui/card.tsx __tests__/components/ui/card.test.tsx
 npx prettier --write components/ui/card.tsx __tests__/components/ui/card.test.tsx
 npx vitest run __tests__/components/ui/card.test.tsx
@@ -514,7 +511,7 @@ export function Button({
 #### 4.3: Run Button Tests
 
 ```bash
-tsc --noEmit
+npx tsc --noEmit
 npx eslint --fix components/ui/button.tsx __tests__/components/ui/button.test.tsx
 npx prettier --write components/ui/button.tsx __tests__/components/ui/button.test.tsx
 npx vitest run __tests__/components/ui/button.test.tsx
@@ -623,7 +620,7 @@ export function Heading({ children, level = 1, className = '' }: HeadingProps) {
 #### 5.3: Run Heading Tests
 
 ```bash
-tsc --noEmit
+npx tsc --noEmit
 npx eslint --fix components/ui/heading.tsx __tests__/components/ui/heading.test.tsx
 npx prettier --write components/ui/heading.tsx __tests__/components/ui/heading.test.tsx
 npx vitest run __tests__/components/ui/heading.test.tsx
@@ -642,7 +639,7 @@ export { Heading } from './heading'
 ### Step 7: Run All Design System Tests
 
 ```bash
-tsc --noEmit
+npx tsc --noEmit
 npx eslint --fix components/ui/**/*.tsx __tests__/components/ui/**/*.tsx __tests__/styles/**/*.ts
 npx prettier --write components/ui/**/*.tsx __tests__/components/ui/**/*.tsx __tests__/styles/**/*.ts tailwind.config.ts
 npx vitest run __tests__/styles/ __tests__/components/ui/
@@ -688,7 +685,7 @@ npm run build
 - [ ] Component index file created for easy imports
 - [ ] All Tailwind configuration tests pass
 - [ ] All UI component tests pass
-- [ ] TypeScript compilation succeeds (tsc --noEmit)
+- [ ] TypeScript compilation succeeds (npx tsc --noEmit)
 - [ ] ESLint passes (npx eslint --fix)
 - [ ] Prettier formatting applied (npx prettier --write)
 - [ ] Test coverage >80% for components/ui/

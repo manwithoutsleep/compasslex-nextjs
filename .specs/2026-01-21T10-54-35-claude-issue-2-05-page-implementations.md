@@ -68,18 +68,7 @@ Implement all 9 pages of the CompassLex website using Next.js App Router with Se
 
 ## Environment Notes
 
-**CRITICAL: npm Command Syntax for Windows PowerShell**
-
-In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
-
-```powershell
-powershell.exe -Command "npm --version"
-powershell.exe -Command "npm install"
-powershell.exe -Command "npm run build"
-powershell.exe -Command "npm run test"
-```
-
-**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
 
 ## Implementation Requirements
 
@@ -104,6 +93,14 @@ All pages follow this pattern:
 ```
 
 ## Implementation Steps
+
+### Step 0: Create Git Branch
+
+Create a git branch for these changes:
+
+```bash
+git checkout -b nextjs-migration-phase-5
+```
 
 ### Step 1: Home Page
 
@@ -413,12 +410,12 @@ export default async function CounselorDetailPage({
 
 After build, verify static HTML generated:
 
-```powershell
+```bash
 # Build the app
 npm run build
 
 # Check output
-Get-ChildItem .next/server/app -Recurse -Include "*.html"
+find .next/server/app -name "*.html"
 
 # Should see:
 # - page.html (home)

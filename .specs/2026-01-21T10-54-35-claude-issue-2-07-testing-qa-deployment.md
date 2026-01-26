@@ -73,18 +73,7 @@ Execute comprehensive testing strategy (unit, integration, E2E, visual regressio
 
 ## Environment Notes
 
-**CRITICAL: npm Command Syntax for Windows PowerShell**
-
-In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
-
-```powershell
-powershell.exe -Command "npm --version"
-powershell.exe -Command "npm install"
-powershell.exe -Command "npm run build"
-powershell.exe -Command "npm run test"
-```
-
-**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
 
 ## Implementation Requirements
 
@@ -95,6 +84,14 @@ Unit Tests (Vitest) → Integration Tests (Vitest) → E2E Tests (Playwright) �
 ```
 
 ## Implementation Steps
+
+### Phase 0: Create Git Branch
+
+Create a git branch for these changes:
+
+```bash
+git checkout -b nextjs-migration-phase-7
+```
 
 ### Phase 1: Unit Test Verification
 
@@ -115,8 +112,9 @@ npx vitest run --coverage
 #### Step 1.2: Review Coverage Report
 
 ```bash
-# Open coverage report
-start coverage/index.html  # Windows
+# Open coverage report (Linux/WSL)
+xdg-open coverage/index.html
+# Or just view the report in browser by navigating to the file
 ```
 
 **Action**: Identify any gaps in coverage and add tests if needed.
@@ -514,7 +512,7 @@ module.exports = nextConfig
 npm run build
 
 # Check .next/server/app for static HTML
-Get-ChildItem .next\server\app -Recurse -Include "*.html"
+find .next/server/app -name "*.html"
 ```
 
 ### Phase 10: Final Pre-Launch Checklist

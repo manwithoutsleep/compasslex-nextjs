@@ -258,17 +258,14 @@ This migration uses a **separate repository approach**:
 - Write all new code to Next.js repo
 - Only commit changes to Next.js repo
 
-### PowerShell Environment
+### Development Environment
 
-All shell commands use **PowerShell syntax** (Windows 11):
+This project is developed in a **WSL (Windows Subsystem for Linux)** environment:
 
-- Use `Copy-Item` instead of `cp`
-- Use `New-Item` instead of `mkdir`
-- **IMPORTANT - npm commands**: To see npm command output, use `powershell.exe -Command "npm {{command}}"` syntax
-  - Example: `powershell.exe -Command "npm --version"`
-  - Example: `powershell.exe -Command "npm install"`
-  - Example: `powershell.exe -Command "npm run build"`
+- Use standard Unix commands (`cp`, `mkdir`, `ls`, etc.)
+- npm commands work natively without any wrapper
 - git commands work normally
+- All paths use Unix-style forward slashes
 
 ### TDD Discipline
 

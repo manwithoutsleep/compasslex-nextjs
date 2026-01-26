@@ -48,18 +48,7 @@ Implement the core data infrastructure using the Repository Pattern with TypeScr
 
 ## Environment Notes
 
-**CRITICAL: npm Command Syntax for Windows PowerShell**
-
-In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
-
-```powershell
-powershell.exe -Command "npm --version"
-powershell.exe -Command "npm install"
-powershell.exe -Command "npm run build"
-powershell.exe -Command "npm run test"
-```
-
-**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
 
 ## Implementation Requirements
 
@@ -551,48 +540,48 @@ npx vitest run __tests__/services/data-repository.test.ts
 
 #### 3.1: Create Directory Structure
 
-```powershell
-New-Item -Path "public/data" -ItemType Directory -Force
-New-Item -Path "public/assets" -ItemType Directory -Force
+```bash
+mkdir -p public/data
+mkdir -p public/assets
 ```
 
 #### 3.2: Copy JSON Data Files
 
-```powershell
-Copy-Item -Path "../compasslex.com/src/assets/data/counselor.json" -Destination "public/data/"
-Copy-Item -Path "../compasslex.com/src/assets/data/newsletter.json" -Destination "public/data/"
+```bash
+cp ../compasslex.com/src/assets/data/counselor.json public/data/
+cp ../compasslex.com/src/assets/data/newsletter.json public/data/
 ```
 
 #### 3.3: Copy All Static Assets
 
-```powershell
-Copy-Item -Path "../compasslex.com/src/assets/newsletters" -Destination "public/assets/" -Recurse -Force
-Copy-Item -Path "../compasslex.com/src/assets/pdf" -Destination "public/assets/" -Recurse -Force
-Copy-Item -Path "../compasslex.com/src/assets/site-images" -Destination "public/assets/" -Recurse -Force
-Copy-Item -Path "../compasslex.com/src/assets/slider-images" -Destination "public/assets/" -Recurse -Force
-Copy-Item -Path "../compasslex.com/src/assets/icons" -Destination "public/assets/" -Recurse -Force
-Copy-Item -Path "../compasslex.com/src/assets/videos" -Destination "public/assets/" -Recurse -Force
+```bash
+cp -r ../compasslex.com/src/assets/newsletters public/assets/
+cp -r ../compasslex.com/src/assets/pdf public/assets/
+cp -r ../compasslex.com/src/assets/site-images public/assets/
+cp -r ../compasslex.com/src/assets/slider-images public/assets/
+cp -r ../compasslex.com/src/assets/icons public/assets/
+cp -r ../compasslex.com/src/assets/videos public/assets/
 ```
 
 #### 3.4: Copy Favicon
 
-```powershell
-Copy-Item -Path "../compasslex.com/src/favicon.ico" -Destination "public/" -Force
+```bash
+cp ../compasslex.com/src/favicon.ico public/
 ```
 
 ### Step 4: Verify Data Integrity
 
-```powershell
+```bash
 # Verify JSON files exist and are valid
-Get-ChildItem public/data
-Test-Json -Path "public/data/counselor.json"
-Test-Json -Path "public/data/newsletter.json"
+ls -la public/data
+cat public/data/counselor.json | jq . > /dev/null && echo "counselor.json is valid"
+cat public/data/newsletter.json | jq . > /dev/null && echo "newsletter.json is valid"
 
 # Verify asset directories exist
-Get-ChildItem public/assets
+ls -la public/assets
 
 # Count assets
-(Get-ChildItem public/assets -Recurse -File).Count
+find public/assets -type f | wc -l
 ```
 
 ### Step 5: Re-run Tests (Should Pass Now)
@@ -682,7 +671,7 @@ npx vitest run __tests__/services/data-repository.test.ts
 
 After copying, verify:
 
-- JSON files are valid (use `Test-Json` in PowerShell or `jq` if available)
+- JSON files are valid (use `jq` for JSON validation)
 - All counselor fields are present
 - All newsletter fields are present
 - No Unicode encoding issues

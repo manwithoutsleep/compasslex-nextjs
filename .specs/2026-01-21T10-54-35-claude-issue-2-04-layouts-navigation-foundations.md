@@ -47,20 +47,19 @@ Implement the root layout, navigation component (desktop and mobile), and establ
 
 ## Environment Notes
 
-**CRITICAL: npm Command Syntax for Windows PowerShell**
-
-In this Windows 11 environment, npm commands must use PowerShell syntax to see output:
-
-```powershell
-powershell.exe -Command "npm --version"
-powershell.exe -Command "npm install"
-powershell.exe -Command "npm run build"
-powershell.exe -Command "npm run test"
-```
-
-**DO NOT use** `npm` directly as it will not produce output. Always wrap npm commands with `powershell.exe -Command "..."`.
+This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
 
 ## Implementation Requirements
+
+## Implementation Steps
+
+### Step 0: Create Git Branch
+
+Create a git branch for these changes:
+
+```bash
+git checkout -b nextjs-migration-phase-4
+```
 
 ### Step 1: Create Root Layout (TDD)
 
