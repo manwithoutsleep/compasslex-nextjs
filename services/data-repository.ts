@@ -145,3 +145,33 @@ export class NewsletterRepository implements INewsletterRepository {
     return newsletters.find((n) => n.id === id) || null
   }
 }
+
+/**
+ * Singleton instance of CounselorRepository
+ * Use this shared instance throughout the application to ensure efficient caching
+ * and prevent duplicate instances
+ *
+ * @example
+ * ```typescript
+ * import { counselorRepository } from '@/services/data-repository'
+ *
+ * const counselors = await counselorRepository.getAllCounselors()
+ * const joanna = await counselorRepository.getCounselorByName('Joanna')
+ * ```
+ */
+export const counselorRepository = new CounselorRepository()
+
+/**
+ * Singleton instance of NewsletterRepository
+ * Use this shared instance throughout the application to ensure efficient caching
+ * and prevent duplicate instances
+ *
+ * @example
+ * ```typescript
+ * import { newsletterRepository } from '@/services/data-repository'
+ *
+ * const newsletters = await newsletterRepository.getAllNewsletters()
+ * const newsletter = await newsletterRepository.getNewsletterById('some-id')
+ * ```
+ */
+export const newsletterRepository = new NewsletterRepository()
