@@ -14,6 +14,8 @@ Before running this skill, ensure:
 
 - You have the PR number
 - You have the local branch name
+- All outstanding changes have been committed
+- The local branch has been pushed to the remote
 - The PR has been approved and is ready to merge
 - You have no uncommitted changes in your working directory
 - You are not currently on the branch you want to delete
@@ -47,7 +49,12 @@ gh pr view {pr-number} --json state,title,headRefName,mergeable
 - If PR is closed without merge: Ask user if they want to proceed with cleanup only
 - If PR is not mergeable: Stop and inform user (may have conflicts or failing checks)
 
-### Step 2: Display Summary and Request Approval
+### Step 2: Ensure the local branch is clean and pushed
+
+- If there are any outstanding changes on {branch-name}, commit them.
+- If there are commits on {branch-name} that have not been pushed to the remote, push {branch-name} to the remote.
+
+### Step 3: Display Summary and Request Approval
 
 Before proceeding with any destructive operations, display a comprehensive summary:
 
@@ -75,7 +82,7 @@ Use AskUserQuestion to get explicit approval:
 
 **If user cancels:** Stop execution and inform user no changes were made.
 
-### Step 3: Merge PR and Delete Remote Branch
+### Step 4: Merge PR and Delete Remote Branch
 
 Execute the merge operation:
 
@@ -98,7 +105,7 @@ gh pr merge {pr-number} --squash --delete-branch
 - Command outputs merge commit hash
 - Command confirms branch deletion
 
-### Step 4: Local Repository Cleanup
+### Step 5: Local Repository Cleanup
 
 Execute local cleanup operations. **IMPORTANT:** Run each command independently (not chained with `&&`) to ensure all cleanup steps execute even if one fails.
 
@@ -131,7 +138,7 @@ git remote prune origin
 
 **Important Note:** The `gh pr merge --delete-branch` command may delete the local branch automatically in some configurations. If `git branch -d` fails because the branch doesn't exist, this is expected behavior. Always continue to `git remote prune origin` to clean up stale remote references.
 
-### Step 5: Verify Cleanup Success
+### Step 6: Verify Cleanup Success
 
 Verify the cleanup was successful:
 
