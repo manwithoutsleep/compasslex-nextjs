@@ -39,7 +39,8 @@
       "WebSearch",
       "Bash(node \"/c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\" run test -- --version)",
       "Bash(npx prettier:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Skill(close-pr-and-cleanup)"
     ],
     "deny": [],
     "ask": []
