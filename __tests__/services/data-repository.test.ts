@@ -40,7 +40,7 @@ describe('CounselorRepository', () => {
   })
 
   describe('getCounselorByName', () => {
-    it('should find counselor by firstname (case-sensitive)', async () => {
+    it('should find counselor by firstname with exact match', async () => {
       // Assuming "Joanna" exists in the data
       const counselor = await repo.getCounselorByName('Joanna')
 
