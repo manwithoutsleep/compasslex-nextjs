@@ -20,11 +20,11 @@ describe('CounselorRepository', () => {
       const counselors = await repo.getAllCounselors()
       const firstCounselor = counselors[0]
 
-      expect(firstCounselor).toHaveProperty('firstname')
-      expect(firstCounselor).toHaveProperty('lastname')
+      expect(firstCounselor).toHaveProperty('firstName')
+      expect(firstCounselor).toHaveProperty('lastName')
       expect(firstCounselor).toHaveProperty('email')
-      expect(firstCounselor).toHaveProperty('shortdescription')
-      expect(firstCounselor).toHaveProperty('longdescription')
+      expect(firstCounselor).toHaveProperty('shortDescription')
+      expect(firstCounselor).toHaveProperty('longDescription')
       expect(firstCounselor).toHaveProperty('id')
     })
 
@@ -47,7 +47,7 @@ describe('CounselorRepository', () => {
       expect(counselor).toBeDefined()
       expect(counselor).not.toBeNull()
       if (counselor) {
-        expect(counselor.firstname).toBe('Joanna')
+        expect(counselor.firstName).toBe('Joanna')
       }
     })
 

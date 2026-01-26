@@ -89,7 +89,7 @@ export class CounselorRepository implements ICounselorRepository {
     const counselors = await this.getAllCounselors()
     const normalizedSearch = firstname.toLowerCase()
 
-    return counselors.find((c) => c.firstname.toLowerCase() === normalizedSearch) || null
+    return counselors.find((c) => c.firstName.toLowerCase() === normalizedSearch) || null
   }
 }
 

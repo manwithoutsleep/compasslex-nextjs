@@ -4,18 +4,18 @@ import { z } from 'zod'
  * Zod schema for counselor validation
  */
 export const CounselorSchema = z.object({
-  appointmentlink: z.string(),
+  appointmentLink: z.string(),
   credentials: z.array(z.string()),
-  directoryid: z.string(),
+  directoryId: z.string(),
   email: z.string().email('Invalid email format'),
-  firstname: z.string().min(1, 'First name is required'),
+  firstName: z.string().min(1, 'First name is required'),
   insurance: z.array(z.string()),
-  lastname: z.string().min(1, 'Last name is required'),
-  longdescription: z.string(),
+  lastName: z.string().min(1, 'Last name is required'),
+  longDescription: z.string(),
   memberships: z.array(z.string()),
   phone: z.string(),
-  practitionerid: z.string(),
-  shortdescription: z.string(),
+  practitionerId: z.string(),
+  shortDescription: z.string(),
   titles: z.array(z.string()),
   id: z.string().min(1, 'ID is required'),
 })
@@ -50,29 +50,29 @@ export const NewsletterDataSchema = z.object({
  */
 export interface Counselor {
   /** Link to online appointment scheduling */
-  appointmentlink: string
+  appointmentLink: string
   /** Professional credentials (e.g., MA, LPC, LPCC) */
   credentials: string[]
   /** Directory ID for counselor */
-  directoryid: string
+  directoryId: string
   /** Contact email address */
   email: string
   /** First name */
-  firstname: string
+  firstName: string
   /** Accepted insurance providers */
   insurance: string[]
   /** Last name */
-  lastname: string
+  lastName: string
   /** Full HTML bio/description */
-  longdescription: string
+  longDescription: string
   /** Professional memberships */
   memberships: string[]
   /** Contact phone number */
   phone: string
   /** Practitioner ID */
-  practitionerid: string
+  practitionerId: string
   /** Brief text description */
-  shortdescription: string
+  shortDescription: string
   /** Professional titles */
   titles: string[]
   /** Unique identifier */
