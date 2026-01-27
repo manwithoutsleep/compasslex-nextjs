@@ -37,7 +37,7 @@ export function Button({
       'bg-transparent border-2 border-deep-sapphire text-deep-sapphire hover:bg-deep-sapphire hover:text-polar-mist focus:ring-deep-sapphire',
   }
 
-  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : ''
+  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''
 
   return (
     <button
