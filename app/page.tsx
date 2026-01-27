@@ -1,3 +1,7 @@
+// TEMPORARY: This demo page showcases the design system components for Phase 3
+// It will be replaced in Phase 5 (Page Implementations) with actual homepage content
+// The design system showcase will be moved to a dedicated /design-system route
+
 import { Card, CardTitle, CardBody, Button, Heading } from '@/components/ui'
 
 export default function Home() {
