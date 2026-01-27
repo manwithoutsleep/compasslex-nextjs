@@ -2,7 +2,9 @@ import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 interface CardProps {
+  /** The card content */
   children: ReactNode
+  /** Additional CSS classes to apply */
   className?: string
 }
 

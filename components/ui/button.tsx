@@ -2,8 +2,11 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  /** The button content */
   children: ReactNode
+  /** Visual style variant @default 'primary' */
   variant?: 'primary' | 'secondary' | 'outline'
+  /** Additional CSS classes to apply */
   className?: string
 }
 

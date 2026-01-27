@@ -2,8 +2,11 @@ import type { ReactNode, ElementType } from 'react'
 import { cn } from '@/lib/utils'
 
 interface HeadingProps {
+  /** The heading content */
   children: ReactNode
+  /** Semantic heading level (h1-h6) @default 1 */
   level?: 1 | 2 | 3 | 4 | 5 | 6
+  /** Additional CSS classes to apply */
   className?: string
 }
 
