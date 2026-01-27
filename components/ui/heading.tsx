@@ -1,4 +1,4 @@
-import type { ReactNode, ElementType } from 'react'
+import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 interface HeadingProps {
@@ -24,7 +24,8 @@ interface HeadingProps {
  * ```
  */
 export function Heading({ children, level = 1, className = '' }: HeadingProps) {
-  const Tag = `h${level}` as ElementType
+  const tags = { 1: 'h1', 2: 'h2', 3: 'h3', 4: 'h4', 5: 'h5', 6: 'h6' } as const
+  const Tag = tags[level]
 
   const sizeStyles = {
     1: 'text-4xl',
