@@ -32,7 +32,7 @@ describe('cn() utility', () => {
     expect(cn('p-2', 'p-4')).toBe('p-4')
     // Test background color precedence with modifiers
     expect(cn('bg-red-500', 'hover:bg-blue-500', 'bg-green-500')).toBe(
-      'hover:bg-blue-500 bg-green-500',
+      'hover:bg-blue-500 bg-green-500'
     )
   })
 

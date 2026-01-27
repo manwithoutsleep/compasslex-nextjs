@@ -157,7 +157,7 @@ $ultra-pure-white: #f8f9f3;
 Update `app/globals.css` with the `@theme` directive:
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Color Palette - Old Site Colors (Primary) */
@@ -216,6 +216,7 @@ export default function RootLayout({
 #### 2.3: Verify Theme Configuration
 
 Manually verify the theme works by checking browser DevTools that:
+
 - Color classes (e.g., `bg-deep-sapphire`) apply correct hex values
 - Custom border width `border-3` renders as 3px
 - Max/min width classes work correctly

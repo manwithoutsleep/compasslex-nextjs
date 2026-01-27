@@ -105,6 +105,7 @@ argument-hint: [pr-num] [git-branch] [spec-name]
         <focus_area name="Maintainability">
           <question>How easy will this code be to debug, modify, or extend in the future?</question>
           <question>Is there any code that is overly clever or hard to reason about?</question>
+          <question>Is there duplication of code/logic that could be pulled into a reusable function?</question>
           <question>Are there magic numbers or strings that should be constants?</question>
           <question>Is there adequate separation of concerns?</question>
           <question>Are there any code smells (long functions, deep nesting, duplicated logic)?</question>
