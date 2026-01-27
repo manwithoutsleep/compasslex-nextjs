@@ -40,7 +40,9 @@
       "Bash(node \"/c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\" run test -- --version)",
       "Bash(npx prettier:*)",
       "Bash(npx tsc:*)",
-      "Skill(close-pr-and-cleanup)"
+      "Skill(close-pr-and-cleanup)",
+      "Bash(npm run test:*)",
+      "Bash(gh pr create:*)"
     ],
     "deny": [],
     "ask": []
