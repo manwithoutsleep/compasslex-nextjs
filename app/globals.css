@@ -1,26 +1,32 @@
 @import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Custom Color Palette - Compasslex Brand Colors */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* New site colors */
+  --color-polar-mist: #ddeff7;
+  --color-bengal-blue: #b1cfdd;
+  --color-raspberry-smoothie: #c6a3b3;
+  --color-north-pole-blue: #709eb4;
+  --color-ultra-pure-white: #f8f9f3;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Old site colors (primary palette) */
+  --color-deep-sapphire: #191248;
+  --color-warm-sand: #f2c58a;
+  --color-peach-puff: #fbe3c9;
+  --color-pure-white: #ffffff;
+  --color-royal-indigo: #43208a;
+
+  /* Typography - Roboto font family */
+  --font-family-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+
+  /* Layout constraints */
+  --max-width-site: 1440px;
+  --min-width-site: 320px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-sans);
+  background: var(--color-pure-white);
+  color: var(--color-deep-sapphire);
 }
