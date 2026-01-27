@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { cn } from '@/lib/utils'
 
 interface CardProps {
   children: ReactNode
@@ -18,7 +19,7 @@ interface CardProps {
  */
 export function Card({ children, className = '' }: CardProps) {
   return (
-    <div className={`border-deep-sapphire m-1 rounded border-3 shadow-md ${className}`}>
+    <div className={cn('border-deep-sapphire m-1 rounded border-3 shadow-md', className)}>
       {children}
     </div>
   )
@@ -30,7 +31,10 @@ export function Card({ children, className = '' }: CardProps) {
 export function CardTitle({ children, className = '' }: CardProps) {
   return (
     <div
-      className={`bg-deep-sapphire text-polar-mist flex items-center justify-center px-5 py-2 text-lg font-medium ${className}`}
+      className={cn(
+        'bg-deep-sapphire text-polar-mist flex items-center justify-center px-5 py-2 text-lg font-medium',
+        className
+      )}
     >
       {children}
     </div>
@@ -41,5 +45,5 @@ export function CardTitle({ children, className = '' }: CardProps) {
  * CardBody component - content section of card
  */
 export function CardBody({ children, className = '' }: CardProps) {
-  return <div className={`p-2.5 ${className}`}>{children}</div>
+  return <div className={cn('p-2.5', className)}>{children}</div>
 }

@@ -1,4 +1,5 @@
 import type { ReactNode, ElementType } from 'react'
+import { cn } from '@/lib/utils'
 
 interface HeadingProps {
   children: ReactNode
@@ -33,5 +34,5 @@ export function Heading({ children, level = 1, className = '' }: HeadingProps) {
 
   const baseStyles = 'font-bold text-deep-sapphire mb-4'
 
-  return <Tag className={`${baseStyles} ${sizeStyles[level]} ${className}`}>{children}</Tag>
+  return <Tag className={cn(baseStyles, sizeStyles[level], className)}>{children}</Tag>
 }

@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import { cn } from '@/lib/utils'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
@@ -41,7 +42,7 @@ export function Button({
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]} ${disabledStyles} ${className}`}
+      className={cn(baseStyles, variantStyles[variant], disabledStyles, className)}
       disabled={disabled}
       {...props}
     >
