@@ -4,8 +4,9 @@ import userEvent from '@testing-library/user-event'
 import Navigation from '@/components/navigation'
 
 // Mock next/navigation
+const mockUsePathname = vi.fn(() => '/')
 vi.mock('next/navigation', () => ({
-  usePathname: () => '/',
+  usePathname: () => mockUsePathname(),
 }))
 
 describe('Navigation', () => {
@@ -150,6 +151,80 @@ describe('Navigation', () => {
       // Should remain closed
       expect(menuButton).toHaveTextContent('☰')
       expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+    })
+  })
+
+  describe('Edge Cases and User Workflows', () => {
+    it('should close mobile menu when a link is clicked', async () => {
+      render(<Navigation />)
+      const user = userEvent.setup()
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      // Open menu
+      await user.click(menuButton)
+      expect(menuButton).toHaveTextContent('✕')
+      expect(menuButton).toHaveAttribute('aria-expanded', 'true')
+
+      // Click a link in the mobile menu
+      const menuItems = screen.getAllByRole('menuitem')
+      await user.click(menuItems[1]) // Click "Meet Us" link
+
+      // Menu should close
+      expect(menuButton).toHaveTextContent('☰')
+      expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+    })
+
+    it('should update active link when pathname changes', () => {
+      const { rerender } = render(<Navigation />)
+
+      // Initially on home page (/)
+      const homeLinks = screen.getAllByText('Home')
+      homeLinks.forEach((link) => {
+        const anchorElement = link.closest('a')
+        if (anchorElement) {
+          expect(anchorElement.className).toContain('font-bold')
+        }
+      })
+
+      // Mock pathname change to /meet-us
+      mockUsePathname.mockReturnValue('/meet-us')
+      rerender(<Navigation />)
+
+      // Meet Us should now be active
+      const meetUsLinks = screen.getAllByText('Meet Us')
+      meetUsLinks.forEach((link) => {
+        const anchorElement = link.closest('a')
+        if (anchorElement) {
+          expect(anchorElement.className).toContain('font-bold')
+        }
+      })
+
+      // Home should no longer be active
+      const homeLinksAfter = screen.getAllByText('Home')
+      homeLinksAfter.forEach((link) => {
+        const anchorElement = link.closest('a')
+        if (anchorElement) {
+          expect(anchorElement.className).not.toContain('font-bold')
+        }
+      })
+    })
+
+    it('should handle multiple rapid toggles correctly', async () => {
+      render(<Navigation />)
+      const user = userEvent.setup()
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      // Initially closed
+      expect(menuButton).toHaveTextContent('☰')
+
+      // Rapid toggles
+      await user.click(menuButton) // Open
+      await user.click(menuButton) // Close
+      await user.click(menuButton) // Open
+
+      // Should end in open state
+      expect(menuButton).toHaveTextContent('✕')
+      expect(menuButton).toHaveAttribute('aria-expanded', 'true')
     })
   })
 })
