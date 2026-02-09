@@ -50,6 +50,61 @@ Implement Google Maps integration using `@googlemaps/js-api-loader` as a client 
 
 This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
 
+## Reference Implementation - Angular Site Comparison
+
+**CRITICAL**: This specification includes example implementation code, but you MUST verify all map configuration, styling, and behavior against the original Angular site at `../compasslex.com/` before implementing.
+
+### Repository Context
+
+This migration uses a **separate repository approach**:
+- **Angular repo** (`../compasslex.com/`): READ-ONLY reference - the source of truth for map configuration and behavior
+- **Next.js repo** (`compasslex-nextjs/`): ACTIVE working directory - where you write all new code
+
+### Before Implementing the Google Maps Component
+
+1. **Run the Angular app** and navigate to the page with the map (likely contact-us or home)
+2. **Inspect the Angular Google Maps implementation**:
+   - Map component: `../compasslex.com/src/app/components/shared/google-map/google-map.component.ts`
+   - Map HTML: `../compasslex.com/src/app/components/shared/google-map/google-map.component.html`
+   - Map styles: `../compasslex.com/src/app/components/shared/google-map/google-map.component.scss`
+   - Page integration: `../compasslex.com/src/app/components/pages/contact-us/contact-us.component.html`
+3. **Document exact configuration values**:
+   - Map center coordinates (latitude, longitude)
+   - Zoom level
+   - Map type (roadmap, satellite, hybrid, terrain)
+   - Marker position
+   - Marker title/label
+   - Map dimensions (width, height)
+   - Any custom styling or controls
+   - Map container styling (borders, shadows, etc.)
+4. **Check environment configuration**:
+   - Google Maps API key configuration in `../compasslex.com/src/environments/`
+   - Any API restrictions or settings
+
+### Key Angular Reference Files
+
+- **Google Maps Component**: `../compasslex.com/src/app/components/shared/google-map/`
+- **Angular Google Maps Module**: Check `../compasslex.com/package.json` for `@angular/google-maps` version
+- **Contact Us Page**: `../compasslex.com/src/app/components/pages/contact-us/`
+- **Environment Config**: `../compasslex.com/src/environments/environment.ts`
+
+### Map Configuration Verification Checklist
+
+After implementing the map component, verify these match the original:
+- [ ] Map center coordinates (exact lat/lng)
+- [ ] Zoom level
+- [ ] Map type (roadmap/satellite/etc.)
+- [ ] Marker position
+- [ ] Marker icon (default or custom)
+- [ ] Marker title/info window text
+- [ ] Map dimensions and aspect ratio
+- [ ] Container styling (borders, shadows, rounded corners)
+- [ ] Loading state behavior
+- [ ] Error handling behavior
+- [ ] Responsive behavior on mobile
+
+**DO NOT** assume the example code in this spec is correct. Always verify against the Angular source.
+
 ## Implementation Requirements
 
 ### Technology Stack
