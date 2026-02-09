@@ -52,18 +52,18 @@ export default function Navigation() {
         <div className="py-4 min-[600px]:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-deep-sapphire transition-all duration-300 ease-in-out hover:cursor-pointer hover:[text-shadow:white_0_0_3px,#aaaaff_0_0_5px,#191248_0_0_25px]"
+            className="text-deep-sapphire flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 ease-in-out hover:cursor-pointer hover:bg-black/[0.04]"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? '✕ Close' : '☰ Menu'}
+            {mobileMenuOpen ? '✕' : '☰'}
           </button>
           {mobileMenuOpen && (
-            <div className="mt-4 flex flex-col space-y-2 pb-4">
+            <div className="mt-4 flex flex-col pb-4">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-[1.3em] whitespace-nowrap transition-all duration-300 ease-in-out hover:cursor-pointer hover:[text-shadow:white_0_0_3px,#aaaaff_0_0_5px,#191248_0_0_25px] ${
+                  className={`text-deep-sapphire box-border flex h-12 flex-row items-center px-4 py-3.5 text-left text-[1.3em] leading-5 font-bold no-underline transition-all duration-300 ease-in-out hover:cursor-pointer hover:bg-black/[0.04] ${
                     pathname === link.href ? 'font-bold' : ''
                   }`}
                   onClick={() => setMobileMenuOpen(false)}

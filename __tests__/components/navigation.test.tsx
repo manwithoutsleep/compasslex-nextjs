@@ -31,14 +31,14 @@ describe('Navigation', () => {
     const user = userEvent.setup()
     const menuButton = screen.getByRole('button', { name: /menu/i })
 
-    // Initially the mobile menu should show "Menu"
-    expect(menuButton).toHaveTextContent('Menu')
+    // Initially the mobile menu should show the hamburger icon
+    expect(menuButton).toHaveTextContent('☰')
 
     // Click to open
     await user.click(menuButton)
 
-    // After click, button should show "Close"
-    expect(menuButton).toHaveTextContent('Close')
+    // After click, button should show the close icon
+    expect(menuButton).toHaveTextContent('✕')
   })
 
   it('should highlight active link', () => {
