@@ -74,4 +74,82 @@ describe('Navigation', () => {
     // Mobile nav should have min-[600px]:hidden class
     expect(mobileNav?.className).toContain('min-[600px]:hidden')
   })
+
+  describe('Accessibility', () => {
+    it('should have aria-expanded false when menu is closed', () => {
+      render(<Navigation />)
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+    })
+
+    it('should have aria-expanded true when menu is open', async () => {
+      render(<Navigation />)
+      const user = userEvent.setup()
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      await user.click(menuButton)
+
+      expect(menuButton).toHaveAttribute('aria-expanded', 'true')
+    })
+
+    it('should have aria-controls pointing to mobile menu', () => {
+      render(<Navigation />)
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      expect(menuButton).toHaveAttribute('aria-controls', 'mobile-menu')
+    })
+
+    it('should render mobile menu with correct id and role', async () => {
+      render(<Navigation />)
+      const user = userEvent.setup()
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      await user.click(menuButton)
+
+      const mobileMenu = screen.getByRole('menu')
+      expect(mobileMenu).toHaveAttribute('id', 'mobile-menu')
+    })
+
+    it('should have role menuitem on each mobile navigation link', async () => {
+      render(<Navigation />)
+      const user = userEvent.setup()
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      await user.click(menuButton)
+
+      const menuItems = screen.getAllByRole('menuitem')
+      expect(menuItems).toHaveLength(7)
+    })
+
+    it('should close mobile menu when Escape key is pressed', async () => {
+      render(<Navigation />)
+      const user = userEvent.setup()
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      // Open menu
+      await user.click(menuButton)
+      expect(menuButton).toHaveTextContent('✕')
+
+      // Press Escape key
+      await user.keyboard('{Escape}')
+
+      // Menu should close
+      expect(menuButton).toHaveTextContent('☰')
+      expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+    })
+
+    it('should not throw error when Escape is pressed with menu closed', async () => {
+      render(<Navigation />)
+      const user = userEvent.setup()
+      const menuButton = screen.getByRole('button', { name: /menu/i })
+
+      // Press Escape with menu already closed
+      await user.keyboard('{Escape}')
+
+      // Should remain closed
+      expect(menuButton).toHaveTextContent('☰')
+      expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+    })
+  })
 })

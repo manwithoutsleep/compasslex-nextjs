@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 /**
  * Navigation link configuration
@@ -29,6 +29,18 @@ const NAV_LINKS = [
 export default function Navigation() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Close mobile menu on Escape key press
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [mobileMenuOpen])
 
   return (
     <nav className="bg-pure-white text-deep-sapphire">
@@ -58,15 +70,18 @@ export default function Navigation() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-deep-sapphire flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 ease-in-out hover:bg-black/[0.04]"
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? '✕' : '☰'}
           </button>
           {mobileMenuOpen && (
-            <div className="mt-4 flex flex-col pb-4">
+            <div id="mobile-menu" className="mt-4 flex flex-col pb-4" role="menu">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
+                  role="menuitem"
                   className={`text-deep-sapphire box-border flex h-12 flex-row items-center px-4 py-3.5 text-left text-[1.3em] leading-5 font-bold no-underline transition-all duration-300 ease-in-out hover:bg-black/[0.04] ${
                     pathname === link.href ? 'font-bold' : ''
                   }`}
