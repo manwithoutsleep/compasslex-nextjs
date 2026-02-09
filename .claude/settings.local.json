@@ -42,7 +42,9 @@
       "Bash(npx tsc:*)",
       "Skill(close-pr-and-cleanup)",
       "Bash(npm run test:*)",
-      "Bash(gh pr create:*)"
+      "Bash(gh pr create:*)",
+      "Bash(grep:*)",
+      "Bash(npm run format:check:*)"
     ],
     "deny": [],
     "ask": []

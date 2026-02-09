@@ -75,6 +75,99 @@ Execute comprehensive testing strategy (unit, integration, E2E, visual regressio
 
 This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
 
+## Reference Implementation - Angular Site Comparison
+
+**CRITICAL**: This testing and QA phase requires comprehensive comparison with the original Angular site at `../compasslex.com/` to ensure pixel-perfect migration and functional parity.
+
+### Repository Context
+
+This migration uses a **separate repository approach**:
+
+- **Angular repo** (`../compasslex.com/`): READ-ONLY reference - the source of truth for all visual and functional behavior
+- **Next.js repo** (`compasslex-nextjs/`): ACTIVE working directory - the implementation being tested
+
+### Visual Regression Testing Strategy
+
+1. **Run both applications side-by-side**:
+   - Angular app: Start at `../compasslex.com/` with `npm start` or equivalent
+   - Next.js app: Start at current directory with `npm run dev`
+
+2. **Compare each page systematically**:
+   - Navigate to the same route in both apps
+   - Take screenshots at the same viewport sizes
+   - Compare visually for pixel-perfect match
+   - Document any discrepancies found
+
+3. **Test at multiple viewport sizes**:
+   - Desktop: 1920x1080, 1440x900, 1280x720
+   - Tablet: 768x1024, 1024x768
+   - Mobile: 375x667 (iPhone), 360x640 (Android)
+
+### Functional Comparison Checklist
+
+Compare functionality between Angular and Next.js implementations:
+
+- [ ] All navigation links work identically
+- [ ] All 11 counselor profiles display with identical data
+- [ ] All 24 newsletters display with identical data
+- [ ] PDF downloads work identically
+- [ ] Google Maps displays with same center, zoom, and marker
+- [ ] Mobile menu behavior matches exactly
+- [ ] Hover states and transitions match
+- [ ] Responsive breakpoints trigger at same widths
+- [ ] Page load behavior is identical
+- [ ] Error states handled similarly
+
+### Key Angular Reference Points for Testing
+
+- **Original Angular Routes**: Check `../compasslex.com/src/app/app-routing.module.ts` for complete route list
+- **Data Files**: Verify JSON data matches between `../compasslex.com/src/assets/data/` and `public/data/`
+- **Styling Variables**: Compare final rendered styles against `../compasslex.com/src/sass/_variables.scss`
+- **Component Behavior**: Reference individual component `.ts` files for expected behavior
+
+### Performance Comparison
+
+Run Lighthouse audits on both implementations:
+
+- Compare Performance scores
+- Compare Accessibility scores
+- Compare Best Practices scores
+- Compare SEO scores
+
+**Target**: Next.js should meet or exceed Angular's Lighthouse scores.
+
+### Cross-Browser Testing
+
+Test in the same browsers used for Angular app:
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+Ensure Next.js app works identically in all browsers where Angular app works.
+
+### Data Integrity Verification
+
+**CRITICAL**: Verify that all data from Angular app appears correctly in Next.js app:
+
+1. **Counselor Data**:
+   - Compare `../compasslex.com/src/assets/data/counselor.json` with `public/data/counselor.json`
+   - Verify all 11 counselors display correctly
+   - Check all fields: name, title, credentials, bio, insurance, memberships, contact info
+
+2. **Newsletter Data**:
+   - Compare `../compasslex.com/src/assets/data/newsletter.json` with `public/data/newsletter.json`
+   - Verify all 24 newsletters display correctly
+   - Verify PDF links work
+
+3. **Static Assets**:
+   - Verify all images from `../compasslex.com/src/assets/` appear in Next.js app
+   - Verify all PDFs are accessible
+   - Verify all icons and media assets work
+
+**DO NOT** assume the Next.js implementation is correct without explicit comparison to the Angular source.
+
 ## Implementation Requirements
 
 ### Testing Strategy Overview

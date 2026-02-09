@@ -17,6 +17,9 @@
   --color-pure-white: #ffffff;
   --color-royal-indigo: #43208a;
 
+  /* Navigation hover effect colors */
+  --color-hover-glow: #aaaaff;
+
   /* Typography - Roboto font family */
   --font-family-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
 
@@ -32,4 +35,16 @@ body {
   font-family: var(--font-family-sans);
   background: var(--color-pure-white);
   color: var(--color-deep-sapphire);
+}
+
+/* Navigation link hover effect - three-layered glow matching Angular site */
+.nav-link-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link-hover:hover {
+  text-shadow:
+    white 0 0 3px,
+    var(--color-hover-glow) 0 0 5px,
+    var(--color-deep-sapphire) 0 0 25px;
 }

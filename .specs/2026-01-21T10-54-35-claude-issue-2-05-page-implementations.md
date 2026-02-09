@@ -15,7 +15,8 @@ Implement all 9 pages of the CompassLex website using Next.js App Router with Se
 
 - Task 02: Core Infrastructure & Data Layer (repositories required)
 - Task 03: Design System & Tailwind (UI components required)
-- Task 04: Layouts, Navigation & Foundations (layout required)
+- Task 04: Layouts, Navigation & Foundations (navigation links required)
+- Task 04b: Header & Footer Components (complete layout structure required)
 
 **Blocks** (tasks that depend on this one):
 
@@ -23,7 +24,7 @@ Implement all 9 pages of the CompassLex website using Next.js App Router with Se
 
 **Parallel Opportunities**:
 
-- Task 06: Google Maps Integration (can run mostly in parallel - maps may integrate into contact-us page)
+- Task 06: Google Maps Integration (can run mostly in parallel - maps integrate into footer created in 04b)
 
 ## Scope
 
@@ -69,6 +70,59 @@ Implement all 9 pages of the CompassLex website using Next.js App Router with Se
 ## Environment Notes
 
 This project is developed in a **WSL (Windows Subsystem for Linux)** environment where all standard Unix commands and npm commands work natively without any special syntax.
+
+## Reference Implementation - Angular Site Comparison
+
+**CRITICAL**: This specification includes example implementation code, but you MUST verify all styling, behavior, and content against the original Angular site at `../compasslex.com/` before implementing.
+
+### Repository Context
+
+This migration uses a **separate repository approach**:
+
+- **Angular repo** (`../compasslex.com/`): READ-ONLY reference - the source of truth for all visual styling and behavior
+- **Next.js repo** (`compasslex-nextjs/`): ACTIVE working directory - where you write all new code
+
+### Before Implementing Each Page
+
+1. **Navigate to the corresponding Angular page** in a browser (run the Angular app if needed)
+2. **Inspect the Angular source code** for exact styling details:
+   - Component HTML: `../compasslex.com/src/app/[component]/[component].component.html`
+   - Component styles: `../compasslex.com/src/app/[component]/[component].component.scss`
+   - Component logic: `../compasslex.com/src/app/[component]/[component].component.ts`
+3. **Document specific styling values** before implementation:
+   - Colors (check against SCSS variables in `../compasslex.com/src/sass/_variables.scss`)
+   - Font sizes
+   - Spacing (margins, padding, gaps)
+   - Responsive breakpoints
+   - Animations and transitions
+   - Layout structures
+4. **Compare your implementation** against the original frequently during development
+
+### Key Angular Reference Files
+
+- **Global Styles**: `../compasslex.com/src/sass/_variables.scss`
+- **Page Routes**: `../compasslex.com/src/app/app-routing.module.ts`
+- **Home Page**: `../compasslex.com/src/app/home/`
+- **Meet Us (Counselor Listing)**: `../compasslex.com/src/app/counselor-list/`
+- **Counselor Detail**: `../compasslex.com/src/app/counselor-detail/`
+- **Newsletters**: `../compasslex.com/src/app/newsletter/`
+- **Other Pages**: `../compasslex.com/src/app/[page-name]/`
+
+### Visual Verification Checklist (for each page)
+
+After implementing each page, verify these match the original:
+
+- [ ] Page layout structure (header, main, sections)
+- [ ] Typography (font family, sizes, weights)
+- [ ] Color scheme (backgrounds, text, borders)
+- [ ] Spacing (margins, padding between elements)
+- [ ] Component styling (cards, buttons, lists)
+- [ ] Responsive behavior at different screen sizes
+- [ ] Hover states and transitions
+- [ ] Images and asset placement
+- [ ] Content hierarchy and ordering
+
+**DO NOT** blindly follow example code in this spec. Use it as a starting point, but always verify against the Angular source.
 
 ## Implementation Requirements
 

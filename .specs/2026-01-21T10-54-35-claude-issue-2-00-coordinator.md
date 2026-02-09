@@ -4,8 +4,8 @@
 
 This coordinator plan manages the execution of sub-tasks for the parent specification: `2026-01-21T10-54-35-claude-issue-2.md` - Next.js Migration with Tailwind CSS.
 
-**Total Sub-Tasks**: 7
-**Estimated Total Effort**: 80-120 hours
+**Total Sub-Tasks**: 8
+**Estimated Total Effort**: 86-128 hours
 **Parallelization Potential**: Medium
 
 ## Sub-Task Index
@@ -16,8 +16,9 @@ This coordinator plan manages the execution of sub-tasks for the parent specific
 | 02   | core-infrastructure-data-layer | Pending | 01           | None                     |
 | 03   | design-system-tailwind         | Pending | 01           | 02                       |
 | 04   | layouts-navigation-foundations | Pending | 02, 03       | None                     |
-| 05   | page-implementations           | Pending | 04           | None                     |
-| 06   | google-maps-integration        | Pending | 04           | 05                       |
+| 04b  | header-footer-components       | Pending | 04           | None                     |
+| 05   | page-implementations           | Pending | 04b          | None                     |
+| 06   | google-maps-integration        | Pending | 04b          | 05                       |
 | 07   | testing-qa-deployment          | Pending | 05, 06       | None                     |
 
 ## Execution Strategy
@@ -60,7 +61,7 @@ This coordinator plan manages the execution of sub-tasks for the parent specific
 
 ---
 
-### Phase 3: Layout & Navigation (1 task)
+### Phase 3: Layout & Navigation (2 tasks - Sequential)
 
 **Task 04: Layouts, Navigation & Foundations**
 
@@ -71,7 +72,17 @@ This coordinator plan manages the execution of sub-tasks for the parent specific
 
 **Estimated Duration**: 6-8 hours
 
-**Wait for Phase 3 completion before proceeding to Phase 4**
+**Task 04b: Header & Footer Components**
+
+- Header component with logo and branding
+- Footer component with address and map placeholder
+- Update mobile navigation to sidenav overlay
+- Copy logo and footer assets
+- TDD approach
+
+**Estimated Duration**: 6-8 hours
+
+**Wait for Phase 3 completion (Tasks 04 and 04b) before proceeding to Phase 4**
 
 ---
 
@@ -84,7 +95,7 @@ This coordinator plan manages the execution of sub-tasks for the parent specific
 - Dynamic routing for counselor detail pages
 - TDD approach for each page
 
-**Task 06: Google Maps Integration** (Can start after Task 04, parallel with Task 05)
+**Task 06: Google Maps Integration** (Can start after Task 04b, parallel with Task 05)
 
 - Google Maps component with loader
 - Client component implementation
@@ -123,20 +134,20 @@ This coordinator plan manages the execution of sub-tasks for the parent specific
 ```
 01 (env-setup)
  ├─→ 02 (data-layer) ─────┐
- └─→ 03 (design-system) ──┼─→ 04 (layouts-nav) ──┐
-                          │                       ├─→ 05 (pages) ──┐
-                          │                       └─→ 06 (maps) ───┼─→ 07 (testing-qa)
-                          │                                          │
-                          └──────────────────────────────────────────┘
+ └─→ 03 (design-system) ──┼─→ 04 (layouts-nav) ─→ 04b (header-footer) ──┐
+                          │                                               ├─→ 05 (pages) ──┐
+                          │                                               └─→ 06 (maps) ───┼─→ 07 (testing-qa)
+                          │                                                                  │
+                          └──────────────────────────────────────────────────────────────────┘
 ```
 
 ## Critical Path
 
 The longest sequence of dependent tasks (determines minimum completion time):
 
-**01 → 02 → 04 → 05 → 07**
+**01 → 02 → 04 → 04b → 05 → 07**
 
-**Estimated Critical Path Duration**: 56-83 hours
+**Estimated Critical Path Duration**: 62-91 hours
 
 ## Coordination Notes
 
@@ -166,9 +177,10 @@ If executing sequentially (not in parallel), follow this order for optimal flow:
 2. **Task 02** (Core Infrastructure & Data Layer) - Critical for pages
 3. **Task 03** (Design System & Tailwind) - Required for all UI components
 4. **Task 04** (Layouts, Navigation & Foundations) - Required for pages
-5. **Task 05** (Page Implementations) - Core content
-6. **Task 06** (Google Maps Integration) - Integration with pages
-7. **Task 07** (Testing, QA & Deployment) - Final validation
+5. **Task 04b** (Header & Footer Components) - Complete layout structure
+6. **Task 05** (Page Implementations) - Core content
+7. **Task 06** (Google Maps Integration) - Integration with pages
+8. **Task 07** (Testing, QA & Deployment) - Final validation
 
 ### Integration Points
 
@@ -176,11 +188,13 @@ If executing sequentially (not in parallel), follow this order for optimal flow:
 
 **Task 03 → Task 04**: UI components (Card, Button) used in navigation component
 
-**Task 04 → Task 05**: Root layout and navigation wrap all pages
+**Task 04 → Task 04b**: Navigation component used in header
+
+**Task 04b → Task 05**: Complete header and footer wrap all pages
 
 **Task 02 + Task 05**: CounselorRepository and NewsletterRepository used extensively in pages
 
-**Task 06 → Task 05**: Google Maps component likely integrated into contact-us or home page
+**Task 06 → Task 04b**: Google Maps component integrated into footer (Task 04b creates placeholder)
 
 **Task 07**: Integrates ALL previous work - comprehensive testing
 
@@ -192,6 +206,7 @@ If executing sequentially (not in parallel), follow this order for optimal flow:
 - [ ] Task 02: Core Infrastructure & Data Layer
 - [ ] Task 03: Design System & Tailwind
 - [ ] Task 04: Layouts, Navigation & Foundations
+- [ ] Task 04b: Header & Footer Components
 - [ ] Task 05: Page Implementations (9 pages)
 - [ ] Task 06: Google Maps Integration
 - [ ] Task 07: Testing, QA & Deployment Preparation
@@ -329,7 +344,8 @@ npx vitest run {test-files}
 ---
 
 **Coordinator Created**: 2026-01-21
+**Last Updated**: 2026-02-09 (Added Task 04b: Header & Footer Components)
 **Parent Specification**: 2026-01-21T10-54-35-claude-issue-2.md
-**Total Sub-Tasks**: 7
+**Total Sub-Tasks**: 8
 **Execution Model**: Sequential with limited parallelization opportunities
-**Critical Path Duration**: 56-83 hours
+**Critical Path Duration**: 62-91 hours
