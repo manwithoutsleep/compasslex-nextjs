@@ -82,6 +82,7 @@ This project is developed in a **WSL (Windows Subsystem for Linux)** environment
 ### Repository Context
 
 This migration uses a **separate repository approach**:
+
 - **Angular repo** (`../compasslex.com/`): READ-ONLY reference - the source of truth for all visual and functional behavior
 - **Next.js repo** (`compasslex-nextjs/`): ACTIVE working directory - the implementation being tested
 
@@ -105,6 +106,7 @@ This migration uses a **separate repository approach**:
 ### Functional Comparison Checklist
 
 Compare functionality between Angular and Next.js implementations:
+
 - [ ] All navigation links work identically
 - [ ] All 11 counselor profiles display with identical data
 - [ ] All 24 newsletters display with identical data
@@ -126,6 +128,7 @@ Compare functionality between Angular and Next.js implementations:
 ### Performance Comparison
 
 Run Lighthouse audits on both implementations:
+
 - Compare Performance scores
 - Compare Accessibility scores
 - Compare Best Practices scores
@@ -136,6 +139,7 @@ Run Lighthouse audits on both implementations:
 ### Cross-Browser Testing
 
 Test in the same browsers used for Angular app:
+
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
