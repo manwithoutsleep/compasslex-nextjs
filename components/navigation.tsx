@@ -39,7 +39,7 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-[1.3em] whitespace-nowrap transition-all duration-300 ease-in-out hover:cursor-pointer hover:[text-shadow:white_0_0_3px,#aaaaff_0_0_5px,#191248_0_0_25px] ${
+              className={`nav-link-hover text-[1.3em] whitespace-nowrap ${
                 pathname === link.href ? 'font-bold' : ''
               }`}
             >
