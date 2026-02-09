@@ -49,6 +49,10 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
+        {/* TODO: Update mobile menu to use overlay sidenav instead of inline expansion
+             when header component is built. Should slide in from left with backdrop,
+             positioned below fixed header bar. See Angular implementation in
+             ../compasslex.com/src/app/components/navigation/ */}
         <div className="py-4 min-[600px]:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

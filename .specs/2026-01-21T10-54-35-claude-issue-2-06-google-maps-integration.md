@@ -14,7 +14,7 @@ Implement Google Maps integration using `@googlemaps/js-api-loader` as a client 
 **Prerequisites** (must be completed before this task):
 
 - Task 01: Development Environment Setup (Google Maps loader installed, API key configured)
-- Task 04: Layouts, Navigation & Foundations (page structure available)
+- Task 04b: Header & Footer Components (footer with map placeholder available)
 
 **Blocks** (tasks that depend on this one):
 
@@ -57,6 +57,7 @@ This project is developed in a **WSL (Windows Subsystem for Linux)** environment
 ### Repository Context
 
 This migration uses a **separate repository approach**:
+
 - **Angular repo** (`../compasslex.com/`): READ-ONLY reference - the source of truth for map configuration and behavior
 - **Next.js repo** (`compasslex-nextjs/`): ACTIVE working directory - where you write all new code
 
@@ -91,6 +92,7 @@ This migration uses a **separate repository approach**:
 ### Map Configuration Verification Checklist
 
 After implementing the map component, verify these match the original:
+
 - [ ] Map center coordinates (exact lat/lng)
 - [ ] Zoom level
 - [ ] Map type (roadmap/satellite/etc.)

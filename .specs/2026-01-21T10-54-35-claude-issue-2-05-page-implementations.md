@@ -15,7 +15,8 @@ Implement all 9 pages of the CompassLex website using Next.js App Router with Se
 
 - Task 02: Core Infrastructure & Data Layer (repositories required)
 - Task 03: Design System & Tailwind (UI components required)
-- Task 04: Layouts, Navigation & Foundations (layout required)
+- Task 04: Layouts, Navigation & Foundations (navigation links required)
+- Task 04b: Header & Footer Components (complete layout structure required)
 
 **Blocks** (tasks that depend on this one):
 
@@ -23,7 +24,7 @@ Implement all 9 pages of the CompassLex website using Next.js App Router with Se
 
 **Parallel Opportunities**:
 
-- Task 06: Google Maps Integration (can run mostly in parallel - maps may integrate into contact-us page)
+- Task 06: Google Maps Integration (can run mostly in parallel - maps integrate into footer created in 04b)
 
 ## Scope
 
@@ -77,6 +78,7 @@ This project is developed in a **WSL (Windows Subsystem for Linux)** environment
 ### Repository Context
 
 This migration uses a **separate repository approach**:
+
 - **Angular repo** (`../compasslex.com/`): READ-ONLY reference - the source of truth for all visual styling and behavior
 - **Next.js repo** (`compasslex-nextjs/`): ACTIVE working directory - where you write all new code
 
@@ -109,6 +111,7 @@ This migration uses a **separate repository approach**:
 ### Visual Verification Checklist (for each page)
 
 After implementing each page, verify these match the original:
+
 - [ ] Page layout structure (header, main, sections)
 - [ ] Typography (font family, sizes, weights)
 - [ ] Color scheme (backgrounds, text, borders)
