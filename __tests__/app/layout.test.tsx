@@ -1,6 +1,13 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render } from '@testing-library/react'
 import RootLayout, { metadata } from '@/app/layout'
+
+// Mock Roboto font to verify it's being used
+vi.mock('next/font/google', () => ({
+  Roboto: vi.fn(() => ({
+    className: 'roboto-font-class',
+  })),
+}))
 
 describe('RootLayout', () => {
   it('should render children', () => {
@@ -17,14 +24,22 @@ describe('RootLayout', () => {
     expect(metadata.description).toBeDefined()
   })
 
-  it('should apply Roboto font class to html element', () => {
-    const { container } = render(
-      <RootLayout>
-        <div>Test</div>
-      </RootLayout>
-    )
-    // The html element is rendered but we can verify the className is applied
-    // by checking that the component renders without errors
-    expect(container).toBeTruthy()
+  it('should configure and apply Roboto font', async () => {
+    const { Roboto } = await import('next/font/google')
+
+    // Verify Roboto is called with correct configuration
+    expect(Roboto).toHaveBeenCalledWith({
+      weight: ['400', '700'],
+      subsets: ['latin'],
+      display: 'swap',
+    })
+
+    // Verify the font returns a className
+    const fontResult = Roboto({
+      weight: ['400', '700'],
+      subsets: ['latin'],
+      display: 'swap',
+    })
+    expect(fontResult.className).toBe('roboto-font-class')
   })
 })
