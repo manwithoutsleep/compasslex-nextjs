@@ -37,6 +37,75 @@ body {
   color: var(--color-deep-sapphire);
 }
 
+/* ===== Home Page Rotator ===== */
+
+@keyframes home-page-image-animation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+
+.home-page-rotator {
+  display: flex;
+  height: max(min(33.33333vw, 400px), 200px);
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.home-page-rotator .rotator-text {
+  color: var(--color-peach-puff);
+  font-weight: bold;
+  margin: 10px;
+  position: absolute;
+  text-align: center;
+  text-shadow:
+    var(--color-deep-sapphire) 0 0 3px,
+    #aaaaff 0 0 5px,
+    var(--color-bengal-blue) 0 0 25px;
+  z-index: 1000;
+
+  /* Small screen (< 600px) */
+  top: max(124px, calc(160px + (0.33 * min(0px, calc(100vw - 477px)))));
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .home-page-rotator .rotator-text {
+    /* Large screen (>= 600px) */
+    font-size: min(30px, calc(30px + (0.026 * min(0px, calc(100vw - 1100px)))));
+    line-height: min(50px, calc(50px + (0.06 * min(0px, calc(100vw - 1100px)))));
+    right: min(50px, calc(50px + (0.064 * min(0px, calc(100vw - 1100px)))));
+    top: min(70px, calc(70px + (0.1 * min(0px, calc(100vw - 1100px)))));
+    width: min(200px, calc(200px + (0.17 * min(0px, calc(100vw - 1100px)))));
+    text-align: center;
+  }
+}
+
+.home-page-rotator .rotator-item {
+  animation-delay: 0s;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+  animation-name: home-page-image-animation;
+  animation-timing-function: ease-in-out;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+  overflow: hidden;
+  width: 100%;
+}
+
+.home-page-rotator .rotator-item.active {
+  display: block;
+}
+
 /* Navigation link hover effect - three-layered glow matching Angular site */
 .nav-link-hover {
   transition: all 0.3s ease-in-out;

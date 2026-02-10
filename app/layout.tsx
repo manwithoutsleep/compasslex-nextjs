@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="bg-pure-white min-h-screen">
         <Header />
         {/* Add top margin on mobile to account for fixed header */}
-        <main className="max-w-site mx-auto mt-[60px] px-4 min-[600px]:mt-0">{children}</main>
+        <main className="mt-[60px] min-[600px]:mt-0">{children}</main>
         <Footer />
       </body>
     </html>
