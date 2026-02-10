@@ -1,12 +1,20 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { usePathname } from 'next/navigation'
 import Header from '@/components/header'
+
+let mockPathname = '/'
 
 // Mock next/navigation
 vi.mock('next/navigation', () => ({
-  usePathname: () => '/',
+  usePathname: vi.fn(() => mockPathname),
 }))
+
+beforeEach(() => {
+  mockPathname = '/'
+  vi.mocked(usePathname).mockImplementation(() => mockPathname)
+})
 
 describe('Header', () => {
   describe('Desktop Header', () => {
@@ -59,6 +67,24 @@ describe('Header', () => {
       render(<Header />)
       const menuButton = screen.getByLabelText(/toggle menu/i)
       expect(menuButton).toHaveAttribute('aria-controls', 'mobile-sidenav')
+    })
+
+    it('should close mobile menu on route change', async () => {
+      const { rerender } = render(<Header />)
+      const user = userEvent.setup()
+      const menuButton = screen.getByLabelText(/toggle menu/i)
+
+      // Open the menu
+      await user.click(menuButton)
+      expect(menuButton).toHaveTextContent('✕')
+
+      // Simulate a route change
+      mockPathname = '/meet-us'
+      vi.mocked(usePathname).mockImplementation(() => mockPathname)
+      rerender(<Header />)
+
+      // Menu should be closed
+      expect(menuButton).toHaveTextContent('☰')
     })
   })
 })
