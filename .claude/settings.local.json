@@ -45,7 +45,16 @@
       "Bash(gh pr create:*)",
       "Bash(grep:*)",
       "Bash(npm run format:check:*)",
-      "Bash(npx next lint)"
+      "Bash(npx next lint)",
+      "Bash(tree:*)",
+      "Bash(npm --prefix /home/manwithoutsleep/src/github/mws/compasslex-nextjs run lint)",
+      "Bash(npm run format:*)",
+      "WebFetch(domain:compasslex.com)",
+      "Bash(git -C /home/manwithoutsleep/src/github/mws/compasslex-nextjs status)",
+      "Bash(git -C /home/manwithoutsleep/src/github/mws/compasslex-nextjs diff)",
+      "Bash(git -C /home/manwithoutsleep/src/github/mws/compasslex-nextjs add app/globals.css app/layout.tsx components/home-page-rotator.tsx)",
+      "Bash(git -C /home/manwithoutsleep/src/github/mws/compasslex-nextjs commit -m \"$\\(cat <<''EOF''\nfix: Full-width rotating banner with scale animation and responsive text positioning\n\n- Remove max-width constraint from main layout so banner extends full browser width\n- Replace Tailwind-based rotator with CSS classes matching Angular''s exact structure\n- Add home-page-image-animation keyframe \\(scale 1→1.3, 8s, ease-in-out\\)\n- Position rotator-text to the right on large screens using Angular''s responsive min/max formulas\n- Remove dark overlay; use peach-puff text color with deep-sapphire/blue text-shadow instead\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Skill(address-style-discrepancy)"
     ],
     "deny": [],
     "ask": []

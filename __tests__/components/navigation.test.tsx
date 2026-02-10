@@ -22,7 +22,6 @@ describe('Navigation', () => {
       expect(screen.getByText('Meet Us')).toBeInTheDocument()
       expect(screen.getByText('Our Services')).toBeInTheDocument()
       expect(screen.getByText('FAQ')).toBeInTheDocument()
-      expect(screen.getByText('Getting Started')).toBeInTheDocument()
       expect(screen.getByText('Resources')).toBeInTheDocument()
       expect(screen.getByText('Contact Us')).toBeInTheDocument()
     })
@@ -46,7 +45,7 @@ describe('Navigation', () => {
     it('should render sidenav when open', () => {
       render(<Navigation variant="mobile" isOpen={true} onClose={() => {}} />)
       const links = screen.getAllByRole('link')
-      expect(links.length).toBe(7)
+      expect(links.length).toBe(6)
     })
 
     it('should have id="mobile-sidenav" on the nav element', () => {

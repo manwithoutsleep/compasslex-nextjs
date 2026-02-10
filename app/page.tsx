@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import HomePageRotator from '@/components/home-page-rotator'
@@ -16,10 +15,10 @@ export default function HomePage() {
       <HomePageRotator />
 
       {/* Page content */}
-      <div className="max-w-site mx-auto px-4 pb-8 pt-[26px]">
+      <div className="max-w-site mx-auto mt-[18px] mb-[18px]">
         {/* Row 1: Intro */}
-        <div className="mb-10">
-          <div className="mx-auto max-w-[750px] bg-white p-2">
+        <div>
+          <div className="mx-auto max-w-[750px] p-2 pb-6">
             <p className="text-deep-sapphire text-[1.2em] leading-[1.3em]">
               At Compass Christian Counseling our goal is to provide a safe and supportive place for
               individuals, couples, and families to find hope and healing. You might be looking for
@@ -33,23 +32,21 @@ export default function HomePage() {
         </div>
 
         {/* Row 2: Meet Us (image left, text right) */}
-        <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="relative min-h-48 overflow-hidden rounded">
-            <Image
-              src="/assets/site-images/home-image-1.webp"
-              alt="Meet our counselors"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
-          <div className="border-bengal-blue bg-polar-mist rounded border p-6">
-            <h2 className="text-deep-sapphire mb-3 text-2xl font-bold">
-              <Link href="/meet-us" className="hover:text-royal-indigo">
-                Meet Us
-              </Link>
+        <div className="bg-bengal-blue grid min-h-[250px] grid-cols-1 md:grid-cols-2">
+          <div
+            className="min-h-[250px]"
+            style={{
+              backgroundImage: 'url(/assets/site-images/home-image-1.webp)',
+              backgroundPosition: 'top center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          />
+          <div className="m-2">
+            <h2 className="text-deep-sapphire p-2 text-[1.5em] leading-[1.5em] font-bold">
+              <Link href="/meet-us">Meet Us</Link>
             </h2>
-            <p className="text-deep-sapphire text-base leading-relaxed">
+            <p className="text-deep-sapphire p-2">
               Meet our compassionate team of counselors at Compass Christian Counseling, each
               dedicated to guiding you through life&apos;s challenges. Whether facing personal
               struggles, relationship issues, or family dynamics, our therapists provide a nurturing
@@ -60,14 +57,12 @@ export default function HomePage() {
         </div>
 
         {/* Row 3: Our Services (text left, image right) */}
-        <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="border-bengal-blue bg-polar-mist rounded border p-6">
-            <h2 className="text-deep-sapphire mb-3 text-2xl font-bold">
-              <Link href="/our-services" className="hover:text-royal-indigo">
-                Our Services
-              </Link>
+        <div className="bg-raspberry-smoothie grid min-h-[250px] grid-cols-1 md:grid-cols-2">
+          <div className="m-2">
+            <h2 className="text-deep-sapphire p-2 text-[1.5em] leading-[1.5em] font-bold">
+              <Link href="/our-services">Our Services</Link>
             </h2>
-            <p className="text-deep-sapphire text-base leading-relaxed">
+            <p className="text-deep-sapphire p-2">
               At Compass Christian Counseling, we offer a comprehensive range of services including
               individual, couples, family, and group therapy. Our experienced counselors are
               equipped to address a variety of issues such as depression, anxiety, trauma, and more.
@@ -75,35 +70,33 @@ export default function HomePage() {
               relationships, we&apos;re here to provide the guidance and tools you need to thrive.
             </p>
           </div>
-          <div className="relative min-h-48 overflow-hidden rounded">
-            <Image
-              src="/assets/site-images/home-image-2.webp"
-              alt="Our counseling services"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
+          <div
+            className="min-h-[250px]"
+            style={{
+              backgroundImage: 'url(/assets/site-images/home-image-2.webp)',
+              backgroundPosition: 'top center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          />
         </div>
 
         {/* Row 4: FAQ (image left, text right) */}
-        <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="relative min-h-48 overflow-hidden rounded">
-            <Image
-              src="/assets/site-images/home-image-4.webp"
-              alt="Frequently asked questions"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
-          <div className="border-bengal-blue bg-polar-mist rounded border p-6">
-            <h2 className="text-deep-sapphire mb-3 text-2xl font-bold">
-              <Link href="/faq" className="hover:text-royal-indigo">
-                FAQ
-              </Link>
+        <div className="bg-ultra-pure-white grid min-h-[250px] grid-cols-1 md:grid-cols-2">
+          <div
+            className="min-h-[250px]"
+            style={{
+              backgroundImage: 'url(/assets/site-images/home-image-4.webp)',
+              backgroundPosition: 'top center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          />
+          <div className="m-2">
+            <h2 className="text-deep-sapphire p-2 text-[1.5em] leading-[1.5em] font-bold">
+              <Link href="/faq">FAQ</Link>
             </h2>
-            <p className="text-deep-sapphire text-base leading-relaxed">
+            <p className="text-deep-sapphire p-2">
               Explore our Frequently Asked Questions page where we provide clear and helpful answers
               to common queries about counseling costs, insurance coverage, the benefits of private
               pay, session lengths, our therapeutic approach, and much more. This resource is
@@ -115,14 +108,12 @@ export default function HomePage() {
         </div>
 
         {/* Row 5: Resources (text left, image right) */}
-        <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="border-bengal-blue bg-polar-mist rounded border p-6">
-            <h2 className="text-deep-sapphire mb-3 text-2xl font-bold">
-              <Link href="/resources" className="hover:text-royal-indigo">
-                Resources
-              </Link>
+        <div className="bg-raspberry-smoothie grid min-h-[250px] grid-cols-1 md:grid-cols-2">
+          <div className="m-2">
+            <h2 className="text-deep-sapphire p-2 text-[1.5em] leading-[1.5em] font-bold">
+              <Link href="/resources">Resources</Link>
             </h2>
-            <p className="text-deep-sapphire text-base leading-relaxed">
+            <p className="text-deep-sapphire p-2">
               Visit our Resources page for essential support tools and information, including
               suicide and sexual assault hotline numbers, quick self-assessment forms for addiction,
               depression, and eating disorders, and a curated list of recommended books addressing
@@ -131,35 +122,33 @@ export default function HomePage() {
               personal challenges.
             </p>
           </div>
-          <div className="relative min-h-48 overflow-hidden rounded">
-            <Image
-              src="/assets/site-images/home-image-5.webp"
-              alt="Resources and support"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
+          <div
+            className="min-h-[250px]"
+            style={{
+              backgroundImage: 'url(/assets/site-images/home-image-5.webp)',
+              backgroundPosition: 'top center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          />
         </div>
 
         {/* Row 6: Contact Us (image left, text right) */}
-        <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="relative min-h-48 overflow-hidden rounded">
-            <Image
-              src="/assets/site-images/home-image-6.webp"
-              alt="Contact Compass Christian Counseling"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
-          <div className="border-bengal-blue bg-polar-mist rounded border p-6">
-            <h2 className="text-deep-sapphire mb-3 text-2xl font-bold">
-              <Link href="/contact-us" className="hover:text-royal-indigo">
-                Contact Us
-              </Link>
+        <div className="bg-bengal-blue grid min-h-[250px] grid-cols-1 md:grid-cols-2">
+          <div
+            className="min-h-[250px]"
+            style={{
+              backgroundImage: 'url(/assets/site-images/home-image-6.webp)',
+              backgroundPosition: 'top center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}
+          />
+          <div className="m-2">
+            <h2 className="text-deep-sapphire p-2 text-[1.5em] leading-[1.5em] font-bold">
+              <Link href="/contact-us">Contact Us</Link>
             </h2>
-            <p className="text-deep-sapphire text-base leading-relaxed">
+            <p className="text-deep-sapphire p-2">
               The Contact Us page of Compass Christian Counseling offers various ways to reach us,
               including phone numbers, email addresses, and direct links to our appointment
               scheduling tools. Additionally, you&apos;ll find a detailed map to our office,
