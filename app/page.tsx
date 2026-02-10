@@ -16,11 +16,11 @@ export default function HomePage() {
       <HomePageRotator />
 
       {/* Page content */}
-      <div className="max-w-site mx-auto px-4 py-8">
+      <div className="max-w-site mx-auto px-4 pb-8 pt-[26px]">
         {/* Row 1: Intro */}
         <div className="mb-10">
-          <div className="border-bengal-blue bg-polar-mist mx-auto max-w-3xl rounded border p-6">
-            <p className="text-deep-sapphire text-base leading-relaxed">
+          <div className="mx-auto max-w-[750px] bg-white p-2">
+            <p className="text-deep-sapphire text-[1.2em] leading-[1.3em]">
               At Compass Christian Counseling our goal is to provide a safe and supportive place for
               individuals, couples, and families to find hope and healing. You might be looking for
               extra support and guidance through a challenging situation or are ready to take steps
