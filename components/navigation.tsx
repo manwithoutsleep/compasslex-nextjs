@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
 
 /**
  * Navigation link configuration
@@ -37,14 +36,6 @@ interface NavigationProps {
  */
 export default function Navigation({ isMobile, isOpen = false, onClose }: NavigationProps) {
   const pathname = usePathname()
-
-  // Close sidenav on route change
-  useEffect(() => {
-    if (isMobile && isOpen && onClose) {
-      onClose()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname])
 
   // Desktop Navigation
   if (!isMobile) {

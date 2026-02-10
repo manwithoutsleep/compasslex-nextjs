@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Navigation from '@/components/navigation'
 
 /**
@@ -22,6 +23,14 @@ import Navigation from '@/components/navigation'
  */
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const [prevPathname, setPrevPathname] = useState(pathname)
+
+  // Close mobile menu on route change (during render, not in an effect)
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname)
+    setMobileMenuOpen(false)
+  }
 
   return (
     <>
