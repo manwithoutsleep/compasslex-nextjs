@@ -164,7 +164,10 @@ git checkout -b nextjs-migration-phase-5
 
 - Welcome heading
 - Introductory content about Compass Christian Counseling
-- Match Angular home page content
+- Match Angular home page content, specifically:
+  - Banner image with zoom, rotation, and text overlay
+  - Site introduction paragraph
+  - Responsive grid of images and page introductions
 - Static generation
 
 **Reference**: `../compasslex.com/src/app/components/pages/home/home.component.html`
@@ -232,7 +235,7 @@ Each follows similar pattern:
 **FAQ** (`app/faq/page.tsx`):
 
 - Question and answer format
-- Consider accordion component for UX
+- Maintain format of the original
 - Reference: `../compasslex.com/src/app/components/pages/faq/`
 
 **Resources** (`app/resources/page.tsx`):
@@ -247,6 +250,7 @@ Each follows similar pattern:
 - Office hours
 - Google Maps integration (Task 06 will add map component)
 - NO contact form (not in Angular app)
+- Responsive columns (1 col mobile, 2 col desktop)
 - Reference: `../compasslex.com/src/app/components/pages/contact-us/`
 
 ## Example Implementation Pattern
