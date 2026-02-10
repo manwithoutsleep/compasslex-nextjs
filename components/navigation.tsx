@@ -58,8 +58,9 @@ export default function Navigation(props: NavigationProps) {
   const { isOpen, onClose } = props
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop — visual only; menu is dismissed via the hamburger button */}
       <div
+        aria-hidden="true"
         className={`fixed top-0 left-0 z-[1050] h-screen w-screen bg-black/60 transition-opacity duration-300 ease-in-out min-[600px]:hidden ${
           isOpen ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
