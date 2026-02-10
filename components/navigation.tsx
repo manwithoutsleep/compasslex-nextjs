@@ -11,7 +11,6 @@ const NAV_LINKS = [
   { href: '/meet-us', label: 'Meet Us' },
   { href: '/our-services', label: 'Our Services' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/getting-started', label: 'Getting Started' },
   { href: '/resources', label: 'Resources' },
   { href: '/contact-us', label: 'Contact Us' },
 ] as const

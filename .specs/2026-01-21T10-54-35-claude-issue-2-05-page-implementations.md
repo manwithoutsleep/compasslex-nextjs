@@ -7,7 +7,7 @@ The sub-tasks are coordinated by `2026-01-21T10-54-35-claude-issue-2-00-coordina
 
 ## Objective
 
-Implement all 9 pages of the CompassLex website using Next.js App Router with Server Components, connecting to the data repository layer, and ensuring pixel-perfect visual match to the Angular application. This is the core content implementation task.
+Implement all 8 pages of the CompassLex website using Next.js App Router with Server Components, connecting to the data repository layer, and ensuring pixel-perfect visual match to the Angular application. This is the core content implementation task.
 
 ## Dependencies
 
@@ -30,7 +30,7 @@ Implement all 9 pages of the CompassLex website using Next.js App Router with Se
 
 ### In Scope
 
-**Pages to Implement** (9 total):
+**Pages to Implement** (8 total):
 
 1. Home page (`app/page.tsx`) - Welcome content, intro
 2. Meet Us page (`app/meet-us/page.tsx`) - Counselor listing grid
@@ -38,9 +38,8 @@ Implement all 9 pages of the CompassLex website using Next.js App Router with Se
 4. Newsletters page (`app/newsletters/page.tsx`) - Newsletter archive listing
 5. Our Services page (`app/our-services/page.tsx`) - Services information
 6. FAQ page (`app/faq/page.tsx`) - Frequently asked questions
-7. Getting Started page (`app/getting-started/page.tsx`) - Onboarding information
-8. Resources page (`app/resources/page.tsx`) - Resource links
-9. Contact Us page (`app/contact-us/page.tsx`) - Contact information (NO FORM)
+7. Resources page (`app/resources/page.tsx`) - Resource links
+8. Contact Us page (`app/contact-us/page.tsx`) - Contact information (NO FORM)
 
 **Components to Create**:
 
@@ -220,7 +219,7 @@ git checkout -b nextjs-migration-phase-5
 
 **Reference**: `../compasslex.com/src/app/components/pages/newsletters/newsletters.component.html`
 
-### Step 5-9: Remaining Content Pages
+### Step 5-8: Remaining Content Pages
 
 Each follows similar pattern:
 
@@ -235,12 +234,6 @@ Each follows similar pattern:
 - Question and answer format
 - Consider accordion component for UX
 - Reference: `../compasslex.com/src/app/components/pages/faq/`
-
-**Getting Started** (`app/getting-started/page.tsx`):
-
-- Onboarding information for new clients
-- Step-by-step guidance
-- Reference: `../compasslex.com/src/app/components/pages/getting-started/`
 
 **Resources** (`app/resources/page.tsx`):
 
@@ -381,7 +374,7 @@ export default async function CounselorDetailPage({
 
 ## Files to Create/Modify
 
-**Pages** (9 files):
+**Pages** (8 files):
 
 - `app/page.tsx` + test
 - `app/meet-us/page.tsx` + test
@@ -389,7 +382,6 @@ export default async function CounselorDetailPage({
 - `app/newsletters/page.tsx` + test
 - `app/our-services/page.tsx` + test
 - `app/faq/page.tsx` + test
-- `app/getting-started/page.tsx` + test
 - `app/resources/page.tsx` + test
 - `app/contact-us/page.tsx` + test
 
@@ -430,7 +422,7 @@ export default async function CounselorDetailPage({
 
 ## Success Criteria
 
-- [ ] All 9 pages implemented with tests
+- [ ] All 8 pages implemented with tests
 - [ ] All page tests pass
 - [ ] CounselorCard component created with tests
 - [ ] NewsletterCard component created with tests
