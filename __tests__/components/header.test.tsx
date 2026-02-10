@@ -13,8 +13,7 @@ describe('Header', () => {
     it('should render logo image', () => {
       render(<Header />)
       const logos = screen.getAllByAltText(/compass christian counseling/i)
-      expect(logos.length).toBeGreaterThan(0)
-      expect(logos[0]).toBeInTheDocument()
+      expect(logos).toHaveLength(3) // desktop logo + mobile logo + mobile icon
     })
 
     it('should render phone number', () => {
@@ -47,6 +46,10 @@ describe('Header', () => {
       // Click to open
       await user.click(menuButton)
       expect(menuButton).toHaveTextContent('✕')
+
+      // Click to close
+      await user.click(menuButton)
+      expect(menuButton).toHaveTextContent('☰')
     })
   })
 })
