@@ -42,14 +42,23 @@ describe('Header', () => {
 
       // Menu should be closed initially
       expect(menuButton).toHaveTextContent('☰')
+      expect(menuButton).toHaveAttribute('aria-expanded', 'false')
 
       // Click to open
       await user.click(menuButton)
       expect(menuButton).toHaveTextContent('✕')
+      expect(menuButton).toHaveAttribute('aria-expanded', 'true')
 
       // Click to close
       await user.click(menuButton)
       expect(menuButton).toHaveTextContent('☰')
+      expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+    })
+
+    it('should have aria-controls pointing to the mobile sidenav', () => {
+      render(<Header />)
+      const menuButton = screen.getByLabelText(/toggle menu/i)
+      expect(menuButton).toHaveAttribute('aria-controls', 'mobile-sidenav')
     })
   })
 })

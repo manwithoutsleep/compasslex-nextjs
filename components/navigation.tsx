@@ -68,6 +68,7 @@ export default function Navigation(props: NavigationProps) {
 
       {/* Sidenav */}
       <nav
+        id="mobile-sidenav"
         className={`bg-bengal-blue fixed top-[60px] left-0 z-[1100] h-[calc(100vh-60px)] w-[155px] shadow-[0_8px_10px_-5px_rgba(0,0,0,0.2),0_16px_24px_2px_rgba(0,0,0,0.14),0_6px_30px_5px_rgba(0,0,0,0.12)] transition-transform duration-300 ease-in-out min-[600px]:hidden ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}

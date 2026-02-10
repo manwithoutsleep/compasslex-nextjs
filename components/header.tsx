@@ -41,6 +41,8 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-none bg-transparent transition-colors hover:bg-black/[0.04]"
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-sidenav"
           >
             <span className="text-2xl">{mobileMenuOpen ? '✕' : '☰'}</span>
           </button>
