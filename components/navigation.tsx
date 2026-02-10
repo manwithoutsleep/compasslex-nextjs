@@ -16,29 +16,27 @@ const NAV_LINKS = [
   { href: '/contact-us', label: 'Contact Us' },
 ] as const
 
-interface NavigationProps {
-  isMobile: boolean
-  isOpen?: boolean
-  onClose?: () => void
-}
+type NavigationProps =
+  | { variant: 'desktop' }
+  | { variant: 'mobile'; isOpen: boolean; onClose: () => void }
 
 /**
  * Navigation component with responsive desktop and mobile layouts
  *
- * Desktop mode (isMobile=false):
+ * Desktop variant:
  * - Rendered within header component
  * - Horizontal navigation menu
  *
- * Mobile mode (isMobile=true):
+ * Mobile variant:
  * - Slide-out sidenav overlay from left
  * - Dark backdrop
  * - Positioned below fixed header
  */
-export default function Navigation({ isMobile, isOpen = false, onClose }: NavigationProps) {
+export default function Navigation(props: NavigationProps) {
   const pathname = usePathname()
 
   // Desktop Navigation
-  if (!isMobile) {
+  if (props.variant === 'desktop') {
     return (
       <nav className="hidden h-[75px] flex-row flex-wrap items-end justify-around p-[9px_0] font-bold min-[600px]:flex">
         {NAV_LINKS.map((link) => (
@@ -57,6 +55,7 @@ export default function Navigation({ isMobile, isOpen = false, onClose }: Naviga
   }
 
   // Mobile Navigation - Sidenav Overlay
+  const { isOpen, onClose } = props
   return (
     <>
       {/* Backdrop */}

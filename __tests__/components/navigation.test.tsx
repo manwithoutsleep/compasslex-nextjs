@@ -13,7 +13,7 @@ vi.mock('next/navigation', () => ({
 describe('Navigation', () => {
   describe('Desktop Navigation', () => {
     it('should render all navigation links', () => {
-      render(<Navigation isMobile={false} />)
+      render(<Navigation variant="desktop" />)
       expect(screen.getByText('Home')).toBeInTheDocument()
       expect(screen.getByText('Meet Us')).toBeInTheDocument()
       expect(screen.getByText('Our Services')).toBeInTheDocument()
@@ -25,14 +25,14 @@ describe('Navigation', () => {
 
     it('should apply font-bold to the active link when pathname matches', () => {
       mockPathname = '/meet-us'
-      render(<Navigation isMobile={false} />)
+      render(<Navigation variant="desktop" />)
       const activeLink = screen.getByText('Meet Us')
       expect(activeLink).toHaveClass('font-bold')
     })
 
     it('should apply font-normal to inactive links when pathname does not match', () => {
       mockPathname = '/meet-us'
-      render(<Navigation isMobile={false} />)
+      render(<Navigation variant="desktop" />)
       const inactiveLink = screen.getByText('Home')
       expect(inactiveLink).toHaveClass('font-normal')
     })
@@ -40,19 +40,21 @@ describe('Navigation', () => {
 
   describe('Mobile Navigation', () => {
     it('should render sidenav when open', () => {
-      render(<Navigation isMobile={true} isOpen={true} onClose={() => {}} />)
+      render(<Navigation variant="mobile" isOpen={true} onClose={() => {}} />)
       const links = screen.getAllByRole('link')
       expect(links.length).toBe(7)
     })
 
     it('should be hidden when closed', () => {
-      const { container } = render(<Navigation isMobile={true} isOpen={false} onClose={() => {}} />)
+      const { container } = render(
+        <Navigation variant="mobile" isOpen={false} onClose={() => {}} />
+      )
       const sidenav = container.querySelector('nav')
       expect(sidenav).toHaveClass('-translate-x-full')
     })
 
     it('should be visible when open', () => {
-      const { container } = render(<Navigation isMobile={true} isOpen={true} onClose={() => {}} />)
+      const { container } = render(<Navigation variant="mobile" isOpen={true} onClose={() => {}} />)
       const sidenav = container.querySelector('nav')
       expect(sidenav).toHaveClass('translate-x-0')
     })
@@ -60,7 +62,7 @@ describe('Navigation', () => {
     describe('Backdrop', () => {
       it('should render backdrop with opacity-100 and visible when isOpen is true', () => {
         const { container } = render(
-          <Navigation isMobile={true} isOpen={true} onClose={() => {}} />
+          <Navigation variant="mobile" isOpen={true} onClose={() => {}} />
         )
         // Backdrop is the first div (before the nav)
         const backdrop = container.querySelector('div')
@@ -70,7 +72,7 @@ describe('Navigation', () => {
 
       it('should render backdrop with opacity-0 and invisible when isOpen is false', () => {
         const { container } = render(
-          <Navigation isMobile={true} isOpen={false} onClose={() => {}} />
+          <Navigation variant="mobile" isOpen={false} onClose={() => {}} />
         )
         const backdrop = container.querySelector('div')
         expect(backdrop).toHaveClass('opacity-0')
@@ -80,7 +82,9 @@ describe('Navigation', () => {
       it('should call onClose when backdrop is clicked', async () => {
         const user = userEvent.setup()
         const onClose = vi.fn()
-        const { container } = render(<Navigation isMobile={true} isOpen={true} onClose={onClose} />)
+        const { container } = render(
+          <Navigation variant="mobile" isOpen={true} onClose={onClose} />
+        )
         const backdrop = container.querySelector('div')!
         await user.click(backdrop)
         expect(onClose).toHaveBeenCalledTimes(1)

@@ -89,14 +89,14 @@ export default function Header() {
               </Link>
             </div>
             {/* Navigation Menu - Desktop */}
-            <Navigation isMobile={false} />
+            <Navigation variant="desktop" />
           </div>
         </div>
       </header>
 
       {/* Mobile Navigation Sidenav */}
       <Navigation
-        isMobile={true}
+        variant="mobile"
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
       />
