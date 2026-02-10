@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-pure-white max-w-site fixed z-[1200] mx-auto h-[60px] w-full shadow-[0_2px_4px_-1px_rgba(0,0,0,0.2),0_4px_5px_0_rgba(0,0,0,0.14),0_1px_10px_0_rgba(0,0,0,0.12)] min-[600px]:relative min-[600px]:h-auto">
+      <header className="bg-pure-white max-w-site fixed top-0 z-[1200] mx-auto h-[60px] w-full shadow-[0_2px_4px_-1px_rgba(0,0,0,0.2),0_4px_5px_0_rgba(0,0,0,0.14),0_1px_10px_0_rgba(0,0,0,0.12)] min-[600px]:relative min-[600px]:h-auto">
         {/* Mobile Header - Fixed at top */}
         <div className="m-0 flex h-[60px] flex-row items-center justify-between px-2 min-[600px]:hidden">
           <button
@@ -39,8 +39,8 @@ export default function Header() {
             <Image
               src="/assets/site-images/CompassLogoSmall.png"
               alt="Compass Christian Counseling"
-              width={200}
-              height={40}
+              width={217}
+              height={60}
               priority
             />
           </Link>
@@ -48,8 +48,8 @@ export default function Header() {
             <Image
               src="/assets/site-images/CompassIconSmall.png"
               alt="Compass Christian Counseling"
-              width={40}
-              height={40}
+              width={48}
+              height={60}
               priority
             />
           </Link>
@@ -62,19 +62,19 @@ export default function Header() {
               <Image
                 src="/assets/site-images/CompassLogoAndIcon.png"
                 alt="Compass Christian Counseling"
-                width={300}
-                height={80}
+                width={271}
+                height={116}
                 priority
               />
             </Link>
           </h1>
           <div className="flex flex-grow-[4] flex-col">
             {/* Contact Info */}
-            <div className="flex flex-row flex-wrap justify-around px-8 text-center text-[1.3em] leading-[50px]">
+            <div className="flex flex-row flex-wrap justify-around px-8 text-center leading-[50px]">
               <div>(859) 721-3259</div>
               <Link
                 href="/contact-us"
-                className="bg-deep-sapphire text-polar-mist cursor-pointer px-4 no-underline transition-opacity hover:opacity-90"
+                className="bg-deep-sapphire text-polar-mist cursor-pointer self-center px-4 leading-normal no-underline transition-opacity hover:opacity-90"
               >
                 Make an Appointment
               </Link>
