@@ -49,6 +49,14 @@ describe('Navigation', () => {
       expect(links.length).toBe(7)
     })
 
+    it('should have id="mobile-sidenav" on the nav element', () => {
+      const { container } = render(
+        <Navigation variant="mobile" isOpen={false} onClose={() => {}} />
+      )
+      const sidenav = container.querySelector('nav')
+      expect(sidenav).toHaveAttribute('id', 'mobile-sidenav')
+    })
+
     it('should be hidden when closed', () => {
       const { container } = render(
         <Navigation variant="mobile" isOpen={false} onClose={() => {}} />
@@ -81,6 +89,14 @@ describe('Navigation', () => {
         const backdrop = container.querySelector('div')
         expect(backdrop).toHaveClass('opacity-0')
         expect(backdrop).toHaveClass('invisible')
+      })
+
+      it('should have aria-hidden="true" on the backdrop', () => {
+        const { container } = render(
+          <Navigation variant="mobile" isOpen={true} onClose={() => {}} />
+        )
+        const backdrop = container.querySelector('div')
+        expect(backdrop).toHaveAttribute('aria-hidden', 'true')
       })
 
       it('should call onClose when backdrop is clicked', async () => {
