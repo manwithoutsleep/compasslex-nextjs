@@ -57,7 +57,7 @@ export default function Header() {
 
         {/* Desktop Header */}
         <div className="hidden flex-row justify-between p-3 min-[600px]:flex">
-          <h1 className="m-0 flex items-center bg-transparent">
+          <h1 className="m-0 flex h-[118px] items-center bg-transparent">
             <Link href="/" className="m-0 flex border-0 bg-transparent p-0 text-[0em]">
               <Image
                 src="/assets/site-images/CompassLogoAndIcon.png"
