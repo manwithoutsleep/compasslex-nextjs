@@ -1,10 +1,13 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import Navigation from '@/components/navigation'
+
+let mockPathname = '/'
 
 // Mock next/navigation
 vi.mock('next/navigation', () => ({
-  usePathname: () => '/',
+  usePathname: () => mockPathname,
 }))
 
 describe('Navigation', () => {
@@ -19,6 +22,20 @@ describe('Navigation', () => {
       expect(screen.getByText('Resources')).toBeInTheDocument()
       expect(screen.getByText('Contact Us')).toBeInTheDocument()
     })
+
+    it('should apply font-bold to the active link when pathname matches', () => {
+      mockPathname = '/meet-us'
+      render(<Navigation isMobile={false} />)
+      const activeLink = screen.getByText('Meet Us')
+      expect(activeLink).toHaveClass('font-bold')
+    })
+
+    it('should apply font-normal to inactive links when pathname does not match', () => {
+      mockPathname = '/meet-us'
+      render(<Navigation isMobile={false} />)
+      const inactiveLink = screen.getByText('Home')
+      expect(inactiveLink).toHaveClass('font-normal')
+    })
   })
 
   describe('Mobile Navigation', () => {
@@ -32,6 +49,42 @@ describe('Navigation', () => {
       const { container } = render(<Navigation isMobile={true} isOpen={false} onClose={() => {}} />)
       const sidenav = container.querySelector('nav')
       expect(sidenav).toHaveClass('-translate-x-full')
+    })
+
+    it('should be visible when open', () => {
+      const { container } = render(<Navigation isMobile={true} isOpen={true} onClose={() => {}} />)
+      const sidenav = container.querySelector('nav')
+      expect(sidenav).toHaveClass('translate-x-0')
+    })
+
+    describe('Backdrop', () => {
+      it('should render backdrop with opacity-100 and visible when isOpen is true', () => {
+        const { container } = render(
+          <Navigation isMobile={true} isOpen={true} onClose={() => {}} />
+        )
+        // Backdrop is the first div (before the nav)
+        const backdrop = container.querySelector('div')
+        expect(backdrop).toHaveClass('opacity-100')
+        expect(backdrop).toHaveClass('visible')
+      })
+
+      it('should render backdrop with opacity-0 and invisible when isOpen is false', () => {
+        const { container } = render(
+          <Navigation isMobile={true} isOpen={false} onClose={() => {}} />
+        )
+        const backdrop = container.querySelector('div')
+        expect(backdrop).toHaveClass('opacity-0')
+        expect(backdrop).toHaveClass('invisible')
+      })
+
+      it('should call onClose when backdrop is clicked', async () => {
+        const user = userEvent.setup()
+        const onClose = vi.fn()
+        const { container } = render(<Navigation isMobile={true} isOpen={true} onClose={onClose} />)
+        const backdrop = container.querySelector('div')!
+        await user.click(backdrop)
+        expect(onClose).toHaveBeenCalledTimes(1)
+      })
     })
   })
 })
