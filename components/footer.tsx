@@ -34,7 +34,7 @@ export default function Footer() {
       </div>
 
       {/* Map Section - Placeholder */}
-      <div className="flex w-full flex-col items-center min-[600px]:w-full min-[600px]:max-w-[465px]">
+      <div className="flex w-full flex-col items-center min-[600px]:max-w-[465px]">
         <div className="flex h-[300px] w-full items-center justify-center bg-gray-200 text-gray-600">
           Map will be integrated in Task 06
         </div>
