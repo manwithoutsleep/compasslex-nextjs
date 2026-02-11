@@ -30,7 +30,7 @@ describe('Heading Component', () => {
   it('should apply correct sizing for h2', () => {
     render(<Heading level={2}>Medium Heading</Heading>)
     const heading = screen.getByRole('heading', { level: 2 })
-    expect(heading.className).toContain('text-3xl')
+    expect(heading.className).toContain('text-[1.5em]')
   })
 
   it('should apply correct sizing for h3', () => {
@@ -134,7 +134,7 @@ describe('Heading Component', () => {
 
       const heading = screen.getByRole('heading', { level: 2 })
       expect(heading).toBeInTheDocument()
-      expect(heading.className).toContain('text-3xl')
+      expect(heading.className).toContain('text-[1.5em]')
     })
   })
 

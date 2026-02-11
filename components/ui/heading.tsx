@@ -27,16 +27,14 @@ export function Heading({ children, level = 1, className = '' }: HeadingProps) {
   const tags = { 1: 'h1', 2: 'h2', 3: 'h3', 4: 'h4', 5: 'h5', 6: 'h6' } as const
   const Tag = tags[level]
 
-  const sizeStyles = {
-    1: 'text-4xl',
-    2: 'text-3xl',
-    3: 'text-2xl',
-    4: 'text-xl',
-    5: 'text-lg',
-    6: 'text-base',
+  const levelStyles = {
+    1: 'font-bold text-deep-sapphire mb-4 text-4xl',
+    2: 'bg-deep-sapphire text-polar-mist mt-0 mb-1 px-3 text-[1.5em]',
+    3: 'font-bold text-deep-sapphire mb-4 text-2xl',
+    4: 'font-bold text-deep-sapphire mb-4 text-xl',
+    5: 'font-bold text-deep-sapphire mb-4 text-lg',
+    6: 'font-bold text-deep-sapphire mb-4 text-base',
   }
 
-  const baseStyles = 'font-bold text-deep-sapphire mb-4'
-
-  return <Tag className={cn(baseStyles, sizeStyles[level], className)}>{children}</Tag>
+  return <Tag className={cn(levelStyles[level], className)}>{children}</Tag>
 }
