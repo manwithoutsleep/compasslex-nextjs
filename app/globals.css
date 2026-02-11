@@ -33,8 +33,20 @@
 
 body {
   font-family: var(--font-family-sans);
-  background: var(--color-pure-white);
+  background-color: var(--color-pure-white);
   color: var(--color-deep-sapphire);
+}
+
+@layer utilities {
+  @media screen and (min-width: 600px) {
+    body {
+      background-image: url('/assets/site-images/footer-horizon.jpg');
+      background-size: contain;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-attachment: local;
+    }
+  }
 }
 
 /* ===== Home Page Rotator ===== */

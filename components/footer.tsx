@@ -12,7 +12,7 @@ import Image from 'next/image'
  */
 export default function Footer() {
   return (
-    <footer className="m-auto flex w-full flex-row flex-wrap items-center justify-evenly p-[0_0_16px_0] min-[600px]:bg-[url('/assets/site-images/footer-horizon.jpg')] min-[600px]:bg-[length:contain] min-[600px]:bg-bottom min-[600px]:bg-no-repeat">
+    <footer className="m-auto flex w-full flex-row flex-wrap items-center justify-evenly p-[0_0_16px_0]">
       {/* Address Section */}
       <div className="mb-1 flex flex-col">
         <div className="text-[1.1em] leading-[30px]">
