@@ -44,10 +44,7 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
                             ))}
                         </ul>
                     </div>
-                    <Link
-                        href={`/meet-us/${counselor.firstName}`}
-                        className="text-red-600 underline"
-                    >
+                    <Link href={`/meet-us/${counselor.firstName}`} className="underline">
                         Read More&hellip;
                     </Link>
                 </div>
