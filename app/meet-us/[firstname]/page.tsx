@@ -46,17 +46,17 @@ export default async function CounselorDetailPage({ params }: Props) {
       <div className="px-4 py-4">
         <div className="flex flex-col gap-6 md:flex-row">
           {/* Left: Image and sidebar info */}
-          <div className="shrink-0 md:w-64">
+          <div className="shrink-0 md:w-56">
             <div className="relative overflow-hidden rounded">
               <Image
                 src={imageSrc}
                 alt={`${counselor.firstName} ${counselor.lastName}`}
                 width={221}
                 height={276}
-                className="w-full rounded"
+                className="mx-auto w-full max-w-[221px] rounded-2xl object-cover"
                 unoptimized
               />
-              <div className="bg-deep-sapphire text-polar-mist mt-2 rounded p-3">
+              <div className="mx-auto mt-2 w-full max-w-[221px] py-1">
                 <p className="font-semibold">
                   {counselor.firstName} {counselor.lastName}
                 </p>
@@ -70,7 +70,7 @@ export default async function CounselorDetailPage({ params }: Props) {
                   href={counselor.appointmentLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-warm-sand text-deep-sapphire hover:bg-peach-puff mt-2 block rounded px-3 py-2 text-center text-sm font-medium"
+                  className="bg-ultra-pure-white text-deep-sapphire hover:bg-bengal-blue mt-2 block rounded border px-2 py-1 text-center text-sm font-medium font-semibold"
                 >
                   Make an appointment
                   <br />
@@ -90,7 +90,7 @@ export default async function CounselorDetailPage({ params }: Props) {
             {counselor.credentials.length > 0 && (
               <div className="mt-6">
                 <p className="text-deep-sapphire font-bold">Educational/Professional</p>
-                <ul className="text-deep-sapphire mt-2 list-inside list-disc">
+                <ul className="text-deep-sapphire mt-2 ml-6 list-inside">
                   {counselor.credentials.map((credential) => (
                     <li key={credential}>{credential}</li>
                   ))}
@@ -101,7 +101,7 @@ export default async function CounselorDetailPage({ params }: Props) {
             {counselor.memberships.length > 0 && (
               <div className="mt-6">
                 <p className="text-deep-sapphire font-bold">Member of:</p>
-                <ul className="text-deep-sapphire mt-2 list-inside list-disc">
+                <ul className="text-deep-sapphire mt-2 ml-6 list-inside">
                   {counselor.memberships.map((membership) => (
                     <li key={membership}>{membership}</li>
                   ))}
@@ -112,7 +112,7 @@ export default async function CounselorDetailPage({ params }: Props) {
             {counselor.insurance.length > 0 && (
               <div className="mt-6">
                 <p className="text-deep-sapphire font-bold">In Network Provider for:</p>
-                <ul className="text-deep-sapphire mt-2 list-inside list-disc">
+                <ul className="text-deep-sapphire mt-2 ml-6 list-inside">
                   {counselor.insurance.map((provider) => (
                     <li key={provider}>{provider}</li>
                   ))}
