@@ -38,9 +38,9 @@ export default function OurServicesPage() {
       <Heading level={2}>Our Services</Heading>
 
       <div className="px-4 py-4">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="flex flex-row flex-wrap justify-around">
           {/* Left column: service areas */}
-          <div className="flex flex-col gap-4">
+          <div className="flex max-w-[275px] flex-col items-center gap-4 md:mx-0">
             <Card>
               <CardBody>
                 <p className="text-deep-sapphire">
@@ -61,13 +61,13 @@ export default function OurServicesPage() {
           </div>
 
           {/* Center column: images */}
-          <div className="flex flex-col items-center gap-4">
+          <div className="mx-auto flex max-w-[271px] flex-col items-center rounded px-4">
             <Image
               src="/assets/site-images/OurServicesTop.jpg"
               alt="Counseling services"
               width={300}
               height={200}
-              className="w-full rounded"
+              className="border-deep-sapphire my-0 w-full border-6"
               unoptimized
             />
             <Image
@@ -75,7 +75,7 @@ export default function OurServicesPage() {
               alt="Counseling services"
               width={300}
               height={200}
-              className="w-full rounded"
+              className="border-deep-sapphire my-0 w-full border-6"
               unoptimized
             />
             <Image
@@ -83,13 +83,13 @@ export default function OurServicesPage() {
               alt="Counseling services"
               width={300}
               height={200}
-              className="w-full rounded"
+              className="border-deep-sapphire my-0 w-full border-6"
               unoptimized
             />
           </div>
 
           {/* Right column: service type cards */}
-          <div className="flex flex-col gap-4">
+          <div className="flex max-w-[350px] flex-col items-center gap-4">
             <Card>
               <CardTitle>INDIVIDUAL COUNSELING</CardTitle>
               <CardBody>
