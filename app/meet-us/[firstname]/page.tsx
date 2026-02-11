@@ -35,7 +35,7 @@ export default async function CounselorDetailPage({ params }: Props) {
     }
 
     const imageSlug = counselor.firstName.toLowerCase()
-    const imageSrc = `/assets/site-images/${imageSlug}-read-more-221x276.jpg`
+    const imageSrc = `/assets/counselor-images/${imageSlug}-read-more-221x276.jpg`
 
     return (
         <div className="max-w-site mx-auto">

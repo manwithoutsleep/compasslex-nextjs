@@ -11,7 +11,7 @@ interface ContactCounselorCardProps {
  */
 export default function ContactCounselorCard({ counselor }: ContactCounselorCardProps) {
     const imageSlug = counselor.firstName.toLowerCase()
-    const imageSrc = `/assets/site-images/${imageSlug}-contact-us-200x206.jpg`
+    const imageSrc = `/assets/counselor-images/${imageSlug}-contact-us-200x206.jpg`
 
     return (
         <div className="flex flex-wrap items-start justify-center gap-4 border-b border-gray-200 py-4 last:border-0">

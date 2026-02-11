@@ -14,7 +14,7 @@ interface CounselorCardProps {
 export default function CounselorCard({ counselor }: CounselorCardProps) {
     const firstName = counselor.firstName
     const imageSlug = firstName.toLowerCase()
-    const imageSrc = `/assets/site-images/${imageSlug}-meet-us-182x235.jpg`
+    const imageSrc = `/assets/counselor-images/${imageSlug}-meet-us-182x235.jpg`
 
     return (
         <Card className="bg-bengal-blue">
