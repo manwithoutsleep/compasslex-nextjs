@@ -38,7 +38,7 @@ export default function OurServicesPage() {
             <Heading level={2}>Our Services</Heading>
 
             <div className="px-4 py-4">
-                <div className="flex flex-row flex-wrap justify-around">
+                <div className="flex flex-row flex-wrap justify-evenly">
                     {/* Left column: service areas */}
                     <div className="flex max-w-[275px] flex-col items-center gap-4 md:mx-0">
                         <Card>
@@ -60,7 +60,7 @@ export default function OurServicesPage() {
                     </div>
 
                     {/* Center column: images */}
-                    <div className="mx-auto flex max-w-[271px] flex-col items-center rounded px-4">
+                    <div className="flex max-w-[271px] flex-col items-center rounded px-4">
                         <Image
                             src="/assets/site-images/OurServicesTop.jpg"
                             alt="Counseling services"
