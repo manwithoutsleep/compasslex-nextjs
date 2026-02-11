@@ -77,9 +77,9 @@ body {
     position: absolute;
     text-align: center;
     text-shadow:
-        var(--color-deep-sapphire) 0 0 3px,
-        #aaaaff 0 0 5px,
-        var(--color-bengal-blue) 0 0 25px;
+        var(--color-deep-sapphire) 0 0 5px,
+        var(--color-deep-sapphire) 0 0 10px,
+        var(--color-deep-sapphire) 0 0 20px;
     z-index: 1000;
 
     /* Small screen (< 600px) */
