@@ -55,4 +55,10 @@ describe('CounselorCard', () => {
     expect(img).toBeInTheDocument()
     expect(img).toHaveAttribute('src', '/assets/site-images/linda-meet-us-182x235.jpg')
   })
+
+  it('renders the counselor image as a link to the detail page', () => {
+    render(<CounselorCard counselor={mockCounselor} />)
+    const img = screen.getByRole('img', { name: /Linda Fentress/i })
+    expect(img.closest('a')).toHaveAttribute('href', '/meet-us/Linda')
+  })
 })

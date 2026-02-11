@@ -17,35 +17,34 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
   const imageSrc = `/assets/site-images/${imageSlug}-meet-us-182x235.jpg`
 
   return (
-    <Card>
-      <CardTitle>Hi, I&apos;m {firstName}</CardTitle>
-      <CardBody className="flex gap-4">
+    <Card className="bg-bengal-blue">
+      <CardTitle className="py-1">Hi, I&apos;m {firstName}</CardTitle>
+      <CardBody className="text-deep-sapphire flex gap-4 p-1.5 text-base">
         <div className="shrink-0">
-          <Image
-            src={imageSrc}
-            alt={`${counselor.firstName} ${counselor.lastName}`}
-            width={91}
-            height={118}
-            className="rounded"
-            unoptimized
-          />
+          <Link href={`/meet-us/${counselor.firstName}`}>
+            <Image
+              src={imageSrc}
+              alt={`${counselor.firstName} ${counselor.lastName}`}
+              width={182}
+              height={235}
+              className="cursor-pointer rounded"
+              unoptimized
+            />
+          </Link>
         </div>
         <div className="flex flex-col gap-2">
-          <p className="text-sm text-gray-700">{counselor.shortDescription}</p>
+          <p>{counselor.shortDescription}</p>
           <div>
-            <p className="text-deep-sapphire font-medium">
+            <p className="font-medium">
               {counselor.firstName} {counselor.lastName}
             </p>
-            <ul className="text-raspberry-smoothie text-sm">
+            <ul className="m-0 list-none p-0">
               {counselor.titles.map((title) => (
                 <li key={title}>{title}</li>
               ))}
             </ul>
           </div>
-          <Link
-            href={`/meet-us/${counselor.firstName}`}
-            className="text-deep-sapphire hover:text-royal-indigo text-sm font-medium"
-          >
+          <Link href={`/meet-us/${counselor.firstName}`} className="text-red-600 underline">
             Read More&hellip;
           </Link>
         </div>
