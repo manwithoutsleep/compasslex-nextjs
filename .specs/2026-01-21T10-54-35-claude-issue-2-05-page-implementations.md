@@ -85,16 +85,16 @@ This migration uses a **separate repository approach**:
 
 1. **Navigate to the corresponding Angular page** in a browser (run the Angular app if needed)
 2. **Inspect the Angular source code** for exact styling details:
-   - Component HTML: `../compasslex.com/src/app/[component]/[component].component.html`
-   - Component styles: `../compasslex.com/src/app/[component]/[component].component.scss`
-   - Component logic: `../compasslex.com/src/app/[component]/[component].component.ts`
+    - Component HTML: `../compasslex.com/src/app/[component]/[component].component.html`
+    - Component styles: `../compasslex.com/src/app/[component]/[component].component.scss`
+    - Component logic: `../compasslex.com/src/app/[component]/[component].component.ts`
 3. **Document specific styling values** before implementation:
-   - Colors (check against SCSS variables in `../compasslex.com/src/sass/_variables.scss`)
-   - Font sizes
-   - Spacing (margins, padding, gaps)
-   - Responsive breakpoints
-   - Animations and transitions
-   - Layout structures
+    - Colors (check against SCSS variables in `../compasslex.com/src/sass/_variables.scss`)
+    - Font sizes
+    - Spacing (margins, padding, gaps)
+    - Responsive breakpoints
+    - Animations and transitions
+    - Layout structures
 4. **Compare your implementation** against the original frequently during development
 
 ### Key Angular Reference Files
@@ -165,9 +165,9 @@ git checkout -b nextjs-migration-phase-5
 - Welcome heading
 - Introductory content about Compass Christian Counseling
 - Match Angular home page content, specifically:
-  - Banner image with zoom, rotation, and text overlay
-  - Site introduction paragraph
-  - Responsive grid of images and page introductions
+    - Banner image with zoom, rotation, and text overlay
+    - Site introduction paragraph
+    - Responsive grid of images and page introductions
 - Static generation
 
 **Reference**: `../compasslex.com/src/app/components/pages/home/home.component.html`

@@ -89,19 +89,19 @@ This migration uses a **separate repository approach**:
 ### Visual Regression Testing Strategy
 
 1. **Run both applications side-by-side**:
-   - Angular app: Start at `../compasslex.com/` with `npm start` or equivalent
-   - Next.js app: Start at current directory with `npm run dev`
+    - Angular app: Start at `../compasslex.com/` with `npm start` or equivalent
+    - Next.js app: Start at current directory with `npm run dev`
 
 2. **Compare each page systematically**:
-   - Navigate to the same route in both apps
-   - Take screenshots at the same viewport sizes
-   - Compare visually for pixel-perfect match
-   - Document any discrepancies found
+    - Navigate to the same route in both apps
+    - Take screenshots at the same viewport sizes
+    - Compare visually for pixel-perfect match
+    - Document any discrepancies found
 
 3. **Test at multiple viewport sizes**:
-   - Desktop: 1920x1080, 1440x900, 1280x720
-   - Tablet: 768x1024, 1024x768
-   - Mobile: 375x667 (iPhone), 360x640 (Android)
+    - Desktop: 1920x1080, 1440x900, 1280x720
+    - Tablet: 768x1024, 1024x768
+    - Mobile: 375x667 (iPhone), 360x640 (Android)
 
 ### Functional Comparison Checklist
 
@@ -152,19 +152,19 @@ Ensure Next.js app works identically in all browsers where Angular app works.
 **CRITICAL**: Verify that all data from Angular app appears correctly in Next.js app:
 
 1. **Counselor Data**:
-   - Compare `../compasslex.com/src/assets/data/counselor.json` with `public/data/counselor.json`
-   - Verify all 11 counselors display correctly
-   - Check all fields: name, title, credentials, bio, insurance, memberships, contact info
+    - Compare `../compasslex.com/src/assets/data/counselor.json` with `public/data/counselor.json`
+    - Verify all 11 counselors display correctly
+    - Check all fields: name, title, credentials, bio, insurance, memberships, contact info
 
 2. **Newsletter Data**:
-   - Compare `../compasslex.com/src/assets/data/newsletter.json` with `public/data/newsletter.json`
-   - Verify all 24 newsletters display correctly
-   - Verify PDF links work
+    - Compare `../compasslex.com/src/assets/data/newsletter.json` with `public/data/newsletter.json`
+    - Verify all 24 newsletters display correctly
+    - Verify PDF links work
 
 3. **Static Assets**:
-   - Verify all images from `../compasslex.com/src/assets/` appear in Next.js app
-   - Verify all PDFs are accessible
-   - Verify all icons and media assets work
+    - Verify all images from `../compasslex.com/src/assets/` appear in Next.js app
+    - Verify all PDFs are accessible
+    - Verify all icons and media assets work
 
 **DO NOT** assume the Next.js implementation is correct without explicit comparison to the Angular source.
 
@@ -224,10 +224,10 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 describe('Navigation Flow Integration', () => {
-  it('should navigate between pages', async () => {
-    // Test navigation flow through multiple pages
-    // This is a placeholder - actual implementation depends on routing setup
-  })
+    it('should navigate between pages', async () => {
+        // Test navigation flow through multiple pages
+        // This is a placeholder - actual implementation depends on routing setup
+    })
 })
 ```
 
@@ -240,28 +240,28 @@ import { describe, it, expect } from 'vitest'
 import { CounselorRepository, NewsletterRepository } from '@/services/data-repository'
 
 describe('Data Loading Integration', () => {
-  it('should load all counselors successfully', async () => {
-    const repo = new CounselorRepository()
-    const counselors = await repo.getAllCounselors()
+    it('should load all counselors successfully', async () => {
+        const repo = new CounselorRepository()
+        const counselors = await repo.getAllCounselors()
 
-    expect(counselors).toHaveLength(11) // Verify count
-    counselors.forEach((counselor) => {
-      expect(counselor).toHaveProperty('firstname')
-      expect(counselor).toHaveProperty('lastname')
-      expect(counselor).toHaveProperty('email')
+        expect(counselors).toHaveLength(11) // Verify count
+        counselors.forEach((counselor) => {
+            expect(counselor).toHaveProperty('firstname')
+            expect(counselor).toHaveProperty('lastname')
+            expect(counselor).toHaveProperty('email')
+        })
     })
-  })
 
-  it('should load all newsletters successfully', async () => {
-    const repo = new NewsletterRepository()
-    const newsletters = await repo.getAllNewsletters()
+    it('should load all newsletters successfully', async () => {
+        const repo = new NewsletterRepository()
+        const newsletters = await repo.getAllNewsletters()
 
-    expect(newsletters).toHaveLength(24) // Verify count
-    newsletters.forEach((newsletter) => {
-      expect(newsletter).toHaveProperty('title')
-      expect(newsletter).toHaveProperty('year')
+        expect(newsletters).toHaveLength(24) // Verify count
+        newsletters.forEach((newsletter) => {
+            expect(newsletter).toHaveProperty('title')
+            expect(newsletter).toHaveProperty('year')
+        })
     })
-  })
 })
 ```
 
@@ -281,19 +281,19 @@ npx vitest run __tests__/integration/
 import { test, expect } from '@playwright/test'
 
 test.describe('Homepage', () => {
-  test('should display correctly', async ({ page }) => {
-    await page.goto('/')
+    test('should display correctly', async ({ page }) => {
+        await page.goto('/')
 
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-    await expect(page.getByRole('navigation')).toBeVisible()
-  })
+        await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+        await expect(page.getByRole('navigation')).toBeVisible()
+    })
 
-  test('should have working navigation links', async ({ page }) => {
-    await page.goto('/')
+    test('should have working navigation links', async ({ page }) => {
+        await page.goto('/')
 
-    await page.getByRole('link', { name: 'Meet Us' }).click()
-    await expect(page).toHaveURL(/\/meet-us/)
-  })
+        await page.getByRole('link', { name: 'Meet Us' }).click()
+        await expect(page).toHaveURL(/\/meet-us/)
+    })
 })
 ```
 
@@ -305,23 +305,23 @@ test.describe('Homepage', () => {
 import { test, expect } from '@playwright/test'
 
 test.describe('Counselor Flow', () => {
-  test('should navigate from meet-us to counselor detail', async ({ page }) => {
-    await page.goto('/meet-us')
+    test('should navigate from meet-us to counselor detail', async ({ page }) => {
+        await page.goto('/meet-us')
 
-    // Click first counselor card
-    await page.getByText('Joanna').first().click()
+        // Click first counselor card
+        await page.getByText('Joanna').first().click()
 
-    await expect(page).toHaveURL(/\/meet-us\/Joanna/)
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Joanna')
-  })
+        await expect(page).toHaveURL(/\/meet-us\/Joanna/)
+        await expect(page.getByRole('heading', { level: 1 })).toContainText('Joanna')
+    })
 
-  test('should display all 11 counselors', async ({ page }) => {
-    await page.goto('/meet-us')
+    test('should display all 11 counselors', async ({ page }) => {
+        await page.goto('/meet-us')
 
-    // Count counselor cards
-    const cards = page.locator('[data-testid="counselor-card"]')
-    await expect(cards).toHaveCount(11)
-  })
+        // Count counselor cards
+        const cards = page.locator('[data-testid="counselor-card"]')
+        await expect(cards).toHaveCount(11)
+    })
 })
 ```
 
@@ -333,19 +333,19 @@ test.describe('Counselor Flow', () => {
 import { test, expect } from '@playwright/test'
 
 test.describe('Newsletters', () => {
-  test('should display all newsletters', async ({ page }) => {
-    await page.goto('/newsletters')
+    test('should display all newsletters', async ({ page }) => {
+        await page.goto('/newsletters')
 
-    const cards = page.locator('[data-testid="newsletter-card"]')
-    await expect(cards).toHaveCount(24)
-  })
+        const cards = page.locator('[data-testid="newsletter-card"]')
+        await expect(cards).toHaveCount(24)
+    })
 
-  test('should have working PDF download links', async ({ page }) => {
-    await page.goto('/newsletters')
+    test('should have working PDF download links', async ({ page }) => {
+        await page.goto('/newsletters')
 
-    const pdfLink = page.getByRole('link', { name: /download/i }).first()
-    await expect(pdfLink).toHaveAttribute('href', /\.pdf$/)
-  })
+        const pdfLink = page.getByRole('link', { name: /download/i }).first()
+        await expect(pdfLink).toHaveAttribute('href', /\.pdf$/)
+    })
 })
 ```
 
@@ -357,11 +357,11 @@ test.describe('Newsletters', () => {
 import { test, expect } from '@playwright/test'
 
 test.describe('Google Maps', () => {
-  test('should display map on contact-us page', async ({ page }) => {
-    await page.goto('/contact-us')
+    test('should display map on contact-us page', async ({ page }) => {
+        await page.goto('/contact-us')
 
-    await expect(page.getByTestId('google-map')).toBeVisible()
-  })
+        await expect(page.getByTestId('google-map')).toBeVisible()
+    })
 })
 ```
 
@@ -383,30 +383,30 @@ npx playwright test --ui  # Run with UI for debugging
 import { test, expect } from '@playwright/test'
 
 test.describe('Visual Regression', () => {
-  test('homepage visual regression', async ({ page }) => {
-    await page.goto('/')
-    await expect(page).toHaveScreenshot('homepage.png', { fullPage: true })
-  })
+    test('homepage visual regression', async ({ page }) => {
+        await page.goto('/')
+        await expect(page).toHaveScreenshot('homepage.png', { fullPage: true })
+    })
 
-  test('meet-us page visual regression', async ({ page }) => {
-    await page.goto('/meet-us')
-    await expect(page).toHaveScreenshot('meet-us.png', { fullPage: true })
-  })
+    test('meet-us page visual regression', async ({ page }) => {
+        await page.goto('/meet-us')
+        await expect(page).toHaveScreenshot('meet-us.png', { fullPage: true })
+    })
 
-  test('counselor detail visual regression', async ({ page }) => {
-    await page.goto('/meet-us/Joanna')
-    await expect(page).toHaveScreenshot('counselor-detail.png', { fullPage: true })
-  })
+    test('counselor detail visual regression', async ({ page }) => {
+        await page.goto('/meet-us/Joanna')
+        await expect(page).toHaveScreenshot('counselor-detail.png', { fullPage: true })
+    })
 
-  test('newsletters page visual regression', async ({ page }) => {
-    await page.goto('/newsletters')
-    await expect(page).toHaveScreenshot('newsletters.png', { fullPage: true })
-  })
+    test('newsletters page visual regression', async ({ page }) => {
+        await page.goto('/newsletters')
+        await expect(page).toHaveScreenshot('newsletters.png', { fullPage: true })
+    })
 
-  test('contact-us page visual regression', async ({ page }) => {
-    await page.goto('/contact-us')
-    await expect(page).toHaveScreenshot('contact-us.png', { fullPage: true })
-  })
+    test('contact-us page visual regression', async ({ page }) => {
+        await page.goto('/contact-us')
+        await expect(page).toHaveScreenshot('contact-us.png', { fullPage: true })
+    })
 })
 ```
 
@@ -476,19 +476,19 @@ import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
 test.describe('Accessibility', () => {
-  test('homepage should not have accessibility violations', async ({ page }) => {
-    await page.goto('/')
+    test('homepage should not have accessibility violations', async ({ page }) => {
+        await page.goto('/')
 
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
-    expect(accessibilityScanResults.violations).toEqual([])
-  })
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        expect(accessibilityScanResults.violations).toEqual([])
+    })
 
-  test('meet-us page should not have accessibility violations', async ({ page }) => {
-    await page.goto('/meet-us')
+    test('meet-us page should not have accessibility violations', async ({ page }) => {
+        await page.goto('/meet-us')
 
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
-    expect(accessibilityScanResults.violations).toEqual([])
-  })
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        expect(accessibilityScanResults.violations).toEqual([])
+    })
 })
 ```
 
@@ -526,10 +526,10 @@ npx playwright test --project="Mobile Safari"
 
 ```json
 {
-  "framework": "nextjs",
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install"
+    "framework": "nextjs",
+    "buildCommand": "npm run build",
+    "devCommand": "npm run dev",
+    "installCommand": "npm install"
 }
 ```
 
@@ -551,7 +551,7 @@ NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your-google-maps-api-key-here
 
 1. Connect GitHub repository to Vercel
 2. Configure environment variables in Vercel dashboard:
-   - `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`: Google Maps API key
+    - `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`: Google Maps API key
 
 ## Build Verification
 
@@ -643,14 +643,14 @@ npm run e2e
 1. Open Angular app: http://localhost:4200 (or test.compasslex.com)
 2. Open Next.js app: http://localhost:3000
 3. Compare visually:
-   - [ ] Homepage matches
-   - [ ] Meet Us page matches
-   - [ ] Counselor detail pages match
-   - [ ] Newsletters page matches
-   - [ ] All other pages match
-   - [ ] Colors match
-   - [ ] Fonts match
-   - [ ] Spacing matches
+    - [ ] Homepage matches
+    - [ ] Meet Us page matches
+    - [ ] Counselor detail pages match
+    - [ ] Newsletters page matches
+    - [ ] All other pages match
+    - [ ] Colors match
+    - [ ] Fonts match
+    - [ ] Spacing matches
 
 #### Step 10.4: Final Checklist
 

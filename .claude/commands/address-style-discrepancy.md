@@ -35,16 +35,16 @@ This migration uses a **separate repository approach**:
 
 1. **Review styling discrepancy described by user** inspecting supplied screenshots if available.
 2. **Inspect the Angular source code** for exact styling details:
-   - Component HTML: `../compasslex.com/src/app/[component]/[component].component.html`
-   - Component styles: `../compasslex.com/src/app/[component]/[component].component.scss`
-   - Component logic: `../compasslex.com/src/app/[component]/[component].component.ts`
+    - Component HTML: `../compasslex.com/src/app/[component]/[component].component.html`
+    - Component styles: `../compasslex.com/src/app/[component]/[component].component.scss`
+    - Component logic: `../compasslex.com/src/app/[component]/[component].component.ts`
 3. **Document specific styling values**:
-   - Colors (check against SCSS variables in `../compasslex.com/src/sass/_variables.scss`)
-   - Font sizes
-   - Spacing (margins, padding, gaps)
-   - Responsive breakpoints
-   - Animations and transitions
-   - Layout structures
+    - Colors (check against SCSS variables in `../compasslex.com/src/sass/_variables.scss`)
+    - Font sizes
+    - Spacing (margins, padding, gaps)
+    - Responsive breakpoints
+    - Animations and transitions
+    - Layout structures
 4. **Compare your implementation** against the original frequently
 
 ### Key Angular Reference Files

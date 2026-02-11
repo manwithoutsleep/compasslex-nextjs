@@ -42,29 +42,29 @@ npm run format:check     # Check formatting without changes
 The application uses a **repository pattern** for data access, currently implemented with JSON files in `public/data/`:
 
 - **Repository Classes**: `services/data-repository.ts`
-  - `CounselorRepository`: Manages counselor data
-  - `NewsletterRepository`: Manages newsletter data
-  - Both implement corresponding interfaces (`ICounselorRepository`, `INewsletterRepository`)
-  - **Singleton instances exported**: `counselorRepository`, `newsletterRepository` (use these instead of creating new instances)
+    - `CounselorRepository`: Manages counselor data
+    - `NewsletterRepository`: Manages newsletter data
+    - Both implement corresponding interfaces (`ICounselorRepository`, `INewsletterRepository`)
+    - **Singleton instances exported**: `counselorRepository`, `newsletterRepository` (use these instead of creating new instances)
 
 - **In-Memory Caching**: Each repository caches data after first load to avoid redundant file I/O
 
 - **Runtime Validation**: All JSON data is validated at runtime using Zod schemas defined in `types/models.ts`
 
 - **Error Handling**: Repositories throw descriptive errors for:
-  - Missing files (ENOENT)
-  - Invalid JSON syntax
-  - Schema validation failures
+    - Missing files (ENOENT)
+    - Invalid JSON syntax
+    - Schema validation failures
 
 ### Type System
 
 - **Zod Schemas**: Runtime validation schemas in `types/models.ts`
-  - `CounselorSchema`, `NewsletterSchema`
-  - `CounselorDataSchema`, `NewsletterDataSchema` (wrappers for JSON structure)
+    - `CounselorSchema`, `NewsletterSchema`
+    - `CounselorDataSchema`, `NewsletterDataSchema` (wrappers for JSON structure)
 
 - **TypeScript Interfaces**: Type definitions alongside schemas
-  - `Counselor`, `Newsletter`
-  - `CounselorData`, `NewsletterData`
+    - `Counselor`, `Newsletter`
+    - `CounselorData`, `NewsletterData`
 
 ### Path Aliases
 
@@ -82,14 +82,14 @@ const newsletters = await newsletterRepository.getAllNewsletters()
 ### Testing Structure
 
 - **Unit Tests**: Located in `__tests__/` directory, mirroring the source structure
-  - Use Vitest with jsdom environment
-  - Testing Library React for component tests
-  - Tests follow the pattern: `__tests__/<directory>/<filename>.test.ts`
+    - Use Vitest with jsdom environment
+    - Testing Library React for component tests
+    - Tests follow the pattern: `__tests__/<directory>/<filename>.test.ts`
 
 - **E2E Tests**: Playwright configured but no tests yet implemented
-  - Test directory should be `./e2e`
-  - Runs dev server automatically for tests
-  - Configured for multiple browsers and devices
+    - Test directory should be `./e2e`
+    - Runs dev server automatically for tests
+    - Configured for multiple browsers and devices
 
 ## Key Files
 
