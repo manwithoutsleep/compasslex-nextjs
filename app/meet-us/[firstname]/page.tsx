@@ -127,7 +127,6 @@ export default async function CounselorDetailPage({ params }: Props) {
                                     href={`mailto:${counselor.email}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-royal-indigo hover:underline"
                                 >
                                     {counselor.email}
                                 </a>

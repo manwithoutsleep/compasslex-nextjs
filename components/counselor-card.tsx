@@ -21,7 +21,7 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
             <CardTitle className="py-1">Hi, I&apos;m {firstName}</CardTitle>
             <CardBody className="text-deep-sapphire flex gap-4 p-1.5 text-base">
                 <div className="shrink-0">
-                    <Link href={`/meet-us/${counselor.firstName}`}>
+                    <Link href={`/meet-us/${counselor.firstName}`} className="no-underline">
                         <Image
                             src={imageSrc}
                             alt={`${counselor.firstName} ${counselor.lastName}`}
@@ -44,9 +44,7 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
                             ))}
                         </ul>
                     </div>
-                    <Link href={`/meet-us/${counselor.firstName}`} className="underline">
-                        Read More&hellip;
-                    </Link>
+                    <Link href={`/meet-us/${counselor.firstName}`}>Read More&hellip;</Link>
                 </div>
             </CardBody>
         </Card>

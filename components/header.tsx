@@ -46,7 +46,7 @@ export default function Header() {
                     >
                         <span className="text-2xl">{mobileMenuOpen ? '✕' : '☰'}</span>
                     </button>
-                    <Link href="/" className="flex">
+                    <Link href="/" className="flex no-underline">
                         <Image
                             src="/assets/site-images/CompassLogoSmall.png"
                             alt="Compass Christian Counseling"
@@ -55,7 +55,7 @@ export default function Header() {
                             priority
                         />
                     </Link>
-                    <Link href="/" className="flex">
+                    <Link href="/" className="flex no-underline">
                         <Image
                             src="/assets/site-images/CompassIconSmall.png"
                             alt="Compass Christian Counseling"
@@ -69,7 +69,10 @@ export default function Header() {
                 {/* Desktop Header */}
                 <div className="hidden h-[142px] flex-row justify-between p-3 min-[600px]:flex">
                     <h1 className="m-0 flex items-center bg-transparent">
-                        <Link href="/" className="m-0 flex border-0 bg-transparent p-0 text-[0em]">
+                        <Link
+                            href="/"
+                            className="m-0 flex border-0 bg-transparent p-0 text-[0em] no-underline"
+                        >
                             <Image
                                 src="/assets/site-images/CompassLogoAndIcon.png"
                                 alt="Compass Christian Counseling"

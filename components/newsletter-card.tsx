@@ -15,7 +15,7 @@ export default function NewsletterCard({ newsletter }: NewsletterCardProps) {
             href={pdfHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-deep-sapphire block rounded border-3 shadow-md"
+            className="border-deep-sapphire block rounded border-3 no-underline shadow-md"
         >
             <Image
                 src={imageSrc}

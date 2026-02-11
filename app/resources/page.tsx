@@ -53,7 +53,6 @@ export default function ResourcesPage() {
                                         href="/assets/pdf/CompassAddiction.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline hover:text-sky-700"
                                     >
                                         Am I addicted?
                                     </a>
@@ -61,7 +60,6 @@ export default function ResourcesPage() {
                                         href="/assets/pdf/CompassDepression.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline hover:text-sky-700"
                                     >
                                         Am I depressed?
                                     </a>
@@ -69,7 +67,6 @@ export default function ResourcesPage() {
                                         href="/assets/pdf/CompassEatingDisorder.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline hover:text-sky-700"
                                     >
                                         Do I have an eating disorder?
                                     </a>
@@ -86,9 +83,7 @@ export default function ResourcesPage() {
                                     that the articles written by Compass Christian Counseling staff
                                     will be helpful to you.
                                 </p>
-                                <Link href="/newsletters" className="underline hover:text-sky-700">
-                                    See articles here
-                                </Link>
+                                <Link href="/newsletters">See articles here</Link>
                             </CardBody>
                         </Card>
                     </div>
@@ -112,7 +107,6 @@ export default function ResourcesPage() {
                                         href="/assets/pdf/GoodReadsEatingDisorders.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline hover:text-sky-700"
                                     >
                                         Eating Disorders
                                     </a>
@@ -120,7 +114,6 @@ export default function ResourcesPage() {
                                         href="/assets/pdf/GoodReadsParenting.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline hover:text-sky-700"
                                     >
                                         Parenting
                                     </a>
@@ -128,7 +121,6 @@ export default function ResourcesPage() {
                                         href="/assets/pdf/GoodReadsMarriageAndRelationships.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline hover:text-sky-700"
                                     >
                                         Marriage &amp; Relationships
                                     </a>
@@ -136,7 +128,6 @@ export default function ResourcesPage() {
                                         href="/assets/pdf/GoodReadsAddiction.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline hover:text-sky-700"
                                     >
                                         Addiction
                                     </a>
@@ -144,7 +135,6 @@ export default function ResourcesPage() {
                                         href="/assets/pdf/GoodReadsSpiritualLife.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline hover:text-sky-700"
                                     >
                                         Spiritual
                                     </a>
