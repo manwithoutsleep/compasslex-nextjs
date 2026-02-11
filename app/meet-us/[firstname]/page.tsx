@@ -89,7 +89,7 @@ export default async function CounselorDetailPage({ params }: Props) {
 
                         {counselor.credentials.length > 0 && (
                             <div className="mt-6">
-                                <p className="font-bold">Educational/Professional</p>
+                                <h3 className="font-bold">Educational/Professional</h3>
                                 <ul className="mt-2 ml-6 list-inside">
                                     {counselor.credentials.map((credential) => (
                                         <li key={credential}>{credential}</li>
@@ -100,7 +100,7 @@ export default async function CounselorDetailPage({ params }: Props) {
 
                         {counselor.memberships.length > 0 && (
                             <div className="mt-6">
-                                <p className="font-bold">Member of:</p>
+                                <h3 className="font-bold">Member of:</h3>
                                 <ul className="mt-2 ml-6 list-inside">
                                     {counselor.memberships.map((membership) => (
                                         <li key={membership}>{membership}</li>
@@ -111,7 +111,7 @@ export default async function CounselorDetailPage({ params }: Props) {
 
                         {counselor.insurance.length > 0 && (
                             <div className="mt-6">
-                                <p className="font-bold">In Network Provider for:</p>
+                                <h3 className="font-bold">In Network Provider for:</h3>
                                 <ul className="mt-2 ml-6 list-inside">
                                     {counselor.insurance.map((provider) => (
                                         <li key={provider}>{provider}</li>
