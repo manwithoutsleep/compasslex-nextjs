@@ -12,26 +12,14 @@ const mockNewsletter: Newsletter = {
 }
 
 describe('NewsletterCard', () => {
-  it('renders the newsletter title', () => {
+  it('renders a link to the PDF', () => {
     render(<NewsletterCard newsletter={mockNewsletter} />)
-    expect(screen.getByText('The Comparison Trap')).toBeInTheDocument()
-  })
-
-  it('renders the year and quarter', () => {
-    render(<NewsletterCard newsletter={mockNewsletter} />)
-    expect(screen.getByText(/2021/)).toBeInTheDocument()
-    expect(screen.getByText(/Q4/)).toBeInTheDocument()
-  })
-
-  it('renders a PDF download link', () => {
-    render(<NewsletterCard newsletter={mockNewsletter} />)
-    const link = screen.getByRole('link', { name: /download/i })
-    expect(link).toBeInTheDocument()
+    const link = screen.getByRole('link')
     expect(link).toHaveAttribute('href', '/assets/newsletters/CompassNewsletter2021Q4.pdf')
     expect(link).toHaveAttribute('target', '_blank')
   })
 
-  it('renders a newsletter image', () => {
+  it('renders a newsletter image with alt text', () => {
     render(<NewsletterCard newsletter={mockNewsletter} />)
     const img = screen.getByRole('img', { name: /The Comparison Trap/i })
     expect(img).toBeInTheDocument()

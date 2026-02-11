@@ -53,21 +53,22 @@ describe('Newsletters Page', () => {
     ).toBeInTheDocument()
   })
 
-  it('renders newsletter cards for each newsletter', async () => {
+  it('renders a card image for each newsletter', async () => {
     const NewslettersPage = (await import('@/app/newsletters/page')).default
     const jsx = await NewslettersPage()
     render(jsx)
-    expect(screen.getByText('The Comparison Trap')).toBeInTheDocument()
-    expect(screen.getByText('How Good Are Your Listening Skills?')).toBeInTheDocument()
-    expect(screen.getByText('Building Resilience')).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'The Comparison Trap' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('img', { name: 'How Good Are Your Listening Skills?' })
+    ).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Building Resilience' })).toBeInTheDocument()
   })
 
-  it('renders newsletters in order (newest first)', async () => {
+  it('renders newsletters sorted newest first', async () => {
     const NewslettersPage = (await import('@/app/newsletters/page')).default
     const jsx = await NewslettersPage()
     render(jsx)
-    const titles = screen.getAllByRole('heading', { level: 3 })
-    // First newsletter title should be the most recent (id 24)
-    expect(titles[0]).toHaveTextContent('The Comparison Trap')
+    const links = screen.getAllByRole('link')
+    expect(links[0]).toHaveAttribute('href', '/assets/newsletters/CompassNewsletter2021Q4.pdf')
   })
 })
