@@ -22,13 +22,13 @@ export default async function NewslettersPage() {
     <div className="max-w-site mx-auto">
       <Heading level={2}>Compass Articles</Heading>
       <div className="px-4 py-4">
-        <p className="text-deep-sapphire mb-8 text-base">
+        <p className="text-deep-sapphire mb-8 text-center text-base">
           Compass Christian Counseling Articles cover a variety of topics including coping
           strategies for stress, relationship skills, and mental and emotional well-being.
         </p>
 
         {sorted.length > 0 && (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="flex flex-wrap justify-center gap-6">
             {sorted.map((newsletter) => (
               <NewsletterCard key={newsletter.id} newsletter={newsletter} />
             ))}
