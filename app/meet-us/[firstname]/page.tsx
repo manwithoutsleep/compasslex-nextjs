@@ -60,17 +60,17 @@ export default async function CounselorDetailPage({ params }: Props) {
                 <p className="font-semibold">
                   {counselor.firstName} {counselor.lastName}
                 </p>
-                <ul className="text-sm">
+                <ul>
                   {counselor.titles.map((title) => (
                     <li key={title}>{title}</li>
                   ))}
                 </ul>
-                <p className="mt-1 text-sm">Compass Christian Counseling</p>
+                <p>Compass Christian Counseling</p>
                 <a
                   href={counselor.appointmentLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-ultra-pure-white text-deep-sapphire hover:bg-bengal-blue mt-2 block rounded border px-2 py-1 text-center text-sm font-medium font-semibold"
+                  className="btn-appointment mt-2 block"
                 >
                   Make an appointment
                   <br />

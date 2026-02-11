@@ -14,27 +14,27 @@ export default function ContactCounselorCard({ counselor }: ContactCounselorCard
   const imageSrc = `/assets/site-images/${imageSlug}-contact-us-200x206.jpg`
 
   return (
-    <div className="flex items-start gap-4 border-b border-gray-200 py-4 last:border-0">
+    <div className="flex flex-wrap items-start justify-center gap-4 border-b border-gray-200 py-4 last:border-0">
       <div className="shrink-0">
         <Image
           src={imageSrc}
           alt={`${counselor.firstName} ${counselor.lastName}`}
-          width={100}
-          height={103}
+          width={200}
+          height={206}
           className="rounded"
           unoptimized
         />
       </div>
-      <div className="flex flex-col gap-1">
+      <div className="flex min-w-[180px] flex-col gap-1">
         <p className="text-deep-sapphire font-semibold">
           {counselor.firstName} {counselor.lastName}
         </p>
-        <p className="text-sm text-gray-700">{counselor.phone}</p>
+        <p>{counselor.phone}</p>
         <a
           href={`mailto:${counselor.email}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-deep-sapphire hover:text-royal-indigo text-sm"
+          className="hover:text-royal-indigo underline"
         >
           {counselor.email}
         </a>
@@ -42,7 +42,7 @@ export default function ContactCounselorCard({ counselor }: ContactCounselorCard
           href={counselor.appointmentLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-deep-sapphire text-polar-mist hover:bg-royal-indigo mt-1 inline-block rounded px-3 py-1 text-sm"
+          className="btn-appointment mt-1 block"
         >
           Make an appointment
           <br />

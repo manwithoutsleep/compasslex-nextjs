@@ -17,10 +17,10 @@ export default async function ContactUsPage() {
     <div className="max-w-site mx-auto">
       <Heading level={2}>Contact Us</Heading>
 
-      <div className="px-4 py-4">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="p-4">
+        <div className="flex flex-wrap justify-evenly gap-8">
           {/* Left column: counselor contact cards */}
-          <div>
+          <div className="w-full max-w-[475px]">
             <p className="text-deep-sapphire mb-6 text-base">
               Call us with questions! Often we are in session and will not be able to answer the
               phone, but please leave a message and we will make every effort to return your call in
@@ -34,7 +34,7 @@ export default async function ContactUsPage() {
           </div>
 
           {/* Right column: directions and map */}
-          <div>
+          <div className="w-full max-w-[475px]">
             <div className="mb-6">
               <p className="text-deep-sapphire mb-4 text-base">
                 We are located at the corner of New Circle Road and Alumni Drive. Take New Circle

@@ -118,6 +118,11 @@ body {
   display: block;
 }
 
+/* Appointment button */
+.btn-appointment {
+  @apply bg-ultra-pure-white text-deep-sapphire hover:bg-bengal-blue rounded border px-2 py-1 text-center text-base font-semibold;
+}
+
 /* Navigation link hover effect - three-layered glow matching Angular site */
 .nav-link-hover {
   transition: all 0.3s ease-in-out;
