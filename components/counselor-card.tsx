@@ -18,7 +18,7 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
 
     return (
         <Card className="bg-bengal-blue">
-            <CardTitle className="py-1">Hi, I&apos;m {firstName}</CardTitle>
+            <CardTitle>Hi, I&apos;m {firstName}</CardTitle>
             <CardBody className="text-deep-sapphire flex gap-4 p-1.5 text-base">
                 <div className="shrink-0">
                     <Link href={`/meet-us/${counselor.firstName}`} className="no-underline">

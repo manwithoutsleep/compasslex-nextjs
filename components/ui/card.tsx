@@ -32,14 +32,14 @@ export function Card({ children, className = '' }: CardProps) {
  */
 export function CardTitle({ children, className = '' }: CardProps) {
     return (
-        <div
+        <h3
             className={cn(
-                'bg-deep-sapphire text-polar-mist flex items-center justify-center px-5 py-2 text-lg font-medium',
+                'bg-deep-sapphire text-polar-mist flex items-center justify-center px-5 py-1 text-lg font-medium',
                 className
             )}
         >
             {children}
-        </div>
+        </h3>
     )
 }
 
