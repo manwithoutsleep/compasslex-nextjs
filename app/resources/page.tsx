@@ -52,7 +52,7 @@ export default function ResourcesPage() {
                     href="/assets/pdf/CompassAddiction.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                    className="text-deep-sapphire underline hover:text-royal-indigo"
                   >
                     Am I addicted?
                   </a>
@@ -60,7 +60,7 @@ export default function ResourcesPage() {
                     href="/assets/pdf/CompassDepression.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                    className="text-deep-sapphire underline hover:text-royal-indigo"
                   >
                     Am I depressed?
                   </a>
@@ -68,7 +68,7 @@ export default function ResourcesPage() {
                     href="/assets/pdf/CompassEatingDisorder.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                    className="text-deep-sapphire underline hover:text-royal-indigo"
                   >
                     Do I have an eating disorder?
                   </a>
@@ -86,7 +86,7 @@ export default function ResourcesPage() {
                 </p>
                 <Link
                   href="/newsletters"
-                  className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                  className="text-deep-sapphire underline hover:text-royal-indigo"
                 >
                   See articles here
                 </Link>
@@ -113,7 +113,7 @@ export default function ResourcesPage() {
                     href="/assets/pdf/GoodReadsEatingDisorders.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                    className="text-deep-sapphire underline hover:text-royal-indigo"
                   >
                     Eating Disorders
                   </a>
@@ -121,7 +121,7 @@ export default function ResourcesPage() {
                     href="/assets/pdf/GoodReadsParenting.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                    className="text-deep-sapphire underline hover:text-royal-indigo"
                   >
                     Parenting
                   </a>
@@ -129,7 +129,7 @@ export default function ResourcesPage() {
                     href="/assets/pdf/GoodReadsMarriageAndRelationships.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                    className="text-deep-sapphire underline hover:text-royal-indigo"
                   >
                     Marriage &amp; Relationships
                   </a>
@@ -137,7 +137,7 @@ export default function ResourcesPage() {
                     href="/assets/pdf/GoodReadsAddiction.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                    className="text-deep-sapphire underline hover:text-royal-indigo"
                   >
                     Addiction
                   </a>
@@ -145,7 +145,7 @@ export default function ResourcesPage() {
                     href="/assets/pdf/GoodReadsSpiritualLife.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-deep-sapphire hover:text-royal-indigo hover:underline"
+                    className="text-deep-sapphire underline hover:text-royal-indigo"
                   >
                     Spiritual
                   </a>
