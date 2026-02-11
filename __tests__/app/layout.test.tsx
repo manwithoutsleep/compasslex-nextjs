@@ -24,6 +24,27 @@ describe('RootLayout', () => {
     expect(metadata.description).toBeDefined()
   })
 
+  it('should render <main> with transparent background so body background image shows through', () => {
+    const { container } = render(
+      <RootLayout>
+        <div>Test</div>
+      </RootLayout>
+    )
+    const main = container.querySelector('main')
+    expect(main).toBeInTheDocument()
+    expect(main?.className).toContain('bg-transparent')
+  })
+
+  it('should not apply an opaque white background to <main>', () => {
+    const { container } = render(
+      <RootLayout>
+        <div>Test</div>
+      </RootLayout>
+    )
+    const main = container.querySelector('main')
+    expect(main?.className).not.toMatch(/bg-white|bg-pure-white/)
+  })
+
   it('should configure and apply Roboto font', async () => {
     const { Roboto } = await import('next/font/google')
 

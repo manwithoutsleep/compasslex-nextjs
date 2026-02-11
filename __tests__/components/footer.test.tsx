@@ -21,4 +21,11 @@ describe('Footer', () => {
     render(<Footer />)
     expect(screen.getByText(/Map will be integrated in Task 06/i)).toBeInTheDocument()
   })
+
+  it('should not apply a background-image to the footer element', () => {
+    const { container } = render(<Footer />)
+    const footer = container.querySelector('footer')
+    expect(footer).toBeInTheDocument()
+    expect(footer?.className).not.toMatch(/bg-\[url/)
+  })
 })

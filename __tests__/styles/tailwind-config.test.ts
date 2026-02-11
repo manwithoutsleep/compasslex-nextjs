@@ -128,11 +128,52 @@ describe('Tailwind v4 CSS Configuration', () => {
     })
 
     it('should set default background color on body', () => {
-      expect(globalsCSS).toMatch(/body\s*{[^}]*background:\s*var\(--color-pure-white\)/)
+      expect(globalsCSS).toMatch(/body\s*{[^}]*background-color:\s*transparent/)
     })
 
     it('should set default text color on body', () => {
       expect(globalsCSS).toMatch(/body\s*{[^}]*color:\s*var\(--color-deep-sapphire\)/)
+    })
+  })
+
+  describe('Footer Background Image', () => {
+    // Slice from @layer utilities onward so all assertions are scoped to that block
+    let layerUtilitiesContent: string
+
+    beforeAll(() => {
+      const startIndex = globalsCSS.indexOf('@layer utilities')
+      layerUtilitiesContent = startIndex >= 0 ? globalsCSS.slice(startIndex) : ''
+    })
+
+    it('should be defined inside @layer utilities to override Tailwind preflight reset', () => {
+      expect(layerUtilitiesContent).not.toBe('')
+      expect(layerUtilitiesContent).toContain('background-image')
+    })
+
+    it('should use the footer horizon image URL', () => {
+      expect(layerUtilitiesContent).toMatch(
+        /background-image:\s*url\(['"]?\/assets\/site-images\/footer-horizon\.jpg['"]?\)/
+      )
+    })
+
+    it('should only apply on desktop screens via min-width: 600px media query', () => {
+      expect(layerUtilitiesContent).toMatch(/@media screen and \(min-width:\s*600px\)/)
+    })
+
+    it('should use contain background-size so image spans full browser width', () => {
+      expect(layerUtilitiesContent).toMatch(/background-size:\s*contain/)
+    })
+
+    it('should position background at bottom center', () => {
+      expect(layerUtilitiesContent).toMatch(/background-position:\s*bottom center/)
+    })
+
+    it('should not repeat the background image', () => {
+      expect(layerUtilitiesContent).toMatch(/background-repeat:\s*no-repeat/)
+    })
+
+    it('should scroll with page content via local background-attachment', () => {
+      expect(layerUtilitiesContent).toMatch(/background-attachment:\s*local/)
     })
   })
 })
