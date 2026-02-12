@@ -35,7 +35,7 @@ describe('CounselorRepository', () => {
             expect(Array.isArray(firstCounselor.credentials)).toBe(true)
             expect(Array.isArray(firstCounselor.insurance)).toBe(true)
             expect(Array.isArray(firstCounselor.memberships)).toBe(true)
-            expect(Array.isArray(firstCounselor.titles)).toBe(true)
+            expect(typeof firstCounselor.title).toBe('string')
         })
     })
 

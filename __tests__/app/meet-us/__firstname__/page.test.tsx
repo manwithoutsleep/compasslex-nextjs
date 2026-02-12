@@ -6,9 +6,9 @@ const mockCounselor: Counselor = {
     id: '1',
     firstName: 'Linda',
     lastName: 'Fentress',
-    titles: ['Ph.D', 'LPCC-S'],
+    title: 'Ph.D, LPCC-S',
     shortDescription: 'Linda is a licensed professional counselor.',
-    longDescription: '<p>Linda has extensive experience in counseling.</p>',
+    longDescription: ['Linda has extensive experience in counseling.'],
     email: 'linda@compasslex.com',
     phone: '(859) 555-1234',
     credentials: ['Ph.D in Psychology', 'Licensed Professional Counselor'],
@@ -44,12 +44,11 @@ describe('Counselor Detail Page', () => {
         expect(screen.getByRole('heading', { name: /Linda Fentress/i })).toBeInTheDocument()
     })
 
-    it('renders the counselor titles', async () => {
+    it('renders the counselor title', async () => {
         const CounselorDetailPage = (await import('@/app/meet-us/[firstname]/page')).default
         const jsx = await CounselorDetailPage({ params: Promise.resolve({ firstname: 'Linda' }) })
         render(jsx)
-        expect(screen.getByText('Ph.D')).toBeInTheDocument()
-        expect(screen.getByText('LPCC-S')).toBeInTheDocument()
+        expect(screen.getByText('Ph.D, LPCC-S')).toBeInTheDocument()
     })
 
     it('renders educational credentials section', async () => {

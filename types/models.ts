@@ -11,12 +11,12 @@ export const CounselorSchema = z.object({
     firstName: z.string().min(1, 'First name is required'),
     insurance: z.array(z.string()),
     lastName: z.string().min(1, 'Last name is required'),
-    longDescription: z.string(),
+    longDescription: z.array(z.string()),
     memberships: z.array(z.string()),
     phone: z.string(),
     practitionerId: z.string(),
     shortDescription: z.string(),
-    titles: z.array(z.string()),
+    title: z.string(),
     id: z.string().min(1, 'ID is required'),
 })
 
@@ -63,8 +63,8 @@ export interface Counselor {
     insurance: string[]
     /** Last name */
     lastName: string
-    /** Full HTML bio/description */
-    longDescription: string
+    /** Bio/description paragraphs */
+    longDescription: string[]
     /** Professional memberships */
     memberships: string[]
     /** Contact phone number */
@@ -73,8 +73,8 @@ export interface Counselor {
     practitionerId: string
     /** Brief text description */
     shortDescription: string
-    /** Professional titles */
-    titles: string[]
+    /** Professional title */
+    title: string
     /** Unique identifier */
     id: string
 }

@@ -32,17 +32,13 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
                         />
                     </Link>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-3">
                     <p>{counselor.shortDescription}</p>
                     <div>
-                        <p className="font-medium">
+                        <p className="font-bold">
                             {counselor.firstName} {counselor.lastName}
                         </p>
-                        <ul className="m-0 list-none p-0">
-                            {counselor.titles.map((title) => (
-                                <li key={title}>{title}</li>
-                            ))}
-                        </ul>
+                        <p className="ml-3">{counselor.title}</p>
                     </div>
                     <Link href={`/meet-us/${counselor.firstName}`}>Read More&hellip;</Link>
                 </div>

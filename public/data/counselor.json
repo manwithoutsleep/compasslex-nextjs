@@ -19,12 +19,16 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Tidei",
-            "longDescription": "<p>After earning two undergraduate degrees in Human Services and Counseling and Christian Ministries, I went on to earn a Master's degree in Mental Health Counseling from Asbury Theological Seminary. My goal is to partner with individuals and families in their pursuit of holistic wellness. Life is often full of difficulty and having support while navigating those challenges can be highly beneficial. I'm dedicated to working with children, adolescents, and adults to identify meaningful life goals and work towards achieving them.</p><p>My integrative approach is heavily informed by acceptance and commitment therapy, which combines mindfulness and behavioral change in a way that allows individuals to work towards a flourishing life. I also incorporate aspects of cognitive-behavioral therapy and dialectical-behavioral therapy into my conceptualization. In the past, I have partnered with adults and children facing a variety of issues, including anxiety, depression, trauma history, grief, relational difficulties, and behavioral difficulties. I believe it's extremely important for individuals to feel safe and cared for in counseling, which is why I work to create a nurturing environment where you can thrive.</p><p>My hope is that together, we will be able to take another step forward on your journey towards the life you want to live. Contact me today to begin working with you or your child.</p>",
+            "longDescription": [
+                "After earning two undergraduate degrees in Human Services and Counseling and Christian Ministries, I went on to earn a Master's degree in Mental Health Counseling from Asbury Theological Seminary. My goal is to partner with individuals and families in their pursuit of holistic wellness. Life is often full of difficulty and having support while navigating those challenges can be highly beneficial. I'm dedicated to working with children, adolescents, and adults to identify meaningful life goals and work towards achieving them.",
+                "My integrative approach is heavily informed by acceptance and commitment therapy, which combines mindfulness and behavioral change in a way that allows individuals to work towards a flourishing life. I also incorporate aspects of cognitive-behavioral therapy and dialectical-behavioral therapy into my conceptualization. In the past, I have partnered with adults and children facing a variety of issues, including anxiety, depression, trauma history, grief, relational difficulties, and behavioral difficulties. I believe it's extremely important for individuals to feel safe and cared for in counseling, which is why I work to create a nurturing environment where you can thrive.",
+                "My hope is that together, we will be able to take another step forward on your journey towards the life you want to live. Contact me today to begin working with you or your child."
+            ],
             "memberships": ["American Counseling Association (ACA)"],
             "phone": "(502) 604-8692",
             "practitionerId": "0",
             "shortDescription": "Life is often full of difficulty and having support while navigating those challenges can be highly beneficial. I believe it's extremely important for individuals to feel safe and cared for in counseling, which is why I work to create a nurturing environment where you can thrive and live the life you want to live.",
-            "titles": ["M.A., LPCA"],
+            "title": "M.A., LPCA",
             "directoryId": "141460F3FF91458E8FD61F6CD8391B22",
             "id": "10",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=141460F3FF91458E8FD61F6CD8391B22"
@@ -45,7 +49,12 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Beaven",
-            "longDescription": "<p>Hi, I'm Weston.</p><p>I earned my Master's degree in Clinical Mental Health Counseling from the University of the Cumberlands. After graduating with an undergraduate degree in education, I subsequently realized the last thing I wanted to do with my life was become a teacher. After some time, I discovered that a career in which I could get to know people on a deep and genuine level would be a good fit for me. My own experience with darkness has been one that brought me to seek professional help and has grown a desire in me for others to experience the healing and transformation that I have through counseling. Upon reflection of my life, I have learned that suffering and pain can be a gift from God. I have always been comfortable in conversations that may seem a bit heavy on the outside looking in and find joy in experiencing this with my clients.</p><p>My philosophical approach to the therapeutic relationship is an integrated one which is heavily driven by a mode of therapy labeled Internal Family Systems (IFS). This type of therapy holds the belief that our true self can be accessed through the unburdening of emotions, memories, and beliefs associated with our deepest hurts. I also offer EMDR (Eye Movement Desensitization and Reprocessing) therapy, which is a tool that offers a tangible way to heal from the symptoms and distress that are the result of trauma and adverse life experiences. My experience includes working with those who have faced challenges with PTSD, depression, anxiety, relationship issues, suicidal ideation/self-harm, homicidal ideation, anger, and chronic pain.</p><p>Whether you find yourself in pain, confused, outraged, numb, apathetic, etc., I can assure you that all parts of your being are welcome. It would genuinely be a joy for me to journey with you as you navigate your own unique circumstances, whatever they might be.</p>",
+            "longDescription": [
+                "Hi, I'm Weston.",
+                "I earned my Master's degree in Clinical Mental Health Counseling from the University of the Cumberlands. After graduating with an undergraduate degree in education, I subsequently realized the last thing I wanted to do with my life was become a teacher. After some time, I discovered that a career in which I could get to know people on a deep and genuine level would be a good fit for me. My own experience with darkness has been one that brought me to seek professional help and has grown a desire in me for others to experience the healing and transformation that I have through counseling. Upon reflection of my life, I have learned that suffering and pain can be a gift from God. I have always been comfortable in conversations that may seem a bit heavy on the outside looking in and find joy in experiencing this with my clients.",
+                "My philosophical approach to the therapeutic relationship is an integrated one which is heavily driven by a mode of therapy labeled Internal Family Systems (IFS). This type of therapy holds the belief that our true self can be accessed through the unburdening of emotions, memories, and beliefs associated with our deepest hurts. I also offer EMDR (Eye Movement Desensitization and Reprocessing) therapy, which is a tool that offers a tangible way to heal from the symptoms and distress that are the result of trauma and adverse life experiences. My experience includes working with those who have faced challenges with PTSD, depression, anxiety, relationship issues, suicidal ideation/self-harm, homicidal ideation, anger, and chronic pain.",
+                "Whether you find yourself in pain, confused, outraged, numb, apathetic, etc., I can assure you that all parts of your being are welcome. It would genuinely be a joy for me to journey with you as you navigate your own unique circumstances, whatever they might be."
+            ],
             "memberships": [
                 "American Counseling Association (ACA)",
                 "Kentucky Counseling Association (KCA)"
@@ -53,7 +62,7 @@
             "phone": "502-517-8136",
             "practitionerId": "0",
             "shortDescription": "My goal as a therapist is to partner with you in a compassionate and authentic way, wherever you find yourself in life. Hardship can lead us to a point of feeling ashamed, hopeless, stuck, anxious, and frustrated. When we find ourselves struggling, it is easy for our connections to become diminished and distorted. It would be a joy for me to work with you to restore a sense of hope, inner peace, and excitement to be alive.",
-            "titles": ["M. A., LPCC"],
+            "title": "M. A., LPCC",
             "directoryId": "BABFFA046D6D4352BE7E690588F5D186",
             "id": "7",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=BABFFA046D6D4352BE7E690588F5D186"
@@ -75,7 +84,12 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Robertson",
-            "longDescription": " <p>Hi. I'm Martha.</p><p>After retiring from a career in human resources and raising a family of four children, I felt the Lord was calling me to something more. Having spent many years leading a women's Bible study group, I had a desire to learn how to make a difference for hurting women, married couples, and families. I earned my Master of Arts in Marriage and Family Counseling from Asbury Theological Seminary.</p><p>My person-centered integrated approach is largely attachment based and pulls from tried-and-true modalities such as Emotionally Focused Therapy (EFT) for individuals, couples, and families as well as Gottman couples therapy, family systems theory, cognitive behavioral therapy (CBT), dialectical behavioral therapy (DBT), and more. I have been privileged to come alongside those suffering with depression, anxiety, grief, low self-worth, and shame. I utilize the Prepare/Enrich assessment for those seeking premarital counseling and have worked with those struggling with sexual identity, marriage difficulties, family isolation, and emotional distance.</p><p>I believe strongly that the Lord sees us in our pain and suffering and the Holy Spirit is present with us in the counseling room. As spiritual beings, it is important that we integrate faith and the practice of sound, evidenced-based counseling principles. As we work together to sort through the challenges you're facing, we will set goals that will help you get where you'd like to be as a person made in the image of God, whether individually, as a married couple, or as a family. May the Lord bless you as you take this first step toward counseling for a better future. I look forward to our work together!</p>",
+            "longDescription": [
+                "Hi. I'm Martha.",
+                "After retiring from a career in human resources and raising a family of four children, I felt the Lord was calling me to something more. Having spent many years leading a women's Bible study group, I had a desire to learn how to make a difference for hurting women, married couples, and families. I earned my Master of Arts in Marriage and Family Counseling from Asbury Theological Seminary.",
+                "My person-centered integrated approach is largely attachment based and pulls from tried-and-true modalities such as Emotionally Focused Therapy (EFT) for individuals, couples, and families as well as Gottman couples therapy, family systems theory, cognitive behavioral therapy (CBT), dialectical behavioral therapy (DBT), and more. I have been privileged to come alongside those suffering with depression, anxiety, grief, low self-worth, and shame. I utilize the Prepare/Enrich assessment for those seeking premarital counseling and have worked with those struggling with sexual identity, marriage difficulties, family isolation, and emotional distance.",
+                "I believe strongly that the Lord sees us in our pain and suffering and the Holy Spirit is present with us in the counseling room. As spiritual beings, it is important that we integrate faith and the practice of sound, evidenced-based counseling principles. As we work together to sort through the challenges you're facing, we will set goals that will help you get where you'd like to be as a person made in the image of God, whether individually, as a married couple, or as a family. May the Lord bless you as you take this first step toward counseling for a better future. I look forward to our work together!"
+            ],
             "memberships": [
                 "American Counseling Association (ACA)",
                 "Christian Association for Psychological Studies (CAPS)",
@@ -85,7 +99,7 @@
             "phone": "502-209-7662",
             "practitionerId": "0",
             "shortDescription": "You never know when you're going to wake up to find your world has changed. Grief, heartache, separation, or sadness within? Tension, anger, frustration or feeling invisible to your spouse or other family members? Our work together will be to help you see what has shifted in your world and learn how to move forward in new ways toward healing and wholeness with yourself, your spouse, or your family.",
-            "titles": ["M. A., Marriage and Family Therapist Associate"],
+            "title": "M. A., Marriage and Family Therapist Associate",
             "directoryId": "8A05D144DE88454B82D2156BCFCAFA99",
             "id": "8",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=8A05D144DE88454B82D2156BCFCAFA99"
@@ -109,7 +123,11 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Cowen",
-            "longDescription": "<p>After earning a bachelor's degree in Medical Technology in my 20s, I spent almost three decades along with my husband raising and educating our five children. Following that, I earned my Master's Degree in Mental Health Counseling from Asbury Theological Seminary. My years of experience in discipleship ministry and mentoring in my church brought me face to face with the honest questions that people ask as they confront life's struggles. My own experiences with suffering and challenging transitions led me to pursue a degree in counseling, hoping to help others as I have been helped.</p><p>In my counseling work I collaborate with clients to meet them right where they are, conceptualize where they want to be, then plan and implement the steps to reach the goal. I favor an integrative approach that utilizes several evidence-based treatment modalities including narrative-focused trauma care, EMDR, cognitive behavioral therapy, attachment theory and acceptance and commitment therapy/mindfulness. My clinical focus is on working with individual adults navigating issues of anxiety, depression, grief and loss, relationship conflict, and past and present trauma including childhood sexual abuse.</p><p>Perhaps you too are facing life transitions, relational struggles or personal suffering. Perhaps a traumatic event from your past has resurfaced, creating distress and distraction in your present life. I am deeply committed to helping you make meaning from your suffering, find redemptive purpose even in tragic circumstances, and live with authenticity. Contact me at the email address below and let's get started on your healing journey.</p>",
+            "longDescription": [
+                "After earning a bachelor's degree in Medical Technology in my 20s, I spent almost three decades along with my husband raising and educating our five children. Following that, I earned my Master's Degree in Mental Health Counseling from Asbury Theological Seminary. My years of experience in discipleship ministry and mentoring in my church brought me face to face with the honest questions that people ask as they confront life's struggles. My own experiences with suffering and challenging transitions led me to pursue a degree in counseling, hoping to help others as I have been helped.",
+                "In my counseling work I collaborate with clients to meet them right where they are, conceptualize where they want to be, then plan and implement the steps to reach the goal. I favor an integrative approach that utilizes several evidence-based treatment modalities including narrative-focused trauma care, EMDR, cognitive behavioral therapy, attachment theory and acceptance and commitment therapy/mindfulness. My clinical focus is on working with individual adults navigating issues of anxiety, depression, grief and loss, relationship conflict, and past and present trauma including childhood sexual abuse.",
+                "Perhaps you too are facing life transitions, relational struggles or personal suffering. Perhaps a traumatic event from your past has resurfaced, creating distress and distraction in your present life. I am deeply committed to helping you make meaning from your suffering, find redemptive purpose even in tragic circumstances, and live with authenticity. Contact me at the email address below and let's get started on your healing journey."
+            ],
             "memberships": [
                 "American Counseling Association (ACA)",
                 "American Association of Christian Counselors (AACC)",
@@ -117,8 +135,8 @@
             ],
             "phone": "(859) 694-0025",
             "practitionerId": "34732",
-            "shortDescription": "Disillusionment and suffering are inevitable parts of every life; wounding from the past has a way of rearing its head when you least expect it, creating anxiety, depression, relational difficulties, and more. God has always been in the business of redeeming broken things and that means restoration is possible for you! I understand that asking for help feels risky... I want to provide a safe space to explore your story and its impact on your life.",
-            "titles": ["M.A., LPCC"],
+            "shortDescription": "Disillusionment and suffering are inevitable parts of every life; wounding from the past has a way of rearing its head when you least expect it, creating anxiety, depression, relational difficulties, and more. God has always been in the business of redeeming broken things and that means restoration is possible for you! I understand that asking for help feels risky… I want to provide a safe space to explore your story and its impact on your life.",
+            "title": "M.A., LPCC",
             "directoryId": "ca134d0122c9c6ec7a420e884d9d8df7",
             "id": "4",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=ca134d0122c9c6ec7a420e884d9d8df7"
@@ -141,7 +159,13 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Butcher",
-            "longDescription": "<p>Hey there! I'm Kelsi.</p><p>If you're reading this, chances are you're facing some tough moments—whether that's dealing with past trauma, struggling with anxiety or depression, navigating relationship challenges, or just feeling disconnected from your true self. Life's stressors can feel overwhelming, and it's hard to know where to turn.</p><p>Through therapy, I believe everyone can build the tools and skills they need to navigate life with confidence.</p><p>Although equipped to handle a wide variety of topics, my focus areas include anxiety, depression, self-esteem, and relationship issues. I have a special heart for children and adolescents who may be struggling, but I offer my services to people of any age.</p><p>Please let me know how I can be a support to you. My approach is warm and empathetic. Together we can work to identify your goals for counseling and how to move forward to meet those goals. You can do this, and I would love to help!</p>",
+            "longDescription": [
+                "Hey there! I'm Kelsi.",
+                "If you're reading this, chances are you're facing some tough moments—whether that's dealing with past trauma, struggling with anxiety or depression, navigating relationship challenges, or just feeling disconnected from your true self. Life's stressors can feel overwhelming, and it's hard to know where to turn.",
+                "Through therapy, I believe everyone can build the tools and skills they need to navigate life with confidence.",
+                "Although equipped to handle a wide variety of topics, my focus areas include anxiety, depression, self-esteem, and relationship issues. I have a special heart for children and adolescents who may be struggling, but I offer my services to people of any age.",
+                "Please let me know how I can be a support to you. My approach is warm and empathetic. Together we can work to identify your goals for counseling and how to move forward to meet those goals. You can do this, and I would love to help!"
+            ],
             "memberships": [
                 "Kentucky Counseling Association (KCA)",
                 "The International Honor Society in Psychology"
@@ -149,7 +173,7 @@
             "phone": "(859) 358-0059",
             "practitionerId": "31076",
             "shortDescription": "Our counseling relationship will be based on trust and respect. Throughout sessions, we will work together to identify your goals for counseling and how to move forward to meet those goals. The most important thing to remember: You can do this!.....and I would love to help.",
-            "titles": ["M. A., LPCC"],
+            "title": "M. A., LPCC",
             "directoryId": "18877676F3364830BE603CDF059494A4",
             "id": "2",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=18877676F3364830BE603CDF059494A4"
@@ -174,7 +198,12 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Wagner",
-            "longDescription": "<p>I graduated from Asbury Theological Seminary with a Masters in Mental Health Counseling and a Masters in Theological Studies with a concentration in Spiritual Formation. I pursued these two separate degrees in order to help people develop and grow towards a whole and integrated self. I am passionate about bridging together all facets of human life including the physical, mental, emotional, spiritual, and relational. I want people to find wholeness, health and healing in a complete way.</p><p>My primary modality is Relational Psychodynamic Therapy because I believe relationships are at the heart of what it means to be human. I also believe our childhood upbringing plays a large role in shaping the trajectory of our lives although we can be intentional about changing that trajectory with applied and consistent effort in therapy. In addition, I pull from other theories such as Internal Family Systems and Acceptance and Commitment Therapy because no therapeutic style is one size fits all, and I want to utilize the best approach for each client.</p><p>When I am not counseling, I enjoy spending time with my family playing games, being outdoors in the woods, riding my motorcycle, or making music with my instruments. I love reading (anything with a good story!) and I'm currently working on writing two books (one fiction and the other focusing on the merging of theology and science).</p><p>If you are looking for change, healing, or growth I would be honored to assist you as we partner together to build the life that you are working towards.</p>",
+            "longDescription": [
+                "I graduated from Asbury Theological Seminary with a Masters in Mental Health Counseling and a Masters in Theological Studies with a concentration in Spiritual Formation. I pursued these two separate degrees in order to help people develop and grow towards a whole and integrated self. I am passionate about bridging together all facets of human life including the physical, mental, emotional, spiritual, and relational. I want people to find wholeness, health and healing in a complete way.",
+                "My primary modality is Relational Psychodynamic Therapy because I believe relationships are at the heart of what it means to be human. I also believe our childhood upbringing plays a large role in shaping the trajectory of our lives although we can be intentional about changing that trajectory with applied and consistent effort in therapy. In addition, I pull from other theories such as Internal Family Systems and Acceptance and Commitment Therapy because no therapeutic style is one size fits all, and I want to utilize the best approach for each client.",
+                "When I am not counseling, I enjoy spending time with my family playing games, being outdoors in the woods, riding my motorcycle, or making music with my instruments. I love reading (anything with a good story!) and I'm currently working on writing two books (one fiction and the other focusing on the merging of theology and science).",
+                "If you are looking for change, healing, or growth I would be honored to assist you as we partner together to build the life that you are working towards."
+            ],
             "memberships": [
                 "Kentucky Counseling Association (KCA)",
                 "Christian Association for Psychological Studies (CAPS)",
@@ -183,7 +212,7 @@
             "phone": "(859) 401-0685",
             "practitionerId": "0",
             "shortDescription": "We often find ourselves in broken places both in ourselves and in our relationships. The good news is that we can be intentional about pursuing healing. Sometimes we need outside assistance to help us figure out what we want our life to be and how we can get there. I am committed to creating a non-judgmental space to work toward holistic healing.",
-            "titles": ["M.A., LPCA"],
+            "title": "M.A., LPCA",
             "directoryId": "BFA6D9B1BFEE459593B2515532871A92",
             "id": "11",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=BFA6D9B1BFEE459593B2515532871A92"
@@ -207,12 +236,17 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Tiemeyer",
-            "longDescription": "<p>With a deep desire for relational and healing work, I earned a Bachelors in Psychology from the University of Kentucky and went on to complete a Masters in Marriage & Family Therapy at Campbellsville University. My desire as a therapist is to partner with clients on their journey to holistic wellness, relational healing, and wholehearted living.</p><p>My integrative approach to therapy is heavily influenced by Internal Family Systems, as well as EMDR, Nonviolent Communication, Attachment, and Gottman therapies. Above all else, I consider myself client-centered and truly desire to connect with the individual person (or people!) across from me in a relational, down-to-earth way. I have worked with individuals of all ages, couples, and whole family systems throughout the years. I have experience working with anxiety, depression, grief, divorce, infidelity, trauma, OCD, PTSD, and family conflict.</p><p>When I'm not counseling, you can find me cooking, reading, hiking, or playing with my husband and three children.</p><p>It would be a privilege to walk alongside as you heal, process, and discover lasting freedom. We are not meant to handle the complexities of life alone. Contact me for more information or to get started.</p>",
+            "longDescription": [
+                "With a deep desire for relational and healing work, I earned a Bachelors in Psychology from the University of Kentucky and went on to complete a Masters in Marriage & Family Therapy at Campbellsville University. My desire as a therapist is to partner with clients on their journey to holistic wellness, relational healing, and wholehearted living.",
+                "My integrative approach to therapy is heavily influenced by Internal Family Systems, as well as EMDR, Nonviolent Communication, Attachment, and Gottman therapies. Above all else, I consider myself client-centered and truly desire to connect with the individual person (or people!) across from me in a relational, down-to-earth way. I have worked with individuals of all ages, couples, and whole family systems throughout the years. I have experience working with anxiety, depression, grief, divorce, infidelity, trauma, OCD, PTSD, and family conflict.",
+                "When I'm not counseling, you can find me cooking, reading, hiking, or playing with my husband and three children.",
+                "It would be a privilege to walk alongside as you heal, process, and discover lasting freedom. We are not meant to handle the complexities of life alone. Contact me for more information or to get started."
+            ],
             "memberships": ["American Association for Marriage and Family Therapy (AAMFT)"],
             "phone": "(859) 583-2717",
             "practitionerId": "0",
             "shortDescription": "There are times in life when heaviness, complexity, and pain feel too burdensome to handle alone. Are you looking to heal from past trauma? Repair your relationship? Discover new confidence in yourself? Process your story? It would be an honor to walk alongside you on the journey. You are brave to reach out and inquire about therapy. And you will be so thankful you started one year from now. It would be a great privilege to hold space for honest conversation and lasting growth.",
-            "titles": ["Licensed Marriage and Family Therapist"],
+            "title": "Licensed Marriage and Family Therapist",
             "directoryId": "E71F9BD1267245A0B7483AC5D9416911",
             "id": "12",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=E71F9BD1267245A0B7483AC5D9416911"
@@ -234,12 +268,18 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Basore",
-            "longDescription": "<p>Hi, I'm Sherry.</p><p>After years of serving as a school counselor I saw a need for more individual and group support from a clinical aspect. I found myself with a deep passion for helping people find their inner peace and their peace with others even outside the school setting. This desire to support children and adults on their journey of overcoming obstacles and working through tough challenges led me to pursue my clinical counseling licensure.</p><p>Following a Bachelor's Degree in Education from University of Kentucky, I also earned a Rank 1 Certification with double Master's Degrees in Counseling and Administration at Eastern Kentucky University. Making the transition from working entirely in a school setting, I became a Licensed Professional Counselor Associate in March of 2023.</p><p>In the counseling process I utilize an integrative approach that draws on various interventions from the Cognitive Behavioral (CBT) field, Dialectical and Behavior Therapy (DBT) Acceptance and Commitment Therapy (ACT), and Internal Family Systems (IFS). It is also important to me as a counselor to integrate Christian faith into the counseling process to the degree the client wishes. Helping children and adults with issues of bereavement has become a specialty area for me, and I am also contracted with the Kentucky Center for Grieving Children and Families.</p><p>When I am not counseling you can find me enjoying hobbies such as traveling, reading, spending time with family and friends, and walking and being a part of nature</p>",
+            "longDescription": [
+                "Hi, I'm Sherry.",
+                "After years of serving as a school counselor I saw a need for more individual and group support from a clinical aspect. I found myself with a deep passion for helping people find their inner peace and their peace with others even outside the school setting. This desire to support children and adults on their journey of overcoming obstacles and working through tough challenges led me to pursue my clinical counseling licensure.",
+                "Following a Bachelor's Degree in Education from University of Kentucky, I also earned a Rank 1 Certification with double Master's Degrees in Counseling and Administration at Eastern Kentucky University. Making the transition from working entirely in a school setting, I became a Licensed Professional Counselor Associate in March of 2023.",
+                "In the counseling process I utilize an integrative approach that draws on various interventions from the Cognitive Behavioral (CBT) field, Dialectical and Behavior Therapy (DBT) Acceptance and Commitment Therapy (ACT), and Internal Family Systems (IFS). It is also important to me as a counselor to integrate Christian faith into the counseling process to the degree the client wishes. Helping children and adults with issues of bereavement has become a specialty area for me, and I am also contracted with the Kentucky Center for Grieving Children and Families.",
+                "When I am not counseling you can find me enjoying hobbies such as traveling, reading, spending time with family and friends, and walking and being a part of nature"
+            ],
             "memberships": [],
             "phone": "(859) 721-3259",
             "practitionerId": "0",
             "shortDescription": "Life can be hard, and when you have someone helping you to navigate through difficult times, it makes the journey easier.  As a counselor, I meet people where they are, help them find solutions to problems, and work through issues they are facing. It would be my honor to walk alongside you helping to navigate the maze of life.",
-            "titles": ["M.A., LPCA"],
+            "title": "M.A., LPCA",
             "directoryId": "E96A32CC5BB04BC1A0BAC83297EBC523",
             "id": "13",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=E96A32CC5BB04BC1A0BAC83297EBC523"
@@ -264,7 +304,12 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Henderson",
-            "longDescription": "<p>Hi, I'm Kyra.</p><p>I have a heart for helping couples deepen their bonds, restore trust, and establish the security needed to see their relationship thrive. Whether you're rebuilding after betrayal, navigating loss, or simply longing to feel close again, I aim to create a space where both partners feel seen, valued, and empowered to grow - together. And, because I believe an ounce of prevention is worth a pound of cure, I also love working with couples who are in the early stages of their relationship and want to build strong foundations together. Additionally, I work with individuals navigating identity crises and life transitions or struggling with the effects of anxiety, depression, co-dependency or trauma. </p><p>In our work together, we'll get curious about patterns and where they come from while gently helping you to separate from the labels and negative core beliefs that are keeping you from living from a place of security and connection. I often take an eclectic approach, tailoring therapy to your unique needs and goals while keeping a relational and systemic focus. I draw primarily from Emotionally Focused Therapy, Internal Family Systems, and Acceptance and Commitment Therapy to support my clients as they learn to understand themselves and others better, build secure connections, and foster holistic well-being. Regardless of the method I use, I endeavor to always let empathy, compassion, and humble curiosity lead in my work with individuals and couples. </p><p>I'm interested in getting to the root of the problem—not just treating symptoms. It's not just about finding quick fixes; it's about getting to the heart of the matter and creating lasting change. I help clients recognize that the places where they feel stuck or lost are often a result of adaptive patterns that once served to protect them but that have since become limiting or debilitating. My goal is to cultivate a safe and compassionate therapeutic space to process your experiences through a depathologizing lens, reconnect with your inner wisdom, and move forward with hope and a felt sense of security in your relationships and in who you are.</p>",
+            "longDescription": [
+                "Hi, I'm Kyra.",
+                "I have a heart for helping couples deepen their bonds, restore trust, and establish the security needed to see their relationship thrive. Whether you're rebuilding after betrayal, navigating loss, or simply longing to feel close again, I aim to create a space where both partners feel seen, valued, and empowered to grow - together. And, because I believe an ounce of prevention is worth a pound of cure, I also love working with couples who are in the early stages of their relationship and want to build strong foundations together. Additionally, I work with individuals navigating identity crises and life transitions or struggling with the effects of anxiety, depression, co-dependency or trauma.",
+                "In our work together, we'll get curious about patterns and where they come from while gently helping you to separate from the labels and negative core beliefs that are keeping you from living from a place of security and connection. I often take an eclectic approach, tailoring therapy to your unique needs and goals while keeping a relational and systemic focus. I draw primarily from Emotionally Focused Therapy, Internal Family Systems, and Acceptance and Commitment Therapy to support my clients as they learn to understand themselves and others better, build secure connections, and foster holistic well-being. Regardless of the method I use, I endeavor to always let empathy, compassion, and humble curiosity lead in my work with individuals and couples.",
+                "I'm interested in getting to the root of the problem—not just treating symptoms. It's not just about finding quick fixes; it's about getting to the heart of the matter and creating lasting change. I help clients recognize that the places where they feel stuck or lost are often a result of adaptive patterns that once served to protect them but that have since become limiting or debilitating. My goal is to cultivate a safe and compassionate therapeutic space to process your experiences through a depathologizing lens, reconnect with your inner wisdom, and move forward with hope and a felt sense of security in your relationships and in who you are."
+            ],
             "memberships": [
                 "American Counseling Association (ACA)",
                 "Kentucky Counseling Association (KCA)",
@@ -274,7 +319,7 @@
             "phone": "(615) 656-0950",
             "practitionerId": "0",
             "shortDescription": "It's a sacred honor to walk alongside others in some of life's hardest moments - one that I do not take for granted. My approach to therapy is person-centered, collaborative, and holistic, grounded in the belief that you carry an innate, God-given wisdom within you. I'm not the expert on you or your relationship - you are. My role is to help you see yourself and others more clearly, uncover the patterns that keep you feeling disconnected, and build a sense of safety and trust where healing can happen. Whatever you're facing, I would be honored to hear your story and help you find a way to thrive again.",
-            "titles": ["M.A., Marriage and Family Therapist Associate"],
+            "title": "M.A., Marriage and Family Therapist Associate",
             "directoryId": "",
             "id": "14",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=55a158cbbb159d09dff1889c40b3af5d"
@@ -300,7 +345,13 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Marchman",
-            "longDescription": "<p>Hey there! I'm Julie.</p><p>Following my undergraduate degree in counseling psychology, I was accepted into the master's program at Asbury Theological Seminary and joined Compass Christian Counseling as an intern. I am a member of the American Association of Marriage and Family Therapy and the Kentucky Counseling Association. My experience also comprises internships at Asbury University and Asbury Theological Seminary counseling centers. I am trained in premarital counseling and have pursued advanced training in Emotionally Focused Therapy to assist couples and families in resolving distress and creating more satisfying connections.</p><p>I previously served for two decades as a lay counselor in the church where I offered a faith-based model to individuals, couples, and families for emotional healing. I also served as a key-note speaker at conferences and retreats especially addressing sexual addiction, relational and parenting issues, as well as spiritual formation. I have also facilitated support groups for pregnancy loss and grief recovery.</p><p>Life is tough! Seeking therapy is a wise step. My counseling approach rests on the belief that reaching out for help is a sign of courage and strength. It is normal to need help in difficult times. I am passionate about working with individuals, couples, and families to help them overcome their hurdles. I use a collaborative and respectful style and am committed to creating a therapeutic relationship built on authenticity, trust, and acceptance.</p><p>I would be honored to work with you, so please feel free reach out with any questions about the process.</p>",
+            "longDescription": [
+                "Hey there! I'm Julie.",
+                "Following my undergraduate degree in counseling psychology, I was accepted into the master's program at Asbury Theological Seminary and joined Compass Christian Counseling as an intern. I am a member of the American Association of Marriage and Family Therapy and the Kentucky Counseling Association. My experience also comprises internships at Asbury University and Asbury Theological Seminary counseling centers. I am trained in premarital counseling and have pursued advanced training in Emotionally Focused Therapy to assist couples and families in resolving distress and creating more satisfying connections.",
+                "I previously served for two decades as a lay counselor in the church where I offered a faith-based model to individuals, couples, and families for emotional healing. I also served as a key-note speaker at conferences and retreats especially addressing sexual addiction, relational and parenting issues, as well as spiritual formation. I have also facilitated support groups for pregnancy loss and grief recovery.",
+                "Life is tough! Seeking therapy is a wise step. My counseling approach rests on the belief that reaching out for help is a sign of courage and strength. It is normal to need help in difficult times. I am passionate about working with individuals, couples, and families to help them overcome their hurdles. I use a collaborative and respectful style and am committed to creating a therapeutic relationship built on authenticity, trust, and acceptance.",
+                "I would be honored to work with you, so please feel free reach out with any questions about the process."
+            ],
             "memberships": [
                 "American Association of Marriage and Family Therapists (AAMFT)",
                 "International Centre for Excellence in Emotionally Focused Therapy (ICEEFT)",
@@ -309,7 +360,7 @@
             "phone": "(770) 262-0635",
             "practitionerId": "32663",
             "shortDescription": "Sometimes stress, trauma, hurts, and fears simply pile up. Ultimately, we all seek to improve our mental and emotional well-being and counseling has been proven effective. There's hope and reaching out is the first step. I am committed to listening and understanding your point of view while working to help you heal, grow, and find solutions. I would be honored to walk the process with you.",
-            "titles": ["M. A., Marriage and Family Therapist"],
+            "title": "M. A., Marriage and Family Therapist",
             "directoryId": "",
             "id": "3",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId="
@@ -334,15 +385,21 @@
                 "United Commercial and Medicaid"
             ],
             "lastName": "Fentress",
-            "longDescription": "<p>Hi, I'm Linda.</p><p>Following an undergraduate degree in Theology, I earned a Master's Degree in Counseling Education from Stephens College and am a member of the American Counseling Association and the American Association of Christian Counselors. Volunteering and working in pastorally focused roles for over two decades has allowed me to integrate the clinical aspects of psychology with the framework of spiritual truth.</p><p>I specialize in couples counseling and trauma related issues such as grief and PTSD. I have a special heart for children or families struggling to recover from divorce and/or blended families trying to make things work.</p><p>As a counselor, my primary mode of psychotherapy is an integrated approach that is custom designed for each client's unique needs. This means that I will draw on tools/techniques from the cognitive-behavioral, experiential, structural, narrative, and psychoanalytic schools of thought, although I lean most heavily into attachment theory. When engaged in family therapy, I view the family as a system, which means that the entire system must be respected and understood in order to bring about meaningful change.</p><p>Regardless of what life phase you are in, there are challenging issues that come up. Sometimes you will be able to improve your situation on your own. Other times it takes some outside help. I am committed to providing a safe, confidential, and compassionate environment where individuals, a couple, or an entire family can receive tools to overcome past and present difficulties. Healing is possible, and I'd like to be a part of your journey.</p>",
+            "longDescription": [
+                "Hi, I'm Linda.",
+                "Following an undergraduate degree in Theology, I earned a Master's Degree in Counseling Education from Stephens College and am a member of the American Counseling Association and the American Association of Christian Counselors. Volunteering and working in pastorally focused roles for over two decades has allowed me to integrate the clinical aspects of psychology with the framework of spiritual truth.",
+                "I specialize in couples counseling and trauma related issues such as grief and PTSD. I have a special heart for children or families struggling to recover from divorce and/or blended families trying to make things work.",
+                "As a counselor, my primary mode of psychotherapy is an integrated approach that is custom designed for each client's unique needs. This means that I will draw on tools/techniques from the cognitive-behavioral, experiential, structural, narrative, and psychoanalytic schools of thought, although I lean most heavily into attachment theory. When engaged in family therapy, I view the family as a system, which means that the entire system must be respected and understood in order to bring about meaningful change.",
+                "Regardless of what life phase you are in, there are challenging issues that come up. Sometimes you will be able to improve your situation on your own. Other times it takes some outside help. I am committed to providing a safe, confidential, and compassionate environment where individuals, a couple, or an entire family can receive tools to overcome past and present difficulties. Healing is possible, and I'd like to be a part of your journey."
+            ],
             "memberships": [
                 "American Association of Christian Counselors (AACC)",
                 "American Counseling Association (ACA)"
             ],
             "phone": "(859) 721-3259",
             "practitionerId": "11321",
-            "shortDescription": "In the counseling journey, I hope to come alongside you as you wrestle with the inherent difficulties and struggles associated with life. Damaged relationships, disappointments, insecurities, hurt, trauma, and anxieties\u2026 it all can be overwhelming and debilitating at times. But I believe healing is possible, and together we can figure out what your next steps on that journey may be...",
-            "titles": ["Ph.D, LPCC-S"],
+            "shortDescription": "In the counseling journey, I hope to come alongside you as you wrestle with the inherent difficulties and struggles associated with life. Damaged relationships, disappointments, insecurities, hurt, trauma, and anxieties… it all can be overwhelming and debilitating at times. But I believe healing is possible, and together we can figure out what your next steps on that journey may be…",
+            "title": "Ph.D, LPCC-S",
             "directoryId": "55a158cbbb159d09dff1889c40b3af5d",
             "id": "1",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=55a158cbbb159d09dff1889c40b3af5d"

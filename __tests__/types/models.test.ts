@@ -12,12 +12,12 @@ describe('Type Definitions', () => {
                 firstName: 'John',
                 insurance: ['Aetna', 'Humana'],
                 lastName: 'Doe',
-                longDescription: '<p>Long description here</p>',
+                longDescription: ['Long description here'],
                 memberships: ['ACA', 'AACC'],
                 phone: '555-1234',
                 practitionerId: '1',
                 shortDescription: 'Short description',
-                titles: ['MA', 'LPC'],
+                title: 'MA, LPC',
                 id: '1',
             }
             expect(counselor).toBeDefined()
@@ -35,12 +35,12 @@ describe('Type Definitions', () => {
                 firstName: '',
                 insurance: [],
                 lastName: '',
-                longDescription: '',
+                longDescription: [],
                 memberships: [],
                 phone: '',
                 practitionerId: '',
                 shortDescription: '',
-                titles: [],
+                title: '',
                 id: '',
             }
             expect(counselor).toBeDefined()

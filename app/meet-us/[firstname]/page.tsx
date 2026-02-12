@@ -44,7 +44,7 @@ export default async function CounselorDetailPage({ params }: Props) {
             </Heading>
 
             <div className="px-4 py-4">
-                <div className="flex flex-col gap-6 md:flex-row">
+                <div className="flex flex-col justify-center gap-6 md:flex-row">
                     {/* Left: Image and sidebar info */}
                     <div className="shrink-0 md:w-56">
                         <div className="relative overflow-hidden rounded">
@@ -60,11 +60,7 @@ export default async function CounselorDetailPage({ params }: Props) {
                                 <p className="font-semibold">
                                     {counselor.firstName} {counselor.lastName}
                                 </p>
-                                <ul>
-                                    {counselor.titles.map((title) => (
-                                        <li key={title}>{title}</li>
-                                    ))}
-                                </ul>
+                                <p className="ml-4">{counselor.title}</p>
                                 <p>Compass Christian Counseling</p>
                                 <a
                                     href={counselor.appointmentLink}
@@ -81,11 +77,14 @@ export default async function CounselorDetailPage({ params }: Props) {
                     </div>
 
                     {/* Right: Content */}
-                    <div className="flex-1">
-                        <div
-                            className="prose max-w-none"
-                            dangerouslySetInnerHTML={{ __html: counselor.longDescription }}
-                        />
+                    <div className="max-w-[730px] flex-1">
+                        <div className="prose max-w-none">
+                            {counselor.longDescription.map((paragraph, index) => (
+                                <p className="mb-4" key={index}>
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
 
                         {counselor.credentials.length > 0 && (
                             <div className="mt-6">

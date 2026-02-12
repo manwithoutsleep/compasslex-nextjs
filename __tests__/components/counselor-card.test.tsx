@@ -7,9 +7,9 @@ const mockCounselor: Counselor = {
     id: '1',
     firstName: 'Linda',
     lastName: 'Fentress',
-    titles: ['Ph.D', 'LPCC-S'],
+    title: 'Ph.D, LPCC-S',
     shortDescription: 'Linda is a licensed professional counselor.',
-    longDescription: '<p>Long bio here</p>',
+    longDescription: ['Long bio here'],
     email: 'linda@compasslex.com',
     phone: '(859) 555-1234',
     credentials: ['Ph.D in Psychology'],
@@ -36,10 +36,9 @@ describe('CounselorCard', () => {
         expect(screen.getByText('Linda Fentress')).toBeInTheDocument()
     })
 
-    it('renders the counselor titles', () => {
+    it('renders the counselor title', () => {
         render(<CounselorCard counselor={mockCounselor} />)
-        expect(screen.getByText('Ph.D')).toBeInTheDocument()
-        expect(screen.getByText('LPCC-S')).toBeInTheDocument()
+        expect(screen.getByText('Ph.D, LPCC-S')).toBeInTheDocument()
     })
 
     it('renders a "Read More" link to the counselor detail page', () => {
@@ -53,7 +52,7 @@ describe('CounselorCard', () => {
         render(<CounselorCard counselor={mockCounselor} />)
         const img = screen.getByRole('img', { name: /Linda Fentress/i })
         expect(img).toBeInTheDocument()
-        expect(img).toHaveAttribute('src', '/assets/site-images/linda-meet-us-182x235.jpg')
+        expect(img).toHaveAttribute('src', '/assets/counselor-images/linda-meet-us-182x235.jpg')
     })
 
     it('renders the counselor image as a link to the detail page', () => {
