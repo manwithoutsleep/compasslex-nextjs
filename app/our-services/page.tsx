@@ -37,10 +37,10 @@ export default function OurServicesPage() {
         <div className="max-w-site mx-auto">
             <Heading level={2}>Our Services</Heading>
 
-            <div className="px-4 py-4">
+            <div className="p-4">
                 <div className="flex flex-row flex-wrap justify-evenly">
                     {/* Left column: service areas */}
-                    <div className="flex max-w-[275px] flex-col items-center gap-4 md:mx-0">
+                    <div className="flex max-w-[275px] flex-col items-center gap-4">
                         <Card>
                             <CardBody>
                                 <p>
@@ -52,9 +52,11 @@ export default function OurServicesPage() {
                         </Card>
                         <Card>
                             <CardBody>
-                                {SERVICE_AREAS.map((area) => (
-                                    <p key={area}>{area}</p>
-                                ))}
+                                <div className="flex flex-col gap-3">
+                                    {SERVICE_AREAS.map((area) => (
+                                        <p key={area}>{area}</p>
+                                    ))}
+                                </div>
                             </CardBody>
                         </Card>
                     </div>

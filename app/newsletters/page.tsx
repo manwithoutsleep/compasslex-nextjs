@@ -21,7 +21,7 @@ export default async function NewslettersPage() {
     return (
         <div className="max-w-site mx-auto">
             <Heading level={2}>Compass Articles</Heading>
-            <div className="px-4 py-4">
+            <div className="p-4">
                 <p className="mb-8 text-center text-base">
                     Compass Christian Counseling Articles cover a variety of topics including coping
                     strategies for stress, relationship skills, and mental and emotional well-being.

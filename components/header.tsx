@@ -88,7 +88,7 @@ export default function Header() {
                             <div>(859) 721-3259</div>
                             <Link
                                 href="/contact-us"
-                                className="bg-deep-sapphire text-polar-mist cursor-pointer self-center px-4 leading-normal no-underline transition-opacity hover:opacity-90"
+                                className="bg-deep-sapphire text-polar-mist hover:bg-royal-indigo self-center px-4 leading-normal no-underline transition-colors duration-500 ease-in-out"
                             >
                                 Make an Appointment
                             </Link>

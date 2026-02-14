@@ -14,7 +14,7 @@ export default function FaqPage() {
         <div className="max-w-site mx-auto">
             <Heading level={2}>Frequently Asked Questions</Heading>
 
-            <dl className="mx-auto max-w-[975px] space-y-6 px-4 py-4">
+            <dl className="mx-auto max-w-[975px] space-y-6 p-4">
                 <div>
                     <dt className={questionClass}>How much is counseling going to cost me?</dt>
                     <dd>

@@ -14,15 +14,15 @@ export default function ResourcesPage() {
         <div className="max-w-site mx-auto">
             <Heading level={2}>Resources</Heading>
 
-            <div className="px-4 py-4">
+            <div className="p-4">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                     {/* Left column */}
                     <div className="flex flex-col gap-4">
                         <Image
                             src="/assets/site-images/Help.png"
                             alt="Help!"
-                            width={200}
-                            height={200}
+                            width={264}
+                            height={185}
                             className="mx-auto"
                             unoptimized
                         />
@@ -93,8 +93,8 @@ export default function ResourcesPage() {
                         <Image
                             src="/assets/site-images/Book.png"
                             alt="Good reads"
-                            width={200}
-                            height={200}
+                            width={281}
+                            height={185}
                             className="mx-auto"
                             unoptimized
                         />
