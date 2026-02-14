@@ -1,50 +1,143 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Custom Color Palette - Compasslex Brand Colors */
+    /* Custom Color Palette - Compasslex Brand Colors */
 
-  /* New site colors */
-  --color-polar-mist: #ddeff7;
-  --color-bengal-blue: #b1cfdd;
-  --color-raspberry-smoothie: #c6a3b3;
-  --color-north-pole-blue: #709eb4;
-  --color-ultra-pure-white: #f8f9f3;
+    /* New site colors */
+    --color-polar-mist: #ddeff7;
+    --color-bengal-blue: #b1cfdd;
+    --color-raspberry-smoothie: #c6a3b3;
+    --color-north-pole-blue: #709eb4;
+    --color-ultra-pure-white: #f8f9f3;
 
-  /* Old site colors (primary palette) */
-  --color-deep-sapphire: #191248;
-  --color-warm-sand: #f2c58a;
-  --color-peach-puff: #fbe3c9;
-  --color-pure-white: #ffffff;
-  --color-royal-indigo: #43208a;
+    /* Old site colors (primary palette) */
+    --color-deep-sapphire: #191248;
+    --color-warm-sand: #f2c58a;
+    --color-peach-puff: #fbe3c9;
+    --color-pure-white: #ffffff;
+    --color-royal-indigo: #43208a;
 
-  /* Navigation hover effect colors */
-  --color-hover-glow: #aaaaff;
+    /* Navigation hover effect colors */
+    --color-hover-glow: #aaaaff;
 
-  /* Typography - Roboto font family */
-  --font-family-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+    /* Typography - Roboto font family */
+    --font-family-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
 
-  /* Layout constraints */
-  --max-width-site: 1440px;
-  --min-width-site: 320px;
+    /* Layout constraints */
+    --max-width-site: 1440px;
+    --min-width-site: 320px;
 
-  /* Border widths */
-  --border-width-3: 3px;
+    /* Border widths */
+    --border-width-3: 3px;
 }
 
 body {
-  font-family: var(--font-family-sans);
-  background: var(--color-pure-white);
-  color: var(--color-deep-sapphire);
+    font-family: var(--font-family-sans);
+    background-color: transparent;
+    color: var(--color-deep-sapphire);
+}
+
+@layer utilities {
+    @media screen and (min-width: 600px) {
+        body {
+            background-image: url('/assets/site-images/footer-horizon.jpg');
+            background-size: contain;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-attachment: local;
+        }
+    }
+}
+
+/* ===== Home Page Rotator ===== */
+
+@keyframes home-page-image-animation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.3);
+    }
+}
+
+.home-page-rotator {
+    display: flex;
+    height: max(min(33.33333vw, 400px), 200px);
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.home-page-rotator .rotator-text {
+    color: var(--color-peach-puff);
+    font-weight: bold;
+    margin: 10px;
+    position: absolute;
+    text-align: center;
+    text-shadow:
+        var(--color-deep-sapphire) 0 0 5px,
+        var(--color-deep-sapphire) 0 0 10px,
+        var(--color-deep-sapphire) 0 0 20px;
+    z-index: 1000;
+
+    /* Small screen (< 600px) */
+    top: max(124px, calc(160px + (0.33 * min(0px, calc(100vw - 477px)))));
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .home-page-rotator .rotator-text {
+        /* Large screen (>= 600px) */
+        font-size: min(30px, calc(30px + (0.026 * min(0px, calc(100vw - 1100px)))));
+        line-height: min(50px, calc(50px + (0.06 * min(0px, calc(100vw - 1100px)))));
+        right: min(50px, calc(50px + (0.064 * min(0px, calc(100vw - 1100px)))));
+        top: min(70px, calc(70px + (0.1 * min(0px, calc(100vw - 1100px)))));
+        width: min(200px, calc(200px + (0.17 * min(0px, calc(100vw - 1100px)))));
+        text-align: center;
+    }
+}
+
+.home-page-rotator .rotator-item {
+    animation-delay: 0s;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-name: home-page-image-animation;
+    animation-timing-function: ease-in-out;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+.home-page-rotator .rotator-item.active {
+    display: block;
+}
+
+/* Default text link style */
+@layer base {
+    a {
+        @apply underline hover:text-sky-700;
+    }
+}
+
+/* Appointment button */
+.btn-appointment {
+    @apply bg-ultra-pure-white text-deep-sapphire hover:bg-bengal-blue rounded border px-2 py-1 text-center text-base font-semibold no-underline;
 }
 
 /* Navigation link hover effect - three-layered glow matching Angular site */
 .nav-link-hover {
-  transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-link-hover:hover {
-  text-shadow:
-    white 0 0 3px,
-    var(--color-hover-glow) 0 0 5px,
-    var(--color-deep-sapphire) 0 0 25px;
+    text-shadow:
+        white 0 0 3px,
+        var(--color-hover-glow) 0 0 5px,
+        var(--color-deep-sapphire) 0 0 25px;
 }

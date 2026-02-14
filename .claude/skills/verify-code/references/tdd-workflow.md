@@ -29,14 +29,14 @@ Detect TDD phases by analyzing recent changes:
 Ask yourself these questions in order:
 
 1. **Did I create new test files or add new test cases?**
-   - Yes → Check if implementation is modified
-     - No → **RED phase** (expect failures)
-     - Yes → **GREEN phase** (expect pass)
-   - No → **REFACTOR phase** (expect pass)
+    - Yes → Check if implementation is modified
+        - No → **RED phase** (expect failures)
+        - Yes → **GREEN phase** (expect pass)
+    - No → **REFACTOR phase** (expect pass)
 
 2. **When in doubt:**
-   - Ask the user which phase we're in
-   - Default assumption: REFACTOR (expect tests to pass)
+    - Ask the user which phase we're in
+    - Default assumption: REFACTOR (expect tests to pass)
 
 ## Test Expectations
 

@@ -65,22 +65,22 @@ This migration uses a **separate repository approach**:
 
 1. **Run the Angular app** and navigate to the page with the map (likely contact-us or home)
 2. **Inspect the Angular Google Maps implementation**:
-   - Map component: `../compasslex.com/src/app/components/shared/google-map/google-map.component.ts`
-   - Map HTML: `../compasslex.com/src/app/components/shared/google-map/google-map.component.html`
-   - Map styles: `../compasslex.com/src/app/components/shared/google-map/google-map.component.scss`
-   - Page integration: `../compasslex.com/src/app/components/pages/contact-us/contact-us.component.html`
+    - Map component: `../compasslex.com/src/app/components/shared/google-map/google-map.component.ts`
+    - Map HTML: `../compasslex.com/src/app/components/shared/google-map/google-map.component.html`
+    - Map styles: `../compasslex.com/src/app/components/shared/google-map/google-map.component.scss`
+    - Page integration: `../compasslex.com/src/app/components/pages/contact-us/contact-us.component.html`
 3. **Document exact configuration values**:
-   - Map center coordinates (latitude, longitude)
-   - Zoom level
-   - Map type (roadmap, satellite, hybrid, terrain)
-   - Marker position
-   - Marker title/label
-   - Map dimensions (width, height)
-   - Any custom styling or controls
-   - Map container styling (borders, shadows, etc.)
+    - Map center coordinates (latitude, longitude)
+    - Zoom level
+    - Map type (roadmap, satellite, hybrid, terrain)
+    - Marker position
+    - Marker title/label
+    - Map dimensions (width, height)
+    - Any custom styling or controls
+    - Map container styling (borders, shadows, etc.)
 4. **Check environment configuration**:
-   - Google Maps API key configuration in `../compasslex.com/src/environments/`
-   - Any API restrictions or settings
+    - Google Maps API key configuration in `../compasslex.com/src/environments/`
+    - Any API restrictions or settings
 
 ### Key Angular Reference Files
 
@@ -137,14 +137,14 @@ Google Maps requires mocking for tests:
 ```typescript
 // Mock @googlemaps/js-api-loader
 vi.mock('@googlemaps/js-api-loader', () => ({
-  Loader: vi.fn().mockImplementation(() => ({
-    load: vi.fn().mockResolvedValue({
-      maps: {
-        Map: vi.fn(),
-        Marker: vi.fn(),
-      },
-    }),
-  })),
+    Loader: vi.fn().mockImplementation(() => ({
+        load: vi.fn().mockResolvedValue({
+            maps: {
+                Map: vi.fn(),
+                Marker: vi.fn(),
+            },
+        }),
+    })),
 }))
 ```
 

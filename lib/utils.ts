@@ -10,5 +10,5 @@ import { twMerge } from 'tailwind-merge'
  * cn('text-red-500', false && 'text-blue-500') // Returns 'text-red-500'
  */
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+    return twMerge(clsx(inputs))
 }

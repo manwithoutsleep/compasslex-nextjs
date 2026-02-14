@@ -141,10 +141,10 @@ After 3 consecutive failures on same command:
 
 1. Stop all implementation work
 2. Document the error in detail:
-   - Command that failed
-   - Full error output
-   - Files involved
-   - What was attempted
+    - Command that failed
+    - Full error output
+    - Files involved
+    - What was attempted
 3. Use AskUserQuestion to request human guidance
 4. Do NOT proceed until issue resolved
 
@@ -181,10 +181,10 @@ After each fix, re-run ONLY the failed command, not the entire verification sequ
 Ask yourself these questions in order:
 
 1. **Did I create new test files or add new test cases?**
-   - Yes → Check if implementation is modified
-     - No → **RED phase** (expect test failures)
-     - Yes → **GREEN phase** (expect tests to pass)
-   - No → **REFACTOR phase** (expect tests to pass)
+    - Yes → Check if implementation is modified
+        - No → **RED phase** (expect test failures)
+        - Yes → **GREEN phase** (expect tests to pass)
+    - No → **REFACTOR phase** (expect tests to pass)
 
 **Phase indicators:**
 

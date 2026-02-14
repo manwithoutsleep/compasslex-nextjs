@@ -24,40 +24,40 @@ The coordinator file contains a table with spec file paths in the format:
 <process>
 
 1. **Parse the Coordinator File**
-   - Read the coordinator file specified by the user
-   - Extract all spec file paths from the "File" column of the task table
-   - Note which tasks are already marked as "Complete" (skip these)
-   - Respect dependency order (tasks with dependencies should run after their prerequisites)
+    - Read the coordinator file specified by the user
+    - Extract all spec file paths from the "File" column of the task table
+    - Note which tasks are already marked as "Complete" (skip these)
+    - Respect dependency order (tasks with dependencies should run after their prerequisites)
 
 2. **For Each Spec File (Sequential Execution)**
 
-   Execute these steps for each spec file that is NOT already complete:
+    Execute these steps for each spec file that is NOT already complete:
 
-   a. **Announce the Task**
-   - Display which task number and spec file is being started
-   - Show any relevant dependencies or prerequisites
+    a. **Announce the Task**
+    - Display which task number and spec file is being started
+    - Show any relevant dependencies or prerequisites
 
-   b. **Spawn a Claude Code Subagent**
-   - Spawn a new Claude Code subagent to process the task
-   - Pass any relevant summarized context to the subagent
+    b. **Spawn a Claude Code Subagent**
+    - Spawn a new Claude Code subagent to process the task
+    - Pass any relevant summarized context to the subagent
 
-   c. **Wait for Task Completion**
-   - Monitor the subagent for completion
-   - Determine completion status: success, partial, or failed
-   - Summarize relevant notes to be passed to the next subagent
-   - Document any issues, blockers, or important details
-   - Update progress tracking in the Coordinator File
+    c. **Wait for Task Completion**
+    - Monitor the subagent for completion
+    - Determine completion status: success, partial, or failed
+    - Summarize relevant notes to be passed to the next subagent
+    - Document any issues, blockers, or important details
+    - Update progress tracking in the Coordinator File
 
-   d. **Proceed to Next Task**
-   - Move to the next incomplete spec file
-   - Repeat steps a-c
+    d. **Proceed to Next Task**
+    - Move to the next incomplete spec file
+    - Repeat steps a-c
 
 3. **Completion Summary**
 
-   After all tasks have been processed:
-   - Display a summary of completed tasks
-   - List any tasks that failed or were skipped
-   - Note any follow-up actions required
+    After all tasks have been processed:
+    - Display a summary of completed tasks
+    - List any tasks that failed or were skipped
+    - Note any follow-up actions required
 
 </process>
 
