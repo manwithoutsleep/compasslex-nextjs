@@ -1,13 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import HomePage from '@/app/page'
 
+vi.mock('@/components/home-page-rotator', () => ({
+    default: () => <div data-testid="home-page-rotator" />,
+}))
+
 describe('Home Page', () => {
-    it('renders the rotator heading text', () => {
+    it('renders the HomePageRotator component', () => {
         render(<HomePage />)
-        expect(
-            screen.getByText('Sometimes you just need a little help along the way')
-        ).toBeInTheDocument()
+        expect(screen.getByTestId('home-page-rotator')).toBeInTheDocument()
     })
 
     it('renders the intro paragraph about Compass Christian Counseling', () => {

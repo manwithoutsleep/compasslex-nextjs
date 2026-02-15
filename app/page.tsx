@@ -94,7 +94,7 @@ export default function HomePage() {
                     <div
                         className="min-h-[250px]"
                         style={{
-                            backgroundImage: 'url(/assets/site-images/home-image-4.webp)',
+                            backgroundImage: 'url(/assets/site-images/home-image-3.webp)',
                             backgroundPosition: 'top center',
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
@@ -139,7 +139,7 @@ export default function HomePage() {
                     <div
                         className="min-h-[250px]"
                         style={{
-                            backgroundImage: 'url(/assets/site-images/home-image-5.webp)',
+                            backgroundImage: 'url(/assets/site-images/home-image-4.webp)',
                             backgroundPosition: 'top center',
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
@@ -152,7 +152,7 @@ export default function HomePage() {
                     <div
                         className="min-h-[250px]"
                         style={{
-                            backgroundImage: 'url(/assets/site-images/home-image-6.webp)',
+                            backgroundImage: 'url(/assets/site-images/home-image-5.webp)',
                             backgroundPosition: 'top center',
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
