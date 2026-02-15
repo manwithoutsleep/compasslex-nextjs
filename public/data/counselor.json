@@ -31,6 +31,7 @@
             "title": "M.A., LPCA",
             "directoryId": "141460F3FF91458E8FD61F6CD8391B22",
             "id": "10",
+            "slug": "joanna",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=141460F3FF91458E8FD61F6CD8391B22"
         },
         {
@@ -65,6 +66,7 @@
             "title": "M. A., LPCC",
             "directoryId": "BABFFA046D6D4352BE7E690588F5D186",
             "id": "7",
+            "slug": "weston",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=BABFFA046D6D4352BE7E690588F5D186"
         },
         {
@@ -102,6 +104,7 @@
             "title": "M. A., Marriage and Family Therapist Associate",
             "directoryId": "8A05D144DE88454B82D2156BCFCAFA99",
             "id": "8",
+            "slug": "martha",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=8A05D144DE88454B82D2156BCFCAFA99"
         },
         {
@@ -139,6 +142,7 @@
             "title": "M.A., LPCC",
             "directoryId": "ca134d0122c9c6ec7a420e884d9d8df7",
             "id": "4",
+            "slug": "katrina",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=ca134d0122c9c6ec7a420e884d9d8df7"
         },
         {
@@ -176,6 +180,7 @@
             "title": "M. A., LPCC",
             "directoryId": "18877676F3364830BE603CDF059494A4",
             "id": "2",
+            "slug": "kelsi",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=18877676F3364830BE603CDF059494A4"
         },
         {
@@ -215,6 +220,7 @@
             "title": "M.A., LPCA",
             "directoryId": "BFA6D9B1BFEE459593B2515532871A92",
             "id": "11",
+            "slug": "melissa",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=BFA6D9B1BFEE459593B2515532871A92"
         },
         {
@@ -249,6 +255,7 @@
             "title": "Licensed Marriage and Family Therapist",
             "directoryId": "E71F9BD1267245A0B7483AC5D9416911",
             "id": "12",
+            "slug": "alison",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=E71F9BD1267245A0B7483AC5D9416911"
         },
         {
@@ -282,6 +289,7 @@
             "title": "M.A., LPCA",
             "directoryId": "E96A32CC5BB04BC1A0BAC83297EBC523",
             "id": "13",
+            "slug": "sherry",
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=E96A32CC5BB04BC1A0BAC83297EBC523"
         },
         {
@@ -322,6 +330,7 @@
             "title": "M.A., Marriage and Family Therapist Associate",
             "directoryId": "",
             "id": "14",
+            "slug": "kyra",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=55a158cbbb159d09dff1889c40b3af5d"
         },
         {
@@ -363,6 +372,7 @@
             "title": "M. A., Marriage and Family Therapist",
             "directoryId": "",
             "id": "3",
+            "slug": "julie",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId="
         },
         {
@@ -402,6 +412,7 @@
             "title": "Ph.D, LPCC-S",
             "directoryId": "55a158cbbb159d09dff1889c40b3af5d",
             "id": "1",
+            "slug": "linda",
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=55a158cbbb159d09dff1889c40b3af5d"
         }
     ]

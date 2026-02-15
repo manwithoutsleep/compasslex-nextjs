@@ -5,19 +5,19 @@ import { counselorRepository } from '@/services/data-repository'
 import { Heading } from '@/components/ui'
 
 interface Props {
-    params: Promise<{ firstname: string }>
+    params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
     const counselors = await counselorRepository.getAllCounselors()
     return counselors.map((counselor) => ({
-        firstname: counselor.firstName,
+        slug: counselor.slug,
     }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { firstname } = await params
-    const counselor = await counselorRepository.getCounselorByName(firstname)
+    const { slug } = await params
+    const counselor = await counselorRepository.getCounselorBySlug(slug)
     if (!counselor) return {}
 
     return {
@@ -27,15 +27,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CounselorDetailPage({ params }: Props) {
-    const { firstname } = await params
-    const counselor = await counselorRepository.getCounselorByName(firstname)
+    const { slug } = await params
+    const counselor = await counselorRepository.getCounselorBySlug(slug)
 
     if (!counselor) {
         notFound()
     }
 
-    const imageSlug = counselor.firstName.toLowerCase()
-    const imageSrc = `/assets/counselor-images/${imageSlug}-read-more-221x276.jpg`
+    const imageSrc = `/assets/counselor-images/${counselor.slug}-read-more-221x276.jpg`
 
     return (
         <div className="max-w-site mx-auto">

@@ -18,6 +18,7 @@ const mockCounselors: Counselor[] = [
         appointmentLink: 'https://example.com',
         directoryId: 'dir-1',
         practitionerId: 'prac-1',
+        slug: 'linda',
     },
     {
         id: '2',
@@ -34,6 +35,7 @@ const mockCounselors: Counselor[] = [
         appointmentLink: 'https://example.com',
         directoryId: 'dir-2',
         practitionerId: 'prac-2',
+        slug: 'kelsi',
     },
 ]
 

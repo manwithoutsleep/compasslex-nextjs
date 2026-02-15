@@ -19,6 +19,7 @@ describe('Type Definitions', () => {
                 shortDescription: 'Short description',
                 title: 'MA, LPC',
                 id: '1',
+                slug: 'john',
             }
             expect(counselor).toBeDefined()
             expect(counselor.firstName).toBe('John')
@@ -42,6 +43,7 @@ describe('Type Definitions', () => {
                 shortDescription: '',
                 title: '',
                 id: '',
+                slug: '',
             }
             expect(counselor).toBeDefined()
         })

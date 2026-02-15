@@ -21,7 +21,7 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
             <CardTitle>Hi, I&apos;m {firstName}</CardTitle>
             <CardBody className="text-deep-sapphire flex gap-4 p-1.5 text-base">
                 <div className="shrink-0">
-                    <Link href={`/meet-us/${counselor.firstName}`} className="no-underline">
+                    <Link href={`/meet-us/${counselor.slug}`} className="no-underline">
                         <Image
                             src={imageSrc}
                             alt={`${counselor.firstName} ${counselor.lastName}`}
@@ -40,7 +40,7 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
                         </p>
                         <p className="ml-3">{counselor.title}</p>
                     </div>
-                    <Link href={`/meet-us/${counselor.firstName}`}>Read More&hellip;</Link>
+                    <Link href={`/meet-us/${counselor.slug}`}>Read More&hellip;</Link>
                 </div>
             </CardBody>
         </Card>

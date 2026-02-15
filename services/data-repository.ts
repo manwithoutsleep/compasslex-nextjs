@@ -19,6 +19,13 @@ export interface ICounselorRepository {
      * @returns Counselor if found, null otherwise
      */
     getCounselorByName(firstname: string): Promise<Counselor | null>
+
+    /**
+     * Find counselor by URL slug (exact match)
+     * @param slug - Slug to search for (e.g. "joanna")
+     * @returns Counselor if found, null otherwise
+     */
+    getCounselorBySlug(slug: string): Promise<Counselor | null>
 }
 
 /**
@@ -93,6 +100,16 @@ export class CounselorRepository implements ICounselorRepository {
 
         return counselors.find((c) => c.firstName.toLowerCase() === normalizedSearch) || null
     }
+
+    /**
+     * Find counselor by URL slug (exact match)
+     */
+    async getCounselorBySlug(slug: string): Promise<Counselor | null> {
+        if (!slug) return null
+
+        const counselors = await this.getAllCounselors()
+        return counselors.find((c) => c.slug === slug) || null
+    }
 }
 
 /**
@@ -160,7 +177,7 @@ export class NewsletterRepository implements INewsletterRepository {
  * import { counselorRepository } from '@/services/data-repository'
  *
  * const counselors = await counselorRepository.getAllCounselors()
- * const joanna = await counselorRepository.getCounselorByName('Joanna')
+ * const joanna = await counselorRepository.getCounselorBySlug('joanna')
  * ```
  */
 export const counselorRepository = new CounselorRepository()

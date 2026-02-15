@@ -26,6 +26,7 @@ describe('CounselorRepository', () => {
             expect(firstCounselor).toHaveProperty('shortDescription')
             expect(firstCounselor).toHaveProperty('longDescription')
             expect(firstCounselor).toHaveProperty('id')
+            expect(firstCounselor).toHaveProperty('slug')
         })
 
         it('should return counselors with array fields as arrays', async () => {
@@ -70,6 +71,36 @@ describe('CounselorRepository', () => {
             // This might fail if implementation is case-sensitive
             // If so, update implementation or test expectations
             expect(counselor).toBeDefined()
+        })
+    })
+
+    describe('getCounselorBySlug', () => {
+        it('should find counselor by slug', async () => {
+            const counselor = await repo.getCounselorBySlug('joanna')
+
+            expect(counselor).not.toBeNull()
+            if (counselor) {
+                expect(counselor.slug).toBe('joanna')
+                expect(counselor.firstName).toBe('Joanna')
+            }
+        })
+
+        it('should return null for non-existent slug', async () => {
+            const counselor = await repo.getCounselorBySlug('nonexistent')
+
+            expect(counselor).toBeNull()
+        })
+
+        it('should return null for empty string', async () => {
+            const counselor = await repo.getCounselorBySlug('')
+
+            expect(counselor).toBeNull()
+        })
+
+        it('should perform exact match (case-sensitive)', async () => {
+            const counselor = await repo.getCounselorBySlug('Joanna')
+
+            expect(counselor).toBeNull()
         })
     })
 })

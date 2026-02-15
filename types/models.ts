@@ -18,6 +18,7 @@ export const CounselorSchema = z.object({
     shortDescription: z.string(),
     title: z.string(),
     id: z.string().min(1, 'ID is required'),
+    slug: z.string().min(1, 'Slug is required'),
 })
 
 /**
@@ -77,6 +78,8 @@ export interface Counselor {
     title: string
     /** Unique identifier */
     id: string
+    /** URL-safe slug for routing (e.g. "joanna") */
+    slug: string
 }
 
 /**

@@ -18,6 +18,7 @@ const mockCounselor: Counselor = {
     appointmentLink: 'https://example.com/appt',
     directoryId: 'dir-1',
     practitionerId: 'prac-1',
+    slug: 'linda',
 }
 
 describe('CounselorCard', () => {
@@ -45,7 +46,7 @@ describe('CounselorCard', () => {
         render(<CounselorCard counselor={mockCounselor} />)
         const link = screen.getByRole('link', { name: /Read More/i })
         expect(link).toBeInTheDocument()
-        expect(link).toHaveAttribute('href', '/meet-us/Linda')
+        expect(link).toHaveAttribute('href', '/meet-us/linda')
     })
 
     it('renders a counselor image with correct src', () => {
@@ -58,6 +59,6 @@ describe('CounselorCard', () => {
     it('renders the counselor image as a link to the detail page', () => {
         render(<CounselorCard counselor={mockCounselor} />)
         const img = screen.getByRole('img', { name: /Linda Fentress/i })
-        expect(img.closest('a')).toHaveAttribute('href', '/meet-us/Linda')
+        expect(img.closest('a')).toHaveAttribute('href', '/meet-us/linda')
     })
 })
