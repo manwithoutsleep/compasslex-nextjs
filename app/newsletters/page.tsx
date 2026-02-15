@@ -10,13 +10,7 @@ export const metadata: Metadata = {
 }
 
 export default async function NewslettersPage() {
-    const newsletters = await newsletterRepository.getAllNewsletters()
-    // Sort newest first (by year desc, quarter desc)
-    const sorted = [...newsletters].sort((a, b) => {
-        const yearDiff = parseInt(b.year) - parseInt(a.year)
-        if (yearDiff !== 0) return yearDiff
-        return parseInt(b.quarter) - parseInt(a.quarter)
-    })
+    const sorted = await newsletterRepository.getAllNewslettersSorted()
 
     return (
         <div className="max-w-site mx-auto">

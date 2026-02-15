@@ -140,6 +140,46 @@ describe('NewsletterRepository', () => {
         })
     })
 
+    describe('getAllNewslettersSorted', () => {
+        it('should return newsletters sorted by year descending', async () => {
+            const newsletters = await repo.getAllNewslettersSorted()
+
+            for (let i = 0; i < newsletters.length - 1; i++) {
+                const current = parseInt(newsletters[i].year)
+                const next = parseInt(newsletters[i + 1].year)
+                expect(current).toBeGreaterThanOrEqual(next)
+            }
+        })
+
+        it('should sort newsletters with the same year by quarter descending', async () => {
+            const newsletters = await repo.getAllNewslettersSorted()
+
+            const byYear: Record<string, typeof newsletters> = {}
+            for (const n of newsletters) {
+                if (!byYear[n.year]) byYear[n.year] = []
+                byYear[n.year].push(n)
+            }
+
+            for (const group of Object.values(byYear)) {
+                for (let i = 0; i < group.length - 1; i++) {
+                    expect(parseInt(group[i].quarter)).toBeGreaterThanOrEqual(
+                        parseInt(group[i + 1].quarter)
+                    )
+                }
+            }
+        })
+
+        it('should not mutate the cached data returned by getAllNewsletters', async () => {
+            const unsorted = await repo.getAllNewsletters()
+            const firstUnsortedId = unsorted[0].id
+
+            await repo.getAllNewslettersSorted()
+
+            const unsortedAgain = await repo.getAllNewsletters()
+            expect(unsortedAgain[0].id).toBe(firstUnsortedId)
+        })
+    })
+
     describe('getNewsletterById', () => {
         it('should find newsletter by id', async () => {
             const newsletters = await repo.getAllNewsletters()

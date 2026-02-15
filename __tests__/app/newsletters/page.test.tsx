@@ -28,7 +28,7 @@ const mockNewsletters: Newsletter[] = [
 
 vi.mock('@/services/data-repository', () => ({
     newsletterRepository: {
-        getAllNewsletters: vi.fn().mockResolvedValue(mockNewsletters),
+        getAllNewslettersSorted: vi.fn().mockResolvedValue(mockNewsletters),
     },
 }))
 

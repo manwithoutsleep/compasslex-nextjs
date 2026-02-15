@@ -38,6 +38,11 @@ export interface INewsletterRepository {
     getAllNewsletters(): Promise<Newsletter[]>
 
     /**
+     * Retrieve all newsletters sorted newest first (by year desc, then quarter desc)
+     */
+    getAllNewslettersSorted(): Promise<Newsletter[]>
+
+    /**
      * Find newsletter by ID
      * @param id - Newsletter ID to search for
      * @returns Newsletter if found, null otherwise
@@ -154,6 +159,18 @@ export class NewsletterRepository implements INewsletterRepository {
             }
         }
         return this.cachedData
+    }
+
+    /**
+     * Retrieve all newsletters sorted newest first (by year desc, then quarter desc)
+     */
+    async getAllNewslettersSorted(): Promise<Newsletter[]> {
+        const newsletters = await this.getAllNewsletters()
+        return [...newsletters].sort((a, b) => {
+            const yearDiff = parseInt(b.year) - parseInt(a.year)
+            if (yearDiff !== 0) return yearDiff
+            return parseInt(b.quarter) - parseInt(a.quarter)
+        })
     }
 
     /**
