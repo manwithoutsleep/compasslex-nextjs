@@ -78,8 +78,8 @@ export default async function CounselorDetailPage({ params }: Props) {
                     {/* Right: Content */}
                     <div className="max-w-[730px] flex-1">
                         <div className="prose max-w-none">
-                            {counselor.longDescription.map((paragraph, index) => (
-                                <p className="mb-4" key={index}>
+                            {counselor.longDescription.map((paragraph) => (
+                                <p className="mb-4" key={paragraph}>
                                     {paragraph}
                                 </p>
                             ))}
