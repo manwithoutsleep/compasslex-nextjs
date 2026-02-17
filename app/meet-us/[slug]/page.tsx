@@ -65,7 +65,7 @@ export default async function CounselorDetailPage({ params }: Props) {
                                     href={counselor.appointmentLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn-appointment mt-2 block"
+                                    className="btn-link-light"
                                 >
                                     Make an appointment
                                     <br />

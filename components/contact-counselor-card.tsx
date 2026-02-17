@@ -37,7 +37,7 @@ export default function ContactCounselorCard({ counselor }: ContactCounselorCard
                     href={counselor.appointmentLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-appointment mt-1 block"
+                    className="btn-link-light"
                 >
                     Make an appointment
                     <br />

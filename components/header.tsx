@@ -86,10 +86,7 @@ export default function Header() {
                         {/* Contact Info */}
                         <div className="flex flex-row flex-wrap justify-around px-8 text-center leading-[50px]">
                             <div>(859) 721-3259</div>
-                            <Link
-                                href="/contact-us"
-                                className="bg-deep-sapphire text-polar-mist hover:bg-royal-indigo self-center px-4 leading-normal no-underline transition-colors duration-500 ease-in-out"
-                            >
+                            <Link href="/contact-us" className="btn-link-dark">
                                 Make an Appointment
                             </Link>
                         </div>
