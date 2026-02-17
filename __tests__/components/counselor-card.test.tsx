@@ -51,14 +51,19 @@ describe('CounselorCard', () => {
 
     it('renders a counselor image with correct src', () => {
         render(<CounselorCard counselor={mockCounselor} />)
-        const img = screen.getByRole('img', { name: /Linda Fentress/i })
+        // Image link is aria-hidden, so use getByAltText instead of getByRole
+        const img = screen.getByAltText(/Linda Fentress/i)
         expect(img).toBeInTheDocument()
         expect(img).toHaveAttribute('src', '/assets/counselor-images/linda-meet-us-182x235.jpg')
     })
 
     it('renders the counselor image as a link to the detail page', () => {
         render(<CounselorCard counselor={mockCounselor} />)
-        const img = screen.getByRole('img', { name: /Linda Fentress/i })
-        expect(img.closest('a')).toHaveAttribute('href', '/meet-us/linda')
+        // Image link is aria-hidden to prevent duplicate navigation for screen readers
+        const img = screen.getByAltText(/Linda Fentress/i)
+        const link = img.closest('a')
+        expect(link).toHaveAttribute('href', '/meet-us/linda')
+        expect(link).toHaveAttribute('aria-hidden', 'true')
+        expect(link).toHaveAttribute('tabindex', '-1')
     })
 })

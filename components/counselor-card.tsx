@@ -21,7 +21,12 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
             <CardTitle>Hi, I&apos;m {firstName}</CardTitle>
             <CardBody className="text-deep-sapphire flex gap-4 p-1.5 text-base">
                 <div className="shrink-0">
-                    <Link href={`/meet-us/${counselor.slug}`} className="no-underline">
+                    <Link
+                        href={`/meet-us/${counselor.slug}`}
+                        className="no-underline"
+                        aria-hidden="true"
+                        tabIndex={-1}
+                    >
                         <Image
                             src={imageSrc}
                             alt={`${counselor.firstName} ${counselor.lastName}`}
