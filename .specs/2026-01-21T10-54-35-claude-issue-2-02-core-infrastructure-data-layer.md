@@ -108,94 +108,94 @@ import { describe, it, expect } from 'vitest'
 import type { Counselor, Newsletter, CounselorData, NewsletterData } from '@/types/models'
 
 describe('Type Definitions', () => {
-  describe('Counselor Interface', () => {
-    it('should accept valid Counselor object', () => {
-      const counselor: Counselor = {
-        appointmentlink: 'https://example.com',
-        credentials: ['MA', 'LPC'],
-        directoryid: '123',
-        email: 'test@example.com',
-        firstname: 'John',
-        insurance: ['Aetna', 'Humana'],
-        lastname: 'Doe',
-        longdescription: '<p>Long description here</p>',
-        memberships: ['ACA', 'AACC'],
-        phone: '555-1234',
-        practitionerid: '1',
-        shortdescription: 'Short description',
-        titles: ['MA', 'LPC'],
-        id: '1',
-      }
-      expect(counselor).toBeDefined()
-      expect(counselor.firstname).toBe('John')
+    describe('Counselor Interface', () => {
+        it('should accept valid Counselor object', () => {
+            const counselor: Counselor = {
+                appointmentlink: 'https://example.com',
+                credentials: ['MA', 'LPC'],
+                directoryid: '123',
+                email: 'test@example.com',
+                firstname: 'John',
+                insurance: ['Aetna', 'Humana'],
+                lastname: 'Doe',
+                longdescription: '<p>Long description here</p>',
+                memberships: ['ACA', 'AACC'],
+                phone: '555-1234',
+                practitionerid: '1',
+                shortdescription: 'Short description',
+                titles: ['MA', 'LPC'],
+                id: '1',
+            }
+            expect(counselor).toBeDefined()
+            expect(counselor.firstname).toBe('John')
+        })
+
+        it('should enforce required fields', () => {
+            // This test verifies TypeScript compilation would fail for missing fields
+            // In runtime, we verify the shape is correct
+            const counselor: Counselor = {
+                appointmentlink: '',
+                credentials: [],
+                directoryid: '',
+                email: '',
+                firstname: '',
+                insurance: [],
+                lastname: '',
+                longdescription: '',
+                memberships: [],
+                phone: '',
+                practitionerid: '',
+                shortdescription: '',
+                titles: [],
+                id: '',
+            }
+            expect(counselor).toBeDefined()
+        })
     })
 
-    it('should enforce required fields', () => {
-      // This test verifies TypeScript compilation would fail for missing fields
-      // In runtime, we verify the shape is correct
-      const counselor: Counselor = {
-        appointmentlink: '',
-        credentials: [],
-        directoryid: '',
-        email: '',
-        firstname: '',
-        insurance: [],
-        lastname: '',
-        longdescription: '',
-        memberships: [],
-        phone: '',
-        practitionerid: '',
-        shortdescription: '',
-        titles: [],
-        id: '',
-      }
-      expect(counselor).toBeDefined()
-    })
-  })
+    describe('Newsletter Interface', () => {
+        it('should accept valid Newsletter object', () => {
+            const newsletter: Newsletter = {
+                description: 'Newsletter description',
+                id: '1',
+                quarter: 'Q1',
+                title: 'Spring Newsletter',
+                year: '2024',
+            }
+            expect(newsletter).toBeDefined()
+            expect(newsletter.title).toBe('Spring Newsletter')
+        })
 
-  describe('Newsletter Interface', () => {
-    it('should accept valid Newsletter object', () => {
-      const newsletter: Newsletter = {
-        description: 'Newsletter description',
-        id: '1',
-        quarter: 'Q1',
-        title: 'Spring Newsletter',
-        year: '2024',
-      }
-      expect(newsletter).toBeDefined()
-      expect(newsletter.title).toBe('Spring Newsletter')
+        it('should allow null description', () => {
+            const newsletter: Newsletter = {
+                description: null,
+                id: '2',
+                quarter: 'Q2',
+                title: 'Summer Newsletter',
+                year: '2024',
+            }
+            expect(newsletter).toBeDefined()
+            expect(newsletter.description).toBeNull()
+        })
     })
 
-    it('should allow null description', () => {
-      const newsletter: Newsletter = {
-        description: null,
-        id: '2',
-        quarter: 'Q2',
-        title: 'Summer Newsletter',
-        year: '2024',
-      }
-      expect(newsletter).toBeDefined()
-      expect(newsletter.description).toBeNull()
+    describe('CounselorData Interface', () => {
+        it('should contain counselorList array', () => {
+            const data: CounselorData = {
+                counselorList: [],
+            }
+            expect(data.counselorList).toEqual([])
+        })
     })
-  })
 
-  describe('CounselorData Interface', () => {
-    it('should contain counselorList array', () => {
-      const data: CounselorData = {
-        counselorList: [],
-      }
-      expect(data.counselorList).toEqual([])
+    describe('NewsletterData Interface', () => {
+        it('should contain newsletterList array', () => {
+            const data: NewsletterData = {
+                newsletterList: [],
+            }
+            expect(data.newsletterList).toEqual([])
+        })
     })
-  })
-
-  describe('NewsletterData Interface', () => {
-    it('should contain newsletterList array', () => {
-      const data: NewsletterData = {
-        newsletterList: [],
-      }
-      expect(data.newsletterList).toEqual([])
-    })
-  })
 })
 ```
 
@@ -208,66 +208,66 @@ Create `types/models.ts`:
  * Represents a counselor profile
  */
 export interface Counselor {
-  /** Link to online appointment scheduling */
-  appointmentlink: string
-  /** Professional credentials (e.g., MA, LPC, LPCC) */
-  credentials: string[]
-  /** Directory ID for counselor */
-  directoryid: string
-  /** Contact email address */
-  email: string
-  /** First name */
-  firstname: string
-  /** Accepted insurance providers */
-  insurance: string[]
-  /** Last name */
-  lastname: string
-  /** Full HTML bio/description */
-  longdescription: string
-  /** Professional memberships */
-  memberships: string[]
-  /** Contact phone number */
-  phone: string
-  /** Practitioner ID */
-  practitionerid: string
-  /** Brief text description */
-  shortdescription: string
-  /** Professional titles */
-  titles: string[]
-  /** Unique identifier */
-  id: string
+    /** Link to online appointment scheduling */
+    appointmentlink: string
+    /** Professional credentials (e.g., MA, LPC, LPCC) */
+    credentials: string[]
+    /** Directory ID for counselor */
+    directoryid: string
+    /** Contact email address */
+    email: string
+    /** First name */
+    firstname: string
+    /** Accepted insurance providers */
+    insurance: string[]
+    /** Last name */
+    lastname: string
+    /** Full HTML bio/description */
+    longdescription: string
+    /** Professional memberships */
+    memberships: string[]
+    /** Contact phone number */
+    phone: string
+    /** Practitioner ID */
+    practitionerid: string
+    /** Brief text description */
+    shortdescription: string
+    /** Professional titles */
+    titles: string[]
+    /** Unique identifier */
+    id: string
 }
 
 /**
  * Represents a newsletter
  */
 export interface Newsletter {
-  /** Optional newsletter description */
-  description: string | null
-  /** Unique identifier */
-  id: string
-  /** Quarter (Q1, Q2, Q3, Q4) */
-  quarter: string
-  /** Newsletter title */
-  title: string
-  /** Year */
-  year: string
+    /** Optional newsletter description */
+    description: string | null
+    /** Unique identifier */
+    id: string
+    /** Quarter (Q1, Q2, Q3, Q4) */
+    quarter: string
+    /** Newsletter title */
+    title: string
+    /** Year */
+    year: string
 }
 
 /**
  * Container for counselor data from JSON
  */
 export interface CounselorData {
-  /** Array of counselors */
-  counselorList: Counselor[]
+    /** Array of counselors */
+    counselorList: Counselor[]
 }
 
 /**
  * Container for newsletter data from JSON
  */
 export interface NewsletterData {
-  /** Array of newsletters */
-  newsletterList: Newsletter[]
+    /** Array of newsletters */
+    newsletterList: Newsletter[]
 }
 ```
 
@@ -289,139 +289,139 @@ import { describe, it, expect, beforeEach } from 'vitest'
 import { CounselorRepository, NewsletterRepository } from '@/services/data-repository'
 
 describe('CounselorRepository', () => {
-  let repo: CounselorRepository
+    let repo: CounselorRepository
 
-  beforeEach(() => {
-    repo = new CounselorRepository()
-  })
-
-  describe('getAllCounselors', () => {
-    it('should load all counselors from JSON', async () => {
-      const counselors = await repo.getAllCounselors()
-
-      expect(counselors).toBeInstanceOf(Array)
-      expect(counselors.length).toBeGreaterThan(0)
+    beforeEach(() => {
+        repo = new CounselorRepository()
     })
 
-    it('should return counselors with all required fields', async () => {
-      const counselors = await repo.getAllCounselors()
-      const firstCounselor = counselors[0]
+    describe('getAllCounselors', () => {
+        it('should load all counselors from JSON', async () => {
+            const counselors = await repo.getAllCounselors()
 
-      expect(firstCounselor).toHaveProperty('firstname')
-      expect(firstCounselor).toHaveProperty('lastname')
-      expect(firstCounselor).toHaveProperty('email')
-      expect(firstCounselor).toHaveProperty('shortdescription')
-      expect(firstCounselor).toHaveProperty('longdescription')
-      expect(firstCounselor).toHaveProperty('id')
+            expect(counselors).toBeInstanceOf(Array)
+            expect(counselors.length).toBeGreaterThan(0)
+        })
+
+        it('should return counselors with all required fields', async () => {
+            const counselors = await repo.getAllCounselors()
+            const firstCounselor = counselors[0]
+
+            expect(firstCounselor).toHaveProperty('firstname')
+            expect(firstCounselor).toHaveProperty('lastname')
+            expect(firstCounselor).toHaveProperty('email')
+            expect(firstCounselor).toHaveProperty('shortdescription')
+            expect(firstCounselor).toHaveProperty('longdescription')
+            expect(firstCounselor).toHaveProperty('id')
+        })
+
+        it('should return counselors with array fields as arrays', async () => {
+            const counselors = await repo.getAllCounselors()
+            const firstCounselor = counselors[0]
+
+            expect(Array.isArray(firstCounselor.credentials)).toBe(true)
+            expect(Array.isArray(firstCounselor.insurance)).toBe(true)
+            expect(Array.isArray(firstCounselor.memberships)).toBe(true)
+            expect(Array.isArray(firstCounselor.titles)).toBe(true)
+        })
     })
 
-    it('should return counselors with array fields as arrays', async () => {
-      const counselors = await repo.getAllCounselors()
-      const firstCounselor = counselors[0]
+    describe('getCounselorByName', () => {
+        it('should find counselor by firstname (case-sensitive)', async () => {
+            // Assuming "Joanna" exists in the data
+            const counselor = await repo.getCounselorByName('Joanna')
 
-      expect(Array.isArray(firstCounselor.credentials)).toBe(true)
-      expect(Array.isArray(firstCounselor.insurance)).toBe(true)
-      expect(Array.isArray(firstCounselor.memberships)).toBe(true)
-      expect(Array.isArray(firstCounselor.titles)).toBe(true)
+            expect(counselor).toBeDefined()
+            expect(counselor).not.toBeNull()
+            if (counselor) {
+                expect(counselor.firstname).toBe('Joanna')
+            }
+        })
+
+        it('should return null for non-existent counselor', async () => {
+            const counselor = await repo.getCounselorByName('NonExistentPerson')
+
+            expect(counselor).toBeNull()
+        })
+
+        it('should return null for empty string', async () => {
+            const counselor = await repo.getCounselorByName('')
+
+            expect(counselor).toBeNull()
+        })
+
+        it('should find counselor regardless of case', async () => {
+            // Test case-insensitive search
+            const counselor = await repo.getCounselorByName('joanna')
+
+            // This might fail if implementation is case-sensitive
+            // If so, update implementation or test expectations
+            expect(counselor).toBeDefined()
+        })
     })
-  })
-
-  describe('getCounselorByName', () => {
-    it('should find counselor by firstname (case-sensitive)', async () => {
-      // Assuming "Joanna" exists in the data
-      const counselor = await repo.getCounselorByName('Joanna')
-
-      expect(counselor).toBeDefined()
-      expect(counselor).not.toBeNull()
-      if (counselor) {
-        expect(counselor.firstname).toBe('Joanna')
-      }
-    })
-
-    it('should return null for non-existent counselor', async () => {
-      const counselor = await repo.getCounselorByName('NonExistentPerson')
-
-      expect(counselor).toBeNull()
-    })
-
-    it('should return null for empty string', async () => {
-      const counselor = await repo.getCounselorByName('')
-
-      expect(counselor).toBeNull()
-    })
-
-    it('should find counselor regardless of case', async () => {
-      // Test case-insensitive search
-      const counselor = await repo.getCounselorByName('joanna')
-
-      // This might fail if implementation is case-sensitive
-      // If so, update implementation or test expectations
-      expect(counselor).toBeDefined()
-    })
-  })
 })
 
 describe('NewsletterRepository', () => {
-  let repo: NewsletterRepository
+    let repo: NewsletterRepository
 
-  beforeEach(() => {
-    repo = new NewsletterRepository()
-  })
-
-  describe('getAllNewsletters', () => {
-    it('should load all newsletters from JSON', async () => {
-      const newsletters = await repo.getAllNewsletters()
-
-      expect(newsletters).toBeInstanceOf(Array)
-      expect(newsletters.length).toBeGreaterThan(0)
+    beforeEach(() => {
+        repo = new NewsletterRepository()
     })
 
-    it('should return newsletters with all required fields', async () => {
-      const newsletters = await repo.getAllNewsletters()
-      const firstNewsletter = newsletters[0]
+    describe('getAllNewsletters', () => {
+        it('should load all newsletters from JSON', async () => {
+            const newsletters = await repo.getAllNewsletters()
 
-      expect(firstNewsletter).toHaveProperty('id')
-      expect(firstNewsletter).toHaveProperty('title')
-      expect(firstNewsletter).toHaveProperty('year')
-      expect(firstNewsletter).toHaveProperty('quarter')
-      expect(firstNewsletter).toHaveProperty('description')
+            expect(newsletters).toBeInstanceOf(Array)
+            expect(newsletters.length).toBeGreaterThan(0)
+        })
+
+        it('should return newsletters with all required fields', async () => {
+            const newsletters = await repo.getAllNewsletters()
+            const firstNewsletter = newsletters[0]
+
+            expect(firstNewsletter).toHaveProperty('id')
+            expect(firstNewsletter).toHaveProperty('title')
+            expect(firstNewsletter).toHaveProperty('year')
+            expect(firstNewsletter).toHaveProperty('quarter')
+            expect(firstNewsletter).toHaveProperty('description')
+        })
+
+        it('should handle null description field', async () => {
+            const newsletters = await repo.getAllNewsletters()
+
+            // At least one newsletter might have null description
+            const newsletterWithNullDesc = newsletters.find((n) => n.description === null)
+            expect(newsletterWithNullDesc).toBeDefined()
+        })
     })
 
-    it('should handle null description field', async () => {
-      const newsletters = await repo.getAllNewsletters()
+    describe('getNewsletterById', () => {
+        it('should find newsletter by id', async () => {
+            const newsletters = await repo.getAllNewsletters()
+            const firstNewsletterId = newsletters[0].id
 
-      // At least one newsletter might have null description
-      const newsletterWithNullDesc = newsletters.find((n) => n.description === null)
-      expect(newsletterWithNullDesc).toBeDefined()
+            const newsletter = await repo.getNewsletterById(firstNewsletterId)
+
+            expect(newsletter).toBeDefined()
+            expect(newsletter).not.toBeNull()
+            if (newsletter) {
+                expect(newsletter.id).toBe(firstNewsletterId)
+            }
+        })
+
+        it('should return null for non-existent id', async () => {
+            const newsletter = await repo.getNewsletterById('non-existent-id')
+
+            expect(newsletter).toBeNull()
+        })
+
+        it('should return null for empty string', async () => {
+            const newsletter = await repo.getNewsletterById('')
+
+            expect(newsletter).toBeNull()
+        })
     })
-  })
-
-  describe('getNewsletterById', () => {
-    it('should find newsletter by id', async () => {
-      const newsletters = await repo.getAllNewsletters()
-      const firstNewsletterId = newsletters[0].id
-
-      const newsletter = await repo.getNewsletterById(firstNewsletterId)
-
-      expect(newsletter).toBeDefined()
-      expect(newsletter).not.toBeNull()
-      if (newsletter) {
-        expect(newsletter.id).toBe(firstNewsletterId)
-      }
-    })
-
-    it('should return null for non-existent id', async () => {
-      const newsletter = await repo.getNewsletterById('non-existent-id')
-
-      expect(newsletter).toBeNull()
-    })
-
-    it('should return null for empty string', async () => {
-      const newsletter = await repo.getNewsletterById('')
-
-      expect(newsletter).toBeNull()
-    })
-  })
 })
 ```
 
@@ -438,34 +438,34 @@ import type { Counselor, Newsletter, CounselorData, NewsletterData } from '@/typ
  * Interface for counselor data access
  */
 export interface ICounselorRepository {
-  /**
-   * Retrieve all counselors
-   */
-  getAllCounselors(): Promise<Counselor[]>
+    /**
+     * Retrieve all counselors
+     */
+    getAllCounselors(): Promise<Counselor[]>
 
-  /**
-   * Find counselor by first name (case-insensitive)
-   * @param firstname - First name to search for
-   * @returns Counselor if found, null otherwise
-   */
-  getCounselorByName(firstname: string): Promise<Counselor | null>
+    /**
+     * Find counselor by first name (case-insensitive)
+     * @param firstname - First name to search for
+     * @returns Counselor if found, null otherwise
+     */
+    getCounselorByName(firstname: string): Promise<Counselor | null>
 }
 
 /**
  * Interface for newsletter data access
  */
 export interface INewsletterRepository {
-  /**
-   * Retrieve all newsletters
-   */
-  getAllNewsletters(): Promise<Newsletter[]>
+    /**
+     * Retrieve all newsletters
+     */
+    getAllNewsletters(): Promise<Newsletter[]>
 
-  /**
-   * Find newsletter by ID
-   * @param id - Newsletter ID to search for
-   * @returns Newsletter if found, null otherwise
-   */
-  getNewsletterById(id: string): Promise<Newsletter | null>
+    /**
+     * Find newsletter by ID
+     * @param id - Newsletter ID to search for
+     * @returns Newsletter if found, null otherwise
+     */
+    getNewsletterById(id: string): Promise<Newsletter | null>
 }
 
 /**
@@ -473,28 +473,28 @@ export interface INewsletterRepository {
  * Reads from static JSON file in public directory
  */
 export class CounselorRepository implements ICounselorRepository {
-  private dataPath = join(process.cwd(), 'public', 'data', 'counselor.json')
+    private dataPath = join(process.cwd(), 'public', 'data', 'counselor.json')
 
-  /**
-   * Retrieve all counselors from JSON file
-   */
-  async getAllCounselors(): Promise<Counselor[]> {
-    const raw = await readFile(this.dataPath, 'utf-8')
-    const data: CounselorData = JSON.parse(raw)
-    return data.counselorList
-  }
+    /**
+     * Retrieve all counselors from JSON file
+     */
+    async getAllCounselors(): Promise<Counselor[]> {
+        const raw = await readFile(this.dataPath, 'utf-8')
+        const data: CounselorData = JSON.parse(raw)
+        return data.counselorList
+    }
 
-  /**
-   * Find counselor by first name (case-insensitive)
-   */
-  async getCounselorByName(firstname: string): Promise<Counselor | null> {
-    if (!firstname) return null
+    /**
+     * Find counselor by first name (case-insensitive)
+     */
+    async getCounselorByName(firstname: string): Promise<Counselor | null> {
+        if (!firstname) return null
 
-    const counselors = await this.getAllCounselors()
-    const normalizedSearch = firstname.toLowerCase()
+        const counselors = await this.getAllCounselors()
+        const normalizedSearch = firstname.toLowerCase()
 
-    return counselors.find((c) => c.firstname.toLowerCase() === normalizedSearch) || null
-  }
+        return counselors.find((c) => c.firstname.toLowerCase() === normalizedSearch) || null
+    }
 }
 
 /**
@@ -502,26 +502,26 @@ export class CounselorRepository implements ICounselorRepository {
  * Reads from static JSON file in public directory
  */
 export class NewsletterRepository implements INewsletterRepository {
-  private dataPath = join(process.cwd(), 'public', 'data', 'newsletter.json')
+    private dataPath = join(process.cwd(), 'public', 'data', 'newsletter.json')
 
-  /**
-   * Retrieve all newsletters from JSON file
-   */
-  async getAllNewsletters(): Promise<Newsletter[]> {
-    const raw = await readFile(this.dataPath, 'utf-8')
-    const data: NewsletterData = JSON.parse(raw)
-    return data.newsletterList
-  }
+    /**
+     * Retrieve all newsletters from JSON file
+     */
+    async getAllNewsletters(): Promise<Newsletter[]> {
+        const raw = await readFile(this.dataPath, 'utf-8')
+        const data: NewsletterData = JSON.parse(raw)
+        return data.newsletterList
+    }
 
-  /**
-   * Find newsletter by ID
-   */
-  async getNewsletterById(id: string): Promise<Newsletter | null> {
-    if (!id) return null
+    /**
+     * Find newsletter by ID
+     */
+    async getNewsletterById(id: string): Promise<Newsletter | null> {
+        if (!id) return null
 
-    const newsletters = await this.getAllNewsletters()
-    return newsletters.find((n) => n.id === id) || null
-  }
+        const newsletters = await this.getAllNewsletters()
+        return newsletters.find((n) => n.id === id) || null
+    }
 }
 ```
 

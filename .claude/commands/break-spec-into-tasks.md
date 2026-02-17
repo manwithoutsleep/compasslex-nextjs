@@ -43,12 +43,12 @@ This prompt expects the following input parameter:
 1. Read the specification file at `.specs/{{spec-name}}.md` (or the provided
    path)
 2. Thoroughly analyze the entire specification to understand:
-   - Overall goals and objectives
-   - Major components or features
-   - Technical requirements and constraints
-   - Dependencies between different parts of the work
-   - Existing vs. new functionality
-   - Testing requirements
+    - Overall goals and objectives
+    - Major components or features
+    - Technical requirements and constraints
+    - Dependencies between different parts of the work
+    - Existing vs. new functionality
+    - Testing requirements
 3. Consider these additional notes:
 
 {{notes}}
@@ -67,10 +67,10 @@ This prompt expects the following input parameter:
   small, not too large)
 
 4. Determine the optimal number of sub-tasks:
-   - Minimum 2 sub-tasks (otherwise, no breakdown is needed)
-   - Maximum 10 sub-tasks (beyond this, tasks may be too granular)
-   - Sweet spot: 3-6 sub-tasks for most specifications
-   - Consider: Each sub-task should represent 1-3 hours of focused work
+    - Minimum 2 sub-tasks (otherwise, no breakdown is needed)
+    - Maximum 10 sub-tasks (beyond this, tasks may be too granular)
+    - Sweet spot: 3-6 sub-tasks for most specifications
+    - Consider: Each sub-task should represent 1-3 hours of focused work
 
 </step_2_identify_logical_boundaries>
 
@@ -86,9 +86,9 @@ This prompt expects the following input parameter:
   tasks?
 
 6. Create a dependency graph (conceptually) that shows:
-   - Which tasks can start immediately (no dependencies)
-   - Which tasks must wait for other tasks to complete
-   - Which groups of tasks can run in parallel
+    - Which tasks can start immediately (no dependencies)
+    - Which tasks must wait for other tasks to complete
+    - Which groups of tasks can run in parallel
 
 </step_3_analyze_dependencies>
 
@@ -103,75 +103,75 @@ This prompt expects the following input parameter:
 
 8. Each sub-task file must contain:
 
-   ```markdown
-   # {{spec-name}}-NN: [Descriptive Title]
+    ```markdown
+    # {{spec-name}}-NN: [Descriptive Title]
 
-   ## Parent Specification
+    ## Parent Specification
 
-   This is sub-task NN of the parent specification: `{{spec-name}}.md`
+    This is sub-task NN of the parent specification: `{{spec-name}}.md`
 
-   ## Objective
+    ## Objective
 
-   [Clear, focused objective for this specific sub-task]
+    [Clear, focused objective for this specific sub-task]
 
-   ## Dependencies
+    ## Dependencies
 
-   **Prerequisites** (must be completed before this task):
+    **Prerequisites** (must be completed before this task):
 
-   - [List any sub-tasks that must be completed first, or "None" if this can start
-     immediately]
+    - [List any sub-tasks that must be completed first, or "None" if this can start
+      immediately]
 
-   **Blocks** (tasks that depend on this one):
+    **Blocks** (tasks that depend on this one):
 
-   - [List any sub-tasks that depend on this one completing, or "None"]
+    - [List any sub-tasks that depend on this one completing, or "None"]
 
-   **Parallel Opportunities**:
+    **Parallel Opportunities**:
 
-   - [List any sub-tasks that can be executed simultaneously with this one, or
-     "None"]
+    - [List any sub-tasks that can be executed simultaneously with this one, or
+      "None"]
 
-   ## Scope
+    ## Scope
 
-   [Detailed description of what this sub-task includes]
+    [Detailed description of what this sub-task includes]
 
-   ### In Scope
+    ### In Scope
 
-   - [Specific features, files, components to implement]
+    - [Specific features, files, components to implement]
 
-   ### Out of Scope
+    ### Out of Scope
 
-   - [What is explicitly NOT part of this sub-task]
+    - [What is explicitly NOT part of this sub-task]
 
-   ## Implementation Requirements
+    ## Implementation Requirements
 
-   [Technical requirements specific to this sub-task]
+    [Technical requirements specific to this sub-task]
 
-   ## Files to Create/Modify
+    ## Files to Create/Modify
 
-   - `./path/to/file1.ts` - [description]
-   - `./path/to/file2.tsx` - [description]
+    - `./path/to/file1.ts` - [description]
+    - `./path/to/file2.tsx` - [description]
 
-   ## Testing Requirements
+    ## Testing Requirements
 
-   [How to verify this sub-task is complete]
+    [How to verify this sub-task is complete]
 
-   ## Success Criteria
+    ## Success Criteria
 
-   - [ ] [Specific, measurable criterion 1]
-   - [ ] [Specific, measurable criterion 2]
-   - [ ] All tests pass
-   - [ ] The verify-code skill has been successfully executed
+    - [ ] [Specific, measurable criterion 1]
+    - [ ] [Specific, measurable criterion 2]
+    - [ ] All tests pass
+    - [ ] The verify-code skill has been successfully executed
 
-   ## Notes
+    ## Notes
 
-   [Any additional context, gotchas, or important considerations]
-   ```
+    [Any additional context, gotchas, or important considerations]
+    ```
 
 9. Ensure each sub-task is:
-   - **Self-contained**: Can be understood without reading other sub-tasks
-   - **Focused**: Has a single, clear purpose
-   - **Testable**: Has clear success criteria
-   - **Properly scoped**: Not too large, not too small
+    - **Self-contained**: Can be understood without reading other sub-tasks
+    - **Focused**: Has a single, clear purpose
+    - **Testable**: Has clear success criteria
+    - **Properly scoped**: Not too large, not too small
 
 </step_4_create_subtask_files>
 

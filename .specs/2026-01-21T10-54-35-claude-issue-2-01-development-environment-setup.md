@@ -97,22 +97,22 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  plugins: [react()],
-  test: {
-    environment: 'jsdom',
-    setupFiles: ['./vitest.setup.ts'],
-    globals: true,
-    coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json', 'html'],
-      exclude: ['node_modules/', '.next/', 'coverage/', '**/*.config.ts', '**/*.config.js'],
+    plugins: [react()],
+    test: {
+        environment: 'jsdom',
+        setupFiles: ['./vitest.setup.ts'],
+        globals: true,
+        coverage: {
+            provider: 'v8',
+            reporter: ['text', 'json', 'html'],
+            exclude: ['node_modules/', '.next/', 'coverage/', '**/*.config.ts', '**/*.config.js'],
+        },
     },
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './'),
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './'),
+        },
     },
-  },
 })
 ```
 
@@ -128,43 +128,43 @@ import '@testing-library/jest-dom/vitest'
 import { defineConfig, devices } from '@playwright/test'
 
 export default defineConfig({
-  testDir: './e2e',
-  fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
-  use: {
-    baseURL: 'http://localhost:3000',
-    trace: 'on-first-retry',
-  },
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+    testDir: './e2e',
+    fullyParallel: true,
+    forbidOnly: !!process.env.CI,
+    retries: process.env.CI ? 2 : 0,
+    workers: process.env.CI ? 1 : undefined,
+    reporter: 'html',
+    use: {
+        baseURL: 'http://localhost:3000',
+        trace: 'on-first-retry',
     },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+    projects: [
+        {
+            name: 'chromium',
+            use: { ...devices['Desktop Chrome'] },
+        },
+        {
+            name: 'firefox',
+            use: { ...devices['Desktop Firefox'] },
+        },
+        {
+            name: 'webkit',
+            use: { ...devices['Desktop Safari'] },
+        },
+        {
+            name: 'Mobile Chrome',
+            use: { ...devices['Pixel 5'] },
+        },
+        {
+            name: 'Mobile Safari',
+            use: { ...devices['iPhone 12'] },
+        },
+    ],
+    webServer: {
+        command: 'npm run dev',
+        url: 'http://localhost:3000',
+        reuseExistingServer: !process.env.CI,
     },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
-  ],
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-  },
 })
 ```
 
@@ -172,13 +172,13 @@ export default defineConfig({
 
 ```json
 {
-  "semi": false,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "useTabs": false,
-  "trailingComma": "es5",
-  "printWidth": 100,
-  "plugins": ["prettier-plugin-tailwindcss"]
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "useTabs": false,
+    "trailingComma": "es5",
+    "printWidth": 100,
+    "plugins": ["prettier-plugin-tailwindcss"]
 }
 ```
 
@@ -221,19 +221,19 @@ Add or verify these npm scripts exist:
 
 ```json
 {
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage",
-    "e2e": "playwright test",
-    "e2e:ui": "playwright test --ui",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
-  }
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "test": "vitest",
+        "test:ui": "vitest --ui",
+        "test:coverage": "vitest run --coverage",
+        "e2e": "playwright test",
+        "e2e:ui": "playwright test --ui",
+        "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+        "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
+    }
 }
 ```
 
@@ -257,62 +257,62 @@ Since this task is about setup and configuration, testing involves verification 
 
 1. **Verify npm dependencies installed**:
 
-   ```bash
-   npm list vitest @testing-library/react @playwright/test prettier @googlemaps/js-api-loader
-   ```
+    ```bash
+    npm list vitest @testing-library/react @playwright/test prettier @googlemaps/js-api-loader
+    ```
 
 2. **Verify TypeScript compilation works**:
 
-   ```bash
-   tsc --noEmit
-   ```
+    ```bash
+    tsc --noEmit
+    ```
 
 3. **Verify Vitest configuration is valid**:
 
-   ```bash
-   npx vitest --version
-   npx vitest run --reporter=verbose --no-coverage
-   ```
+    ```bash
+    npx vitest --version
+    npx vitest run --reporter=verbose --no-coverage
+    ```
 
-   Expected: Vitest runs successfully (even with no tests yet)
+    Expected: Vitest runs successfully (even with no tests yet)
 
 4. **Verify Playwright installation**:
 
-   ```bash
-   npx playwright install
-   npx playwright test --list
-   ```
+    ```bash
+    npx playwright install
+    npx playwright test --list
+    ```
 
-   Expected: Playwright lists 0 tests (none created yet)
+    Expected: Playwright lists 0 tests (none created yet)
 
 5. **Verify Prettier configuration**:
 
-   ```bash
-   npx prettier --check "**/*.{ts,tsx,json,md}"
-   ```
+    ```bash
+    npx prettier --check "**/*.{ts,tsx,json,md}"
+    ```
 
-   Expected: Prettier runs successfully
+    Expected: Prettier runs successfully
 
 6. **Verify build pipeline**:
 
-   ```bash
-   npm run build
-   ```
+    ```bash
+    npm run build
+    ```
 
-   Expected: Build completes successfully with no errors
+    Expected: Build completes successfully with no errors
 
 7. **Verify dev server starts**:
 
-   ```bash
-   npm run dev
-   ```
+    ```bash
+    npm run dev
+    ```
 
-   Expected: Dev server starts on http://localhost:3000 with no errors
+    Expected: Dev server starts on http://localhost:3000 with no errors
 
 8. **Verify environment variables**:
-   - Check that `.env.local` exists and contains `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`
-   - Check that `.env.example` exists with placeholder value
-   - Verify `.env.local` is in `.gitignore`
+    - Check that `.env.local` exists and contains `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`
+    - Check that `.env.example` exists with placeholder value
+    - Verify `.env.local` is in `.gitignore`
 
 ## Success Criteria
 

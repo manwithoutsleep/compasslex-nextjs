@@ -96,20 +96,20 @@ This project is developed in a **WSL (Windows Subsystem for Linux)** environment
 
 ```html
 <div class="navigation-header-large-screen">
-  <h1>
-    <a routerLink="/"><img src="/assets/site-images/CompassLogoAndIcon.png" /></a>
-  </h1>
-  <div class="navigation-header-right">
-    <div class="navigation-contact-info">
-      <div>(859) 721-3259</div>
-      <button class="navigation-appointment-button" routerLink="/contact-us">
-        Make an Appointment
-      </button>
+    <h1>
+        <a routerLink="/"><img src="/assets/site-images/CompassLogoAndIcon.png" /></a>
+    </h1>
+    <div class="navigation-header-right">
+        <div class="navigation-contact-info">
+            <div>(859) 721-3259</div>
+            <button class="navigation-appointment-button" routerLink="/contact-us">
+                Make an Appointment
+            </button>
+        </div>
+        <div class="navigation-top-menu">
+            <!-- Navigation buttons here (already implemented in Phase 4) -->
+        </div>
     </div>
-    <div class="navigation-top-menu">
-      <!-- Navigation buttons here (already implemented in Phase 4) -->
-    </div>
-  </div>
 </div>
 ```
 
@@ -117,11 +117,11 @@ This project is developed in a **WSL (Windows Subsystem for Linux)** environment
 
 ```html
 <h1 class="navigation-header-small-screen">
-  <button (click)="toggleSidenav()" class="menu-button icon-button">
-    <span class="material-icons">menu</span>
-  </button>
-  <a routerLink="/"><img src="/assets/site-images/CompassLogoSmall.png" /></a>
-  <a routerLink="/"><img src="/assets/site-images/CompassIconSmall.png" /></a>
+    <button (click)="toggleSidenav()" class="menu-button icon-button">
+        <span class="material-icons">menu</span>
+    </button>
+    <a routerLink="/"><img src="/assets/site-images/CompassLogoSmall.png" /></a>
+    <a routerLink="/"><img src="/assets/site-images/CompassIconSmall.png" /></a>
 </h1>
 ```
 
@@ -138,18 +138,18 @@ This project is developed in a **WSL (Windows Subsystem for Linux)** environment
 
 ```html
 <footer class="navigation-footer">
-  <div class="navigation-footer-address">
-    <div class="address">
-      Compass Christian Counseling<br />
-      651 Perimeter Drive, Suite 115<br />
-      Lexington, KY 40517<br />
-      (859) 721-3259<br />
+    <div class="navigation-footer-address">
+        <div class="address">
+            Compass Christian Counseling<br />
+            651 Perimeter Drive, Suite 115<br />
+            Lexington, KY 40517<br />
+            (859) 721-3259<br />
+        </div>
+        <img src="/assets/site-images/contactus-building_267x160.jpg" alt="building" />
     </div>
-    <img src="/assets/site-images/contactus-building_267x160.jpg" alt="building" />
-  </div>
-  <div class="navigation-footer-map">
-    <!-- Map placeholder for now, actual map in Task 06 -->
-  </div>
+    <div class="navigation-footer-map">
+        <!-- Map placeholder for now, actual map in Task 06 -->
+    </div>
 </footer>
 ```
 

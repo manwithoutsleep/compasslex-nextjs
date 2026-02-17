@@ -56,11 +56,11 @@ This project is developed in a **WSL (Windows Subsystem for Linux)** environment
 ### Technology Stack
 
 - **Tailwind CSS v4** (using CSS-based configuration)
-  - **Note**: This spec originally targeted Tailwind v3 with `tailwind.config.ts`, but the implementation intentionally uses Tailwind v4's modern `@theme` directive in CSS for several advantages:
-    - Native CSS custom properties integration
-    - Simpler configuration without separate JS/TS config file
-    - Better alignment with CSS-first approach
-    - Forward-compatible with CSS ecosystem
+    - **Note**: This spec originally targeted Tailwind v3 with `tailwind.config.ts`, but the implementation intentionally uses Tailwind v4's modern `@theme` directive in CSS for several advantages:
+        - Native CSS custom properties integration
+        - Simpler configuration without separate JS/TS config file
+        - Better alignment with CSS-first approach
+        - Forward-compatible with CSS ecosystem
 - React 18+ for component implementation
 - TypeScript for type safety
 - Vitest + React Testing Library for testing
@@ -160,29 +160,29 @@ Update `app/globals.css` with the `@theme` directive:
 @import 'tailwindcss';
 
 @theme {
-  /* Color Palette - Old Site Colors (Primary) */
-  --color-deep-sapphire: #191248;
-  --color-warm-sand: #f2c58a;
-  --color-peach-puff: #fbe3c9;
-  --color-pure-white: #ffffff;
-  --color-royal-indigo: #43208a;
+    /* Color Palette - Old Site Colors (Primary) */
+    --color-deep-sapphire: #191248;
+    --color-warm-sand: #f2c58a;
+    --color-peach-puff: #fbe3c9;
+    --color-pure-white: #ffffff;
+    --color-royal-indigo: #43208a;
 
-  /* Color Palette - New Site Colors */
-  --color-polar-mist: #ddeff7;
-  --color-bengal-blue: #b1cfdd;
-  --color-raspberry-smoothie: #c6a3b3;
-  --color-north-pole-blue: #709eb4;
-  --color-ultra-pure-white: #f8f9f3;
+    /* Color Palette - New Site Colors */
+    --color-polar-mist: #ddeff7;
+    --color-bengal-blue: #b1cfdd;
+    --color-raspberry-smoothie: #c6a3b3;
+    --color-north-pole-blue: #709eb4;
+    --color-ultra-pure-white: #f8f9f3;
 
-  /* Layout Configuration */
-  --max-width-site: 1440px;
-  --min-width-site: 320px;
+    /* Layout Configuration */
+    --max-width-site: 1440px;
+    --min-width-site: 320px;
 
-  /* Border Widths */
-  --border-width-3: 3px;
+    /* Border Widths */
+    --border-width-3: 3px;
 
-  /* Typography */
-  --font-family-sans: Roboto, sans-serif;
+    /* Typography */
+    --font-family-sans: Roboto, sans-serif;
 }
 ```
 
