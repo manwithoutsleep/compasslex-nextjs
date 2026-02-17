@@ -29,9 +29,7 @@ export default function ContactCounselorCard({ counselor }: ContactCounselorCard
                     {counselor.firstName} {counselor.lastName}
                 </p>
                 <p>{counselor.phone}</p>
-                <a href={`mailto:${counselor.email}`} target="_blank" rel="noopener noreferrer">
-                    {counselor.email}
-                </a>
+                <a href={`mailto:${counselor.email}`}>{counselor.email}</a>
                 <a
                     href={counselor.appointmentLink}
                     target="_blank"

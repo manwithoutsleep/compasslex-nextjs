@@ -120,13 +120,7 @@ export default async function CounselorDetailPage({ params }: Props) {
                         <div className="mt-6">
                             <p>
                                 Contact me:{' '}
-                                <a
-                                    href={`mailto:${counselor.email}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {counselor.email}
-                                </a>
+                                <a href={`mailto:${counselor.email}`}>{counselor.email}</a>
                             </p>
                         </div>
                     </div>
