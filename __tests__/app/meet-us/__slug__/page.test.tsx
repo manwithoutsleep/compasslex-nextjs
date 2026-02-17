@@ -34,60 +34,42 @@ vi.mock('next/navigation', () => ({
 }))
 
 describe('Counselor Detail Page', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
         vi.clearAllMocks()
-    })
-
-    it('renders the counselor name as heading', async () => {
         const CounselorDetailPage = (await import('@/app/meet-us/[slug]/page')).default
         const jsx = await CounselorDetailPage({ params: Promise.resolve({ slug: 'linda' }) })
         render(jsx)
+    })
+
+    it('renders the counselor name as heading', () => {
         expect(screen.getByRole('heading', { name: /Linda Fentress/i })).toBeInTheDocument()
     })
 
-    it('renders the counselor title', async () => {
-        const CounselorDetailPage = (await import('@/app/meet-us/[slug]/page')).default
-        const jsx = await CounselorDetailPage({ params: Promise.resolve({ slug: 'linda' }) })
-        render(jsx)
+    it('renders the counselor title', () => {
         expect(screen.getByText('Ph.D, LPCC-S')).toBeInTheDocument()
     })
 
-    it('renders educational credentials section', async () => {
-        const CounselorDetailPage = (await import('@/app/meet-us/[slug]/page')).default
-        const jsx = await CounselorDetailPage({ params: Promise.resolve({ slug: 'linda' }) })
-        render(jsx)
+    it('renders educational credentials section', () => {
         expect(screen.getByText('Educational/Professional')).toBeInTheDocument()
         expect(screen.getByText('Ph.D in Psychology')).toBeInTheDocument()
     })
 
-    it('renders insurance section', async () => {
-        const CounselorDetailPage = (await import('@/app/meet-us/[slug]/page')).default
-        const jsx = await CounselorDetailPage({ params: Promise.resolve({ slug: 'linda' }) })
-        render(jsx)
+    it('renders insurance section', () => {
         expect(screen.getByText('In Network Provider for:')).toBeInTheDocument()
         expect(screen.getByText('Anthem Blue Cross')).toBeInTheDocument()
     })
 
-    it('renders memberships section', async () => {
-        const CounselorDetailPage = (await import('@/app/meet-us/[slug]/page')).default
-        const jsx = await CounselorDetailPage({ params: Promise.resolve({ slug: 'linda' }) })
-        render(jsx)
+    it('renders memberships section', () => {
         expect(screen.getByText('Member of:')).toBeInTheDocument()
         expect(screen.getByText('American Counseling Association')).toBeInTheDocument()
     })
 
-    it('renders email contact link', async () => {
-        const CounselorDetailPage = (await import('@/app/meet-us/[slug]/page')).default
-        const jsx = await CounselorDetailPage({ params: Promise.resolve({ slug: 'linda' }) })
-        render(jsx)
+    it('renders email contact link', () => {
         const emailLink = screen.getByRole('link', { name: 'linda@compasslex.com' })
         expect(emailLink).toHaveAttribute('href', 'mailto:linda@compasslex.com')
     })
 
-    it('renders appointment button', async () => {
-        const CounselorDetailPage = (await import('@/app/meet-us/[slug]/page')).default
-        const jsx = await CounselorDetailPage({ params: Promise.resolve({ slug: 'linda' }) })
-        render(jsx)
+    it('renders appointment button', () => {
         const apptLink = screen.getByRole('link', { name: /Make an appointment/i })
         expect(apptLink).toHaveAttribute('href', 'https://example.com/appt')
     })

@@ -33,30 +33,24 @@ vi.mock('@/services/data-repository', () => ({
 }))
 
 describe('Newsletters Page', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
         vi.clearAllMocks()
-    })
-
-    it('renders the page heading "Compass Articles"', async () => {
         const NewslettersPage = (await import('@/app/newsletters/page')).default
         const jsx = await NewslettersPage()
         render(jsx)
+    })
+
+    it('renders the page heading "Compass Articles"', () => {
         expect(screen.getByRole('heading', { name: /Compass Articles/i })).toBeInTheDocument()
     })
 
-    it('renders the intro paragraph', async () => {
-        const NewslettersPage = (await import('@/app/newsletters/page')).default
-        const jsx = await NewslettersPage()
-        render(jsx)
+    it('renders the intro paragraph', () => {
         expect(
             screen.getByText(/Compass Christian Counseling Articles cover a variety of topics/i)
         ).toBeInTheDocument()
     })
 
-    it('renders a card image for each newsletter', async () => {
-        const NewslettersPage = (await import('@/app/newsletters/page')).default
-        const jsx = await NewslettersPage()
-        render(jsx)
+    it('renders a card image for each newsletter', () => {
         expect(screen.getByRole('img', { name: 'The Comparison Trap' })).toBeInTheDocument()
         expect(
             screen.getByRole('img', { name: 'How Good Are Your Listening Skills?' })
@@ -64,10 +58,7 @@ describe('Newsletters Page', () => {
         expect(screen.getByRole('img', { name: 'Building Resilience' })).toBeInTheDocument()
     })
 
-    it('renders newsletters sorted newest first', async () => {
-        const NewslettersPage = (await import('@/app/newsletters/page')).default
-        const jsx = await NewslettersPage()
-        render(jsx)
+    it('renders newsletters sorted newest first', () => {
         const links = screen.getAllByRole('link')
         expect(links[0]).toHaveAttribute('href', '/assets/newsletters/CompassNewsletter2021Q4.pdf')
     })

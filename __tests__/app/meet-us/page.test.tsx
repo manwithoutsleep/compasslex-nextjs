@@ -46,29 +46,23 @@ vi.mock('@/services/data-repository', () => ({
 }))
 
 describe('Meet Us Page', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
         vi.clearAllMocks()
-    })
-
-    it('renders the page heading', async () => {
         const MeetUsPage = (await import('@/app/meet-us/page')).default
         const jsx = await MeetUsPage()
         render(jsx)
+    })
+
+    it('renders the page heading', () => {
         expect(screen.getByRole('heading', { name: /Meet Us/i })).toBeInTheDocument()
     })
 
-    it('renders a card for each counselor', async () => {
-        const MeetUsPage = (await import('@/app/meet-us/page')).default
-        const jsx = await MeetUsPage()
-        render(jsx)
+    it('renders a card for each counselor', () => {
         expect(screen.getByText(/Hi, I'm Linda/i)).toBeInTheDocument()
         expect(screen.getByText(/Hi, I'm Kelsi/i)).toBeInTheDocument()
     })
 
-    it('renders counselor short descriptions', async () => {
-        const MeetUsPage = (await import('@/app/meet-us/page')).default
-        const jsx = await MeetUsPage()
-        render(jsx)
+    it('renders counselor short descriptions', () => {
         expect(screen.getByText('Linda is a licensed professional counselor.')).toBeInTheDocument()
     })
 })
