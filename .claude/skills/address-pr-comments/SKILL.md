@@ -1,8 +1,28 @@
 ---
-argument-hint: [pr-num] [branch-name] [focus-areas]
 allowed-tools: Skill(verify-code)
 description: Read and handle comments on a PR
 ---
+
+## Example Usage
+
+```bash
+/address-pr-comments 123 feature-branch "Type safety issues, error handling"
+```
+
+**Parameters:**
+- `pr-num`: The GitHub pull request number (e.g., 123)
+- `branch-name`: The git branch name for this PR (e.g., feature-branch)
+- `focus-areas`: Specific areas to address from the PR feedback (e.g., "Type safety issues, error handling")
+
+**Common Focus Areas:**
+- Type safety issues
+- Error handling
+- Missing tests
+- Performance concerns
+- Accessibility improvements
+- Security vulnerabilities
+- Code duplication
+- Documentation gaps
 
 <context>
     <project_state>
@@ -58,3 +78,9 @@ description: Read and handle comments on a PR
     </final_step>
 
 </instructions>
+
+<references>
+    See `references/examples.md` for examples of common PR comments and how to address them.
+    See `references/response-templates.md` for PR comment response templates.
+    See `references/commit-messages.md` for commit message guidelines and examples.
+</references>
