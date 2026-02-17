@@ -50,9 +50,12 @@
             "Bash(tree*)",
             "Bash(tsc*)",
             "Bash(where*)",
+            "Skill(address-pr-comments)",
             "Skill(address-style-discrepancy)",
             "Skill(close-pr-and-cleanup)",
+            "WebFetch(domain:cli.github.com)",
             "WebFetch(domain:compasslex.com)",
+            "WebFetch(domain:docs.github.com)",
             "WebSearch"
         ],
         "deny": [],
