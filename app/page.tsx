@@ -48,9 +48,7 @@ export default function HomePage() {
                     </div>
                     <div className="m-2">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
-                            <Link href="/meet-us" className="no-underline">
-                                Meet Us
-                            </Link>
+                            <Link href="/meet-us">Meet Us</Link>
                         </h2>
                         <p className="p-2">
                             Meet our compassionate team of counselors at Compass Christian
@@ -67,9 +65,7 @@ export default function HomePage() {
                 <div className="bg-raspberry-smoothie grid min-h-[250px] grid-cols-1 md:grid-cols-2">
                     <div className="m-2">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
-                            <Link href="/our-services" className="no-underline">
-                                Our Services
-                            </Link>
+                            <Link href="/our-services">Our Services</Link>
                         </h2>
                         <p className="p-2">
                             At Compass Christian Counseling, we offer a comprehensive range of
@@ -104,9 +100,7 @@ export default function HomePage() {
                     </div>
                     <div className="m-2">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
-                            <Link href="/faq" className="no-underline">
-                                FAQ
-                            </Link>
+                            <Link href="/faq">FAQ</Link>
                         </h2>
                         <p className="p-2">
                             Explore our Frequently Asked Questions page where we provide clear and
@@ -124,9 +118,7 @@ export default function HomePage() {
                 <div className="bg-raspberry-smoothie grid min-h-[250px] grid-cols-1 md:grid-cols-2">
                     <div className="m-2">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
-                            <Link href="/resources" className="no-underline">
-                                Resources
-                            </Link>
+                            <Link href="/resources">Resources</Link>
                         </h2>
                         <p className="p-2">
                             Visit our Resources page for essential support tools and information,
@@ -162,9 +154,7 @@ export default function HomePage() {
                     </div>
                     <div className="m-2">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
-                            <Link href="/contact-us" className="no-underline">
-                                Contact Us
-                            </Link>
+                            <Link href="/contact-us">Contact Us</Link>
                         </h2>
                         <p className="p-2">
                             The Contact Us page of Compass Christian Counseling offers various ways
