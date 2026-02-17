@@ -22,7 +22,6 @@ export default function ContactCounselorCard({ counselor }: ContactCounselorCard
                     width={200}
                     height={206}
                     className="rounded"
-                    unoptimized
                 />
             </div>
             <div className="flex min-w-[180px] flex-col gap-1">

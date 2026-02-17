@@ -53,7 +53,6 @@ export default async function CounselorDetailPage({ params }: Props) {
                                 width={221}
                                 height={276}
                                 className="mx-auto w-full max-w-[221px] rounded-2xl object-cover"
-                                unoptimized
                             />
                             <div className="mx-auto mt-2 w-full max-w-[221px] py-1">
                                 <p className="font-semibold">

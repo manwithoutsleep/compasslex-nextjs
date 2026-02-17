@@ -24,7 +24,6 @@ export default function ResourcesPage() {
                             width={264}
                             height={185}
                             className="mx-auto"
-                            unoptimized
                         />
                         <Card>
                             <CardTitle>Crisis Contacts</CardTitle>
@@ -96,7 +95,6 @@ export default function ResourcesPage() {
                             width={281}
                             height={185}
                             className="mx-auto"
-                            unoptimized
                         />
                         <Card>
                             <CardTitle>Good Reads</CardTitle>

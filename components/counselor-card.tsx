@@ -33,7 +33,6 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
                             width={182}
                             height={235}
                             className="cursor-pointer rounded"
-                            unoptimized
                         />
                     </Link>
                 </div>

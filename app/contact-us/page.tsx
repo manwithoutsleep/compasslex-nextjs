@@ -49,7 +49,6 @@ export default async function ContactUsPage() {
                                 width={267}
                                 height={160}
                                 className="mb-4 rounded"
-                                unoptimized
                             />
                             <div>
                                 <strong>Compass Christian Counseling</strong>

@@ -69,7 +69,6 @@ export default function OurServicesPage() {
                             width={300}
                             height={200}
                             className="border-deep-sapphire my-0 w-full border-6"
-                            unoptimized
                         />
                         <Image
                             src="/assets/site-images/OurServicesMiddle.png"
@@ -77,7 +76,6 @@ export default function OurServicesPage() {
                             width={300}
                             height={200}
                             className="border-deep-sapphire my-0 w-full border-6"
-                            unoptimized
                         />
                         <Image
                             src="/assets/site-images/OurServicesBottom.jpg"
@@ -85,7 +83,6 @@ export default function OurServicesPage() {
                             width={300}
                             height={200}
                             className="border-deep-sapphire my-0 w-full border-6"
-                            unoptimized
                         />
                     </div>
 

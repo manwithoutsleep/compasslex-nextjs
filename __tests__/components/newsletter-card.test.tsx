@@ -23,6 +23,9 @@ describe('NewsletterCard', () => {
         render(<NewsletterCard newsletter={mockNewsletter} />)
         const img = screen.getByRole('img', { name: /The Comparison Trap/i })
         expect(img).toBeInTheDocument()
-        expect(img).toHaveAttribute('src', '/assets/newsletters/CompassNewsletter2021Q4.png')
+        // Next.js Image optimization is enabled, so src is an optimized URL
+        expect(img.getAttribute('src')).toMatch(
+            /^\/_next\/image\?url=%2Fassets%2Fnewsletters%2FCompassNewsletter2021Q4\.png/
+        )
     })
 })

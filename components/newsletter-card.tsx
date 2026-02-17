@@ -23,7 +23,6 @@ export default function NewsletterCard({ newsletter }: NewsletterCardProps) {
                 width={280}
                 height={266}
                 className="rounded p-1"
-                unoptimized
             />
         </a>
     )

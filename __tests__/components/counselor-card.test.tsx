@@ -54,7 +54,10 @@ describe('CounselorCard', () => {
         // Image link is aria-hidden, so use getByAltText instead of getByRole
         const img = screen.getByAltText(/Linda Fentress/i)
         expect(img).toBeInTheDocument()
-        expect(img).toHaveAttribute('src', '/assets/counselor-images/linda-meet-us-182x235.jpg')
+        // Next.js Image optimization is enabled, so src is an optimized URL
+        expect(img.getAttribute('src')).toMatch(
+            /^\/_next\/image\?url=%2Fassets%2Fcounselor-images%2Flinda-meet-us-182x235\.jpg/
+        )
     })
 
     it('renders the counselor image as a link to the detail page', () => {
