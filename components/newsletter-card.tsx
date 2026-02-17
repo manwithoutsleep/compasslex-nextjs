@@ -5,6 +5,10 @@ interface NewsletterCardProps {
     newsletter: Newsletter
 }
 
+/**
+ * Displays a newsletter card with thumbnail image linking to the PDF download.
+ * Matches the Angular newsletter-card component layout.
+ */
 export default function NewsletterCard({ newsletter }: NewsletterCardProps) {
     const fileBase = `CompassNewsletter${newsletter.year}Q${newsletter.quarter}`
     const pdfHref = `/assets/newsletters/${fileBase}.pdf`
