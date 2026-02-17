@@ -21,12 +21,16 @@ export default async function NewslettersPage() {
                     strategies for stress, relationship skills, and mental and emotional well-being.
                 </p>
 
-                {sorted.length > 0 && (
+                {sorted.length > 0 ? (
                     <div className="flex flex-wrap justify-center gap-6">
                         {sorted.map((newsletter) => (
                             <NewsletterCard key={newsletter.id} newsletter={newsletter} />
                         ))}
                     </div>
+                ) : (
+                    <p className="text-center">
+                        We can&apos;t load the list of newsletters right now.
+                    </p>
                 )}
             </div>
         </div>

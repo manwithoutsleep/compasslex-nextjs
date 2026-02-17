@@ -16,12 +16,16 @@ export default async function MeetUsPage() {
         <div className="max-w-site mx-auto">
             <Heading level={2}>Meet Us</Heading>
             <div className="p-4">
-                {counselors.length > 0 && (
+                {counselors.length > 0 ? (
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {counselors.map((counselor) => (
                             <CounselorCard key={counselor.id} counselor={counselor} />
                         ))}
                     </div>
+                ) : (
+                    <p className="text-center">
+                        We can&apos;t load the list of counselors right now.
+                    </p>
                 )}
             </div>
         </div>
