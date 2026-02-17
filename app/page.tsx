@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import HomePageRotator from '@/components/home-page-rotator'
 
@@ -35,15 +36,16 @@ export default function HomePage() {
 
                 {/* Row 2: Meet Us (image left, text right) */}
                 <div className="bg-bengal-blue grid min-h-[250px] grid-cols-1 md:grid-cols-2">
-                    <div
-                        className="min-h-[250px]"
-                        style={{
-                            backgroundImage: 'url(/assets/site-images/home-image-1.webp)',
-                            backgroundPosition: 'top center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: 'cover',
-                        }}
-                    />
+                    <div className="relative min-h-[250px]" aria-hidden="true">
+                        <Image
+                            src="/assets/site-images/home-image-1.webp"
+                            alt=""
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover object-top"
+                            priority={true}
+                        />
+                    </div>
                     <div className="m-2">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
                             <Link href="/meet-us" className="no-underline">
@@ -78,28 +80,28 @@ export default function HomePage() {
                             we&apos;re here to provide the guidance and tools you need to thrive.
                         </p>
                     </div>
-                    <div
-                        className="min-h-[250px]"
-                        style={{
-                            backgroundImage: 'url(/assets/site-images/home-image-2.webp)',
-                            backgroundPosition: 'top center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: 'cover',
-                        }}
-                    />
+                    <div className="relative min-h-[250px]" aria-hidden="true">
+                        <Image
+                            src="/assets/site-images/home-image-2.webp"
+                            alt=""
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover object-top"
+                        />
+                    </div>
                 </div>
 
                 {/* Row 4: FAQ (image left, text right) */}
                 <div className="bg-ultra-pure-white grid min-h-[250px] grid-cols-1 md:grid-cols-2">
-                    <div
-                        className="min-h-[250px]"
-                        style={{
-                            backgroundImage: 'url(/assets/site-images/home-image-3.webp)',
-                            backgroundPosition: 'top center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: 'cover',
-                        }}
-                    />
+                    <div className="relative min-h-[250px]" aria-hidden="true">
+                        <Image
+                            src="/assets/site-images/home-image-3.webp"
+                            alt=""
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover object-top"
+                        />
+                    </div>
                     <div className="m-2">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
                             <Link href="/faq" className="no-underline">
@@ -136,28 +138,28 @@ export default function HomePage() {
                             personal challenges.
                         </p>
                     </div>
-                    <div
-                        className="min-h-[250px]"
-                        style={{
-                            backgroundImage: 'url(/assets/site-images/home-image-4.webp)',
-                            backgroundPosition: 'top center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: 'cover',
-                        }}
-                    />
+                    <div className="relative min-h-[250px]" aria-hidden="true">
+                        <Image
+                            src="/assets/site-images/home-image-4.webp"
+                            alt=""
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover object-top"
+                        />
+                    </div>
                 </div>
 
                 {/* Row 6: Contact Us (image left, text right) */}
                 <div className="bg-bengal-blue grid min-h-[250px] grid-cols-1 md:grid-cols-2">
-                    <div
-                        className="min-h-[250px]"
-                        style={{
-                            backgroundImage: 'url(/assets/site-images/home-image-5.webp)',
-                            backgroundPosition: 'top center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: 'cover',
-                        }}
-                    />
+                    <div className="relative min-h-[250px]" aria-hidden="true">
+                        <Image
+                            src="/assets/site-images/home-image-5.webp"
+                            alt=""
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover object-top"
+                        />
+                    </div>
                     <div className="m-2">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
                             <Link href="/contact-us" className="no-underline">
