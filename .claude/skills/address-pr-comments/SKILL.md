@@ -1,20 +1,42 @@
 ---
-allowed-tools: Skill(verify-code)
+name: address-pr-comments
 description: Read and handle comments on a PR
+allowed-tools: Skill(verify-code)
 ---
 
 ## Example Usage
+
+### Example 1: Addressing a specific PR comment about TypeScript issues
+
+**Scenario:** PR #123 has a particular comment with the heading "Type safety issues, error handling" that needs to be addressed.
+
+**User Request:**
+
+"Address the comment on PR 123 about type safety and error handling issues."
+
+**Skill Execution:**
+
+1. Validates PR #123 exists and retrieves comments
+2. Identifies the comment with the heading "Type safety issues, error handling"
+3. Analyzes the comment and creates a prioritized list of issues to fix
+4. Iteratively fixes each issue, verifying code quality with the `verify-code` skill
+5. Commits each fix with a descriptive message
+6. Summarizes the changes made and adds a comment to the PR describing the fixes
+
+### Example 2: Addressing Type Safety and Error Handling Issues
 
 ```bash
 /address-pr-comments 123 feature-branch "Type safety issues, error handling"
 ```
 
 **Parameters:**
+
 - `pr-num`: The GitHub pull request number (e.g., 123)
 - `branch-name`: The git branch name for this PR (e.g., feature-branch)
 - `focus-areas`: Specific areas to address from the PR feedback (e.g., "Type safety issues, error handling")
 
 **Common Focus Areas:**
+
 - Type safety issues
 - Error handling
 - Missing tests

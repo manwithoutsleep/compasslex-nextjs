@@ -34,16 +34,19 @@ Guidelines and examples for writing clear, descriptive commit messages when addr
 ### Type Safety Fixes
 
 ✅ **Good:**
+
 ```
 fix: Replace any type with CounselorData interface in getCounselor
 ```
 
 ❌ **Bad:**
+
 ```
 fix: types
 ```
 
 ✅ **Good with context:**
+
 ```
 fix: Add proper TypeScript types to newsletter repository methods
 
@@ -54,11 +57,13 @@ to improve type safety and catch potential runtime errors.
 ### Error Handling Fixes
 
 ✅ **Good:**
+
 ```
 fix: Add error logging and propagation in data fetch handler
 ```
 
 ✅ **Good with context:**
+
 ```
 fix: Improve error handling in counselor repository
 
@@ -70,11 +75,13 @@ fix: Improve error handling in counselor repository
 ### Validation Fixes
 
 ✅ **Good:**
+
 ```
 fix: Add input validation for empty/null values in processData
 ```
 
 ✅ **Good:**
+
 ```
 fix: Validate newsletter ID before database query
 ```
@@ -82,16 +89,19 @@ fix: Validate newsletter ID before database query
 ### Performance Fixes
 
 ✅ **Good:**
+
 ```
 fix: Optimize component with React.memo to prevent unnecessary re-renders
 ```
 
 ✅ **Good:**
+
 ```
 perf: Eliminate N+1 query pattern by batching counselor data fetch
 ```
 
 ✅ **Good with context:**
+
 ```
 perf: Cache newsletter data to avoid redundant file reads
 
@@ -102,16 +112,19 @@ the JSON file on every request. Cache is populated on first read.
 ### Refactoring
 
 ✅ **Good:**
+
 ```
 refactor: Extract data fetching logic into useNewsletterData hook
 ```
 
 ✅ **Good:**
+
 ```
 refactor: Extract duplicated validation logic to shared utility
 ```
 
 ✅ **Good with context:**
+
 ```
 refactor: Split large component into smaller, focused components
 
@@ -122,16 +135,19 @@ separate components to improve maintainability and testability.
 ### Testing Fixes
 
 ✅ **Good:**
+
 ```
 test: Add error and edge case coverage for getUserData
 ```
 
 ✅ **Good:**
+
 ```
 fix: Replace setTimeout with waitFor to fix flaky test
 ```
 
 ✅ **Good with context:**
+
 ```
 test: Add comprehensive test coverage for newsletter repository
 
@@ -145,11 +161,13 @@ Added tests for:
 ### Documentation Fixes
 
 ✅ **Good:**
+
 ```
 docs: Add JSDoc documentation for complex utility functions
 ```
 
 ✅ **Good:**
+
 ```
 docs: Update README with environment variable requirements
 ```
@@ -157,16 +175,19 @@ docs: Update README with environment variable requirements
 ### Security Fixes
 
 ✅ **Good:**
+
 ```
 fix: Sanitize HTML content to prevent XSS vulnerability
 ```
 
 ✅ **Good:**
+
 ```
 fix: Move API key to environment variable
 ```
 
 ✅ **Good with context:**
+
 ```
 fix: Add input sanitization to prevent XSS attacks
 
@@ -177,16 +198,19 @@ before rendering. All dangerouslySetInnerHTML usage now sanitized.
 ### Accessibility Fixes
 
 ✅ **Good:**
+
 ```
 fix: Add descriptive alt text for accessibility
 ```
 
 ✅ **Good:**
+
 ```
 fix: Add keyboard navigation support to custom dropdown
 ```
 
 ✅ **Good with context:**
+
 ```
 fix: Improve keyboard accessibility for modal dialogs
 
@@ -201,6 +225,7 @@ fix: Improve keyboard accessibility for modal dialogs
 When addressing multiple related points from the same PR comment:
 
 ✅ **Good:**
+
 ```
 fix: Improve newsletter component type safety and error handling
 
@@ -214,6 +239,7 @@ fix: Improve newsletter component type safety and error handling
 When a PR comment requires multiple distinct changes, create separate commits:
 
 ✅ **Good (separate commits):**
+
 ```
 Commit 1: refactor: Extract newsletter data fetching to custom hook
 Commit 2: test: Add test coverage for useNewsletterData hook
@@ -221,6 +247,7 @@ Commit 3: docs: Add JSDoc documentation for newsletter hooks
 ```
 
 ❌ **Bad (one large commit):**
+
 ```
 fix: address PR feedback
 ```

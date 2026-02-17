@@ -11,6 +11,7 @@ Templates for responding to PR comments after addressing feedback.
 ```
 
 **Example:**
+
 ```markdown
 ✅ Fixed in a1b2c3d
 
@@ -21,6 +22,7 @@ Replaced `any` type with `NewsletterData` interface and added proper type valida
 
 ```markdown
 ✅ Addressed in commits:
+
 - [commit-sha-1]: [Brief description]
 - [commit-sha-2]: [Brief description]
 - [commit-sha-3]: [Brief description]
@@ -29,8 +31,10 @@ Replaced `any` type with `NewsletterData` interface and added proper type valida
 ```
 
 **Example:**
+
 ```markdown
 ✅ Addressed in commits:
+
 - e4f5g6h: Add input validation for empty/null values
 - i7j8k9l: Add error handling with proper logging
 - m0n1o2p: Add test coverage for edge cases
@@ -44,6 +48,7 @@ All error scenarios now properly handled with descriptive error messages.
 ✅ Refactored in [commit-sha]
 
 **Changes:**
+
 - [Change 1]
 - [Change 2]
 - [Change 3]
@@ -53,10 +58,12 @@ All error scenarios now properly handled with descriptive error messages.
 ```
 
 **Example:**
+
 ```markdown
 ✅ Refactored in q3r4s5t
 
 **Changes:**
+
 - Extracted data fetching logic to `useNewsletterData` custom hook
 - Moved component to focus purely on rendering
 - Added loading and error states in the hook
@@ -79,6 +86,7 @@ Let me know if you'd prefer the original approach instead.
 ```
 
 **Example:**
+
 ```markdown
 I considered using React.memo but went with useMemo for the filtered list because:
 
@@ -102,12 +110,14 @@ Would you prefer [Option A] or [Option B]?
 ```
 
 **Example:**
+
 ```markdown
 Good catch! I have a question about the approach:
 
 Should the validation happen at the API route level or in the repository layer?
 
 Would you prefer:
+
 - **Option A**: Validate in the API route (catches issues earlier, closer to user input)
 - **Option B**: Validate in the repository (reusable across different API routes)
 ```
@@ -124,6 +134,7 @@ However, I'm open to discussing alternatives if you feel strongly about this.
 ```
 
 **Example:**
+
 ```markdown
 I understand the concern, but I'd prefer to keep the inline error handling here because:
 
@@ -144,6 +155,7 @@ Would you like me to address this now instead, or is the follow-up approach okay
 ```
 
 **Example:**
+
 ```markdown
 Great suggestion! This is a bit out of scope for this PR (focused on newsletter display),
 but I've created issue #123 to track adding comprehensive keyboard navigation to all interactive components.
@@ -159,15 +171,19 @@ Would you like me to address this now instead, or is the follow-up approach okay
 I've addressed all the feedback points:
 
 ### Type Safety
+
 ✅ Fixed in y9z0a1b - Replaced `any` types with proper interfaces
 
 ### Error Handling
+
 ✅ Fixed in c2d3e4f - Added error logging and propagation
 
 ### Testing
+
 ✅ Fixed in g5h6i7j - Added test coverage for edge cases and error scenarios
 
 ### Documentation
+
 ✅ Fixed in k8l9m0n - Added JSDoc for complex functions
 
 All changes have been verified with `npm run verify-code` and tests are passing.
@@ -179,6 +195,7 @@ All changes have been verified with `npm run verify-code` and tests are passing.
 @[reviewer-username] All feedback has been addressed!
 
 **Commits:**
+
 - [commit-sha-1]: [description]
 - [commit-sha-2]: [description]
 
@@ -186,10 +203,12 @@ Ready for another look when you have time. Thanks for the thorough review! 🙏
 ```
 
 **Example:**
+
 ```markdown
 @johndoe All feedback has been addressed!
 
 **Commits:**
+
 - o1p2q3r: Add TypeScript interfaces for all data structures
 - s4t5u6v: Implement comprehensive error handling
 - w7x8y9z: Add test coverage for error scenarios
