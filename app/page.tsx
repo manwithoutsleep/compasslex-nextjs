@@ -63,7 +63,7 @@ export default function HomePage() {
 
                 {/* Row 3: Our Services (text left, image right) */}
                 <div className="bg-raspberry-smoothie grid min-h-[250px] grid-cols-1 md:grid-cols-2">
-                    <div className="m-2">
+                    <div className="order-2 m-2 md:order-1">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
                             <Link href="/our-services">Our Services</Link>
                         </h2>
@@ -76,7 +76,7 @@ export default function HomePage() {
                             we&apos;re here to provide the guidance and tools you need to thrive.
                         </p>
                     </div>
-                    <div className="relative min-h-[250px]" aria-hidden="true">
+                    <div className="relative order-1 min-h-[250px] md:order-2" aria-hidden="true">
                         <Image
                             src="/assets/site-images/home-image-2.webp"
                             alt=""
@@ -116,7 +116,7 @@ export default function HomePage() {
 
                 {/* Row 5: Resources (text left, image right) */}
                 <div className="bg-raspberry-smoothie grid min-h-[250px] grid-cols-1 md:grid-cols-2">
-                    <div className="m-2">
+                    <div className="order-2 m-2 md:order-1">
                         <h2 className="p-2 text-[1.5em] leading-[1.5em] font-bold">
                             <Link href="/resources">Resources</Link>
                         </h2>
@@ -130,7 +130,7 @@ export default function HomePage() {
                             personal challenges.
                         </p>
                     </div>
-                    <div className="relative min-h-[250px]" aria-hidden="true">
+                    <div className="relative order-1 min-h-[250px] md:order-2" aria-hidden="true">
                         <Image
                             src="/assets/site-images/home-image-4.webp"
                             alt=""
