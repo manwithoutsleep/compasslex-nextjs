@@ -7,6 +7,8 @@ interface GoogleMapProps {
     center?: { lat: number; lng: number }
     zoom?: number
     className?: string
+    height?: string
+    maxWidth?: string
 }
 
 /**
@@ -22,6 +24,8 @@ export default function GoogleMap({
     center = { lat: 37.995482, lng: -84.46378 }, // Lexington, KY - 651 Perimeter Drive
     zoom = 14,
     className = '',
+    height = 'h-[400px]',
+    maxWidth = 'max-w-[404px]',
 }: GoogleMapProps) {
     const mapRef = useRef<HTMLDivElement>(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -131,7 +135,7 @@ export default function GoogleMap({
         return (
             <div
                 data-testid="google-map"
-                className={`flex h-[400px] w-full max-w-[404px] items-center justify-center rounded bg-gray-200 shadow-md ${className}`}
+                className={`flex ${height} w-full ${maxWidth} items-center justify-center rounded bg-gray-200 shadow-md ${className}`}
             >
                 <p className="text-gray-600">Unable to load map</p>
             </div>
@@ -139,7 +143,7 @@ export default function GoogleMap({
     }
 
     return (
-        <div className="relative w-full max-w-[404px]">
+        <div className={`relative w-full ${maxWidth}`}>
             {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center rounded bg-gray-100">
                     <p className="text-gray-600">Loading map...</p>
@@ -148,7 +152,7 @@ export default function GoogleMap({
             <div
                 ref={mapRef}
                 data-testid="google-map"
-                className={`h-[400px] w-full rounded shadow-md ${className}`}
+                className={`${height} w-full rounded shadow-md ${className}`}
             />
         </div>
     )
