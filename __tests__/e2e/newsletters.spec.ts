@@ -18,15 +18,15 @@ test.describe('Newsletters', () => {
         // Wait for cards to load
         await page.waitForSelector('[data-testid="newsletter-card"]', { timeout: 5000 })
 
-        // Get first PDF link
-        const pdfLink = page.getByRole('link', { name: /download/i }).first()
+        // Get first newsletter card (which is a link)
+        const firstCard = page.locator('[data-testid="newsletter-card"]').first()
 
         // Verify it has href attribute ending with .pdf
-        const href = await pdfLink.getAttribute('href')
+        const href = await firstCard.getAttribute('href')
         expect(href).toMatch(/\.pdf$/)
 
         // Verify it opens in new tab
-        await expect(pdfLink).toHaveAttribute('target', '_blank')
+        await expect(firstCard).toHaveAttribute('target', '_blank')
     })
 
     test('should display newsletter titles', async ({ page }) => {
@@ -35,9 +35,15 @@ test.describe('Newsletters', () => {
         // Wait for cards to load
         await page.waitForSelector('[data-testid="newsletter-card"]', { timeout: 5000 })
 
-        // Check that the first newsletter card has a title
+        // Check that the first newsletter card has an image with alt text (title)
         const firstCard = page.locator('[data-testid="newsletter-card"]').first()
-        await expect(firstCard.locator('h3, h4, h5, h6')).toBeVisible()
+        const image = firstCard.locator('img')
+        await expect(image).toBeVisible()
+
+        // Verify image has alt text (newsletter title)
+        const alt = await image.getAttribute('alt')
+        expect(alt).toBeTruthy()
+        expect(alt).not.toBe('')
     })
 
     test('should display page heading', async ({ page }) => {

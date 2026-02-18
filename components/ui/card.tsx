@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react'
+import React, { type ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
-interface CardProps {
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
     /** The card content */
     children: ReactNode
     /** Additional CSS classes to apply */
@@ -19,9 +19,12 @@ interface CardProps {
  * </Card>
  * ```
  */
-export function Card({ children, className = '' }: CardProps) {
+export function Card({ children, className = '', ...props }: CardProps) {
     return (
-        <div className={cn('border-deep-sapphire m-1 rounded border-3 shadow-md', className)}>
+        <div
+            className={cn('border-deep-sapphire m-1 rounded border-3 shadow-md', className)}
+            {...props}
+        >
             {children}
         </div>
     )

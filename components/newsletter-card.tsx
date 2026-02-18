@@ -20,6 +20,7 @@ export default function NewsletterCard({ newsletter }: NewsletterCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="border-deep-sapphire block rounded border-3 no-underline shadow-md"
+            data-testid="newsletter-card"
         >
             <Image
                 src={imageSrc}
