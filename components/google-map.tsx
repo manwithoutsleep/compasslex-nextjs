@@ -152,6 +152,8 @@ export default function GoogleMap({
             <div
                 ref={mapRef}
                 data-testid="google-map"
+                role="application"
+                aria-label="Interactive map showing Compass Christian Counseling office location at 651 Perimeter Drive, Lexington, KY"
                 className={`${height} w-full rounded shadow-md ${className}`}
             />
         </div>
