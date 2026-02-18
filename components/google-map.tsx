@@ -3,6 +3,22 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 
+// Initialize Google Maps API options once at module level (browser only)
+// This is an exception to the "no module-level state in client components" rule because:
+// 1. The Google Maps API requires setOptions() to be called exactly once globally
+// 2. This is immutable configuration, not mutable state (no counters, flags, or changing values)
+// 3. Similar to other SDK initialization patterns (Sentry, analytics, etc.)
+// 4. Prevents console warnings: "The setOptions() function should only be called once"
+// 5. Test isolation is preserved via mocking
+// See PR #7 discussion on module-level state vs. one-time configuration
+// Note: Check for browser environment to prevent SSR errors during build
+if (typeof window !== 'undefined') {
+    setOptions({
+        key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
+        v: 'weekly',
+    })
+}
+
 interface GoogleMapProps {
     center?: { lat: number; lng: number }
     zoom?: number
@@ -31,25 +47,12 @@ export default function GoogleMap({
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
-    // Track if this component instance has initialized the Google Maps API
-    const initializeRef = useRef(false)
-
     // Generate unique map ID using React's useId hook
     // useId() returns a stable value, so no need for useRef
     const reactId = useId()
     const mapId = `CompassMapId-${reactId.replace(/:/g, '-')}`
 
     useEffect(() => {
-        // Initialize API options once per component instance
-        // Note: setOptions is idempotent, so multiple calls are harmless
-        if (!initializeRef.current) {
-            setOptions({
-                key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
-                v: 'weekly',
-            })
-            initializeRef.current = true
-        }
-
         // Track component mount state to prevent state updates after unmount
         let cancelled = false
 

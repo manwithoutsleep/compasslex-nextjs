@@ -37,34 +37,59 @@ describe('GoogleMap Component', () => {
         vi.clearAllMocks()
     })
 
-    it('should render map container', () => {
+    it('should render map container', async () => {
         render(<GoogleMap />)
         expect(screen.getByTestId('google-map')).toBeInTheDocument()
+
+        // Wait for async effects to complete
+        await waitFor(() => {
+            expect(screen.queryByText('Loading map...')).not.toBeInTheDocument()
+        })
     })
 
-    it('should have correct styling classes', () => {
+    it('should have correct styling classes', async () => {
         render(<GoogleMap />)
         const mapContainer = screen.getByTestId('google-map')
         expect(mapContainer.className).toContain('h-[400px]')
         expect(mapContainer.className).toContain('w-full')
+
+        // Wait for async effects to complete
+        await waitFor(() => {
+            expect(screen.queryByText('Loading map...')).not.toBeInTheDocument()
+        })
     })
 
-    it('should accept custom center prop', () => {
+    it('should accept custom center prop', async () => {
         const customCenter = { lat: 40.7128, lng: -74.006 }
         render(<GoogleMap center={customCenter} />)
         expect(screen.getByTestId('google-map')).toBeInTheDocument()
+
+        // Wait for async effects to complete
+        await waitFor(() => {
+            expect(screen.queryByText('Loading map...')).not.toBeInTheDocument()
+        })
     })
 
-    it('should accept custom zoom prop', () => {
+    it('should accept custom zoom prop', async () => {
         render(<GoogleMap zoom={15} />)
         expect(screen.getByTestId('google-map')).toBeInTheDocument()
+
+        // Wait for async effects to complete
+        await waitFor(() => {
+            expect(screen.queryByText('Loading map...')).not.toBeInTheDocument()
+        })
     })
 
-    it('should use default Lexington coordinates', () => {
+    it('should use default Lexington coordinates', async () => {
         render(<GoogleMap />)
         // Default center should be Lexington, KY (651 Perimeter Drive)
         // Coordinates from Angular app: 37.995482, -84.46378
         expect(screen.getByTestId('google-map')).toBeInTheDocument()
+
+        // Wait for async effects to complete
+        await waitFor(() => {
+            expect(screen.queryByText('Loading map...')).not.toBeInTheDocument()
+        })
     })
 
     it('should initialize map on mount', async () => {
@@ -79,12 +104,20 @@ describe('GoogleMap Component', () => {
         })
     })
 
-    it('should show loading state initially', () => {
+    it('should show loading state initially', async () => {
         render(<GoogleMap />)
         expect(screen.getByText('Loading map...')).toBeInTheDocument()
+
+        // Wait for async effects to complete to avoid act() warnings
+        await waitFor(() => {
+            expect(screen.queryByText('Loading map...')).not.toBeInTheDocument()
+        })
     })
 
     it('should display error state when map fails to load', async () => {
+        // Suppress expected console.error from error handling
+        const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+
         // Mock a failing importLibrary for this specific test
         const { importLibrary } = await import('@googlemaps/js-api-loader')
         vi.mocked(importLibrary).mockRejectedValueOnce(new Error('API key error'))
@@ -99,6 +132,15 @@ describe('GoogleMap Component', () => {
             expect(screen.queryByText('Loading map...')).not.toBeInTheDocument()
             expect(screen.getByText('Unable to load map')).toBeInTheDocument()
         })
+
+        // Verify the error was logged (even though we suppressed the output)
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+            'Error loading Google Maps:',
+            expect.any(Error)
+        )
+
+        // Restore console.error
+        consoleErrorSpy.mockRestore()
     })
 
     it('should create marker with correct position and title', async () => {
@@ -134,13 +176,19 @@ describe('GoogleMap Component', () => {
         })
     })
 
-    it('should generate unique map IDs for multiple instances', () => {
+    it('should generate unique map IDs for multiple instances', async () => {
         const { container: container1 } = render(<GoogleMap />)
         const { container: container2 } = render(<GoogleMap />)
 
         // Both components should render successfully
         expect(container1).toBeTruthy()
         expect(container2).toBeTruthy()
+
+        // Wait for async effects to complete for both instances
+        await waitFor(() => {
+            const loadingMessages = screen.queryAllByText('Loading map...')
+            expect(loadingMessages).toHaveLength(0)
+        })
 
         // The mockMap should be called twice with different mapId values
         // Note: This test verifies the components can coexist without ID conflicts
