@@ -1,31 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 
 interface GoogleMapProps {
     center?: { lat: number; lng: number }
     zoom?: number
     className?: string
-}
-
-// Track if setOptions has been called to prevent multiple calls
-let optionsSet = false
-
-// Counter for generating unique map IDs
-let mapIdCounter = 0
-
-/**
- * Initialize Google Maps API options (call once per page)
- */
-function initializeGoogleMaps() {
-    if (!optionsSet) {
-        setOptions({
-            key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
-            v: 'weekly',
-        })
-        optionsSet = true
-    }
 }
 
 /**
@@ -45,12 +26,25 @@ export default function GoogleMap({
     const mapRef = useRef<HTMLDivElement>(null)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
-    // Generate unique map ID for this instance
-    const mapId = useRef(`CompassMapId-${++mapIdCounter}`).current
+
+    // Track if this component instance has initialized the Google Maps API
+    const initializeRef = useRef(false)
+
+    // Generate unique map ID using React's useId hook
+    // useId() returns a stable value, so no need for useRef
+    const reactId = useId()
+    const mapId = `CompassMapId-${reactId.replace(/:/g, '-')}`
 
     useEffect(() => {
-        // Initialize API options once
-        initializeGoogleMaps()
+        // Initialize API options once per component instance
+        // Note: setOptions is idempotent, so multiple calls are harmless
+        if (!initializeRef.current) {
+            setOptions({
+                key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
+                v: 'weekly',
+            })
+            initializeRef.current = true
+        }
 
         // Load map and marker libraries
         Promise.all([importLibrary('maps'), importLibrary('marker')])
