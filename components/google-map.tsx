@@ -46,9 +46,19 @@ export default function GoogleMap({
             initializeRef.current = true
         }
 
+        // Track component mount state to prevent state updates after unmount
+        let cancelled = false
+
+        // Store references for cleanup
+        let mapInstance: google.maps.Map | null = null
+        let markerInstance: google.maps.marker.AdvancedMarkerElement | null = null
+        let infoWindowInstance: google.maps.InfoWindow | null = null
+
         // Load map and marker libraries
         Promise.all([importLibrary('maps'), importLibrary('marker')])
             .then(async ([mapsLib, markerLib]) => {
+                if (cancelled) return
+
                 if (!mapRef.current) {
                     setError('Map container not ready')
                     setIsLoading(false)
@@ -59,7 +69,7 @@ export default function GoogleMap({
                 const { AdvancedMarkerElement } = markerLib as google.maps.MarkerLibrary
 
                 // Create map with cooperative gesture handling
-                const map = new Map(mapRef.current, {
+                mapInstance = new Map(mapRef.current, {
                     center,
                     zoom,
                     mapId, // Unique ID required for AdvancedMarkerElement
@@ -72,30 +82,49 @@ export default function GoogleMap({
                     '<b>Compass Christian Counseling</b><br />651 Perimeter Drive, Suite 115<br />Lexington, KY 40517'
 
                 // Add advanced marker for office location
-                const marker = new AdvancedMarkerElement({
-                    map,
+                markerInstance = new AdvancedMarkerElement({
+                    map: mapInstance,
                     position: center,
                     title,
                 })
 
                 // Create and open info window
-                const infoWindow = new google.maps.InfoWindow({
+                infoWindowInstance = new google.maps.InfoWindow({
                     content,
                     ariaLabel: title,
                 })
 
-                infoWindow.open({
-                    anchor: marker,
-                    map,
+                infoWindowInstance.open({
+                    anchor: markerInstance,
+                    map: mapInstance,
                 })
 
-                setIsLoading(false)
+                if (!cancelled) {
+                    setIsLoading(false)
+                }
             })
             .catch((err: Error) => {
+                if (cancelled) return
+
                 console.error('Error loading Google Maps:', err)
                 setError('Failed to load map')
                 setIsLoading(false)
             })
+
+        // Cleanup function
+        return () => {
+            cancelled = true
+
+            // Close info window
+            if (infoWindowInstance && typeof infoWindowInstance.close === 'function') {
+                infoWindowInstance.close()
+            }
+
+            // Clear references to allow garbage collection
+            mapInstance = null
+            markerInstance = null
+            infoWindowInstance = null
+        }
     }, [center, zoom, mapId])
 
     if (error) {
