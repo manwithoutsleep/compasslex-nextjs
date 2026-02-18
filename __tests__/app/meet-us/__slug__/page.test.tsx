@@ -99,11 +99,7 @@ describe('generateStaticParams', () => {
         const params = await generateStaticParams()
 
         expect(params).toHaveLength(3)
-        expect(params).toEqual([
-            { slug: 'linda' },
-            { slug: 'joanna' },
-            { slug: 'mary' },
-        ])
+        expect(params).toEqual([{ slug: 'linda' }, { slug: 'joanna' }, { slug: 'mary' }])
     })
 })
 
