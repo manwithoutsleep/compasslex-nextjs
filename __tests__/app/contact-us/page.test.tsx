@@ -58,8 +58,8 @@ describe('Contact Us Page', () => {
         expect(screen.getByText(/New Circle Road/)).toBeInTheDocument()
     })
 
-    it('renders a map placeholder', () => {
-        expect(screen.getByTestId('map-placeholder')).toBeInTheDocument()
+    it('renders the Google Map', () => {
+        expect(screen.getByTestId('google-map')).toBeInTheDocument()
     })
 
     it('does NOT render a contact form', () => {

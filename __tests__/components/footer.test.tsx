@@ -17,9 +17,9 @@ describe('Footer', () => {
         expect(image).toBeInTheDocument()
     })
 
-    it('should render map placeholder', () => {
+    it('should render Google Map', () => {
         render(<Footer />)
-        expect(screen.getByText(/Map will be integrated in Task 06/i)).toBeInTheDocument()
+        expect(screen.getByTestId('google-map')).toBeInTheDocument()
     })
 
     it('should not apply a background-image to the footer element', () => {

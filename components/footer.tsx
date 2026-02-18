@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import GoogleMap from '@/components/google-map'
 
 /**
  * Footer component with address, building image, and map
@@ -6,7 +7,7 @@ import Image from 'next/image'
  * Features:
  * - Address and contact information
  * - Building image
- * - Map placeholder (actual Google Maps in Task 06)
+ * - Google Maps integration showing office location
  * - Background horizon image (desktop only)
  * - Responsive layout
  */
@@ -33,11 +34,9 @@ export default function Footer() {
                 />
             </div>
 
-            {/* Map Section - Placeholder */}
+            {/* Map Section */}
             <div className="flex w-full flex-col items-center min-[600px]:max-w-[465px]">
-                <div className="flex h-[300px] w-full items-center justify-center bg-gray-200 text-gray-600">
-                    Map will be integrated in Task 06
-                </div>
+                <GoogleMap />
             </div>
         </footer>
     )

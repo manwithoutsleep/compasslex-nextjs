@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { counselorRepository } from '@/services/data-repository'
 import ContactCounselorCard from '@/components/contact-counselor-card'
 import { Heading } from '@/components/ui'
+import GoogleMap from '@/components/google-map'
 
 export const metadata: Metadata = {
     title: 'Contact Us - Compass Christian Counseling',
@@ -59,14 +60,7 @@ export default async function ContactUsPage() {
                             </div>
                         </div>
 
-                        <div
-                            data-testid="map-placeholder"
-                            className="bg-bengal-blue h-64 w-full rounded"
-                        >
-                            <p className="flex h-full items-center justify-center">
-                                Map coming soon
-                            </p>
-                        </div>
+                        <GoogleMap />
                     </div>
                 </div>
             </div>
