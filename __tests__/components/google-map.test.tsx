@@ -85,16 +85,19 @@ describe('GoogleMap Component', () => {
     })
 
     it('should display error state when map fails to load', async () => {
-        // Mock a failing importLibrary
-        vi.doMock('@googlemaps/js-api-loader', () => ({
-            setOptions: vi.fn(),
-            importLibrary: vi.fn().mockRejectedValue(new Error('API key error')),
-        }))
+        // Mock a failing importLibrary for this specific test
+        const { importLibrary } = await import('@googlemaps/js-api-loader')
+        vi.mocked(importLibrary).mockRejectedValueOnce(new Error('API key error'))
 
         render(<GoogleMap />)
 
+        // Verify loading state appears first
+        expect(screen.getByText('Loading map...')).toBeInTheDocument()
+
+        // Wait for error state to appear
         await waitFor(() => {
             expect(screen.queryByText('Loading map...')).not.toBeInTheDocument()
+            expect(screen.getByText('Unable to load map')).toBeInTheDocument()
         })
     })
 })
