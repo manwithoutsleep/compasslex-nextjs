@@ -83,3 +83,55 @@ describe('Counselor Detail Page', () => {
         ).rejects.toThrow('Not found')
     })
 })
+
+describe('generateStaticParams', () => {
+    it('should generate params for all counselors', async () => {
+        const mockCounselors = [
+            { ...mockCounselor, slug: 'linda' },
+            { ...mockCounselor, slug: 'joanna' },
+            { ...mockCounselor, slug: 'mary' },
+        ]
+
+        const { counselorRepository } = await import('@/services/data-repository')
+        vi.mocked(counselorRepository.getAllCounselors).mockResolvedValueOnce(mockCounselors)
+
+        const { generateStaticParams } = await import('@/app/meet-us/[slug]/page')
+        const params = await generateStaticParams()
+
+        expect(params).toHaveLength(3)
+        expect(params).toEqual([
+            { slug: 'linda' },
+            { slug: 'joanna' },
+            { slug: 'mary' },
+        ])
+    })
+})
+
+describe('generateMetadata', () => {
+    it('should generate metadata for existing counselor', async () => {
+        const { counselorRepository } = await import('@/services/data-repository')
+        vi.mocked(counselorRepository.getCounselorBySlug).mockResolvedValueOnce(mockCounselor)
+
+        const { generateMetadata } = await import('@/app/meet-us/[slug]/page')
+        const metadata = await generateMetadata({
+            params: Promise.resolve({ slug: 'linda' }),
+        })
+
+        expect(metadata).toEqual({
+            title: 'Linda Fentress - Compass Christian Counseling',
+            description: 'Linda is a licensed professional counselor.',
+        })
+    })
+
+    it('should return empty metadata for non-existent counselor', async () => {
+        const { counselorRepository } = await import('@/services/data-repository')
+        vi.mocked(counselorRepository.getCounselorBySlug).mockResolvedValueOnce(null)
+
+        const { generateMetadata } = await import('@/app/meet-us/[slug]/page')
+        const metadata = await generateMetadata({
+            params: Promise.resolve({ slug: 'unknown' }),
+        })
+
+        expect(metadata).toEqual({})
+    })
+})

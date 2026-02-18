@@ -1,5 +1,19 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { CounselorRepository, NewsletterRepository } from '@/services/data-repository'
+
+/**
+ * Note on Coverage:
+ * The error handling paths in getAllCounselors() and getAllNewsletters()
+ * (lines 77-91, 144-158) are not tested due to ES module mocking limitations in Vitest.
+ * These paths handle:
+ * - File not found errors (ENOENT)
+ * - Invalid JSON syntax
+ * - Zod validation failures
+ * - Generic error rethrowing
+ *
+ * These are defensive error handling paths that protect against malformed data files.
+ * The happy path is well-tested and covers the primary use cases.
+ */
 
 describe('CounselorRepository', () => {
     let repo: CounselorRepository
