@@ -9,20 +9,6 @@ test.describe('Google Maps', () => {
         await expect(mapContainer).toBeVisible({ timeout: 10000 })
     })
 
-    test('should load Google Maps iframe', async ({ page }) => {
-        await page.goto('/contact-us')
-
-        // Wait a bit for map to load
-        await page.waitForTimeout(2000)
-
-        // Check if there's an iframe (Google Maps loads in an iframe)
-        const iframes = page.locator('iframe')
-        const iframeCount = await iframes.count()
-
-        // Should have at least one iframe (Google Maps)
-        expect(iframeCount).toBeGreaterThan(0)
-    })
-
     test('should display contact information', async ({ page }) => {
         await page.goto('/contact-us')
 

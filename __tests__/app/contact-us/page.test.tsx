@@ -59,7 +59,7 @@ describe('Contact Us Page', () => {
     })
 
     it('renders the Google Map', () => {
-        expect(screen.getByTestId('google-map')).toBeInTheDocument()
+        expect(screen.getByTestId('google-map-contact')).toBeInTheDocument()
     })
 
     it('does NOT render a contact form', () => {

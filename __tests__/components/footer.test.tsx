@@ -19,7 +19,7 @@ describe('Footer', () => {
 
     it('should render Google Map', () => {
         render(<Footer />)
-        expect(screen.getByTestId('google-map')).toBeInTheDocument()
+        expect(screen.getByTestId('google-map-footer')).toBeInTheDocument()
     })
 
     it('should not apply a background-image to the footer element', () => {

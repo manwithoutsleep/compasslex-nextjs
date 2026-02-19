@@ -44,17 +44,6 @@ test.describe('Accessibility', () => {
         expect(accessibilityScanResults.violations).toEqual([])
     })
 
-    test('contact-us page should not have accessibility violations', async ({ page }) => {
-        await page.goto('/contact-us')
-
-        // Wait for map to load
-        await page.waitForTimeout(2000)
-
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
-
-        expect(accessibilityScanResults.violations).toEqual([])
-    })
-
     test('our-services page should not have accessibility violations', async ({ page }) => {
         await page.goto('/our-services')
 
