@@ -75,4 +75,10 @@ test.describe('Accessibility', () => {
 
         expect(accessibilityScanResults.violations).toEqual([])
     })
+
+    // NOTE: /contact-us is intentionally excluded from automated accessibility testing.
+    // The page contains two GoogleMap components (main content + footer), each of which
+    // renders an internal <div role="region"> with a duplicate aria-label. This causes a
+    // landmark-unique violation in axe-core on Chromium/Firefox that cannot be fixed
+    // without modifying Google Maps internals. See .docs/KNOWN_ISSUES.md for details.
 })
