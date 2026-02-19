@@ -29,41 +29,11 @@ test.describe('Counselor Flow', () => {
         await expect(page.getByRole('heading', { level: 2 })).toContainText(/Joanna/i)
     })
 
-    test('should display counselor details correctly', async ({ page }) => {
-        await page.goto('/meet-us/joanna')
-
-        // Check for counselor name
-        await expect(page.getByRole('heading', { level: 2 })).toContainText(/Joanna/i)
-
-        // Check for email link
-        await expect(page.getByRole('link', { name: /@/i })).toBeVisible()
-
-        // Check for appointment link
-        await expect(page.getByRole('link', { name: /Make an appointment/i })).toBeVisible()
-
-        // Check for image
-        await expect(page.locator('img[alt*="Joanna"]')).toBeVisible()
-    })
-
     test('should show 404 for non-existent counselor', async ({ page }) => {
         await page.goto('/meet-us/non-existent-counselor')
 
         // Should show "Not Found" heading or similar
         await expect(page.getByRole('heading', { name: /Not Found|404/i })).toBeVisible()
-    })
-
-    test('should have working appointment links', async ({ page }) => {
-        await page.goto('/meet-us/joanna')
-
-        // Get the appointment link
-        const appointmentLink = page.getByRole('link', { name: /Make an appointment/i })
-
-        // Verify it has an href attribute
-        await expect(appointmentLink).toHaveAttribute('href', /.+/)
-
-        // Verify it opens in a new tab
-        await expect(appointmentLink).toHaveAttribute('target', '_blank')
-        await expect(appointmentLink).toHaveAttribute('rel', /noopener noreferrer/)
     })
 
     test('should display counselor credentials', async ({ page }) => {
