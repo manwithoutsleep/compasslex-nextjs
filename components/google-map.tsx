@@ -25,6 +25,8 @@ interface GoogleMapProps {
     className?: string
     height?: string
     maxWidth?: string
+    testId?: string
+    ariaLabel?: string
 }
 
 /**
@@ -42,6 +44,8 @@ export default function GoogleMap({
     className = '',
     height = 'h-[400px]',
     maxWidth = 'max-w-[404px]',
+    testId = 'google-map',
+    ariaLabel = 'Interactive map showing Compass Christian Counseling office location at 651 Perimeter Drive, Lexington, KY',
 }: GoogleMapProps) {
     const mapRef = useRef<HTMLDivElement>(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -137,7 +141,7 @@ export default function GoogleMap({
     if (error) {
         return (
             <div
-                data-testid="google-map"
+                data-testid={testId}
                 className={`flex ${height} w-full ${maxWidth} items-center justify-center rounded bg-gray-200 shadow-md ${className}`}
             >
                 <p className="text-gray-600">Unable to load map</p>
@@ -154,9 +158,9 @@ export default function GoogleMap({
             )}
             <div
                 ref={mapRef}
-                data-testid="google-map"
+                data-testid={testId}
                 role="application"
-                aria-label="Interactive map showing Compass Christian Counseling office location at 651 Perimeter Drive, Lexington, KY"
+                aria-label={ariaLabel}
                 className={`${height} w-full rounded shadow-md ${className}`}
             />
         </div>

@@ -18,7 +18,7 @@
     --color-royal-indigo: #43208a;
 
     /* Link colors */
-    --color-cinnabar: #c74350;
+    --color-old-rose: #8d1f2e;
 
     /* Navigation hover effect colors */
     --color-hover-glow: #aaaaff;
@@ -124,7 +124,7 @@ body {
 /* Default text link style */
 @layer base {
     a {
-        @apply text-cinnabar hover:text-deep-sapphire underline;
+        @apply text-old-rose hover:text-deep-sapphire underline;
     }
 }
 

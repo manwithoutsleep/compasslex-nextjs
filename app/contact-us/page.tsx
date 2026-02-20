@@ -60,7 +60,10 @@ export default async function ContactUsPage() {
                             </div>
                         </div>
 
-                        <GoogleMap />
+                        <GoogleMap
+                            testId="google-map-contact"
+                            ariaLabel="Contact page map with directions to office"
+                        />
                     </div>
                 </div>
             </div>

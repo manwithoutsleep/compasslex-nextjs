@@ -17,7 +17,7 @@ export default function CounselorCard({ counselor }: CounselorCardProps) {
     const imageSrc = `/assets/counselor-images/${imageSlug}-meet-us-182x235.jpg`
 
     return (
-        <Card className="bg-bengal-blue">
+        <Card className="bg-bengal-blue" data-testid="counselor-card">
             <CardTitle>Hi, I&apos;m {firstName}</CardTitle>
             <CardBody className="text-deep-sapphire flex gap-4 p-1.5 text-base">
                 <div className="shrink-0">

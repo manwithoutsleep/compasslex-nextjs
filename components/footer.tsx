@@ -36,7 +36,10 @@ export default function Footer() {
 
             {/* Map Section */}
             <div className="flex w-full flex-col items-center min-[600px]:max-w-[465px]">
-                <GoogleMap />
+                <GoogleMap
+                    testId="google-map-footer"
+                    ariaLabel="Map in footer showing office location"
+                />
             </div>
         </footer>
     )
