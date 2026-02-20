@@ -10,7 +10,7 @@ const IMAGES = [
     '/assets/slider-images/slider-image-5.jpg',
 ]
 
-const ROTATION_INTERVAL_MS = 5000
+const ROTATION_INTERVAL_MS = 6000
 
 /**
  * Auto-rotating hero image banner for the home page.
@@ -19,6 +19,13 @@ const ROTATION_INTERVAL_MS = 5000
  */
 export default function HomePageRotator() {
     const [activeIndex, setActiveIndex] = useState(0)
+
+    useEffect(() => {
+        IMAGES.forEach((src) => {
+            const img = new Image()
+            img.src = src
+        })
+    }, [])
 
     useEffect(() => {
         const timer = setInterval(() => {
