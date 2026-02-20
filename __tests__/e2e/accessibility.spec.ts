@@ -11,7 +11,7 @@ test.describe('Accessibility', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
 
-        expect(accessibilityScanResults.violations).toEqual([])
+        expect(accessibilityScanResults.violations).toHaveLength(0)
     })
 
     test('meet-us page should not have accessibility violations', async ({ page }) => {
@@ -22,7 +22,7 @@ test.describe('Accessibility', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
 
-        expect(accessibilityScanResults.violations).toEqual([])
+        expect(accessibilityScanResults.violations).toHaveLength(0)
     })
 
     test('counselor detail page should not have accessibility violations', async ({ page }) => {
@@ -30,7 +30,7 @@ test.describe('Accessibility', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
 
-        expect(accessibilityScanResults.violations).toEqual([])
+        expect(accessibilityScanResults.violations).toHaveLength(0)
     })
 
     test('newsletters page should not have accessibility violations', async ({ page }) => {
@@ -41,7 +41,7 @@ test.describe('Accessibility', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
 
-        expect(accessibilityScanResults.violations).toEqual([])
+        expect(accessibilityScanResults.violations).toHaveLength(0)
     })
 
     test('our-services page should not have accessibility violations', async ({ page }) => {
@@ -49,7 +49,7 @@ test.describe('Accessibility', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
 
-        expect(accessibilityScanResults.violations).toEqual([])
+        expect(accessibilityScanResults.violations).toHaveLength(0)
     })
 
     test('faq page should not have accessibility violations', async ({ page }) => {
@@ -57,7 +57,7 @@ test.describe('Accessibility', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
 
-        expect(accessibilityScanResults.violations).toEqual([])
+        expect(accessibilityScanResults.violations).toHaveLength(0)
     })
 
     test('resources page should not have accessibility violations', async ({ page }) => {
@@ -65,7 +65,7 @@ test.describe('Accessibility', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
 
-        expect(accessibilityScanResults.violations).toEqual([])
+        expect(accessibilityScanResults.violations).toHaveLength(0)
     })
 
     test('404 page should not have accessibility violations', async ({ page }) => {
@@ -73,7 +73,7 @@ test.describe('Accessibility', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
 
-        expect(accessibilityScanResults.violations).toEqual([])
+        expect(accessibilityScanResults.violations).toHaveLength(0)
     })
 
     // NOTE: /contact-us is intentionally excluded from automated accessibility testing.
