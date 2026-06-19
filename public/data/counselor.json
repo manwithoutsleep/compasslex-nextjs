@@ -52,9 +52,10 @@
             "lastName": "Beaven",
             "longDescription": [
                 "Hi, I'm Weston.",
-                "I earned my Master's degree in Clinical Mental Health Counseling from the University of the Cumberlands. After graduating with an undergraduate degree in education, I subsequently realized the last thing I wanted to do with my life was become a teacher. After some time, I discovered that a career in which I could get to know people on a deep and genuine level would be a good fit for me. My own experience with darkness has been one that brought me to seek professional help and has grown a desire in me for others to experience the healing and transformation that I have through counseling. Upon reflection of my life, I have learned that suffering and pain can be a gift from God. I have always been comfortable in conversations that may seem a bit heavy on the outside looking in and find joy in experiencing this with my clients.",
-                "My philosophical approach to the therapeutic relationship is an integrated one which is heavily driven by a mode of therapy labeled Internal Family Systems (IFS). This type of therapy holds the belief that our true self can be accessed through the unburdening of emotions, memories, and beliefs associated with our deepest hurts. I also offer EMDR (Eye Movement Desensitization and Reprocessing) therapy, which is a tool that offers a tangible way to heal from the symptoms and distress that are the result of trauma and adverse life experiences. My experience includes working with those who have faced challenges with PTSD, depression, anxiety, relationship issues, suicidal ideation/self-harm, homicidal ideation, anger, and chronic pain.",
-                "Whether you find yourself in pain, confused, outraged, numb, apathetic, etc., I can assure you that all parts of your being are welcome. It would genuinely be a joy for me to journey with you as you navigate your own unique circumstances, whatever they might be."
+                "Perhaps you have once more found yourself in a familiar space of pain, overwhelm, panic, or numbness. The burdens you carry are overwhelming, and you feel like a shell of who you once were. You've tried to apply what you know in your mind to be true, but there's something that keeps the truth from being felt at your core.",
+                "My goal is to go beyond teaching coping skills, and instead to make space for healing from the inside out that leads to lasting change. We will gently explore your inner world in a way that honors every part of you, even the ones that create big challenges. I have worked with folks struggling with anxiety, depression, relationship stress, PTSD, anger, and chronic pain, and more.",
+                "Know that you are welcome as you are and that you can simply &quot;be&quot; during our time together. Wherever you are finding yourself at the moment, it would be an honor for me to join you as a supportive guide. I believe in this work and am confident you can experience newness in your life.",
+                "Outside of being a therapist, I love movies, backpacking/hiking, trivia, sports, hanging out with family/friends/my dogs, and buying books I tell myself I'll read that end up sitting on the bookshelf collecting dust."
             ],
             "memberships": [
                 "American Counseling Association (ACA)",
@@ -290,7 +291,7 @@
             "directoryId": "E96A32CC5BB04BC1A0BAC83297EBC523",
             "id": "13",
             "slug": "sherry",
-            "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=E96A32CC5BB04BC1A0BAC83297EBC523"
+            "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=22B71728E5244166A2B45FD655B33F34"
         },
         {
             "credentials": [
@@ -331,7 +332,7 @@
             "directoryId": "",
             "id": "14",
             "slug": "kyra",
-            "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=55a158cbbb159d09dff1889c40b3af5d"
+            "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=E96A32CC5BB04BC1A0BAC83297EBC523"
         },
         {
             "credentials": [
@@ -370,10 +371,10 @@
             "practitionerId": "32663",
             "shortDescription": "Sometimes stress, trauma, hurts, and fears simply pile up. Ultimately, we all seek to improve our mental and emotional well-being and counseling has been proven effective. There's hope and reaching out is the first step. I am committed to listening and understanding your point of view while working to help you heal, grow, and find solutions. I would be honored to walk the process with you.",
             "title": "M. A., Marriage and Family Therapist",
-            "directoryId": "",
+            "directoryId": "82fb5b193e8c27710993b98c482f9634",
             "id": "3",
             "slug": "julie",
-            "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId="
+            "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=82fb5b193e8c27710993b98c482f9634"
         },
         {
             "credentials": [
