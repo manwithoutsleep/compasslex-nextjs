@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 test.describe('Counselor Flow', () => {
-    test('should display all 11 counselors on meet-us page', async ({ page }) => {
+    test('should display all 10 active counselors on meet-us page', async ({ page }) => {
         await page.goto('/meet-us')
 
         // Wait for content to load
@@ -9,7 +9,8 @@ test.describe('Counselor Flow', () => {
 
         // Count counselor cards
         const cards = page.locator('[data-testid="counselor-card"]')
-        await expect(cards).toHaveCount(11)
+        await expect(cards).toHaveCount(10)
+        await expect(cards.filter({ hasText: 'Katrina' })).toHaveCount(0)
     })
 
     test('should navigate from meet-us to counselor detail', async ({ page }) => {

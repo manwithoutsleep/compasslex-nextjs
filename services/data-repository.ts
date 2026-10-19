@@ -72,7 +72,9 @@ export class CounselorRepository implements ICounselorRepository {
                 // Runtime validation with Zod
                 const validatedData = CounselorDataSchema.parse(parsed)
 
-                this.cachedData = validatedData.counselorList
+                this.cachedData = validatedData.counselorList.filter(
+                    (counselor) => counselor.active
+                )
             } catch (error) {
                 if (error instanceof z.ZodError) {
                     const issues = error.issues

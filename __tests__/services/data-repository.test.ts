@@ -40,6 +40,7 @@ describe('CounselorRepository', () => {
             const firstCounselor = counselors[0]
 
             expect(firstCounselor).toHaveProperty('firstName')
+            expect(firstCounselor).toHaveProperty('active', true)
             expect(firstCounselor).toHaveProperty('lastName')
             expect(firstCounselor).toHaveProperty('email')
             expect(firstCounselor).toHaveProperty('shortDescription')

@@ -3,6 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import type { Counselor } from '@/types/models'
 
 const mockCounselor: Counselor = {
+    active: true,
     id: '1',
     firstName: 'Linda',
     lastName: 'Fentress',

@@ -1,6 +1,7 @@
 {
     "counselorList": [
         {
+            "active": true,
             "credentials": [
                 "M.A. in Mental Health Counseling, Asbury Theological Seminary, Wilmore, KY",
                 "B.A in Human Services and Counseling, Lindsey Wilson College, Columbia, KY",
@@ -18,7 +19,7 @@
                 "Wellcare Medicaid",
                 "United Commercial and Medicaid"
             ],
-            "lastName": "Tidei",
+            "lastName": "Clark",
             "longDescription": [
                 "After earning two undergraduate degrees in Human Services and Counseling and Christian Ministries, I went on to earn a Master's degree in Mental Health Counseling from Asbury Theological Seminary. My goal is to partner with individuals and families in their pursuit of holistic wellness. Life is often full of difficulty and having support while navigating those challenges can be highly beneficial. I'm dedicated to working with children, adolescents, and adults to identify meaningful life goals and work towards achieving them.",
                 "My integrative approach is heavily informed by acceptance and commitment therapy, which combines mindfulness and behavioral change in a way that allows individuals to work towards a flourishing life. I also incorporate aspects of cognitive-behavioral therapy and dialectical-behavioral therapy into my conceptualization. In the past, I have partnered with adults and children facing a variety of issues, including anxiety, depression, trauma history, grief, relational difficulties, and behavioral difficulties. I believe it's extremely important for individuals to feel safe and cared for in counseling, which is why I work to create a nurturing environment where you can thrive.",
@@ -35,6 +36,7 @@
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=141460F3FF91458E8FD61F6CD8391B22"
         },
         {
+            "active": true,
             "credentials": [
                 "MA in Clinical Mental Health Counseling, University of the Cumberlands",
                 "BA in Secondary Education, Social Studies, University of Kentucky"
@@ -71,6 +73,7 @@
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=BABFFA046D6D4352BE7E690588F5D186"
         },
         {
+            "active": true,
             "credentials": [
                 "M.A. in Marriage and Family Counseling, Asbury Theological Seminary, Wilmore, KY",
                 "Gottman Couples Therapy certified, level 1",
@@ -109,6 +112,7 @@
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=8A05D144DE88454B82D2156BCFCAFA99"
         },
         {
+            "active": false,
             "credentials": [
                 "M.A. in Mental Health Counseling, Asbury Theological Seminary, Wilmore, KY",
                 "Licensed Professional Clinical Counselor (LPCC)",
@@ -147,6 +151,7 @@
             "appointmentLink": "https://portal.therapyappointment.com/index.cfm/public:therapistdetail?directoryId=ca134d0122c9c6ec7a420e884d9d8df7"
         },
         {
+            "active": true,
             "credentials": [
                 "B.A. of Psychology, Eastern Kentucky University",
                 "M.A. in Counseling, Eastern Kentucky University",
@@ -185,6 +190,7 @@
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=18877676F3364830BE603CDF059494A4"
         },
         {
+            "active": true,
             "credentials": [
                 "B.A. Christian Ministries, Asbury University, Wilmore, KY",
                 "M.A. Theological Studies, Asbury Theological Seminary, Wilmore, KY",
@@ -225,6 +231,7 @@
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=BFA6D9B1BFEE459593B2515532871A92"
         },
         {
+            "active": true,
             "credentials": [
                 "B.A. in Psychology, University of Kentucky, Lexington, KY",
                 "M.A. in Marriage & Family Therapy, Campbellsville University, Louisville, KY",
@@ -260,6 +267,7 @@
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=E71F9BD1267245A0B7483AC5D9416911"
         },
         {
+            "active": true,
             "credentials": [
                 "M.A. in Counseling and Administration, Eastern Kentucky University, Richmond, KY",
                 "B.A. in Education, University of Kentucky, Lexington, KY",
@@ -294,6 +302,7 @@
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=22B71728E5244166A2B45FD655B33F34"
         },
         {
+            "active": true,
             "credentials": [
                 "M.A. Marriage and Family Counseling, Asbury Theological Seminary, Wilmore, KY",
                 "B.S. Elementary Education, University of the Cumberlands, Williamsburg, KY",
@@ -335,6 +344,7 @@
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=E96A32CC5BB04BC1A0BAC83297EBC523"
         },
         {
+            "active": true,
             "credentials": [
                 "M.A. in Marriage & Family Counseling, Asbury Theological Seminary, KY",
                 "B.A. in Counseling Psychology, Toccoa Falls College, GA",
@@ -377,6 +387,7 @@
             "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=82fb5b193e8c27710993b98c482f9634"
         },
         {
+            "active": true,
             "credentials": [
                 "Ph.D. in Counseling Education and Supervision, University of the Cumberlands, Williamsburg, KY",
                 "M.Ed. in Counseling, Stephens College, Columbia, MO",
