@@ -4,6 +4,7 @@ import { z } from 'zod'
  * Zod schema for counselor validation
  */
 export const CounselorSchema = z.object({
+    active: z.boolean(),
     appointmentLink: z.string(),
     credentials: z.array(z.string()),
     directoryId: z.string(),
@@ -50,6 +51,8 @@ export const NewsletterDataSchema = z.object({
  * Represents a counselor profile
  */
 export interface Counselor {
+    /** Whether the counselor is currently listed on the site */
+    active: boolean
     /** Link to online appointment scheduling */
     appointmentLink: string
     /** Professional credentials (e.g., MA, LPC, LPCC) */

@@ -4,6 +4,7 @@ import CounselorCard from '@/components/counselor-card'
 import type { Counselor } from '@/types/models'
 
 const mockCounselor: Counselor = {
+    active: true,
     id: '1',
     firstName: 'Linda',
     lastName: 'Fentress',

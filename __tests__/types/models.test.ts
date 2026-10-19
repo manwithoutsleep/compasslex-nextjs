@@ -5,6 +5,7 @@ describe('Type Definitions', () => {
     describe('Counselor Interface', () => {
         it('should accept valid Counselor object', () => {
             const counselor: Counselor = {
+                active: true,
                 appointmentLink: 'https://example.com',
                 credentials: ['MA', 'LPC'],
                 directoryId: '123',
@@ -29,6 +30,7 @@ describe('Type Definitions', () => {
             // This test verifies TypeScript compilation would fail for missing fields
             // In runtime, we verify the shape is correct
             const counselor: Counselor = {
+                active: false,
                 appointmentLink: '',
                 credentials: [],
                 directoryId: '',

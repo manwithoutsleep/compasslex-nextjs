@@ -4,6 +4,7 @@ import type { Counselor } from '@/types/models'
 
 const mockCounselors: Counselor[] = [
     {
+        active: true,
         id: '1',
         firstName: 'Linda',
         lastName: 'Fentress',
@@ -21,6 +22,7 @@ const mockCounselors: Counselor[] = [
         slug: 'linda',
     },
     {
+        active: true,
         id: '2',
         firstName: 'Kelsi',
         lastName: 'Butcher',

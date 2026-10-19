@@ -8,10 +8,11 @@ import { counselorRepository, newsletterRepository } from '@/services/data-repos
  */
 describe('Data Loading Integration', () => {
     describe('Counselor Data', () => {
-        it('should load all 11 counselors successfully', async () => {
+        it('should load all 10 active counselors successfully', async () => {
             const counselors = await counselorRepository.getAllCounselors()
 
-            expect(counselors).toHaveLength(11)
+            expect(counselors).toHaveLength(10)
+            expect(counselors.every((counselor) => counselor.active)).toBe(true)
         })
 
         it('should have all required fields for each counselor', async () => {
@@ -19,6 +20,7 @@ describe('Data Loading Integration', () => {
 
             counselors.forEach((counselor) => {
                 expect(counselor).toHaveProperty('id')
+                expect(counselor).toHaveProperty('active')
                 expect(counselor).toHaveProperty('firstName')
                 expect(counselor).toHaveProperty('lastName')
                 expect(counselor).toHaveProperty('email')
@@ -53,6 +55,12 @@ describe('Data Loading Integration', () => {
             expect(counselor).not.toBeNull()
             expect(counselor?.slug).toBe('joanna')
             expect(counselor?.firstName).toBe('Joanna')
+        })
+
+        it('should not return inactive counselors by slug', async () => {
+            const counselor = await counselorRepository.getCounselorBySlug('katrina')
+
+            expect(counselor).toBeNull()
         })
 
         it('should find counselor by name (case-insensitive)', async () => {
