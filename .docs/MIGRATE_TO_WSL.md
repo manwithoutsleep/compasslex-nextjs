@@ -26,7 +26,7 @@ Location: WSL filesystem (~/...)
 npm install speed: 🚀 Fast
 File I/O: Fast
 Windows access: ✅ Via \\wsl$\
- Recommended for: Development with Node/npm
+Recommended for: Development with Node/npm
 For Node.js development, Microsoft strongly recommends keeping files in WSL filesystem due to the dramatic performance
 difference in npm operations.
 
