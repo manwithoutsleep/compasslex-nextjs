@@ -2,7 +2,7 @@ import { render, screen, act } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import HomePageRotator from '@/components/home-page-rotator'
 
-const ROTATION_INTERVAL_MS = 5000
+const ROTATION_INTERVAL_MS = 6000
 
 describe('HomePageRotator', () => {
     beforeEach(() => {

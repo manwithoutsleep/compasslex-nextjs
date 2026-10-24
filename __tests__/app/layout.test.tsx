@@ -2,11 +2,16 @@ import { describe, it, expect, vi } from 'vitest'
 import { render } from '@testing-library/react'
 import RootLayout, { metadata } from '@/app/layout'
 
+// Roboto() runs once at module load; record its options outside the mock so
+// Vitest's default clearMocks doesn't wipe the call before the test runs
+const robotoCalls = vi.hoisted(() => [] as unknown[])
+
 // Mock Roboto font to verify it's being used
 vi.mock('next/font/google', () => ({
-    Roboto: vi.fn(() => ({
-        className: 'roboto-font-class',
-    })),
+    Roboto: vi.fn((options: unknown) => {
+        robotoCalls.push(options)
+        return { className: 'roboto-font-class' }
+    }),
 }))
 
 describe('RootLayout', () => {
@@ -49,7 +54,7 @@ describe('RootLayout', () => {
         const { Roboto } = await import('next/font/google')
 
         // Verify Roboto is called with correct configuration
-        expect(Roboto).toHaveBeenCalledWith({
+        expect(robotoCalls).toContainEqual({
             weight: ['400', '700'],
             subsets: ['latin'],
             display: 'swap',

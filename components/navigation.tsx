@@ -16,8 +16,7 @@ const NAV_LINKS = [
 ] as const
 
 type NavigationProps =
-    | { variant: 'desktop' }
-    | { variant: 'mobile'; isOpen: boolean; onClose: () => void }
+    { variant: 'desktop' } | { variant: 'mobile'; isOpen: boolean; onClose: () => void }
 
 /**
  * Navigation component with responsive desktop and mobile layouts
