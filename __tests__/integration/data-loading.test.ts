@@ -8,10 +8,10 @@ import { counselorRepository, newsletterRepository } from '@/services/data-repos
  */
 describe('Data Loading Integration', () => {
     describe('Counselor Data', () => {
-        it('should load all 10 active counselors successfully', async () => {
+        it('should load all 11 active counselors successfully', async () => {
             const counselors = await counselorRepository.getAllCounselors()
 
-            expect(counselors).toHaveLength(10)
+            expect(counselors).toHaveLength(11)
             expect(counselors.every((counselor) => counselor.active)).toBe(true)
         })
 
