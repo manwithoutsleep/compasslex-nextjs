@@ -21,7 +21,7 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en" className={roboto.className}>
+        <html lang="en" className={roboto.className} suppressHydrationWarning>
             <body className="min-h-screen">
                 <Header />
                 {/* Add top margin on mobile to account for fixed header */}

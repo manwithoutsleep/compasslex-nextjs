@@ -346,6 +346,41 @@
         {
             "active": true,
             "credentials": [
+                "B.A. in Secondary Education, Wheaton College",
+                "M.A. in Clinical Mental Health, University of Kentucky",
+                "Licensed Professional Counselor Associate (LPCA)",
+                "Integrative Somatic Parts Work, Levels I-III"
+            ],
+            "email": "deborah@compasslex.com",
+            "firstName": "Deborah",
+            "insurance": [
+                "Aetna Commercial and Medicaid",
+                "Anthem Blue Cross/Blue Shield",
+                "Humana Medicaid",
+                "Passport Medicaid",
+                "Wellcare Medicaid",
+                "United Commercial and Medicaid"
+            ],
+            "lastName": "Lynerd",
+            "longDescription": [
+                "After earning a B.A. in Secondary Education from Wheaton College, and before becoming a counselor, I spent years as a middle and high school teacher and administrator. This work deepened my care for people navigating issues of identity, growth, and pressure. I then earned an M.A. in Clinical Mental Health from the University of Kentucky in order to pursue this care in a deeper way.",
+                "I work with individuals (adults, adolescents) and couples facing a variety of symptoms including those associated with anxiety, depression, stress and burnout, life transitions, and complex trauma (C-PTSD). As an integrative therapist, I draw primarily on Somatic Parts Work, Internal Family Systems (IFS), and Person-Centered Therapy, with Polyvagal Theory informing how I pay attention to the nervous system. This framework is trauma-informed and non-pathologizing, focusing on the care and relief that we can offer to those wounded parts of our systems.",
+                "Our inner parts or aspects are shaped by our life experiences and the beliefs that we have formed around those experiences. This may show up as tension in the body, as patterns of thought, and in the ways we relate to ourselves and others. A somatic framework helps us notice together how parts show up physically, in breath, posture, and nervous system states, and supports work within each individual's window of tolerance. Over time, this work can help soften the inner critic, tend to unmet needs, and offer support in leading your inner world with clarity, confidence, and self-compassion.",
+                "It's often the case that one part of a new client wants to begin this journey, while other parts hold anxiety, fear, or ambivalence. All of those parts are welcome here. I offer both in-person and virtual sessions, and I'd be glad to talk with you about beginning this work."
+            ],
+            "memberships": [],
+            "phone": "(859) 359-6467",
+            "practitionerId": "0",
+            "shortDescription": "Taking steps toward healing is courageous work. My goal is to offer a space where you can bring compassionate curiosity to your own defenses and pain, learning to build trust within yourself. You bring your experience, and I bring a framework and skills to help you find a way forward that honors the wisdom already within you.",
+            "title": "M.A., LPCA",
+            "directoryId": "248208E1A1F04EDABEECD4F8EF575939",
+            "id": "15",
+            "slug": "deborah",
+            "appointmentLink": "https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=248208E1A1F04EDABEECD4F8EF575939"
+        },
+        {
+            "active": true,
+            "credentials": [
                 "M.A. in Marriage & Family Counseling, Asbury Theological Seminary, KY",
                 "B.A. in Counseling Psychology, Toccoa Falls College, GA",
                 "Externship and Core Skills training in Emotionally Focused Couple Therapy (EFT)",
